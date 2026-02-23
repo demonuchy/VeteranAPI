@@ -1,0 +1,32 @@
+# 1. Виртуальное окружение
+.venv/
+venv/
+
+# 2. Кэш Python
+__pycache__/
+*.pyc
+
+# 3. Файлы IDE
+.vscode/
+.idea/
+
+
+# 4. Системные файлы
+.DS_Store
+Thumbs.db
+
+# 5. Файлы данных 
+postgres-data/
+redis-data/
+*.db
+*.sqlite3
+
+# 6. Файлы окружения
+.env
+.env.local
+.env.*.local
+
+# 7.
+.dist/
+.github/
+.test/
