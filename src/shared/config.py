@@ -26,6 +26,7 @@ class Config(BaseSettings):
     JWT_ALGORITHM : str 
     JWT_ACCESS_EXPIRE_MINUTES : int 
     JWT_REFRESH_EXPIRE_MINUTES : int 
+    JWT_ADMIN_REFRESH_EXPIRE_MINUTES : int
 
     REDIS_HOST : str 
     REDIS_PORT : str 

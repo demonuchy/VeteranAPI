@@ -13,12 +13,12 @@ from shared.logger.logger import logger
 class TokenCleanupService:
     """
     Сервис для фоновой очистки истекших токенов
-    Запускается в отдельном потоке с синхронным SQLAlchemy
+    Запуск в отдельном поток синхронный SQLAlchemy
     """
     
     def __init__(
         self,
-        database_url: str,  # Передаем строку подключения вместо фабрики
+        database_url: str, 
         interval_minutes: int = 60,
         batch_size: int = 1000,
         name: str = "TokenCleanup"
@@ -27,11 +27,9 @@ class TokenCleanupService:
         self.interval = interval_minutes * 60
         self.batch_size = batch_size
         self.name = name
-        
         # Синхронный engine для фонового потока
         self.sync_engine = None
         self.SyncSessionLocal = None
-        
         # Состояние сервиса
         self.is_running = False
         self.thread: Optional[threading.Thread] = None
@@ -65,7 +63,6 @@ class TokenCleanupService:
         """Синхронная очистка батча"""
         if not self.SyncSessionLocal:
             self._init_sync_engine()
-        
         session = self.SyncSessionLocal()
         try:
             # Находим ID токенов для удаления
@@ -74,18 +71,13 @@ class TokenCleanupService:
                     Token.exp < datetime.utcnow()
                 ).limit(self.batch_size)
             ).scalars().all()
-            
             if not token_ids:
                 return 0
-            
-            # Удаляем
             result = session.execute(
                 delete(Token).where(Token.id.in_(token_ids))
             )
             session.commit()
-            
             return result.rowcount
-            
         except Exception as e:
             session.rollback()
             logger.error(f"[{self.name}] Ошибка в _cleanup_batch_sync: {e}")
@@ -95,49 +87,34 @@ class TokenCleanupService:
     
     def _run_cleanup_loop(self):
         """Основной цикл очистки (выполняется в отдельном потоке)"""
-        # Инициализируем синхронный engine для этого потока
         self._init_sync_engine()
-        
         logger.info(
             f"[{self.name}] 🚀 Поток очистки запущен "
             f"(интервал: {self.interval // 60} мин, поток: {threading.current_thread().name})"
         )
-        
         while self.is_running:
             try:
                 start_time = time.time()
                 total_deleted = 0
                 batches = 0
-                
                 logger.info(f"[{self.name}] 🧹 Начинаем очистку...")
-                
-                # Удаляем батчами
                 while self.is_running:
                     try:
                         deleted = self._cleanup_batch_sync()
-                        
                         if deleted == 0:
                             break
-                        
                         total_deleted += deleted
                         batches += 1
-                        
                         logger.debug(
                             f"[{self.name}] Удалено {deleted} токенов (батч #{batches})"
                         )
-                        
-                        # Небольшая пауза между батчами
                         time.sleep(0.1)
-                        
                     except Exception as e:
                         logger.error(f"[{self.name}] Ошибка при удалении батча: {e}")
                         with self._lock:
                             self._stats['errors'] += 1
                         break
-                
                 duration = time.time() - start_time
-                
-                # Обновляем статистику
                 with self._lock:
                     self._stats['total_deleted'] += total_deleted
                     self._stats['last_run'] = datetime.utcnow()
@@ -158,18 +135,12 @@ class TokenCleanupService:
                 logger.error(f"[{self.name}] ❌ Критическая ошибка в цикле: {e}")
                 with self._lock:
                     self._stats['errors'] += 1
-            
-            # Ждем до следующего запуска
             if self.is_running:
                 logger.debug(f"[{self.name}] Ожидание {self.interval // 60} мин...")
-                
-                # Ждем с интервалами по 1 секунде
                 for _ in range(self.interval):
                     if not self.is_running:
                         break
                     time.sleep(1)
-        
-        # Закрываем соединения при завершении
         if self.sync_engine:
             self.sync_engine.dispose()
             logger.info(f"[{self.name}] Соединения с БД закрыты")
@@ -181,7 +152,6 @@ class TokenCleanupService:
         if self.is_running:
             logger.warning(f"[{self.name}] Сервис уже запущен")
             return
-        
         self.is_running = True
         self.thread = threading.Thread(
             target=self._run_cleanup_loop,
@@ -199,10 +169,8 @@ class TokenCleanupService:
         if not self.is_running:
             logger.warning(f"[{self.name}] Сервис не запущен")
             return
-        
         logger.info(f"[{self.name}] 🛑 Останавливаем фоновый процесс...")
         self.is_running = False
-        
         if self.thread and self.thread.is_alive():
             self.thread.join(timeout=10)
             if self.thread.is_alive():
@@ -225,34 +193,26 @@ class TokenCleanupService:
     def run_once_sync(self) -> dict:
         """Синхронная версия одноразовой очистки"""
         self._init_sync_engine()
-        
         start_time = time.time()
         total_deleted = 0
         batches = 0
-        
         try:
             while True:
                 deleted = self._cleanup_batch_sync()
-                
                 if deleted == 0:
                     break
-                
                 total_deleted += deleted
                 batches += 1
-                
                 if batches % 10 == 0:
                     logger.info(f"[{self.name}] Прогресс: удалено {total_deleted} токенов")
-                
                 time.sleep(0.1)
             
             duration = time.time() - start_time
-            
             return {
                 'deleted': total_deleted,
                 'batches': batches,
                 'duration': duration
             }
-            
         except Exception as e:
             logger.error(f"[{self.name}] Ошибка в run_once_sync: {e}")
             raise

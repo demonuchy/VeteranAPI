@@ -1,6 +1,4 @@
 from fastapi import HTTPException, status
-from typing import Tuple
-from sqlalchemy.ext.asyncio import AsyncSession
 
 from shared.logger.logger import logger
 from shared.config import config
@@ -9,6 +7,7 @@ from utils.jwt_manager import AbstractTokenManager, AbstractTokenStorage
 from utils.password_hash import hash_password, is_password_valid
 from database.base import BaseSQLAlchemyRepository
 from database.repository import TokenRepository
+from database.fields import Role
 
 
 class AuthService:
@@ -107,7 +106,10 @@ class AuthService:
         logger.debug("calculate expire ...")
         refresh_expire_minutes=config.JWT_REFRESH_EXPIRE_MINUTES
         if is_admin:
-            refresh_expire_minutes=60
+            if user.role != Role.ROOT:
+                logger.warn("Role is not root forbidden")
+                raise HTTPException(status_code=status.HTTP_403_FORBIDDEN, detail="Forbidden")
+            refresh_expire_minutes=config.JWT_ADMIN_REFRESH_EXPIRE_MINUTES
         logger.debug(f"exoire {refresh_expire_minutes}")
         logger.debug("Create token pair ...")
         access_token, refresh_token = self.token_manager.create_token_pair(

@@ -42,10 +42,7 @@ class AuthBackend(AuthenticationBackend):
                     return False
                 logger.debug("Parse responce ... ")
                 data = response.json()
-                logger.debug(f"Data : {data}")
-                if data["data"]["user"]["role"] != "root":
-                    logger.warn(f"Forbbiden {data['data']['user']}")
-                    return False
+               # logger.debug(f"Data : {data}")
                 request.session.update(
                     {
                         "access_token": data["data"]["access_token"],
@@ -93,16 +90,20 @@ class AuthBackend(AuthenticationBackend):
                         return False
                     data = response.json()
                     logger.debug("Fetch new access token")
+                    new_access_token = data['data']['access_token']
                     response = await client.post(
                     f"{self.api_url}/api/v1/auth/verify",
                     headers={
-                        "Authorization": f"Bearer {data['data']['access_token']}",
+                        "Authorization": f"Bearer {new_access_token}",
                         "X-Device-Id" : f"{request.session.get('session_id')}"
                         }
                     )
                     if response.status_code != 200:
                         logger.warn("New accsess token is not valid")
                         return False
+                    logger.debug("update session")
+                    request.session.update({"access_token" : new_access_token})
+                logger.debug("Check user role ...")
                 data = response.json()
                 if data["data"]["user"]["role"] != "root":
                     logger.warn(f"Forbbiden {data['data']['user']}")

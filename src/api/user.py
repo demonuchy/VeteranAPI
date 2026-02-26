@@ -4,7 +4,9 @@ from fastapi.responses import JSONResponse
 
 from shared.depends import UserServiceDep
 
+
 user_route = APIRouter(prefix="/api/v1/users")
+
 
 @user_route.get("/me")
 async def get_me(service : UserServiceDep, user_id = Header(..., alias="X-User-Id")):

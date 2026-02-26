@@ -3,7 +3,7 @@ import base64
 import asyncio
 import uuid
 from fastapi import HTTPException, status, UploadFile
-from typing import List
+from typing import List, Optional
 
 from concurrent.futures import ThreadPoolExecutor
 
@@ -49,7 +49,7 @@ class NewsService:
             image.base64 = base64.b64encode(image_bytes).decode('utf-8')
         return news
     
-    async def delete_news(self, news_id):
+    async def delete_news(self, news_id) -> None:
         """Удаление новости"""
         logger.debug(f"Delete news {news_id}")
         news = await self.news_repository.get_with_image(news_id)
@@ -65,9 +65,9 @@ class NewsService:
         await asyncio.gather(*minio_task)
         logger.debug("Delete news..")
         await self.news_repository.delete(news_id)
-        logger.debug("✅")
+        logger.debug("✅ News deleted...")
     
-    async def create_news(self, user_id, title: str, body: str, upload_images: List[UploadFile]):
+    async def create_news(self, user_id, title: str, body: str, upload_images: List[UploadFile]) -> None:
         """Создание новости"""
         logger.debug("Publish news...")
         news_bucket_name = "news-images"
@@ -120,7 +120,6 @@ class NewsService:
         for image in upload_images:
             await image.seek(0)
         logger.debug(f"✅ Successfully uploaded {len(upload_images)} images")
-        return news
 
     async def get_all_news(self) -> List:
         news_list = await self.news_repository.get_all_with_image(order=1)
@@ -135,7 +134,7 @@ class NewsService:
             serialize_news_list.append(serialize_news)
         return serialize_news_list
 
-    async def get_news(self, news_id):
+    async def get_news(self, news_id) -> dict:
         logger.debug(f"Get news {news_id}")
         logger.debug("Get news ogj...")
         news = await self.news_repository.get_with_image(news_id)
@@ -146,3 +145,13 @@ class NewsService:
         await self._load_image(news)
         serialize_news = NewsSchema.model_validate(news).model_dump()
         return serialize_news
+    
+    async def update_news(
+            self, 
+            news_id : int, 
+            title: Optional[str], 
+            body: Optional[str], 
+            upload_images: Optional[List[UploadFile]]
+            ) -> None:
+        logger.debug("Updated news ...")
+        

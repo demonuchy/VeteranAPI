@@ -7,7 +7,7 @@ from datetime import datetime
 from database.models import User, Token, News, NewsImages, Comment
 from database.fields import Role, TokenType, ImageType
 from shared.logger.logger import logger
-
+from utils.jwt_manager import TokenStorage
 
 class UserAdmin(ModelView, model=User):
     """Админ-панель для пользователей"""
