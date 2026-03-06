@@ -38239,3 +38239,2376 @@ INFO: 2026-02-24 07:21:58 - [TokenCleanup] 🛑 Останавливаем фо�
 INFO: 2026-02-24 07:21:59 - [TokenCleanup] Соединения с БД закрыты
 INFO: 2026-02-24 07:21:59 - [TokenCleanup] 👋 Поток очистки остановлен
 INFO: 2026-02-24 07:21:59 - [TokenCleanup] Поток успешно завершен
+INFO: 2026-02-27 13:28:46 - [TokenCleanup] ✅ Фоновый процесс запущен (поток: TokenCleanup, ID: 132425051272896)
+INFO: 2026-02-27 13:28:46 - [TokenCleanup] Синхронный engine инициализирован
+INFO: 2026-02-27 13:28:46 - [TokenCleanup] 🚀 Поток очистки запущен (интервал: 60 мин, поток: TokenCleanup)
+INFO: 2026-02-27 13:28:46 - [TokenCleanup] 🧹 Начинаем очистку...
+INFO: 2026-02-27 13:28:47 - [TokenCleanup] ✅ Истекших токенов не найдено
+DEBUG: 2026-02-27 13:28:47 - [TokenCleanup] Ожидание 60 мин...
+DEBUG: 2026-02-27 13:30:13 - session : {'token': 'eyJhbGciOiJIUzI1NiIsImtpZCI6ImtpZCIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NzE2ODUzNTQsImp0aSI6ImNjYTRjMDJlLTg0MTEtNDNiNy04YWMzLTE3NWY2YmU0NjFiNCIsInRva2VuX3R5cGUiOiJhY2Nlc3MiLCJ1c2VyX2lkIjo1NCwiaWF0IjoxNzcxNjg0NDU0LCJ1c2VyX3JvbGUiOiJyb290IiwiZGV2aWNlX2lkIjoiZjlkYzZlMTIwMDJjNDVmNWFlMDg3OWRhZTEyMTQ0ZmIiLCJpcF9hZGRyZXNzIjoiMTI3LjAuMC4xIn0.tZfb3KrUieH4afNGpjXPnNE7HRS6D7irLXwTqPCjICQ', 'username': 'demonuchy@gmail.com', 'session_id': '099e4ba8bef24ccc8084b1b746f381a7', 'access_token': 'eyJhbGciOiJIUzI1NiIsImtpZCI6ImtpZCIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NzE5MTM0OTIsImp0aSI6IjlmMTJhMzVmLTQxNDMtNDk3NS1iNTA5LTMxZmI0N2VlZTY3ZiIsInRva2VuX3R5cGUiOiJhY2Nlc3MiLCJ1c2VyX2lkIjo1NCwiaWF0IjoxNzcxOTEyNTkyLCJ1c2VyX3JvbGUiOiJyb290IiwiZGV2aWNlX2lkIjoiMDk5ZTRiYThiZWYyNGNjYzgwODRiMWI3NDZmMzgxYTciLCJpcF9hZGRyZXNzIjoiMTI3LjAuMC4xIn0.4l-PkQ8zanCzW7LOAGCPjtbsfTJZO5-DwPPKm1jB3vY', 'refresh_token ': 'eyJhbGciOiJIUzI1NiIsImtpZCI6ImtpZCIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NzE2OTI0NjUsImp0aSI6IjY1Mzc3ZTYyLTljODYtNDg5ZC05OGU0LWI5OThmZTQ3MWE0NSIsInRva2VuX3R5cGUiOiJyZWZyZXNoIiwidXNlcl9pZCI6NTQsImlhdCI6MTc3MTY4ODg2NSwidXNlcl9yb2xlIjoicm9vdCIsImRldmljZV9pZCI6IjI2Y2QyN2E1YzBkYzRlNDZhN2E0NDkwMmIzNTVjNGE3IiwiaXBfYWRkcmVzcyI6IjEyNy4wLjAuMSJ9.a6YPth_L_bPHRN18Aa09np19qxwrxP1YwZYlVK_H254', 'refresh_token': 'eyJhbGciOiJIUzI1NiIsImtpZCI6ImtpZCIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NzE5MTYxOTIsImp0aSI6ImRjNDU2NTg5LTg3YTItNGNmYS1iZjVkLTU3MTJjYzQ2OWUyYyIsInRva2VuX3R5cGUiOiJyZWZyZXNoIiwidXNlcl9pZCI6NTQsImlhdCI6MTc3MTkxMjU5MiwidXNlcl9yb2xlIjoicm9vdCIsImRldmljZV9pZCI6IjA5OWU0YmE4YmVmMjRjY2M4MDg0YjFiNzQ2ZjM4MWE3IiwiaXBfYWRkcmVzcyI6IjEyNy4wLjAuMSJ9.GAsQ7-pMlt4SUqAvxBYT8hogKEtNgtRgJgCCiJQDKVc'}
+DEBUG: 2026-02-27 13:30:13 - Open transaction ...
+DEBUG: 2026-02-27 13:30:13 - Verefy access token
+WARNING: 2026-02-27 13:30:13 - Токен просрочен!
+WARNING: 2026-02-27 13:30:13 - Error invalid token
+WARNING: 2026-02-27 13:30:13 - Discard change rollback...
+DEBUG: 2026-02-27 13:30:13 - Session close
+DEBUG: 2026-02-27 13:30:13 - Refresh access token
+DEBUG: 2026-02-27 13:30:13 - Fetch...
+DEBUG: 2026-02-27 13:30:13 - Open transaction ...
+DEBUG: 2026-02-27 13:30:13 - Verefy refresh token
+WARNING: 2026-02-27 13:30:13 - Токен просрочен!
+WARNING: 2026-02-27 13:30:13 - Error invalid token
+WARNING: 2026-02-27 13:30:13 - Discard change rollback...
+DEBUG: 2026-02-27 13:30:13 - Session close
+WARNING: 2026-02-27 13:30:13 - Refresh token is not valid
+DEBUG: 2026-02-27 13:30:33 - Admin login attemp username : demonuchy@gmail.com, password : D2i0m0a5
+DEBUG: 2026-02-27 13:30:33 - Open transaction ...
+DEBUG: 2026-02-27 13:30:33 - Login attemp demonuchy@gmail.com - D2i0m0a5
+DEBUG: 2026-02-27 13:30:33 - Check login attemmp ...
+DEBUG: 2026-02-27 13:30:33 - Check user ...
+DEBUG: 2026-02-27 13:30:33 - Check tokens
+DEBUG: 2026-02-27 13:30:33 - Revoking the refresh token
+DEBUG: 2026-02-27 13:30:34 - Revoking the access token
+DEBUG: 2026-02-27 13:30:34 - Redis session started
+DEBUG: 2026-02-27 13:30:34 - Found 0 keys matching pattern: 54:*:1273c500735942d1bf75f21fccc29462
+DEBUG: 2026-02-27 13:30:34 - Redis session ended
+DEBUG: 2026-02-27 13:30:34 - Revork 0 tokens
+DEBUG: 2026-02-27 13:30:34 - calculate expire ...
+DEBUG: 2026-02-27 13:30:34 - exoire 60
+DEBUG: 2026-02-27 13:30:34 - Create token pair ...
+DEBUG: 2026-02-27 13:30:34 - Accouting refresh token
+DEBUG: 2026-02-27 13:30:34 - Accouting access token
+DEBUG: 2026-02-27 13:30:34 - Redis session started
+DEBUG: 2026-02-27 13:30:34 - saved to Redis: 54:e0642baa-c97d-4d23-838a-338a7bc2ffb5:1273c500735942d1bf75f21fccc29462, TTL: 0:15:00s
+DEBUG: 2026-02-27 13:30:34 - Redis session ended
+DEBUG: 2026-02-27 13:30:34 - User login
+DEBUG: 2026-02-27 13:30:34 - Parse responce ... 
+DEBUG: 2026-02-27 13:30:34 - Commit
+DEBUG: 2026-02-27 13:30:34 - Session close
+DEBUG: 2026-02-27 13:30:34 - session : {'token': 'eyJhbGciOiJIUzI1NiIsImtpZCI6ImtpZCIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NzE2ODUzNTQsImp0aSI6ImNjYTRjMDJlLTg0MTEtNDNiNy04YWMzLTE3NWY2YmU0NjFiNCIsInRva2VuX3R5cGUiOiJhY2Nlc3MiLCJ1c2VyX2lkIjo1NCwiaWF0IjoxNzcxNjg0NDU0LCJ1c2VyX3JvbGUiOiJyb290IiwiZGV2aWNlX2lkIjoiZjlkYzZlMTIwMDJjNDVmNWFlMDg3OWRhZTEyMTQ0ZmIiLCJpcF9hZGRyZXNzIjoiMTI3LjAuMC4xIn0.tZfb3KrUieH4afNGpjXPnNE7HRS6D7irLXwTqPCjICQ', 'username': 'demonuchy@gmail.com', 'session_id': '1273c500735942d1bf75f21fccc29462', 'access_token': 'eyJhbGciOiJIUzI1NiIsImtpZCI6ImtpZCIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NzIxOTk5MzQsImp0aSI6ImUwNjQyYmFhLWM5N2QtNGQyMy04MzhhLTMzOGE3YmMyZmZiNSIsInRva2VuX3R5cGUiOiJhY2Nlc3MiLCJ1c2VyX2lkIjo1NCwiaWF0IjoxNzcyMTk5MDM0LCJ1c2VyX3JvbGUiOiJyb290IiwiZGV2aWNlX2lkIjoiMTI3M2M1MDA3MzU5NDJkMWJmNzVmMjFmY2NjMjk0NjIiLCJpcF9hZGRyZXNzIjoiMTI3LjAuMC4xIn0.QMj8mCPF4zm4Tc6U32Q5RVQsBLNLyMZ63ao6PO1Iv_8', 'refresh_token ': 'eyJhbGciOiJIUzI1NiIsImtpZCI6ImtpZCIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NzE2OTI0NjUsImp0aSI6IjY1Mzc3ZTYyLTljODYtNDg5ZC05OGU0LWI5OThmZTQ3MWE0NSIsInRva2VuX3R5cGUiOiJyZWZyZXNoIiwidXNlcl9pZCI6NTQsImlhdCI6MTc3MTY4ODg2NSwidXNlcl9yb2xlIjoicm9vdCIsImRldmljZV9pZCI6IjI2Y2QyN2E1YzBkYzRlNDZhN2E0NDkwMmIzNTVjNGE3IiwiaXBfYWRkcmVzcyI6IjEyNy4wLjAuMSJ9.a6YPth_L_bPHRN18Aa09np19qxwrxP1YwZYlVK_H254', 'refresh_token': 'eyJhbGciOiJIUzI1NiIsImtpZCI6ImtpZCIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NzIyMDI2MzQsImp0aSI6IjUzNWU2OGFlLWI5MDEtNGExMy1hMDNkLWQ2N2M0OGMxMzU1NyIsInRva2VuX3R5cGUiOiJyZWZyZXNoIiwidXNlcl9pZCI6NTQsImlhdCI6MTc3MjE5OTAzNCwidXNlcl9yb2xlIjoicm9vdCIsImRldmljZV9pZCI6IjEyNzNjNTAwNzM1OTQyZDFiZjc1ZjIxZmNjYzI5NDYyIiwiaXBfYWRkcmVzcyI6IjEyNy4wLjAuMSJ9.sNnhg5AKfAGza5E_FHmXPvnABPx_4i7PmJRLXqtbriQ'}
+DEBUG: 2026-02-27 13:30:34 - Open transaction ...
+DEBUG: 2026-02-27 13:30:34 - Verefy access token
+DEBUG: 2026-02-27 13:30:34 - Verification of access token registration
+DEBUG: 2026-02-27 13:30:34 - Redis session started
+DEBUG: 2026-02-27 13:30:34 - Value retrieved from Redis: 54:e0642baa-c97d-4d23-838a-338a7bc2ffb5:1273c500735942d1bf75f21fccc29462
+DEBUG: 2026-02-27 13:30:34 - Redis session ended
+DEBUG: 2026-02-27 13:30:34 - serialize token payload ...
+DEBUG: 2026-02-27 13:30:34 - Payload : user_id=54 user_role='root' iat=datetime.datetime(2026, 2, 27, 13, 30, 34, 64581) jti='e0642baa-c97d-4d23-838a-338a7bc2ffb5' exp=datetime.datetime(2026, 2, 27, 13, 45, 34, 64521) token_type='access' device_id='1273c500735942d1bf75f21fccc29462' ip_address='127.0.0.1' is_rework=False
+DEBUG: 2026-02-27 13:30:34 - Access token is valid
+DEBUG: 2026-02-27 13:30:34 - Commit
+DEBUG: 2026-02-27 13:30:34 - Session close
+DEBUG: 2026-02-27 13:30:34 - Check user role ...
+DEBUG: 2026-02-27 13:30:36 - session : {'token': 'eyJhbGciOiJIUzI1NiIsImtpZCI6ImtpZCIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NzE2ODUzNTQsImp0aSI6ImNjYTRjMDJlLTg0MTEtNDNiNy04YWMzLTE3NWY2YmU0NjFiNCIsInRva2VuX3R5cGUiOiJhY2Nlc3MiLCJ1c2VyX2lkIjo1NCwiaWF0IjoxNzcxNjg0NDU0LCJ1c2VyX3JvbGUiOiJyb290IiwiZGV2aWNlX2lkIjoiZjlkYzZlMTIwMDJjNDVmNWFlMDg3OWRhZTEyMTQ0ZmIiLCJpcF9hZGRyZXNzIjoiMTI3LjAuMC4xIn0.tZfb3KrUieH4afNGpjXPnNE7HRS6D7irLXwTqPCjICQ', 'username': 'demonuchy@gmail.com', 'session_id': '1273c500735942d1bf75f21fccc29462', 'access_token': 'eyJhbGciOiJIUzI1NiIsImtpZCI6ImtpZCIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NzIxOTk5MzQsImp0aSI6ImUwNjQyYmFhLWM5N2QtNGQyMy04MzhhLTMzOGE3YmMyZmZiNSIsInRva2VuX3R5cGUiOiJhY2Nlc3MiLCJ1c2VyX2lkIjo1NCwiaWF0IjoxNzcyMTk5MDM0LCJ1c2VyX3JvbGUiOiJyb290IiwiZGV2aWNlX2lkIjoiMTI3M2M1MDA3MzU5NDJkMWJmNzVmMjFmY2NjMjk0NjIiLCJpcF9hZGRyZXNzIjoiMTI3LjAuMC4xIn0.QMj8mCPF4zm4Tc6U32Q5RVQsBLNLyMZ63ao6PO1Iv_8', 'refresh_token ': 'eyJhbGciOiJIUzI1NiIsImtpZCI6ImtpZCIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NzE2OTI0NjUsImp0aSI6IjY1Mzc3ZTYyLTljODYtNDg5ZC05OGU0LWI5OThmZTQ3MWE0NSIsInRva2VuX3R5cGUiOiJyZWZyZXNoIiwidXNlcl9pZCI6NTQsImlhdCI6MTc3MTY4ODg2NSwidXNlcl9yb2xlIjoicm9vdCIsImRldmljZV9pZCI6IjI2Y2QyN2E1YzBkYzRlNDZhN2E0NDkwMmIzNTVjNGE3IiwiaXBfYWRkcmVzcyI6IjEyNy4wLjAuMSJ9.a6YPth_L_bPHRN18Aa09np19qxwrxP1YwZYlVK_H254', 'refresh_token': 'eyJhbGciOiJIUzI1NiIsImtpZCI6ImtpZCIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NzIyMDI2MzQsImp0aSI6IjUzNWU2OGFlLWI5MDEtNGExMy1hMDNkLWQ2N2M0OGMxMzU1NyIsInRva2VuX3R5cGUiOiJyZWZyZXNoIiwidXNlcl9pZCI6NTQsImlhdCI6MTc3MjE5OTAzNCwidXNlcl9yb2xlIjoicm9vdCIsImRldmljZV9pZCI6IjEyNzNjNTAwNzM1OTQyZDFiZjc1ZjIxZmNjYzI5NDYyIiwiaXBfYWRkcmVzcyI6IjEyNy4wLjAuMSJ9.sNnhg5AKfAGza5E_FHmXPvnABPx_4i7PmJRLXqtbriQ'}
+DEBUG: 2026-02-27 13:30:36 - Open transaction ...
+DEBUG: 2026-02-27 13:30:36 - Verefy access token
+DEBUG: 2026-02-27 13:30:36 - Verification of access token registration
+DEBUG: 2026-02-27 13:30:36 - Redis session started
+DEBUG: 2026-02-27 13:30:36 - Value retrieved from Redis: 54:e0642baa-c97d-4d23-838a-338a7bc2ffb5:1273c500735942d1bf75f21fccc29462
+DEBUG: 2026-02-27 13:30:36 - Redis session ended
+DEBUG: 2026-02-27 13:30:36 - serialize token payload ...
+DEBUG: 2026-02-27 13:30:36 - Payload : user_id=54 user_role='root' iat=datetime.datetime(2026, 2, 27, 13, 30, 34, 64581) jti='e0642baa-c97d-4d23-838a-338a7bc2ffb5' exp=datetime.datetime(2026, 2, 27, 13, 45, 34, 64521) token_type='access' device_id='1273c500735942d1bf75f21fccc29462' ip_address='127.0.0.1' is_rework=False
+DEBUG: 2026-02-27 13:30:36 - Access token is valid
+DEBUG: 2026-02-27 13:30:36 - Commit
+DEBUG: 2026-02-27 13:30:36 - Session close
+DEBUG: 2026-02-27 13:30:36 - Check user role ...
+DEBUG: 2026-02-27 13:30:38 - session : {'token': 'eyJhbGciOiJIUzI1NiIsImtpZCI6ImtpZCIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NzE2ODUzNTQsImp0aSI6ImNjYTRjMDJlLTg0MTEtNDNiNy04YWMzLTE3NWY2YmU0NjFiNCIsInRva2VuX3R5cGUiOiJhY2Nlc3MiLCJ1c2VyX2lkIjo1NCwiaWF0IjoxNzcxNjg0NDU0LCJ1c2VyX3JvbGUiOiJyb290IiwiZGV2aWNlX2lkIjoiZjlkYzZlMTIwMDJjNDVmNWFlMDg3OWRhZTEyMTQ0ZmIiLCJpcF9hZGRyZXNzIjoiMTI3LjAuMC4xIn0.tZfb3KrUieH4afNGpjXPnNE7HRS6D7irLXwTqPCjICQ', 'username': 'demonuchy@gmail.com', 'session_id': '1273c500735942d1bf75f21fccc29462', 'access_token': 'eyJhbGciOiJIUzI1NiIsImtpZCI6ImtpZCIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NzIxOTk5MzQsImp0aSI6ImUwNjQyYmFhLWM5N2QtNGQyMy04MzhhLTMzOGE3YmMyZmZiNSIsInRva2VuX3R5cGUiOiJhY2Nlc3MiLCJ1c2VyX2lkIjo1NCwiaWF0IjoxNzcyMTk5MDM0LCJ1c2VyX3JvbGUiOiJyb290IiwiZGV2aWNlX2lkIjoiMTI3M2M1MDA3MzU5NDJkMWJmNzVmMjFmY2NjMjk0NjIiLCJpcF9hZGRyZXNzIjoiMTI3LjAuMC4xIn0.QMj8mCPF4zm4Tc6U32Q5RVQsBLNLyMZ63ao6PO1Iv_8', 'refresh_token ': 'eyJhbGciOiJIUzI1NiIsImtpZCI6ImtpZCIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NzE2OTI0NjUsImp0aSI6IjY1Mzc3ZTYyLTljODYtNDg5ZC05OGU0LWI5OThmZTQ3MWE0NSIsInRva2VuX3R5cGUiOiJyZWZyZXNoIiwidXNlcl9pZCI6NTQsImlhdCI6MTc3MTY4ODg2NSwidXNlcl9yb2xlIjoicm9vdCIsImRldmljZV9pZCI6IjI2Y2QyN2E1YzBkYzRlNDZhN2E0NDkwMmIzNTVjNGE3IiwiaXBfYWRkcmVzcyI6IjEyNy4wLjAuMSJ9.a6YPth_L_bPHRN18Aa09np19qxwrxP1YwZYlVK_H254', 'refresh_token': 'eyJhbGciOiJIUzI1NiIsImtpZCI6ImtpZCIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NzIyMDI2MzQsImp0aSI6IjUzNWU2OGFlLWI5MDEtNGExMy1hMDNkLWQ2N2M0OGMxMzU1NyIsInRva2VuX3R5cGUiOiJyZWZyZXNoIiwidXNlcl9pZCI6NTQsImlhdCI6MTc3MjE5OTAzNCwidXNlcl9yb2xlIjoicm9vdCIsImRldmljZV9pZCI6IjEyNzNjNTAwNzM1OTQyZDFiZjc1ZjIxZmNjYzI5NDYyIiwiaXBfYWRkcmVzcyI6IjEyNy4wLjAuMSJ9.sNnhg5AKfAGza5E_FHmXPvnABPx_4i7PmJRLXqtbriQ'}
+DEBUG: 2026-02-27 13:30:38 - Open transaction ...
+DEBUG: 2026-02-27 13:30:38 - Verefy access token
+DEBUG: 2026-02-27 13:30:38 - Verification of access token registration
+DEBUG: 2026-02-27 13:30:38 - Redis session started
+DEBUG: 2026-02-27 13:30:38 - Value retrieved from Redis: 54:e0642baa-c97d-4d23-838a-338a7bc2ffb5:1273c500735942d1bf75f21fccc29462
+DEBUG: 2026-02-27 13:30:38 - Redis session ended
+DEBUG: 2026-02-27 13:30:38 - serialize token payload ...
+DEBUG: 2026-02-27 13:30:38 - Payload : user_id=54 user_role='root' iat=datetime.datetime(2026, 2, 27, 13, 30, 34, 64581) jti='e0642baa-c97d-4d23-838a-338a7bc2ffb5' exp=datetime.datetime(2026, 2, 27, 13, 45, 34, 64521) token_type='access' device_id='1273c500735942d1bf75f21fccc29462' ip_address='127.0.0.1' is_rework=False
+DEBUG: 2026-02-27 13:30:38 - Access token is valid
+DEBUG: 2026-02-27 13:30:38 - Commit
+DEBUG: 2026-02-27 13:30:38 - Session close
+DEBUG: 2026-02-27 13:30:38 - Check user role ...
+DEBUG: 2026-02-27 13:30:39 - session : {'token': 'eyJhbGciOiJIUzI1NiIsImtpZCI6ImtpZCIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NzE2ODUzNTQsImp0aSI6ImNjYTRjMDJlLTg0MTEtNDNiNy04YWMzLTE3NWY2YmU0NjFiNCIsInRva2VuX3R5cGUiOiJhY2Nlc3MiLCJ1c2VyX2lkIjo1NCwiaWF0IjoxNzcxNjg0NDU0LCJ1c2VyX3JvbGUiOiJyb290IiwiZGV2aWNlX2lkIjoiZjlkYzZlMTIwMDJjNDVmNWFlMDg3OWRhZTEyMTQ0ZmIiLCJpcF9hZGRyZXNzIjoiMTI3LjAuMC4xIn0.tZfb3KrUieH4afNGpjXPnNE7HRS6D7irLXwTqPCjICQ', 'username': 'demonuchy@gmail.com', 'session_id': '1273c500735942d1bf75f21fccc29462', 'access_token': 'eyJhbGciOiJIUzI1NiIsImtpZCI6ImtpZCIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NzIxOTk5MzQsImp0aSI6ImUwNjQyYmFhLWM5N2QtNGQyMy04MzhhLTMzOGE3YmMyZmZiNSIsInRva2VuX3R5cGUiOiJhY2Nlc3MiLCJ1c2VyX2lkIjo1NCwiaWF0IjoxNzcyMTk5MDM0LCJ1c2VyX3JvbGUiOiJyb290IiwiZGV2aWNlX2lkIjoiMTI3M2M1MDA3MzU5NDJkMWJmNzVmMjFmY2NjMjk0NjIiLCJpcF9hZGRyZXNzIjoiMTI3LjAuMC4xIn0.QMj8mCPF4zm4Tc6U32Q5RVQsBLNLyMZ63ao6PO1Iv_8', 'refresh_token ': 'eyJhbGciOiJIUzI1NiIsImtpZCI6ImtpZCIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NzE2OTI0NjUsImp0aSI6IjY1Mzc3ZTYyLTljODYtNDg5ZC05OGU0LWI5OThmZTQ3MWE0NSIsInRva2VuX3R5cGUiOiJyZWZyZXNoIiwidXNlcl9pZCI6NTQsImlhdCI6MTc3MTY4ODg2NSwidXNlcl9yb2xlIjoicm9vdCIsImRldmljZV9pZCI6IjI2Y2QyN2E1YzBkYzRlNDZhN2E0NDkwMmIzNTVjNGE3IiwiaXBfYWRkcmVzcyI6IjEyNy4wLjAuMSJ9.a6YPth_L_bPHRN18Aa09np19qxwrxP1YwZYlVK_H254', 'refresh_token': 'eyJhbGciOiJIUzI1NiIsImtpZCI6ImtpZCIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NzIyMDI2MzQsImp0aSI6IjUzNWU2OGFlLWI5MDEtNGExMy1hMDNkLWQ2N2M0OGMxMzU1NyIsInRva2VuX3R5cGUiOiJyZWZyZXNoIiwidXNlcl9pZCI6NTQsImlhdCI6MTc3MjE5OTAzNCwidXNlcl9yb2xlIjoicm9vdCIsImRldmljZV9pZCI6IjEyNzNjNTAwNzM1OTQyZDFiZjc1ZjIxZmNjYzI5NDYyIiwiaXBfYWRkcmVzcyI6IjEyNy4wLjAuMSJ9.sNnhg5AKfAGza5E_FHmXPvnABPx_4i7PmJRLXqtbriQ'}
+DEBUG: 2026-02-27 13:30:39 - Open transaction ...
+DEBUG: 2026-02-27 13:30:39 - Verefy access token
+DEBUG: 2026-02-27 13:30:39 - Verification of access token registration
+DEBUG: 2026-02-27 13:30:39 - Redis session started
+DEBUG: 2026-02-27 13:30:39 - Value retrieved from Redis: 54:e0642baa-c97d-4d23-838a-338a7bc2ffb5:1273c500735942d1bf75f21fccc29462
+DEBUG: 2026-02-27 13:30:39 - Redis session ended
+DEBUG: 2026-02-27 13:30:39 - serialize token payload ...
+DEBUG: 2026-02-27 13:30:39 - Payload : user_id=54 user_role='root' iat=datetime.datetime(2026, 2, 27, 13, 30, 34, 64581) jti='e0642baa-c97d-4d23-838a-338a7bc2ffb5' exp=datetime.datetime(2026, 2, 27, 13, 45, 34, 64521) token_type='access' device_id='1273c500735942d1bf75f21fccc29462' ip_address='127.0.0.1' is_rework=False
+DEBUG: 2026-02-27 13:30:39 - Access token is valid
+DEBUG: 2026-02-27 13:30:39 - Commit
+DEBUG: 2026-02-27 13:30:39 - Session close
+DEBUG: 2026-02-27 13:30:39 - Check user role ...
+DEBUG: 2026-02-27 13:30:42 - session : {'token': 'eyJhbGciOiJIUzI1NiIsImtpZCI6ImtpZCIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NzE2ODUzNTQsImp0aSI6ImNjYTRjMDJlLTg0MTEtNDNiNy04YWMzLTE3NWY2YmU0NjFiNCIsInRva2VuX3R5cGUiOiJhY2Nlc3MiLCJ1c2VyX2lkIjo1NCwiaWF0IjoxNzcxNjg0NDU0LCJ1c2VyX3JvbGUiOiJyb290IiwiZGV2aWNlX2lkIjoiZjlkYzZlMTIwMDJjNDVmNWFlMDg3OWRhZTEyMTQ0ZmIiLCJpcF9hZGRyZXNzIjoiMTI3LjAuMC4xIn0.tZfb3KrUieH4afNGpjXPnNE7HRS6D7irLXwTqPCjICQ', 'username': 'demonuchy@gmail.com', 'session_id': '1273c500735942d1bf75f21fccc29462', 'access_token': 'eyJhbGciOiJIUzI1NiIsImtpZCI6ImtpZCIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NzIxOTk5MzQsImp0aSI6ImUwNjQyYmFhLWM5N2QtNGQyMy04MzhhLTMzOGE3YmMyZmZiNSIsInRva2VuX3R5cGUiOiJhY2Nlc3MiLCJ1c2VyX2lkIjo1NCwiaWF0IjoxNzcyMTk5MDM0LCJ1c2VyX3JvbGUiOiJyb290IiwiZGV2aWNlX2lkIjoiMTI3M2M1MDA3MzU5NDJkMWJmNzVmMjFmY2NjMjk0NjIiLCJpcF9hZGRyZXNzIjoiMTI3LjAuMC4xIn0.QMj8mCPF4zm4Tc6U32Q5RVQsBLNLyMZ63ao6PO1Iv_8', 'refresh_token ': 'eyJhbGciOiJIUzI1NiIsImtpZCI6ImtpZCIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NzE2OTI0NjUsImp0aSI6IjY1Mzc3ZTYyLTljODYtNDg5ZC05OGU0LWI5OThmZTQ3MWE0NSIsInRva2VuX3R5cGUiOiJyZWZyZXNoIiwidXNlcl9pZCI6NTQsImlhdCI6MTc3MTY4ODg2NSwidXNlcl9yb2xlIjoicm9vdCIsImRldmljZV9pZCI6IjI2Y2QyN2E1YzBkYzRlNDZhN2E0NDkwMmIzNTVjNGE3IiwiaXBfYWRkcmVzcyI6IjEyNy4wLjAuMSJ9.a6YPth_L_bPHRN18Aa09np19qxwrxP1YwZYlVK_H254', 'refresh_token': 'eyJhbGciOiJIUzI1NiIsImtpZCI6ImtpZCIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NzIyMDI2MzQsImp0aSI6IjUzNWU2OGFlLWI5MDEtNGExMy1hMDNkLWQ2N2M0OGMxMzU1NyIsInRva2VuX3R5cGUiOiJyZWZyZXNoIiwidXNlcl9pZCI6NTQsImlhdCI6MTc3MjE5OTAzNCwidXNlcl9yb2xlIjoicm9vdCIsImRldmljZV9pZCI6IjEyNzNjNTAwNzM1OTQyZDFiZjc1ZjIxZmNjYzI5NDYyIiwiaXBfYWRkcmVzcyI6IjEyNy4wLjAuMSJ9.sNnhg5AKfAGza5E_FHmXPvnABPx_4i7PmJRLXqtbriQ'}
+DEBUG: 2026-02-27 13:30:42 - Open transaction ...
+DEBUG: 2026-02-27 13:30:42 - Verefy access token
+DEBUG: 2026-02-27 13:30:42 - Verification of access token registration
+DEBUG: 2026-02-27 13:30:42 - Redis session started
+DEBUG: 2026-02-27 13:30:42 - Value retrieved from Redis: 54:e0642baa-c97d-4d23-838a-338a7bc2ffb5:1273c500735942d1bf75f21fccc29462
+DEBUG: 2026-02-27 13:30:42 - Redis session ended
+DEBUG: 2026-02-27 13:30:42 - serialize token payload ...
+DEBUG: 2026-02-27 13:30:42 - Payload : user_id=54 user_role='root' iat=datetime.datetime(2026, 2, 27, 13, 30, 34, 64581) jti='e0642baa-c97d-4d23-838a-338a7bc2ffb5' exp=datetime.datetime(2026, 2, 27, 13, 45, 34, 64521) token_type='access' device_id='1273c500735942d1bf75f21fccc29462' ip_address='127.0.0.1' is_rework=False
+DEBUG: 2026-02-27 13:30:42 - Access token is valid
+DEBUG: 2026-02-27 13:30:42 - Commit
+DEBUG: 2026-02-27 13:30:42 - Session close
+DEBUG: 2026-02-27 13:30:42 - Check user role ...
+DEBUG: 2026-02-27 13:30:45 - session : {'token': 'eyJhbGciOiJIUzI1NiIsImtpZCI6ImtpZCIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NzE2ODUzNTQsImp0aSI6ImNjYTRjMDJlLTg0MTEtNDNiNy04YWMzLTE3NWY2YmU0NjFiNCIsInRva2VuX3R5cGUiOiJhY2Nlc3MiLCJ1c2VyX2lkIjo1NCwiaWF0IjoxNzcxNjg0NDU0LCJ1c2VyX3JvbGUiOiJyb290IiwiZGV2aWNlX2lkIjoiZjlkYzZlMTIwMDJjNDVmNWFlMDg3OWRhZTEyMTQ0ZmIiLCJpcF9hZGRyZXNzIjoiMTI3LjAuMC4xIn0.tZfb3KrUieH4afNGpjXPnNE7HRS6D7irLXwTqPCjICQ', 'username': 'demonuchy@gmail.com', 'session_id': '1273c500735942d1bf75f21fccc29462', 'access_token': 'eyJhbGciOiJIUzI1NiIsImtpZCI6ImtpZCIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NzIxOTk5MzQsImp0aSI6ImUwNjQyYmFhLWM5N2QtNGQyMy04MzhhLTMzOGE3YmMyZmZiNSIsInRva2VuX3R5cGUiOiJhY2Nlc3MiLCJ1c2VyX2lkIjo1NCwiaWF0IjoxNzcyMTk5MDM0LCJ1c2VyX3JvbGUiOiJyb290IiwiZGV2aWNlX2lkIjoiMTI3M2M1MDA3MzU5NDJkMWJmNzVmMjFmY2NjMjk0NjIiLCJpcF9hZGRyZXNzIjoiMTI3LjAuMC4xIn0.QMj8mCPF4zm4Tc6U32Q5RVQsBLNLyMZ63ao6PO1Iv_8', 'refresh_token ': 'eyJhbGciOiJIUzI1NiIsImtpZCI6ImtpZCIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NzE2OTI0NjUsImp0aSI6IjY1Mzc3ZTYyLTljODYtNDg5ZC05OGU0LWI5OThmZTQ3MWE0NSIsInRva2VuX3R5cGUiOiJyZWZyZXNoIiwidXNlcl9pZCI6NTQsImlhdCI6MTc3MTY4ODg2NSwidXNlcl9yb2xlIjoicm9vdCIsImRldmljZV9pZCI6IjI2Y2QyN2E1YzBkYzRlNDZhN2E0NDkwMmIzNTVjNGE3IiwiaXBfYWRkcmVzcyI6IjEyNy4wLjAuMSJ9.a6YPth_L_bPHRN18Aa09np19qxwrxP1YwZYlVK_H254', 'refresh_token': 'eyJhbGciOiJIUzI1NiIsImtpZCI6ImtpZCIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NzIyMDI2MzQsImp0aSI6IjUzNWU2OGFlLWI5MDEtNGExMy1hMDNkLWQ2N2M0OGMxMzU1NyIsInRva2VuX3R5cGUiOiJyZWZyZXNoIiwidXNlcl9pZCI6NTQsImlhdCI6MTc3MjE5OTAzNCwidXNlcl9yb2xlIjoicm9vdCIsImRldmljZV9pZCI6IjEyNzNjNTAwNzM1OTQyZDFiZjc1ZjIxZmNjYzI5NDYyIiwiaXBfYWRkcmVzcyI6IjEyNy4wLjAuMSJ9.sNnhg5AKfAGza5E_FHmXPvnABPx_4i7PmJRLXqtbriQ'}
+DEBUG: 2026-02-27 13:30:45 - Open transaction ...
+DEBUG: 2026-02-27 13:30:45 - Verefy access token
+DEBUG: 2026-02-27 13:30:46 - Verification of access token registration
+DEBUG: 2026-02-27 13:30:46 - Redis session started
+DEBUG: 2026-02-27 13:30:46 - Value retrieved from Redis: 54:e0642baa-c97d-4d23-838a-338a7bc2ffb5:1273c500735942d1bf75f21fccc29462
+DEBUG: 2026-02-27 13:30:46 - Redis session ended
+DEBUG: 2026-02-27 13:30:46 - serialize token payload ...
+DEBUG: 2026-02-27 13:30:46 - Payload : user_id=54 user_role='root' iat=datetime.datetime(2026, 2, 27, 13, 30, 34, 64581) jti='e0642baa-c97d-4d23-838a-338a7bc2ffb5' exp=datetime.datetime(2026, 2, 27, 13, 45, 34, 64521) token_type='access' device_id='1273c500735942d1bf75f21fccc29462' ip_address='127.0.0.1' is_rework=False
+DEBUG: 2026-02-27 13:30:46 - Access token is valid
+DEBUG: 2026-02-27 13:30:46 - Commit
+DEBUG: 2026-02-27 13:30:46 - Session close
+DEBUG: 2026-02-27 13:30:46 - Check user role ...
+DEBUG: 2026-02-27 13:30:46 - session : {'token': 'eyJhbGciOiJIUzI1NiIsImtpZCI6ImtpZCIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NzE2ODUzNTQsImp0aSI6ImNjYTRjMDJlLTg0MTEtNDNiNy04YWMzLTE3NWY2YmU0NjFiNCIsInRva2VuX3R5cGUiOiJhY2Nlc3MiLCJ1c2VyX2lkIjo1NCwiaWF0IjoxNzcxNjg0NDU0LCJ1c2VyX3JvbGUiOiJyb290IiwiZGV2aWNlX2lkIjoiZjlkYzZlMTIwMDJjNDVmNWFlMDg3OWRhZTEyMTQ0ZmIiLCJpcF9hZGRyZXNzIjoiMTI3LjAuMC4xIn0.tZfb3KrUieH4afNGpjXPnNE7HRS6D7irLXwTqPCjICQ', 'username': 'demonuchy@gmail.com', 'session_id': '1273c500735942d1bf75f21fccc29462', 'access_token': 'eyJhbGciOiJIUzI1NiIsImtpZCI6ImtpZCIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NzIxOTk5MzQsImp0aSI6ImUwNjQyYmFhLWM5N2QtNGQyMy04MzhhLTMzOGE3YmMyZmZiNSIsInRva2VuX3R5cGUiOiJhY2Nlc3MiLCJ1c2VyX2lkIjo1NCwiaWF0IjoxNzcyMTk5MDM0LCJ1c2VyX3JvbGUiOiJyb290IiwiZGV2aWNlX2lkIjoiMTI3M2M1MDA3MzU5NDJkMWJmNzVmMjFmY2NjMjk0NjIiLCJpcF9hZGRyZXNzIjoiMTI3LjAuMC4xIn0.QMj8mCPF4zm4Tc6U32Q5RVQsBLNLyMZ63ao6PO1Iv_8', 'refresh_token ': 'eyJhbGciOiJIUzI1NiIsImtpZCI6ImtpZCIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NzE2OTI0NjUsImp0aSI6IjY1Mzc3ZTYyLTljODYtNDg5ZC05OGU0LWI5OThmZTQ3MWE0NSIsInRva2VuX3R5cGUiOiJyZWZyZXNoIiwidXNlcl9pZCI6NTQsImlhdCI6MTc3MTY4ODg2NSwidXNlcl9yb2xlIjoicm9vdCIsImRldmljZV9pZCI6IjI2Y2QyN2E1YzBkYzRlNDZhN2E0NDkwMmIzNTVjNGE3IiwiaXBfYWRkcmVzcyI6IjEyNy4wLjAuMSJ9.a6YPth_L_bPHRN18Aa09np19qxwrxP1YwZYlVK_H254', 'refresh_token': 'eyJhbGciOiJIUzI1NiIsImtpZCI6ImtpZCIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NzIyMDI2MzQsImp0aSI6IjUzNWU2OGFlLWI5MDEtNGExMy1hMDNkLWQ2N2M0OGMxMzU1NyIsInRva2VuX3R5cGUiOiJyZWZyZXNoIiwidXNlcl9pZCI6NTQsImlhdCI6MTc3MjE5OTAzNCwidXNlcl9yb2xlIjoicm9vdCIsImRldmljZV9pZCI6IjEyNzNjNTAwNzM1OTQyZDFiZjc1ZjIxZmNjYzI5NDYyIiwiaXBfYWRkcmVzcyI6IjEyNy4wLjAuMSJ9.sNnhg5AKfAGza5E_FHmXPvnABPx_4i7PmJRLXqtbriQ'}
+DEBUG: 2026-02-27 13:30:46 - Open transaction ...
+DEBUG: 2026-02-27 13:30:46 - Verefy access token
+DEBUG: 2026-02-27 13:30:46 - Verification of access token registration
+DEBUG: 2026-02-27 13:30:46 - Redis session started
+DEBUG: 2026-02-27 13:30:46 - Value retrieved from Redis: 54:e0642baa-c97d-4d23-838a-338a7bc2ffb5:1273c500735942d1bf75f21fccc29462
+DEBUG: 2026-02-27 13:30:46 - Redis session ended
+DEBUG: 2026-02-27 13:30:46 - serialize token payload ...
+DEBUG: 2026-02-27 13:30:46 - Payload : user_id=54 user_role='root' iat=datetime.datetime(2026, 2, 27, 13, 30, 34, 64581) jti='e0642baa-c97d-4d23-838a-338a7bc2ffb5' exp=datetime.datetime(2026, 2, 27, 13, 45, 34, 64521) token_type='access' device_id='1273c500735942d1bf75f21fccc29462' ip_address='127.0.0.1' is_rework=False
+DEBUG: 2026-02-27 13:30:46 - Access token is valid
+DEBUG: 2026-02-27 13:30:46 - Commit
+DEBUG: 2026-02-27 13:30:46 - Session close
+DEBUG: 2026-02-27 13:30:46 - Check user role ...
+DEBUG: 2026-02-27 13:30:48 - session : {'token': 'eyJhbGciOiJIUzI1NiIsImtpZCI6ImtpZCIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NzE2ODUzNTQsImp0aSI6ImNjYTRjMDJlLTg0MTEtNDNiNy04YWMzLTE3NWY2YmU0NjFiNCIsInRva2VuX3R5cGUiOiJhY2Nlc3MiLCJ1c2VyX2lkIjo1NCwiaWF0IjoxNzcxNjg0NDU0LCJ1c2VyX3JvbGUiOiJyb290IiwiZGV2aWNlX2lkIjoiZjlkYzZlMTIwMDJjNDVmNWFlMDg3OWRhZTEyMTQ0ZmIiLCJpcF9hZGRyZXNzIjoiMTI3LjAuMC4xIn0.tZfb3KrUieH4afNGpjXPnNE7HRS6D7irLXwTqPCjICQ', 'username': 'demonuchy@gmail.com', 'session_id': '1273c500735942d1bf75f21fccc29462', 'access_token': 'eyJhbGciOiJIUzI1NiIsImtpZCI6ImtpZCIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NzIxOTk5MzQsImp0aSI6ImUwNjQyYmFhLWM5N2QtNGQyMy04MzhhLTMzOGE3YmMyZmZiNSIsInRva2VuX3R5cGUiOiJhY2Nlc3MiLCJ1c2VyX2lkIjo1NCwiaWF0IjoxNzcyMTk5MDM0LCJ1c2VyX3JvbGUiOiJyb290IiwiZGV2aWNlX2lkIjoiMTI3M2M1MDA3MzU5NDJkMWJmNzVmMjFmY2NjMjk0NjIiLCJpcF9hZGRyZXNzIjoiMTI3LjAuMC4xIn0.QMj8mCPF4zm4Tc6U32Q5RVQsBLNLyMZ63ao6PO1Iv_8', 'refresh_token ': 'eyJhbGciOiJIUzI1NiIsImtpZCI6ImtpZCIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NzE2OTI0NjUsImp0aSI6IjY1Mzc3ZTYyLTljODYtNDg5ZC05OGU0LWI5OThmZTQ3MWE0NSIsInRva2VuX3R5cGUiOiJyZWZyZXNoIiwidXNlcl9pZCI6NTQsImlhdCI6MTc3MTY4ODg2NSwidXNlcl9yb2xlIjoicm9vdCIsImRldmljZV9pZCI6IjI2Y2QyN2E1YzBkYzRlNDZhN2E0NDkwMmIzNTVjNGE3IiwiaXBfYWRkcmVzcyI6IjEyNy4wLjAuMSJ9.a6YPth_L_bPHRN18Aa09np19qxwrxP1YwZYlVK_H254', 'refresh_token': 'eyJhbGciOiJIUzI1NiIsImtpZCI6ImtpZCIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NzIyMDI2MzQsImp0aSI6IjUzNWU2OGFlLWI5MDEtNGExMy1hMDNkLWQ2N2M0OGMxMzU1NyIsInRva2VuX3R5cGUiOiJyZWZyZXNoIiwidXNlcl9pZCI6NTQsImlhdCI6MTc3MjE5OTAzNCwidXNlcl9yb2xlIjoicm9vdCIsImRldmljZV9pZCI6IjEyNzNjNTAwNzM1OTQyZDFiZjc1ZjIxZmNjYzI5NDYyIiwiaXBfYWRkcmVzcyI6IjEyNy4wLjAuMSJ9.sNnhg5AKfAGza5E_FHmXPvnABPx_4i7PmJRLXqtbriQ'}
+DEBUG: 2026-02-27 13:30:48 - Open transaction ...
+DEBUG: 2026-02-27 13:30:48 - Verefy access token
+DEBUG: 2026-02-27 13:30:48 - Verification of access token registration
+DEBUG: 2026-02-27 13:30:48 - Redis session started
+DEBUG: 2026-02-27 13:30:48 - Value retrieved from Redis: 54:e0642baa-c97d-4d23-838a-338a7bc2ffb5:1273c500735942d1bf75f21fccc29462
+DEBUG: 2026-02-27 13:30:48 - Redis session ended
+DEBUG: 2026-02-27 13:30:48 - serialize token payload ...
+DEBUG: 2026-02-27 13:30:48 - Payload : user_id=54 user_role='root' iat=datetime.datetime(2026, 2, 27, 13, 30, 34, 64581) jti='e0642baa-c97d-4d23-838a-338a7bc2ffb5' exp=datetime.datetime(2026, 2, 27, 13, 45, 34, 64521) token_type='access' device_id='1273c500735942d1bf75f21fccc29462' ip_address='127.0.0.1' is_rework=False
+DEBUG: 2026-02-27 13:30:48 - Access token is valid
+DEBUG: 2026-02-27 13:30:48 - Commit
+DEBUG: 2026-02-27 13:30:48 - Session close
+DEBUG: 2026-02-27 13:30:48 - Check user role ...
+DEBUG: 2026-02-27 13:30:50 - session : {'token': 'eyJhbGciOiJIUzI1NiIsImtpZCI6ImtpZCIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NzE2ODUzNTQsImp0aSI6ImNjYTRjMDJlLTg0MTEtNDNiNy04YWMzLTE3NWY2YmU0NjFiNCIsInRva2VuX3R5cGUiOiJhY2Nlc3MiLCJ1c2VyX2lkIjo1NCwiaWF0IjoxNzcxNjg0NDU0LCJ1c2VyX3JvbGUiOiJyb290IiwiZGV2aWNlX2lkIjoiZjlkYzZlMTIwMDJjNDVmNWFlMDg3OWRhZTEyMTQ0ZmIiLCJpcF9hZGRyZXNzIjoiMTI3LjAuMC4xIn0.tZfb3KrUieH4afNGpjXPnNE7HRS6D7irLXwTqPCjICQ', 'username': 'demonuchy@gmail.com', 'session_id': '1273c500735942d1bf75f21fccc29462', 'access_token': 'eyJhbGciOiJIUzI1NiIsImtpZCI6ImtpZCIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NzIxOTk5MzQsImp0aSI6ImUwNjQyYmFhLWM5N2QtNGQyMy04MzhhLTMzOGE3YmMyZmZiNSIsInRva2VuX3R5cGUiOiJhY2Nlc3MiLCJ1c2VyX2lkIjo1NCwiaWF0IjoxNzcyMTk5MDM0LCJ1c2VyX3JvbGUiOiJyb290IiwiZGV2aWNlX2lkIjoiMTI3M2M1MDA3MzU5NDJkMWJmNzVmMjFmY2NjMjk0NjIiLCJpcF9hZGRyZXNzIjoiMTI3LjAuMC4xIn0.QMj8mCPF4zm4Tc6U32Q5RVQsBLNLyMZ63ao6PO1Iv_8', 'refresh_token ': 'eyJhbGciOiJIUzI1NiIsImtpZCI6ImtpZCIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NzE2OTI0NjUsImp0aSI6IjY1Mzc3ZTYyLTljODYtNDg5ZC05OGU0LWI5OThmZTQ3MWE0NSIsInRva2VuX3R5cGUiOiJyZWZyZXNoIiwidXNlcl9pZCI6NTQsImlhdCI6MTc3MTY4ODg2NSwidXNlcl9yb2xlIjoicm9vdCIsImRldmljZV9pZCI6IjI2Y2QyN2E1YzBkYzRlNDZhN2E0NDkwMmIzNTVjNGE3IiwiaXBfYWRkcmVzcyI6IjEyNy4wLjAuMSJ9.a6YPth_L_bPHRN18Aa09np19qxwrxP1YwZYlVK_H254', 'refresh_token': 'eyJhbGciOiJIUzI1NiIsImtpZCI6ImtpZCIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NzIyMDI2MzQsImp0aSI6IjUzNWU2OGFlLWI5MDEtNGExMy1hMDNkLWQ2N2M0OGMxMzU1NyIsInRva2VuX3R5cGUiOiJyZWZyZXNoIiwidXNlcl9pZCI6NTQsImlhdCI6MTc3MjE5OTAzNCwidXNlcl9yb2xlIjoicm9vdCIsImRldmljZV9pZCI6IjEyNzNjNTAwNzM1OTQyZDFiZjc1ZjIxZmNjYzI5NDYyIiwiaXBfYWRkcmVzcyI6IjEyNy4wLjAuMSJ9.sNnhg5AKfAGza5E_FHmXPvnABPx_4i7PmJRLXqtbriQ'}
+DEBUG: 2026-02-27 13:30:50 - Open transaction ...
+DEBUG: 2026-02-27 13:30:50 - Verefy access token
+DEBUG: 2026-02-27 13:30:50 - Verification of access token registration
+DEBUG: 2026-02-27 13:30:50 - Redis session started
+DEBUG: 2026-02-27 13:30:50 - Value retrieved from Redis: 54:e0642baa-c97d-4d23-838a-338a7bc2ffb5:1273c500735942d1bf75f21fccc29462
+DEBUG: 2026-02-27 13:30:50 - Redis session ended
+DEBUG: 2026-02-27 13:30:50 - serialize token payload ...
+DEBUG: 2026-02-27 13:30:50 - Payload : user_id=54 user_role='root' iat=datetime.datetime(2026, 2, 27, 13, 30, 34, 64581) jti='e0642baa-c97d-4d23-838a-338a7bc2ffb5' exp=datetime.datetime(2026, 2, 27, 13, 45, 34, 64521) token_type='access' device_id='1273c500735942d1bf75f21fccc29462' ip_address='127.0.0.1' is_rework=False
+DEBUG: 2026-02-27 13:30:50 - Access token is valid
+DEBUG: 2026-02-27 13:30:50 - Commit
+DEBUG: 2026-02-27 13:30:50 - Session close
+DEBUG: 2026-02-27 13:30:50 - Check user role ...
+DEBUG: 2026-02-27 13:31:06 - Open transaction ...
+WARNING: 2026-02-27 13:31:06 - News not found
+WARNING: 2026-02-27 13:31:06 - Discard change rollback...
+DEBUG: 2026-02-27 13:31:06 - Session close
+DEBUG: 2026-02-27 13:31:07 - Open transaction ...
+WARNING: 2026-02-27 13:31:07 - News not found
+WARNING: 2026-02-27 13:31:07 - Discard change rollback...
+DEBUG: 2026-02-27 13:31:07 - Session close
+DEBUG: 2026-02-27 13:31:18 - Open transaction ...
+DEBUG: 2026-02-27 13:31:18 - Verefy access token
+WARNING: 2026-02-27 13:31:18 - Токен просрочен!
+WARNING: 2026-02-27 13:31:18 - Error invalid token
+WARNING: 2026-02-27 13:31:18 - Discard change rollback...
+DEBUG: 2026-02-27 13:31:18 - Session close
+DEBUG: 2026-02-27 13:31:18 - Open transaction ...
+DEBUG: 2026-02-27 13:31:18 - Verefy refresh token
+DEBUG: 2026-02-27 13:31:18 - Verification of refresh token registration
+DEBUG: 2026-02-27 13:31:18 - Revoking the access token
+DEBUG: 2026-02-27 13:31:18 - Redis session started
+DEBUG: 2026-02-27 13:31:18 - Found 0 keys matching pattern: 54:*:3b764055afbdc00fffd41bec66c0b5e4
+DEBUG: 2026-02-27 13:31:18 - Redis session ended
+DEBUG: 2026-02-27 13:31:18 - Revork 0 tokens
+DEBUG: 2026-02-27 13:31:18 - Create access token ...
+DEBUG: 2026-02-27 13:31:18 - Accouting access token
+DEBUG: 2026-02-27 13:31:19 - Redis session started
+DEBUG: 2026-02-27 13:31:19 - saved to Redis: 54:26abf47d-d26c-4366-953b-bd1578ca76a9:3b764055afbdc00fffd41bec66c0b5e4, TTL: 0:15:00s
+DEBUG: 2026-02-27 13:31:19 - Redis session ended
+DEBUG: 2026-02-27 13:31:19 - Commit
+DEBUG: 2026-02-27 13:31:19 - Session close
+DEBUG: 2026-02-27 13:31:19 - Open transaction ...
+DEBUG: 2026-02-27 13:31:19 - Verefy access token
+DEBUG: 2026-02-27 13:31:19 - Verification of access token registration
+DEBUG: 2026-02-27 13:31:19 - Redis session started
+DEBUG: 2026-02-27 13:31:19 - Value retrieved from Redis: 54:26abf47d-d26c-4366-953b-bd1578ca76a9:3b764055afbdc00fffd41bec66c0b5e4
+DEBUG: 2026-02-27 13:31:19 - Redis session ended
+DEBUG: 2026-02-27 13:31:19 - serialize token payload ...
+DEBUG: 2026-02-27 13:31:19 - Payload : user_id=54 user_role='root' iat=datetime.datetime(2026, 2, 27, 13, 31, 18, 999135) jti='26abf47d-d26c-4366-953b-bd1578ca76a9' exp=datetime.datetime(2026, 2, 27, 13, 46, 18, 999069) token_type='access' device_id='3b764055afbdc00fffd41bec66c0b5e4' ip_address='172.18.0.6' is_rework=False
+DEBUG: 2026-02-27 13:31:19 - Access token is valid
+DEBUG: 2026-02-27 13:31:19 - Commit
+DEBUG: 2026-02-27 13:31:19 - Session close
+DEBUG: 2026-02-27 13:31:19 - Open transaction ...
+DEBUG: 2026-02-27 13:31:19 - Get me ... id : 54
+DEBUG: 2026-02-27 13:31:19 - Serialize ...
+DEBUG: 2026-02-27 13:31:19 - Commit
+DEBUG: 2026-02-27 13:31:19 - Session close
+DEBUG: 2026-02-27 13:31:19 - Open transaction ...
+WARNING: 2026-02-27 13:31:19 - News not found
+WARNING: 2026-02-27 13:31:19 - Discard change rollback...
+DEBUG: 2026-02-27 13:31:19 - Session close
+DEBUG: 2026-02-27 13:31:19 - Open transaction ...
+WARNING: 2026-02-27 13:31:19 - News not found
+WARNING: 2026-02-27 13:31:19 - Discard change rollback...
+DEBUG: 2026-02-27 13:31:19 - Session close
+DEBUG: 2026-02-27 13:31:19 - Open transaction ...
+WARNING: 2026-02-27 13:31:19 - News not found
+WARNING: 2026-02-27 13:31:19 - Discard change rollback...
+DEBUG: 2026-02-27 13:31:19 - Session close
+INFO: 2026-02-27 13:35:57 - [TokenCleanup] 🛑 Останавливаем фоновый процесс...
+INFO: 2026-02-27 13:35:58 - [TokenCleanup] Соединения с БД закрыты
+INFO: 2026-02-27 13:35:58 - [TokenCleanup] 👋 Поток очистки остановлен
+INFO: 2026-02-27 13:35:58 - [TokenCleanup] Поток успешно завершен
+INFO: 2026-02-27 13:36:14 - [TokenCleanup] ✅ Фоновый процесс запущен (поток: TokenCleanup, ID: 128774758717120)
+INFO: 2026-02-27 13:36:14 - [TokenCleanup] Синхронный engine инициализирован
+INFO: 2026-02-27 13:36:14 - [TokenCleanup] 🚀 Поток очистки запущен (интервал: 60 мин, поток: TokenCleanup)
+INFO: 2026-02-27 13:36:14 - [TokenCleanup] 🧹 Начинаем очистку...
+INFO: 2026-02-27 13:36:14 - [TokenCleanup] ✅ Истекших токенов не найдено
+DEBUG: 2026-02-27 13:36:14 - [TokenCleanup] Ожидание 60 мин...
+DEBUG: 2026-02-27 13:36:57 - Open transaction ...
+WARNING: 2026-02-27 13:36:57 - Discard change rollback...
+DEBUG: 2026-02-27 13:36:57 - Session close
+INFO: 2026-02-27 13:40:12 - [TokenCleanup] 🛑 Останавливаем фоновый процесс...
+INFO: 2026-02-27 13:40:12 - [TokenCleanup] Соединения с БД закрыты
+INFO: 2026-02-27 13:40:12 - [TokenCleanup] 👋 Поток очистки остановлен
+INFO: 2026-02-27 13:40:12 - [TokenCleanup] Поток успешно завершен
+INFO: 2026-02-27 13:40:52 - [TokenCleanup] ✅ Фоновый процесс запущен (поток: TokenCleanup, ID: 137226846688960)
+INFO: 2026-02-27 13:40:52 - [TokenCleanup] Синхронный engine инициализирован
+INFO: 2026-02-27 13:40:52 - [TokenCleanup] 🚀 Поток очистки запущен (интервал: 60 мин, поток: TokenCleanup)
+INFO: 2026-02-27 13:40:52 - [TokenCleanup] 🧹 Начинаем очистку...
+INFO: 2026-02-27 13:40:52 - [TokenCleanup] ✅ Истекших токенов не найдено
+DEBUG: 2026-02-27 13:40:52 - [TokenCleanup] Ожидание 60 мин...
+INFO: 2026-02-27 13:43:59 - [TokenCleanup] ✅ Фоновый процесс запущен (поток: TokenCleanup, ID: 127341812287168)
+INFO: 2026-02-27 13:43:59 - [TokenCleanup] Синхронный engine инициализирован
+INFO: 2026-02-27 13:43:59 - [TokenCleanup] 🚀 Поток очистки запущен (интервал: 60 мин, поток: TokenCleanup)
+INFO: 2026-02-27 13:43:59 - [TokenCleanup] 🧹 Начинаем очистку...
+INFO: 2026-02-27 13:43:59 - [TokenCleanup] ✅ Истекших токенов не найдено
+DEBUG: 2026-02-27 13:43:59 - [TokenCleanup] Ожидание 60 мин...
+DEBUG: 2026-02-27 13:44:47 - session : {'token': 'eyJhbGciOiJIUzI1NiIsImtpZCI6ImtpZCIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NzE2ODUzNTQsImp0aSI6ImNjYTRjMDJlLTg0MTEtNDNiNy04YWMzLTE3NWY2YmU0NjFiNCIsInRva2VuX3R5cGUiOiJhY2Nlc3MiLCJ1c2VyX2lkIjo1NCwiaWF0IjoxNzcxNjg0NDU0LCJ1c2VyX3JvbGUiOiJyb290IiwiZGV2aWNlX2lkIjoiZjlkYzZlMTIwMDJjNDVmNWFlMDg3OWRhZTEyMTQ0ZmIiLCJpcF9hZGRyZXNzIjoiMTI3LjAuMC4xIn0.tZfb3KrUieH4afNGpjXPnNE7HRS6D7irLXwTqPCjICQ', 'username': 'demonuchy@gmail.com', 'session_id': '1273c500735942d1bf75f21fccc29462', 'access_token': 'eyJhbGciOiJIUzI1NiIsImtpZCI6ImtpZCIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NzIxOTk5MzQsImp0aSI6ImUwNjQyYmFhLWM5N2QtNGQyMy04MzhhLTMzOGE3YmMyZmZiNSIsInRva2VuX3R5cGUiOiJhY2Nlc3MiLCJ1c2VyX2lkIjo1NCwiaWF0IjoxNzcyMTk5MDM0LCJ1c2VyX3JvbGUiOiJyb290IiwiZGV2aWNlX2lkIjoiMTI3M2M1MDA3MzU5NDJkMWJmNzVmMjFmY2NjMjk0NjIiLCJpcF9hZGRyZXNzIjoiMTI3LjAuMC4xIn0.QMj8mCPF4zm4Tc6U32Q5RVQsBLNLyMZ63ao6PO1Iv_8', 'refresh_token ': 'eyJhbGciOiJIUzI1NiIsImtpZCI6ImtpZCIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NzE2OTI0NjUsImp0aSI6IjY1Mzc3ZTYyLTljODYtNDg5ZC05OGU0LWI5OThmZTQ3MWE0NSIsInRva2VuX3R5cGUiOiJyZWZyZXNoIiwidXNlcl9pZCI6NTQsImlhdCI6MTc3MTY4ODg2NSwidXNlcl9yb2xlIjoicm9vdCIsImRldmljZV9pZCI6IjI2Y2QyN2E1YzBkYzRlNDZhN2E0NDkwMmIzNTVjNGE3IiwiaXBfYWRkcmVzcyI6IjEyNy4wLjAuMSJ9.a6YPth_L_bPHRN18Aa09np19qxwrxP1YwZYlVK_H254', 'refresh_token': 'eyJhbGciOiJIUzI1NiIsImtpZCI6ImtpZCIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NzIyMDI2MzQsImp0aSI6IjUzNWU2OGFlLWI5MDEtNGExMy1hMDNkLWQ2N2M0OGMxMzU1NyIsInRva2VuX3R5cGUiOiJyZWZyZXNoIiwidXNlcl9pZCI6NTQsImlhdCI6MTc3MjE5OTAzNCwidXNlcl9yb2xlIjoicm9vdCIsImRldmljZV9pZCI6IjEyNzNjNTAwNzM1OTQyZDFiZjc1ZjIxZmNjYzI5NDYyIiwiaXBfYWRkcmVzcyI6IjEyNy4wLjAuMSJ9.sNnhg5AKfAGza5E_FHmXPvnABPx_4i7PmJRLXqtbriQ'}
+DEBUG: 2026-02-27 13:44:47 - Open transaction ...
+DEBUG: 2026-02-27 13:44:47 - Verefy access token
+DEBUG: 2026-02-27 13:44:47 - Verification of access token registration
+DEBUG: 2026-02-27 13:44:47 - Redis session started
+DEBUG: 2026-02-27 13:44:47 - Value retrieved from Redis: 54:e0642baa-c97d-4d23-838a-338a7bc2ffb5:1273c500735942d1bf75f21fccc29462
+DEBUG: 2026-02-27 13:44:47 - Redis session ended
+DEBUG: 2026-02-27 13:44:47 - serialize token payload ...
+DEBUG: 2026-02-27 13:44:47 - Payload : user_id=54 user_role='root' iat=datetime.datetime(2026, 2, 27, 13, 30, 34, 64581) jti='e0642baa-c97d-4d23-838a-338a7bc2ffb5' exp=datetime.datetime(2026, 2, 27, 13, 45, 34, 64521) token_type='access' device_id='1273c500735942d1bf75f21fccc29462' ip_address='127.0.0.1' is_rework=False
+DEBUG: 2026-02-27 13:44:47 - Access token is valid
+DEBUG: 2026-02-27 13:44:47 - Commit
+DEBUG: 2026-02-27 13:44:47 - Session close
+DEBUG: 2026-02-27 13:44:47 - Check user role ...
+DEBUG: 2026-02-27 13:45:44 - session : {'token': 'eyJhbGciOiJIUzI1NiIsImtpZCI6ImtpZCIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NzE2ODUzNTQsImp0aSI6ImNjYTRjMDJlLTg0MTEtNDNiNy04YWMzLTE3NWY2YmU0NjFiNCIsInRva2VuX3R5cGUiOiJhY2Nlc3MiLCJ1c2VyX2lkIjo1NCwiaWF0IjoxNzcxNjg0NDU0LCJ1c2VyX3JvbGUiOiJyb290IiwiZGV2aWNlX2lkIjoiZjlkYzZlMTIwMDJjNDVmNWFlMDg3OWRhZTEyMTQ0ZmIiLCJpcF9hZGRyZXNzIjoiMTI3LjAuMC4xIn0.tZfb3KrUieH4afNGpjXPnNE7HRS6D7irLXwTqPCjICQ', 'username': 'demonuchy@gmail.com', 'session_id': '1273c500735942d1bf75f21fccc29462', 'access_token': 'eyJhbGciOiJIUzI1NiIsImtpZCI6ImtpZCIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NzIxOTk5MzQsImp0aSI6ImUwNjQyYmFhLWM5N2QtNGQyMy04MzhhLTMzOGE3YmMyZmZiNSIsInRva2VuX3R5cGUiOiJhY2Nlc3MiLCJ1c2VyX2lkIjo1NCwiaWF0IjoxNzcyMTk5MDM0LCJ1c2VyX3JvbGUiOiJyb290IiwiZGV2aWNlX2lkIjoiMTI3M2M1MDA3MzU5NDJkMWJmNzVmMjFmY2NjMjk0NjIiLCJpcF9hZGRyZXNzIjoiMTI3LjAuMC4xIn0.QMj8mCPF4zm4Tc6U32Q5RVQsBLNLyMZ63ao6PO1Iv_8', 'refresh_token ': 'eyJhbGciOiJIUzI1NiIsImtpZCI6ImtpZCIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NzE2OTI0NjUsImp0aSI6IjY1Mzc3ZTYyLTljODYtNDg5ZC05OGU0LWI5OThmZTQ3MWE0NSIsInRva2VuX3R5cGUiOiJyZWZyZXNoIiwidXNlcl9pZCI6NTQsImlhdCI6MTc3MTY4ODg2NSwidXNlcl9yb2xlIjoicm9vdCIsImRldmljZV9pZCI6IjI2Y2QyN2E1YzBkYzRlNDZhN2E0NDkwMmIzNTVjNGE3IiwiaXBfYWRkcmVzcyI6IjEyNy4wLjAuMSJ9.a6YPth_L_bPHRN18Aa09np19qxwrxP1YwZYlVK_H254', 'refresh_token': 'eyJhbGciOiJIUzI1NiIsImtpZCI6ImtpZCIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NzIyMDI2MzQsImp0aSI6IjUzNWU2OGFlLWI5MDEtNGExMy1hMDNkLWQ2N2M0OGMxMzU1NyIsInRva2VuX3R5cGUiOiJyZWZyZXNoIiwidXNlcl9pZCI6NTQsImlhdCI6MTc3MjE5OTAzNCwidXNlcl9yb2xlIjoicm9vdCIsImRldmljZV9pZCI6IjEyNzNjNTAwNzM1OTQyZDFiZjc1ZjIxZmNjYzI5NDYyIiwiaXBfYWRkcmVzcyI6IjEyNy4wLjAuMSJ9.sNnhg5AKfAGza5E_FHmXPvnABPx_4i7PmJRLXqtbriQ'}
+DEBUG: 2026-02-27 13:45:44 - Open transaction ...
+DEBUG: 2026-02-27 13:45:44 - Verefy access token
+WARNING: 2026-02-27 13:45:44 - Токен просрочен!
+WARNING: 2026-02-27 13:45:44 - Error invalid token
+WARNING: 2026-02-27 13:45:44 - Discard change rollback...
+DEBUG: 2026-02-27 13:45:44 - Session close
+DEBUG: 2026-02-27 13:45:44 - Refresh access token
+DEBUG: 2026-02-27 13:45:44 - Fetch...
+DEBUG: 2026-02-27 13:45:44 - Open transaction ...
+DEBUG: 2026-02-27 13:45:44 - Verefy refresh token
+DEBUG: 2026-02-27 13:45:44 - Verification of refresh token registration
+DEBUG: 2026-02-27 13:45:44 - Revoking the access token
+DEBUG: 2026-02-27 13:45:44 - Redis session started
+DEBUG: 2026-02-27 13:45:44 - Found 0 keys matching pattern: 54:*:1273c500735942d1bf75f21fccc29462
+DEBUG: 2026-02-27 13:45:44 - Redis session ended
+DEBUG: 2026-02-27 13:45:44 - Revork 0 tokens
+DEBUG: 2026-02-27 13:45:44 - Create access token ...
+DEBUG: 2026-02-27 13:45:44 - Accouting access token
+DEBUG: 2026-02-27 13:45:44 - Redis session started
+DEBUG: 2026-02-27 13:45:44 - saved to Redis: 54:1a09aaf3-9d27-4d2a-9787-f38e6ca3bd6e:1273c500735942d1bf75f21fccc29462, TTL: 0:15:00s
+DEBUG: 2026-02-27 13:45:44 - Redis session ended
+DEBUG: 2026-02-27 13:45:44 - Fetch new access token
+DEBUG: 2026-02-27 13:45:44 - Commit
+DEBUG: 2026-02-27 13:45:44 - Session close
+DEBUG: 2026-02-27 13:45:44 - Open transaction ...
+DEBUG: 2026-02-27 13:45:44 - Verefy access token
+DEBUG: 2026-02-27 13:45:44 - Verification of access token registration
+DEBUG: 2026-02-27 13:45:44 - Redis session started
+DEBUG: 2026-02-27 13:45:44 - Value retrieved from Redis: 54:1a09aaf3-9d27-4d2a-9787-f38e6ca3bd6e:1273c500735942d1bf75f21fccc29462
+DEBUG: 2026-02-27 13:45:44 - Redis session ended
+DEBUG: 2026-02-27 13:45:44 - serialize token payload ...
+DEBUG: 2026-02-27 13:45:44 - Payload : user_id=54 user_role='root' iat=datetime.datetime(2026, 2, 27, 13, 45, 44, 741733) jti='1a09aaf3-9d27-4d2a-9787-f38e6ca3bd6e' exp=datetime.datetime(2026, 2, 27, 14, 0, 44, 741672) token_type='access' device_id='1273c500735942d1bf75f21fccc29462' ip_address='127.0.0.1' is_rework=False
+DEBUG: 2026-02-27 13:45:44 - Access token is valid
+DEBUG: 2026-02-27 13:45:44 - Commit
+DEBUG: 2026-02-27 13:45:44 - Session close
+DEBUG: 2026-02-27 13:45:44 - update session
+DEBUG: 2026-02-27 13:45:44 - Check user role ...
+INFO: 2026-02-27 13:47:30 - [TokenCleanup] 🛑 Останавливаем фоновый процесс...
+INFO: 2026-02-27 13:47:30 - [TokenCleanup] Соединения с БД закрыты
+INFO: 2026-02-27 13:47:30 - [TokenCleanup] 👋 Поток очистки остановлен
+INFO: 2026-02-27 13:47:30 - [TokenCleanup] Поток успешно завершен
+INFO: 2026-02-27 13:47:58 - [TokenCleanup] ✅ Фоновый процесс запущен (поток: TokenCleanup, ID: 124824423302848)
+INFO: 2026-02-27 13:47:58 - [TokenCleanup] Синхронный engine инициализирован
+INFO: 2026-02-27 13:47:58 - [TokenCleanup] 🚀 Поток очистки запущен (интервал: 60 мин, поток: TokenCleanup)
+INFO: 2026-02-27 13:47:58 - [TokenCleanup] 🧹 Начинаем очистку...
+INFO: 2026-02-27 13:47:58 - [TokenCleanup] ✅ Истекших токенов не найдено
+DEBUG: 2026-02-27 13:47:58 - [TokenCleanup] Ожидание 60 мин...
+DEBUG: 2026-02-27 13:48:01 - session : {'token': 'eyJhbGciOiJIUzI1NiIsImtpZCI6ImtpZCIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NzE2ODUzNTQsImp0aSI6ImNjYTRjMDJlLTg0MTEtNDNiNy04YWMzLTE3NWY2YmU0NjFiNCIsInRva2VuX3R5cGUiOiJhY2Nlc3MiLCJ1c2VyX2lkIjo1NCwiaWF0IjoxNzcxNjg0NDU0LCJ1c2VyX3JvbGUiOiJyb290IiwiZGV2aWNlX2lkIjoiZjlkYzZlMTIwMDJjNDVmNWFlMDg3OWRhZTEyMTQ0ZmIiLCJpcF9hZGRyZXNzIjoiMTI3LjAuMC4xIn0.tZfb3KrUieH4afNGpjXPnNE7HRS6D7irLXwTqPCjICQ', 'username': 'demonuchy@gmail.com', 'session_id': '1273c500735942d1bf75f21fccc29462', 'access_token': 'eyJhbGciOiJIUzI1NiIsImtpZCI6ImtpZCIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NzIxOTk5MzQsImp0aSI6ImUwNjQyYmFhLWM5N2QtNGQyMy04MzhhLTMzOGE3YmMyZmZiNSIsInRva2VuX3R5cGUiOiJhY2Nlc3MiLCJ1c2VyX2lkIjo1NCwiaWF0IjoxNzcyMTk5MDM0LCJ1c2VyX3JvbGUiOiJyb290IiwiZGV2aWNlX2lkIjoiMTI3M2M1MDA3MzU5NDJkMWJmNzVmMjFmY2NjMjk0NjIiLCJpcF9hZGRyZXNzIjoiMTI3LjAuMC4xIn0.QMj8mCPF4zm4Tc6U32Q5RVQsBLNLyMZ63ao6PO1Iv_8', 'refresh_token ': 'eyJhbGciOiJIUzI1NiIsImtpZCI6ImtpZCIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NzE2OTI0NjUsImp0aSI6IjY1Mzc3ZTYyLTljODYtNDg5ZC05OGU0LWI5OThmZTQ3MWE0NSIsInRva2VuX3R5cGUiOiJyZWZyZXNoIiwidXNlcl9pZCI6NTQsImlhdCI6MTc3MTY4ODg2NSwidXNlcl9yb2xlIjoicm9vdCIsImRldmljZV9pZCI6IjI2Y2QyN2E1YzBkYzRlNDZhN2E0NDkwMmIzNTVjNGE3IiwiaXBfYWRkcmVzcyI6IjEyNy4wLjAuMSJ9.a6YPth_L_bPHRN18Aa09np19qxwrxP1YwZYlVK_H254', 'refresh_token': 'eyJhbGciOiJIUzI1NiIsImtpZCI6ImtpZCIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NzIyMDI2MzQsImp0aSI6IjUzNWU2OGFlLWI5MDEtNGExMy1hMDNkLWQ2N2M0OGMxMzU1NyIsInRva2VuX3R5cGUiOiJyZWZyZXNoIiwidXNlcl9pZCI6NTQsImlhdCI6MTc3MjE5OTAzNCwidXNlcl9yb2xlIjoicm9vdCIsImRldmljZV9pZCI6IjEyNzNjNTAwNzM1OTQyZDFiZjc1ZjIxZmNjYzI5NDYyIiwiaXBfYWRkcmVzcyI6IjEyNy4wLjAuMSJ9.sNnhg5AKfAGza5E_FHmXPvnABPx_4i7PmJRLXqtbriQ'}
+DEBUG: 2026-02-27 13:48:01 - Open transaction ...
+DEBUG: 2026-02-27 13:48:01 - Verefy access token
+WARNING: 2026-02-27 13:48:01 - Токен просрочен!
+WARNING: 2026-02-27 13:48:01 - Error invalid token
+WARNING: 2026-02-27 13:48:01 - Discard change rollback...
+DEBUG: 2026-02-27 13:48:01 - Session close
+DEBUG: 2026-02-27 13:48:01 - Refresh access token
+DEBUG: 2026-02-27 13:48:01 - Fetch...
+DEBUG: 2026-02-27 13:48:01 - Open transaction ...
+DEBUG: 2026-02-27 13:48:01 - Verefy refresh token
+DEBUG: 2026-02-27 13:48:01 - Verification of refresh token registration
+DEBUG: 2026-02-27 13:48:01 - Revoking the access token
+DEBUG: 2026-02-27 13:48:01 - Redis session started
+DEBUG: 2026-02-27 13:48:01 - Found 1 keys matching pattern: 54:*:1273c500735942d1bf75f21fccc29462
+DEBUG: 2026-02-27 13:48:01 - Redis session ended
+DEBUG: 2026-02-27 13:48:01 - Redis session started
+DEBUG: 2026-02-27 13:48:01 - Deleted 1 keys matching pattern: 54:*:1273c500735942d1bf75f21fccc29462
+DEBUG: 2026-02-27 13:48:01 - Redis session ended
+DEBUG: 2026-02-27 13:48:01 - Revork 1 tokens
+DEBUG: 2026-02-27 13:48:01 - Create access token ...
+DEBUG: 2026-02-27 13:48:01 - Accouting access token
+DEBUG: 2026-02-27 13:48:01 - Redis session started
+DEBUG: 2026-02-27 13:48:01 - saved to Redis: 54:b6401c49-b11f-4802-bd3a-b76077222f1d:1273c500735942d1bf75f21fccc29462, TTL: 0:15:00s
+DEBUG: 2026-02-27 13:48:01 - Redis session ended
+DEBUG: 2026-02-27 13:48:01 - Fetch new access token
+DEBUG: 2026-02-27 13:48:01 - Commit
+DEBUG: 2026-02-27 13:48:01 - Session close
+DEBUG: 2026-02-27 13:48:01 - Open transaction ...
+DEBUG: 2026-02-27 13:48:01 - Verefy access token
+DEBUG: 2026-02-27 13:48:01 - Verification of access token registration
+DEBUG: 2026-02-27 13:48:01 - Redis session started
+DEBUG: 2026-02-27 13:48:01 - Value retrieved from Redis: 54:b6401c49-b11f-4802-bd3a-b76077222f1d:1273c500735942d1bf75f21fccc29462
+DEBUG: 2026-02-27 13:48:01 - Redis session ended
+DEBUG: 2026-02-27 13:48:01 - serialize token payload ...
+DEBUG: 2026-02-27 13:48:01 - Payload : user_id=54 user_role='root' iat=datetime.datetime(2026, 2, 27, 13, 48, 1, 902851) jti='b6401c49-b11f-4802-bd3a-b76077222f1d' exp=datetime.datetime(2026, 2, 27, 14, 3, 1, 902785) token_type='access' device_id='1273c500735942d1bf75f21fccc29462' ip_address='127.0.0.1' is_rework=False
+DEBUG: 2026-02-27 13:48:01 - Access token is valid
+DEBUG: 2026-02-27 13:48:02 - Commit
+DEBUG: 2026-02-27 13:48:02 - Session close
+DEBUG: 2026-02-27 13:48:02 - update session
+DEBUG: 2026-02-27 13:48:02 - Check user role ...
+INFO: 2026-03-05 05:38:37 - [TokenCleanup] ✅ Фоновый процесс запущен (поток: TokenCleanup, ID: 127664248432320)
+INFO: 2026-03-05 05:38:37 - [TokenCleanup] Синхронный engine инициализирован
+INFO: 2026-03-05 05:38:37 - [TokenCleanup] 🚀 Поток очистки запущен (интервал: 60 мин, поток: TokenCleanup)
+INFO: 2026-03-05 05:38:37 - [TokenCleanup] 🧹 Начинаем очистку...
+DEBUG: 2026-03-05 05:38:37 - [TokenCleanup] Удалено 1 токенов (батч #1)
+INFO: 2026-03-05 05:38:37 - [TokenCleanup] ✅ Очистка завершена: удалено 1 токенов за 1 батчей за 0.21с
+DEBUG: 2026-03-05 05:38:37 - [TokenCleanup] Ожидание 60 мин...
+DEBUG: 2026-03-05 05:44:40 - session : {'token': 'eyJhbGciOiJIUzI1NiIsImtpZCI6ImtpZCIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NzE2ODUzNTQsImp0aSI6ImNjYTRjMDJlLTg0MTEtNDNiNy04YWMzLTE3NWY2YmU0NjFiNCIsInRva2VuX3R5cGUiOiJhY2Nlc3MiLCJ1c2VyX2lkIjo1NCwiaWF0IjoxNzcxNjg0NDU0LCJ1c2VyX3JvbGUiOiJyb290IiwiZGV2aWNlX2lkIjoiZjlkYzZlMTIwMDJjNDVmNWFlMDg3OWRhZTEyMTQ0ZmIiLCJpcF9hZGRyZXNzIjoiMTI3LjAuMC4xIn0.tZfb3KrUieH4afNGpjXPnNE7HRS6D7irLXwTqPCjICQ', 'username': 'demonuchy@gmail.com', 'session_id': '1273c500735942d1bf75f21fccc29462', 'access_token': 'eyJhbGciOiJIUzI1NiIsImtpZCI6ImtpZCIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NzIxOTk5MzQsImp0aSI6ImUwNjQyYmFhLWM5N2QtNGQyMy04MzhhLTMzOGE3YmMyZmZiNSIsInRva2VuX3R5cGUiOiJhY2Nlc3MiLCJ1c2VyX2lkIjo1NCwiaWF0IjoxNzcyMTk5MDM0LCJ1c2VyX3JvbGUiOiJyb290IiwiZGV2aWNlX2lkIjoiMTI3M2M1MDA3MzU5NDJkMWJmNzVmMjFmY2NjMjk0NjIiLCJpcF9hZGRyZXNzIjoiMTI3LjAuMC4xIn0.QMj8mCPF4zm4Tc6U32Q5RVQsBLNLyMZ63ao6PO1Iv_8', 'refresh_token ': 'eyJhbGciOiJIUzI1NiIsImtpZCI6ImtpZCIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NzE2OTI0NjUsImp0aSI6IjY1Mzc3ZTYyLTljODYtNDg5ZC05OGU0LWI5OThmZTQ3MWE0NSIsInRva2VuX3R5cGUiOiJyZWZyZXNoIiwidXNlcl9pZCI6NTQsImlhdCI6MTc3MTY4ODg2NSwidXNlcl9yb2xlIjoicm9vdCIsImRldmljZV9pZCI6IjI2Y2QyN2E1YzBkYzRlNDZhN2E0NDkwMmIzNTVjNGE3IiwiaXBfYWRkcmVzcyI6IjEyNy4wLjAuMSJ9.a6YPth_L_bPHRN18Aa09np19qxwrxP1YwZYlVK_H254', 'refresh_token': 'eyJhbGciOiJIUzI1NiIsImtpZCI6ImtpZCIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NzIyMDI2MzQsImp0aSI6IjUzNWU2OGFlLWI5MDEtNGExMy1hMDNkLWQ2N2M0OGMxMzU1NyIsInRva2VuX3R5cGUiOiJyZWZyZXNoIiwidXNlcl9pZCI6NTQsImlhdCI6MTc3MjE5OTAzNCwidXNlcl9yb2xlIjoicm9vdCIsImRldmljZV9pZCI6IjEyNzNjNTAwNzM1OTQyZDFiZjc1ZjIxZmNjYzI5NDYyIiwiaXBfYWRkcmVzcyI6IjEyNy4wLjAuMSJ9.sNnhg5AKfAGza5E_FHmXPvnABPx_4i7PmJRLXqtbriQ'}
+DEBUG: 2026-03-05 05:44:40 - Open transaction ...
+DEBUG: 2026-03-05 05:44:40 - Verefy access token
+WARNING: 2026-03-05 05:44:40 - Токен просрочен!
+WARNING: 2026-03-05 05:44:40 - Error invalid token
+WARNING: 2026-03-05 05:44:40 - Discard change rollback...
+DEBUG: 2026-03-05 05:44:40 - Session close
+DEBUG: 2026-03-05 05:44:40 - Refresh access token
+DEBUG: 2026-03-05 05:44:40 - Fetch...
+DEBUG: 2026-03-05 05:44:40 - Open transaction ...
+DEBUG: 2026-03-05 05:44:40 - Verefy refresh token
+WARNING: 2026-03-05 05:44:40 - Токен просрочен!
+WARNING: 2026-03-05 05:44:40 - Error invalid token
+WARNING: 2026-03-05 05:44:40 - Discard change rollback...
+DEBUG: 2026-03-05 05:44:40 - Session close
+WARNING: 2026-03-05 05:44:40 - Refresh token is not valid
+DEBUG: 2026-03-05 05:45:52 - Open transaction ...
+DEBUG: 2026-03-05 05:45:52 - Verefy access token
+WARNING: 2026-03-05 05:45:52 - Токен просрочен!
+WARNING: 2026-03-05 05:45:52 - Error invalid token
+WARNING: 2026-03-05 05:45:52 - Discard change rollback...
+DEBUG: 2026-03-05 05:45:52 - Session close
+DEBUG: 2026-03-05 05:45:52 - Open transaction ...
+DEBUG: 2026-03-05 05:45:52 - Verefy refresh token
+DEBUG: 2026-03-05 05:45:52 - Verification of refresh token registration
+DEBUG: 2026-03-05 05:45:52 - Revoking the access token
+DEBUG: 2026-03-05 05:45:52 - Redis session started
+DEBUG: 2026-03-05 05:45:52 - Found 0 keys matching pattern: 54:*:3b764055afbdc00fffd41bec66c0b5e4
+DEBUG: 2026-03-05 05:45:52 - Redis session ended
+DEBUG: 2026-03-05 05:45:52 - Revork 0 tokens
+DEBUG: 2026-03-05 05:45:52 - Create access token ...
+DEBUG: 2026-03-05 05:45:52 - Accouting access token
+DEBUG: 2026-03-05 05:45:52 - Redis session started
+DEBUG: 2026-03-05 05:45:52 - saved to Redis: 54:ced5b82b-40a9-4d99-8e17-927eaf75f514:3b764055afbdc00fffd41bec66c0b5e4, TTL: 0:15:00s
+DEBUG: 2026-03-05 05:45:52 - Redis session ended
+DEBUG: 2026-03-05 05:45:52 - Commit
+DEBUG: 2026-03-05 05:45:52 - Session close
+DEBUG: 2026-03-05 05:45:52 - Open transaction ...
+DEBUG: 2026-03-05 05:45:52 - Verefy access token
+DEBUG: 2026-03-05 05:45:52 - Verification of access token registration
+DEBUG: 2026-03-05 05:45:52 - Redis session started
+DEBUG: 2026-03-05 05:45:52 - Value retrieved from Redis: 54:ced5b82b-40a9-4d99-8e17-927eaf75f514:3b764055afbdc00fffd41bec66c0b5e4
+DEBUG: 2026-03-05 05:45:52 - Redis session ended
+DEBUG: 2026-03-05 05:45:52 - serialize token payload ...
+DEBUG: 2026-03-05 05:45:53 - Payload : user_id=54 user_role='root' iat=datetime.datetime(2026, 3, 5, 5, 45, 52, 920793) jti='ced5b82b-40a9-4d99-8e17-927eaf75f514' exp=datetime.datetime(2026, 3, 5, 6, 0, 52, 920722) token_type='access' device_id='3b764055afbdc00fffd41bec66c0b5e4' ip_address='172.18.0.4' is_rework=False
+DEBUG: 2026-03-05 05:45:53 - Access token is valid
+DEBUG: 2026-03-05 05:45:53 - Commit
+DEBUG: 2026-03-05 05:45:53 - Session close
+DEBUG: 2026-03-05 05:45:53 - Open transaction ...
+DEBUG: 2026-03-05 05:45:53 - Get me ... id : 54
+DEBUG: 2026-03-05 05:45:53 - Serialize ...
+DEBUG: 2026-03-05 05:45:53 - Commit
+DEBUG: 2026-03-05 05:45:53 - Session close
+DEBUG: 2026-03-05 05:45:53 - Open transaction ...
+WARNING: 2026-03-05 05:45:53 - News not found
+WARNING: 2026-03-05 05:45:53 - Discard change rollback...
+DEBUG: 2026-03-05 05:45:53 - Session close
+DEBUG: 2026-03-05 05:45:53 - Open transaction ...
+WARNING: 2026-03-05 05:45:53 - News not found
+WARNING: 2026-03-05 05:45:53 - Discard change rollback...
+DEBUG: 2026-03-05 05:45:53 - Session close
+DEBUG: 2026-03-05 05:45:53 - Open transaction ...
+WARNING: 2026-03-05 05:45:53 - News not found
+WARNING: 2026-03-05 05:45:53 - Discard change rollback...
+DEBUG: 2026-03-05 05:45:53 - Session close
+DEBUG: 2026-03-05 05:49:19 - Open transaction ...
+DEBUG: 2026-03-05 05:49:19 - Verefy access token
+DEBUG: 2026-03-05 05:49:19 - Verification of access token registration
+DEBUG: 2026-03-05 05:49:19 - Redis session started
+DEBUG: 2026-03-05 05:49:19 - Value retrieved from Redis: 54:ced5b82b-40a9-4d99-8e17-927eaf75f514:3b764055afbdc00fffd41bec66c0b5e4
+DEBUG: 2026-03-05 05:49:19 - Redis session ended
+DEBUG: 2026-03-05 05:49:19 - serialize token payload ...
+DEBUG: 2026-03-05 05:49:19 - Payload : user_id=54 user_role='root' iat=datetime.datetime(2026, 3, 5, 5, 45, 52, 920793) jti='ced5b82b-40a9-4d99-8e17-927eaf75f514' exp=datetime.datetime(2026, 3, 5, 6, 0, 52, 920722) token_type='access' device_id='3b764055afbdc00fffd41bec66c0b5e4' ip_address='172.18.0.4' is_rework=False
+DEBUG: 2026-03-05 05:49:19 - Access token is valid
+DEBUG: 2026-03-05 05:49:19 - Commit
+DEBUG: 2026-03-05 05:49:19 - Session close
+DEBUG: 2026-03-05 05:49:19 - Open transaction ...
+DEBUG: 2026-03-05 05:49:19 - Publish news...
+DEBUG: 2026-03-05 05:49:19 - Данные успешно загружены как 'photo_2026-03-05_08-47-35_7b52e589-e094-4673-93dd-02ee3915cf3d.jpg' в бакет 'news-images'
+DEBUG: 2026-03-05 05:49:19 - ✅ Successfully uploaded 1 images
+DEBUG: 2026-03-05 05:49:19 - Commit
+DEBUG: 2026-03-05 05:49:19 - Session close
+DEBUG: 2026-03-05 05:49:19 - Open transaction ...
+DEBUG: 2026-03-05 05:49:19 - Load images ...
+DEBUG: 2026-03-05 05:49:19 - Файл 'photo_2026-03-05_08-47-35_7b52e589-e094-4673-93dd-02ee3915cf3d.jpg' успешно прочитан (105612 байт)
+DEBUG: 2026-03-05 05:49:19 - Image loaded
+DEBUG: 2026-03-05 05:49:19 - Commit
+DEBUG: 2026-03-05 05:49:19 - Session close
+DEBUG: 2026-03-05 05:49:28 - Open transaction ...
+DEBUG: 2026-03-05 05:49:28 - Get news 12
+DEBUG: 2026-03-05 05:49:28 - Get news ogj...
+DEBUG: 2026-03-05 05:49:28 - Load images ...
+DEBUG: 2026-03-05 05:49:28 - Файл 'photo_2026-03-05_08-47-35_7b52e589-e094-4673-93dd-02ee3915cf3d.jpg' успешно прочитан (105612 байт)
+DEBUG: 2026-03-05 05:49:28 - Image loaded
+DEBUG: 2026-03-05 05:49:28 - Commit
+DEBUG: 2026-03-05 05:49:28 - Session close
+DEBUG: 2026-03-05 05:49:28 - Open transaction ...
+DEBUG: 2026-03-05 05:49:28 - Get news 12
+DEBUG: 2026-03-05 05:49:28 - Get news ogj...
+DEBUG: 2026-03-05 05:49:28 - Load images ...
+DEBUG: 2026-03-05 05:49:28 - Файл 'photo_2026-03-05_08-47-35_7b52e589-e094-4673-93dd-02ee3915cf3d.jpg' успешно прочитан (105612 байт)
+DEBUG: 2026-03-05 05:49:28 - Image loaded
+DEBUG: 2026-03-05 05:49:28 - Commit
+DEBUG: 2026-03-05 05:49:28 - Session close
+DEBUG: 2026-03-05 05:49:35 - Open transaction ...
+DEBUG: 2026-03-05 05:49:35 - Load images ...
+DEBUG: 2026-03-05 05:49:35 - Файл 'photo_2026-03-05_08-47-35_7b52e589-e094-4673-93dd-02ee3915cf3d.jpg' успешно прочитан (105612 байт)
+DEBUG: 2026-03-05 05:49:35 - Image loaded
+DEBUG: 2026-03-05 05:49:35 - Commit
+DEBUG: 2026-03-05 05:49:35 - Session close
+DEBUG: 2026-03-05 05:49:35 - Open transaction ...
+DEBUG: 2026-03-05 05:49:35 - Load images ...
+DEBUG: 2026-03-05 05:49:35 - Файл 'photo_2026-03-05_08-47-35_7b52e589-e094-4673-93dd-02ee3915cf3d.jpg' успешно прочитан (105612 байт)
+DEBUG: 2026-03-05 05:49:35 - Image loaded
+DEBUG: 2026-03-05 05:49:35 - Commit
+DEBUG: 2026-03-05 05:49:35 - Session close
+DEBUG: 2026-03-05 05:49:49 - Open transaction ...
+DEBUG: 2026-03-05 05:49:49 - Get news 12
+DEBUG: 2026-03-05 05:49:49 - Get news ogj...
+DEBUG: 2026-03-05 05:49:49 - Load images ...
+DEBUG: 2026-03-05 05:49:49 - Файл 'photo_2026-03-05_08-47-35_7b52e589-e094-4673-93dd-02ee3915cf3d.jpg' успешно прочитан (105612 байт)
+DEBUG: 2026-03-05 05:49:50 - Image loaded
+DEBUG: 2026-03-05 05:49:50 - Commit
+DEBUG: 2026-03-05 05:49:50 - Session close
+DEBUG: 2026-03-05 05:49:50 - Open transaction ...
+DEBUG: 2026-03-05 05:49:50 - Get news 12
+DEBUG: 2026-03-05 05:49:50 - Get news ogj...
+DEBUG: 2026-03-05 05:49:50 - Load images ...
+DEBUG: 2026-03-05 05:49:50 - Файл 'photo_2026-03-05_08-47-35_7b52e589-e094-4673-93dd-02ee3915cf3d.jpg' успешно прочитан (105612 байт)
+DEBUG: 2026-03-05 05:49:50 - Image loaded
+DEBUG: 2026-03-05 05:49:50 - Commit
+DEBUG: 2026-03-05 05:49:50 - Session close
+DEBUG: 2026-03-05 05:50:05 - Open transaction ...
+DEBUG: 2026-03-05 05:50:05 - Load images ...
+DEBUG: 2026-03-05 05:50:05 - Файл 'photo_2026-03-05_08-47-35_7b52e589-e094-4673-93dd-02ee3915cf3d.jpg' успешно прочитан (105612 байт)
+DEBUG: 2026-03-05 05:50:05 - Image loaded
+DEBUG: 2026-03-05 05:50:05 - Commit
+DEBUG: 2026-03-05 05:50:05 - Session close
+DEBUG: 2026-03-05 05:50:05 - Open transaction ...
+DEBUG: 2026-03-05 05:50:05 - Load images ...
+DEBUG: 2026-03-05 05:50:05 - Файл 'photo_2026-03-05_08-47-35_7b52e589-e094-4673-93dd-02ee3915cf3d.jpg' успешно прочитан (105612 байт)
+DEBUG: 2026-03-05 05:50:05 - Image loaded
+DEBUG: 2026-03-05 05:50:05 - Commit
+DEBUG: 2026-03-05 05:50:05 - Session close
+INFO: 2026-03-06 16:02:49 - [TokenCleanup] ✅ Фоновый процесс запущен (поток: TokenCleanup, ID: 134508646348480)
+INFO: 2026-03-06 16:02:49 - [TokenCleanup] Синхронный engine инициализирован
+INFO: 2026-03-06 16:02:49 - [TokenCleanup] 🚀 Поток очистки запущен (интервал: 60 мин, поток: TokenCleanup)
+INFO: 2026-03-06 16:02:49 - [TokenCleanup] 🧹 Начинаем очистку...
+INFO: 2026-03-06 16:02:50 - [TokenCleanup] ✅ Истекших токенов не найдено
+DEBUG: 2026-03-06 16:02:50 - [TokenCleanup] Ожидание 60 мин...
+INFO: 2026-03-06 16:06:25 - [TokenCleanup] ✅ Фоновый процесс запущен (поток: TokenCleanup, ID: 133654721468096)
+INFO: 2026-03-06 16:06:26 - [TokenCleanup] Синхронный engine инициализирован
+INFO: 2026-03-06 16:06:26 - [TokenCleanup] 🚀 Поток очистки запущен (интервал: 60 мин, поток: TokenCleanup)
+INFO: 2026-03-06 16:06:26 - [TokenCleanup] 🧹 Начинаем очистку...
+INFO: 2026-03-06 16:06:26 - [TokenCleanup] ✅ Истекших токенов не найдено
+DEBUG: 2026-03-06 16:06:26 - [TokenCleanup] Ожидание 60 мин...
+INFO: 2026-03-06 16:09:52 - [TokenCleanup] 🛑 Останавливаем фоновый процесс...
+INFO: 2026-03-06 16:09:53 - [TokenCleanup] Соединения с БД закрыты
+INFO: 2026-03-06 16:09:53 - [TokenCleanup] 👋 Поток очистки остановлен
+INFO: 2026-03-06 16:09:53 - [TokenCleanup] Поток успешно завершен
+INFO: 2026-03-06 16:10:55 - [TokenCleanup] ✅ Фоновый процесс запущен (поток: TokenCleanup, ID: 131209118021312)
+INFO: 2026-03-06 16:10:55 - [TokenCleanup] Синхронный engine инициализирован
+INFO: 2026-03-06 16:10:55 - [TokenCleanup] 🚀 Поток очистки запущен (интервал: 60 мин, поток: TokenCleanup)
+INFO: 2026-03-06 16:10:55 - [TokenCleanup] 🧹 Начинаем очистку...
+ERROR: 2026-03-06 16:10:55 - [TokenCleanup] Ошибка в _cleanup_batch_sync: (psycopg2.errors.UndefinedTable) relation "tokens" does not exist
+LINE 2: FROM tokens 
+             ^
+
+[SQL: SELECT tokens.id 
+FROM tokens 
+WHERE tokens.exp < %(exp_1)s 
+ LIMIT %(param_1)s]
+[parameters: {'exp_1': datetime.datetime(2026, 3, 6, 16, 10, 55, 293290), 'param_1': 100}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+ERROR: 2026-03-06 16:10:55 - [TokenCleanup] Ошибка при удалении батча: (psycopg2.errors.UndefinedTable) relation "tokens" does not exist
+LINE 2: FROM tokens 
+             ^
+
+[SQL: SELECT tokens.id 
+FROM tokens 
+WHERE tokens.exp < %(exp_1)s 
+ LIMIT %(param_1)s]
+[parameters: {'exp_1': datetime.datetime(2026, 3, 6, 16, 10, 55, 293290), 'param_1': 100}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+INFO: 2026-03-06 16:10:55 - [TokenCleanup] ✅ Истекших токенов не найдено
+DEBUG: 2026-03-06 16:10:55 - [TokenCleanup] Ожидание 60 мин...
+INFO: 2026-03-06 16:13:33 - [TokenCleanup] ✅ Фоновый процесс запущен (поток: TokenCleanup, ID: 124425626289856)
+INFO: 2026-03-06 16:13:33 - [TokenCleanup] Синхронный engine инициализирован
+INFO: 2026-03-06 16:13:33 - [TokenCleanup] 🚀 Поток очистки запущен (интервал: 60 мин, поток: TokenCleanup)
+INFO: 2026-03-06 16:13:33 - [TokenCleanup] 🧹 Начинаем очистку...
+ERROR: 2026-03-06 16:13:33 - [TokenCleanup] Ошибка в _cleanup_batch_sync: (psycopg2.errors.UndefinedTable) relation "tokens" does not exist
+LINE 2: FROM tokens 
+             ^
+
+[SQL: SELECT tokens.id 
+FROM tokens 
+WHERE tokens.exp < %(exp_1)s 
+ LIMIT %(param_1)s]
+[parameters: {'exp_1': datetime.datetime(2026, 3, 6, 16, 13, 33, 369628), 'param_1': 100}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+ERROR: 2026-03-06 16:13:33 - [TokenCleanup] Ошибка при удалении батча: (psycopg2.errors.UndefinedTable) relation "tokens" does not exist
+LINE 2: FROM tokens 
+             ^
+
+[SQL: SELECT tokens.id 
+FROM tokens 
+WHERE tokens.exp < %(exp_1)s 
+ LIMIT %(param_1)s]
+[parameters: {'exp_1': datetime.datetime(2026, 3, 6, 16, 13, 33, 369628), 'param_1': 100}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+INFO: 2026-03-06 16:13:33 - [TokenCleanup] ✅ Истекших токенов не найдено
+DEBUG: 2026-03-06 16:13:33 - [TokenCleanup] Ожидание 60 мин...
+INFO: 2026-03-06 16:16:45 - [TokenCleanup] 🛑 Останавливаем фоновый процесс...
+INFO: 2026-03-06 16:16:46 - [TokenCleanup] Соединения с БД закрыты
+INFO: 2026-03-06 16:16:46 - [TokenCleanup] 👋 Поток очистки остановлен
+INFO: 2026-03-06 16:16:46 - [TokenCleanup] Поток успешно завершен
+INFO: 2026-03-06 16:17:31 - [TokenCleanup] ✅ Фоновый процесс запущен (поток: TokenCleanup, ID: 134725244487360)
+INFO: 2026-03-06 16:17:31 - [TokenCleanup] Синхронный engine инициализирован
+INFO: 2026-03-06 16:17:31 - [TokenCleanup] 🚀 Поток очистки запущен (интервал: 60 мин, поток: TokenCleanup)
+INFO: 2026-03-06 16:17:31 - [TokenCleanup] 🧹 Начинаем очистку...
+ERROR: 2026-03-06 16:17:31 - [TokenCleanup] Ошибка в _cleanup_batch_sync: (psycopg2.errors.UndefinedTable) relation "tokens" does not exist
+LINE 2: FROM tokens 
+             ^
+
+[SQL: SELECT tokens.id 
+FROM tokens 
+WHERE tokens.exp < %(exp_1)s 
+ LIMIT %(param_1)s]
+[parameters: {'exp_1': datetime.datetime(2026, 3, 6, 16, 17, 31, 474237), 'param_1': 100}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+ERROR: 2026-03-06 16:17:31 - [TokenCleanup] Ошибка при удалении батча: (psycopg2.errors.UndefinedTable) relation "tokens" does not exist
+LINE 2: FROM tokens 
+             ^
+
+[SQL: SELECT tokens.id 
+FROM tokens 
+WHERE tokens.exp < %(exp_1)s 
+ LIMIT %(param_1)s]
+[parameters: {'exp_1': datetime.datetime(2026, 3, 6, 16, 17, 31, 474237), 'param_1': 100}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+INFO: 2026-03-06 16:17:31 - [TokenCleanup] ✅ Истекших токенов не найдено
+DEBUG: 2026-03-06 16:17:31 - [TokenCleanup] Ожидание 60 мин...
+DEBUG: 2026-03-06 16:18:24 - Open transaction ...
+WARNING: 2026-03-06 16:18:24 - News not found
+WARNING: 2026-03-06 16:18:24 - Discard change rollback...
+DEBUG: 2026-03-06 16:18:24 - Session close
+DEBUG: 2026-03-06 16:18:24 - Open transaction ...
+WARNING: 2026-03-06 16:18:24 - News not found
+WARNING: 2026-03-06 16:18:24 - Discard change rollback...
+DEBUG: 2026-03-06 16:18:24 - Session close
+DEBUG: 2026-03-06 16:20:27 - Open transaction ...
+DEBUG: 2026-03-06 16:20:27 - Register attemp dima@gmail.com - D2i0m0a5
+DEBUG: 2026-03-06 16:20:27 - Create user ...
+DEBUG: 2026-03-06 16:20:27 - Create token pair ...
+DEBUG: 2026-03-06 16:20:27 - Accouting refresh token
+DEBUG: 2026-03-06 16:20:28 - Accouting access token
+DEBUG: 2026-03-06 16:20:28 - Redis session started
+DEBUG: 2026-03-06 16:20:28 - saved to Redis: 1:f11831a0-64e7-428c-812e-c8ce2dd4c073:3b764055afbdc00fffd41bec66c0b5e4, TTL: 0:15:00s
+DEBUG: 2026-03-06 16:20:28 - Redis session ended
+DEBUG: 2026-03-06 16:20:28 - User register
+DEBUG: 2026-03-06 16:20:28 - Commit
+DEBUG: 2026-03-06 16:20:28 - Session close
+DEBUG: 2026-03-06 16:20:28 - Open transaction ...
+DEBUG: 2026-03-06 16:20:28 - Verefy access token
+DEBUG: 2026-03-06 16:20:28 - Verification of access token registration
+DEBUG: 2026-03-06 16:20:28 - Redis session started
+DEBUG: 2026-03-06 16:20:28 - Value retrieved from Redis: 1:f11831a0-64e7-428c-812e-c8ce2dd4c073:3b764055afbdc00fffd41bec66c0b5e4
+DEBUG: 2026-03-06 16:20:28 - Redis session ended
+DEBUG: 2026-03-06 16:20:28 - serialize token payload ...
+DEBUG: 2026-03-06 16:20:28 - Payload : user_id=1 user_role='user' iat=datetime.datetime(2026, 3, 6, 16, 20, 27, 950728) jti='f11831a0-64e7-428c-812e-c8ce2dd4c073' exp=datetime.datetime(2026, 3, 6, 16, 35, 27, 950642) token_type='access' device_id='3b764055afbdc00fffd41bec66c0b5e4' ip_address='172.18.0.6' is_rework=False
+DEBUG: 2026-03-06 16:20:28 - Access token is valid
+DEBUG: 2026-03-06 16:20:28 - Commit
+DEBUG: 2026-03-06 16:20:28 - Session close
+DEBUG: 2026-03-06 16:20:28 - Open transaction ...
+DEBUG: 2026-03-06 16:20:28 - Get me ... id : 1
+DEBUG: 2026-03-06 16:20:28 - Serialize ...
+DEBUG: 2026-03-06 16:20:28 - Commit
+DEBUG: 2026-03-06 16:20:28 - Session close
+DEBUG: 2026-03-06 16:20:28 - Open transaction ...
+WARNING: 2026-03-06 16:20:28 - News not found
+WARNING: 2026-03-06 16:20:28 - Discard change rollback...
+DEBUG: 2026-03-06 16:20:28 - Session close
+DEBUG: 2026-03-06 16:20:28 - Open transaction ...
+WARNING: 2026-03-06 16:20:28 - News not found
+WARNING: 2026-03-06 16:20:28 - Discard change rollback...
+DEBUG: 2026-03-06 16:20:28 - Session close
+DEBUG: 2026-03-06 16:21:33 - Open transaction ...
+DEBUG: 2026-03-06 16:21:33 - Verefy access token
+DEBUG: 2026-03-06 16:21:33 - Verification of access token registration
+DEBUG: 2026-03-06 16:21:33 - Redis session started
+DEBUG: 2026-03-06 16:21:33 - Value retrieved from Redis: 1:f11831a0-64e7-428c-812e-c8ce2dd4c073:3b764055afbdc00fffd41bec66c0b5e4
+DEBUG: 2026-03-06 16:21:33 - Redis session ended
+DEBUG: 2026-03-06 16:21:33 - serialize token payload ...
+DEBUG: 2026-03-06 16:21:33 - Payload : user_id=1 user_role='user' iat=datetime.datetime(2026, 3, 6, 16, 20, 27, 950728) jti='f11831a0-64e7-428c-812e-c8ce2dd4c073' exp=datetime.datetime(2026, 3, 6, 16, 35, 27, 950642) token_type='access' device_id='3b764055afbdc00fffd41bec66c0b5e4' ip_address='172.18.0.6' is_rework=False
+DEBUG: 2026-03-06 16:21:33 - Access token is valid
+DEBUG: 2026-03-06 16:21:33 - Commit
+DEBUG: 2026-03-06 16:21:33 - Session close
+DEBUG: 2026-03-06 16:21:33 - Open transaction ...
+DEBUG: 2026-03-06 16:21:33 - Get me ... id : 1
+DEBUG: 2026-03-06 16:21:33 - Serialize ...
+DEBUG: 2026-03-06 16:21:33 - Commit
+DEBUG: 2026-03-06 16:21:33 - Session close
+DEBUG: 2026-03-06 16:21:33 - Open transaction ...
+WARNING: 2026-03-06 16:21:33 - News not found
+WARNING: 2026-03-06 16:21:33 - Discard change rollback...
+DEBUG: 2026-03-06 16:21:33 - Session close
+DEBUG: 2026-03-06 16:21:33 - Open transaction ...
+WARNING: 2026-03-06 16:21:33 - News not found
+WARNING: 2026-03-06 16:21:33 - Discard change rollback...
+DEBUG: 2026-03-06 16:21:33 - Session close
+DEBUG: 2026-03-06 16:21:41 - Open transaction ...
+DEBUG: 2026-03-06 16:21:41 - Verefy access token
+DEBUG: 2026-03-06 16:21:41 - Verification of access token registration
+DEBUG: 2026-03-06 16:21:41 - Redis session started
+DEBUG: 2026-03-06 16:21:41 - Value retrieved from Redis: 1:f11831a0-64e7-428c-812e-c8ce2dd4c073:3b764055afbdc00fffd41bec66c0b5e4
+DEBUG: 2026-03-06 16:21:41 - Redis session ended
+DEBUG: 2026-03-06 16:21:41 - serialize token payload ...
+DEBUG: 2026-03-06 16:21:41 - Payload : user_id=1 user_role='user' iat=datetime.datetime(2026, 3, 6, 16, 20, 27, 950728) jti='f11831a0-64e7-428c-812e-c8ce2dd4c073' exp=datetime.datetime(2026, 3, 6, 16, 35, 27, 950642) token_type='access' device_id='3b764055afbdc00fffd41bec66c0b5e4' ip_address='172.18.0.6' is_rework=False
+DEBUG: 2026-03-06 16:21:41 - Access token is valid
+DEBUG: 2026-03-06 16:21:41 - Commit
+DEBUG: 2026-03-06 16:21:41 - Session close
+DEBUG: 2026-03-06 16:21:41 - Open transaction ...
+DEBUG: 2026-03-06 16:21:41 - Get me ... id : 1
+DEBUG: 2026-03-06 16:21:41 - Serialize ...
+DEBUG: 2026-03-06 16:21:41 - Commit
+DEBUG: 2026-03-06 16:21:41 - Session close
+DEBUG: 2026-03-06 16:21:43 - Open transaction ...
+WARNING: 2026-03-06 16:21:43 - News not found
+WARNING: 2026-03-06 16:21:43 - Discard change rollback...
+DEBUG: 2026-03-06 16:21:43 - Session close
+DEBUG: 2026-03-06 16:21:43 - Open transaction ...
+WARNING: 2026-03-06 16:21:43 - News not found
+WARNING: 2026-03-06 16:21:43 - Discard change rollback...
+DEBUG: 2026-03-06 16:21:43 - Session close
+DEBUG: 2026-03-06 16:21:44 - session : {'token': 'eyJhbGciOiJIUzI1NiIsImtpZCI6ImtpZCIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NzE2ODUzNTQsImp0aSI6ImNjYTRjMDJlLTg0MTEtNDNiNy04YWMzLTE3NWY2YmU0NjFiNCIsInRva2VuX3R5cGUiOiJhY2Nlc3MiLCJ1c2VyX2lkIjo1NCwiaWF0IjoxNzcxNjg0NDU0LCJ1c2VyX3JvbGUiOiJyb290IiwiZGV2aWNlX2lkIjoiZjlkYzZlMTIwMDJjNDVmNWFlMDg3OWRhZTEyMTQ0ZmIiLCJpcF9hZGRyZXNzIjoiMTI3LjAuMC4xIn0.tZfb3KrUieH4afNGpjXPnNE7HRS6D7irLXwTqPCjICQ', 'username': 'demonuchy@gmail.com', 'session_id': '1273c500735942d1bf75f21fccc29462', 'access_token': 'eyJhbGciOiJIUzI1NiIsImtpZCI6ImtpZCIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NzIxOTk5MzQsImp0aSI6ImUwNjQyYmFhLWM5N2QtNGQyMy04MzhhLTMzOGE3YmMyZmZiNSIsInRva2VuX3R5cGUiOiJhY2Nlc3MiLCJ1c2VyX2lkIjo1NCwiaWF0IjoxNzcyMTk5MDM0LCJ1c2VyX3JvbGUiOiJyb290IiwiZGV2aWNlX2lkIjoiMTI3M2M1MDA3MzU5NDJkMWJmNzVmMjFmY2NjMjk0NjIiLCJpcF9hZGRyZXNzIjoiMTI3LjAuMC4xIn0.QMj8mCPF4zm4Tc6U32Q5RVQsBLNLyMZ63ao6PO1Iv_8', 'refresh_token ': 'eyJhbGciOiJIUzI1NiIsImtpZCI6ImtpZCIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NzE2OTI0NjUsImp0aSI6IjY1Mzc3ZTYyLTljODYtNDg5ZC05OGU0LWI5OThmZTQ3MWE0NSIsInRva2VuX3R5cGUiOiJyZWZyZXNoIiwidXNlcl9pZCI6NTQsImlhdCI6MTc3MTY4ODg2NSwidXNlcl9yb2xlIjoicm9vdCIsImRldmljZV9pZCI6IjI2Y2QyN2E1YzBkYzRlNDZhN2E0NDkwMmIzNTVjNGE3IiwiaXBfYWRkcmVzcyI6IjEyNy4wLjAuMSJ9.a6YPth_L_bPHRN18Aa09np19qxwrxP1YwZYlVK_H254', 'refresh_token': 'eyJhbGciOiJIUzI1NiIsImtpZCI6ImtpZCIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NzIyMDI2MzQsImp0aSI6IjUzNWU2OGFlLWI5MDEtNGExMy1hMDNkLWQ2N2M0OGMxMzU1NyIsInRva2VuX3R5cGUiOiJyZWZyZXNoIiwidXNlcl9pZCI6NTQsImlhdCI6MTc3MjE5OTAzNCwidXNlcl9yb2xlIjoicm9vdCIsImRldmljZV9pZCI6IjEyNzNjNTAwNzM1OTQyZDFiZjc1ZjIxZmNjYzI5NDYyIiwiaXBfYWRkcmVzcyI6IjEyNy4wLjAuMSJ9.sNnhg5AKfAGza5E_FHmXPvnABPx_4i7PmJRLXqtbriQ'}
+DEBUG: 2026-03-06 16:21:44 - Open transaction ...
+DEBUG: 2026-03-06 16:21:44 - Verefy access token
+WARNING: 2026-03-06 16:21:44 - Токен просрочен!
+WARNING: 2026-03-06 16:21:44 - Error invalid token
+WARNING: 2026-03-06 16:21:44 - Discard change rollback...
+DEBUG: 2026-03-06 16:21:44 - Session close
+DEBUG: 2026-03-06 16:21:44 - Refresh access token
+DEBUG: 2026-03-06 16:21:44 - Fetch...
+DEBUG: 2026-03-06 16:21:44 - Open transaction ...
+DEBUG: 2026-03-06 16:21:44 - Verefy refresh token
+WARNING: 2026-03-06 16:21:44 - Токен просрочен!
+WARNING: 2026-03-06 16:21:44 - Error invalid token
+WARNING: 2026-03-06 16:21:44 - Discard change rollback...
+DEBUG: 2026-03-06 16:21:44 - Session close
+WARNING: 2026-03-06 16:21:44 - Refresh token is not valid
+DEBUG: 2026-03-06 16:21:58 - Admin login attemp username : dima@gmail.com, password : D2i0m0a5
+DEBUG: 2026-03-06 16:21:58 - Open transaction ...
+DEBUG: 2026-03-06 16:21:58 - Login attemp dima@gmail.com - D2i0m0a5
+DEBUG: 2026-03-06 16:21:58 - Check login attemmp ...
+DEBUG: 2026-03-06 16:21:58 - Check user ...
+DEBUG: 2026-03-06 16:21:58 - Check tokens
+DEBUG: 2026-03-06 16:21:58 - Revoking the refresh token
+DEBUG: 2026-03-06 16:21:58 - Revoking the access token
+DEBUG: 2026-03-06 16:21:58 - Redis session started
+DEBUG: 2026-03-06 16:21:58 - Found 0 keys matching pattern: 1:*:99832c2b5f5d439db56ff8dbc0bdf87e
+DEBUG: 2026-03-06 16:21:58 - Redis session ended
+DEBUG: 2026-03-06 16:21:58 - Revork 0 tokens
+DEBUG: 2026-03-06 16:21:58 - calculate expire ...
+DEBUG: 2026-03-06 16:21:58 - exoire 60
+DEBUG: 2026-03-06 16:21:58 - Create token pair ...
+DEBUG: 2026-03-06 16:21:58 - Accouting refresh token
+DEBUG: 2026-03-06 16:21:58 - Accouting access token
+DEBUG: 2026-03-06 16:21:58 - Redis session started
+DEBUG: 2026-03-06 16:21:58 - saved to Redis: 1:2a83ef49-a7d8-463a-8ee4-ea1dd610ebdf:99832c2b5f5d439db56ff8dbc0bdf87e, TTL: 0:15:00s
+DEBUG: 2026-03-06 16:21:58 - Redis session ended
+DEBUG: 2026-03-06 16:21:58 - User login
+DEBUG: 2026-03-06 16:21:58 - Parse responce ... 
+DEBUG: 2026-03-06 16:21:58 - Commit
+DEBUG: 2026-03-06 16:21:58 - Session close
+DEBUG: 2026-03-06 16:21:58 - session : {'token': 'eyJhbGciOiJIUzI1NiIsImtpZCI6ImtpZCIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NzE2ODUzNTQsImp0aSI6ImNjYTRjMDJlLTg0MTEtNDNiNy04YWMzLTE3NWY2YmU0NjFiNCIsInRva2VuX3R5cGUiOiJhY2Nlc3MiLCJ1c2VyX2lkIjo1NCwiaWF0IjoxNzcxNjg0NDU0LCJ1c2VyX3JvbGUiOiJyb290IiwiZGV2aWNlX2lkIjoiZjlkYzZlMTIwMDJjNDVmNWFlMDg3OWRhZTEyMTQ0ZmIiLCJpcF9hZGRyZXNzIjoiMTI3LjAuMC4xIn0.tZfb3KrUieH4afNGpjXPnNE7HRS6D7irLXwTqPCjICQ', 'username': 'demonuchy@gmail.com', 'session_id': '99832c2b5f5d439db56ff8dbc0bdf87e', 'access_token': 'eyJhbGciOiJIUzI1NiIsImtpZCI6ImtpZCIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NzI4MTUwMTgsImp0aSI6IjJhODNlZjQ5LWE3ZDgtNDYzYS04ZWU0LWVhMWRkNjEwZWJkZiIsInRva2VuX3R5cGUiOiJhY2Nlc3MiLCJ1c2VyX2lkIjoxLCJpYXQiOjE3NzI4MTQxMTgsInVzZXJfcm9sZSI6InJvb3QiLCJkZXZpY2VfaWQiOiI5OTgzMmMyYjVmNWQ0MzlkYjU2ZmY4ZGJjMGJkZjg3ZSIsImlwX2FkZHJlc3MiOiIxMjcuMC4wLjEifQ.dOl8eeCE0xgQW0AZat2oKANxzpuiZk4DfA0qHq_1Ymo', 'refresh_token ': 'eyJhbGciOiJIUzI1NiIsImtpZCI6ImtpZCIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NzE2OTI0NjUsImp0aSI6IjY1Mzc3ZTYyLTljODYtNDg5ZC05OGU0LWI5OThmZTQ3MWE0NSIsInRva2VuX3R5cGUiOiJyZWZyZXNoIiwidXNlcl9pZCI6NTQsImlhdCI6MTc3MTY4ODg2NSwidXNlcl9yb2xlIjoicm9vdCIsImRldmljZV9pZCI6IjI2Y2QyN2E1YzBkYzRlNDZhN2E0NDkwMmIzNTVjNGE3IiwiaXBfYWRkcmVzcyI6IjEyNy4wLjAuMSJ9.a6YPth_L_bPHRN18Aa09np19qxwrxP1YwZYlVK_H254', 'refresh_token': 'eyJhbGciOiJIUzI1NiIsImtpZCI6ImtpZCIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NzI4MTc3MTgsImp0aSI6IjE4M2MzNGRkLThiNjAtNGYyNi05ODM0LWI2YzkyZTZmNWY4NSIsInRva2VuX3R5cGUiOiJyZWZyZXNoIiwidXNlcl9pZCI6MSwiaWF0IjoxNzcyODE0MTE4LCJ1c2VyX3JvbGUiOiJyb290IiwiZGV2aWNlX2lkIjoiOTk4MzJjMmI1ZjVkNDM5ZGI1NmZmOGRiYzBiZGY4N2UiLCJpcF9hZGRyZXNzIjoiMTI3LjAuMC4xIn0.kNCcZFlTLbYlS17FCVjIJ5DKGVwiVHv2QzZJdTyrn4o'}
+DEBUG: 2026-03-06 16:21:58 - Open transaction ...
+DEBUG: 2026-03-06 16:21:58 - Verefy access token
+DEBUG: 2026-03-06 16:21:58 - Verification of access token registration
+DEBUG: 2026-03-06 16:21:58 - Redis session started
+DEBUG: 2026-03-06 16:21:58 - Value retrieved from Redis: 1:2a83ef49-a7d8-463a-8ee4-ea1dd610ebdf:99832c2b5f5d439db56ff8dbc0bdf87e
+DEBUG: 2026-03-06 16:21:58 - Redis session ended
+DEBUG: 2026-03-06 16:21:58 - serialize token payload ...
+DEBUG: 2026-03-06 16:21:58 - Payload : user_id=1 user_role='root' iat=datetime.datetime(2026, 3, 6, 16, 21, 58, 286392) jti='2a83ef49-a7d8-463a-8ee4-ea1dd610ebdf' exp=datetime.datetime(2026, 3, 6, 16, 36, 58, 286323) token_type='access' device_id='99832c2b5f5d439db56ff8dbc0bdf87e' ip_address='127.0.0.1' is_rework=False
+DEBUG: 2026-03-06 16:21:58 - Access token is valid
+DEBUG: 2026-03-06 16:21:58 - Commit
+DEBUG: 2026-03-06 16:21:58 - Session close
+DEBUG: 2026-03-06 16:21:58 - Check user role ...
+DEBUG: 2026-03-06 16:22:00 - session : {'token': 'eyJhbGciOiJIUzI1NiIsImtpZCI6ImtpZCIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NzE2ODUzNTQsImp0aSI6ImNjYTRjMDJlLTg0MTEtNDNiNy04YWMzLTE3NWY2YmU0NjFiNCIsInRva2VuX3R5cGUiOiJhY2Nlc3MiLCJ1c2VyX2lkIjo1NCwiaWF0IjoxNzcxNjg0NDU0LCJ1c2VyX3JvbGUiOiJyb290IiwiZGV2aWNlX2lkIjoiZjlkYzZlMTIwMDJjNDVmNWFlMDg3OWRhZTEyMTQ0ZmIiLCJpcF9hZGRyZXNzIjoiMTI3LjAuMC4xIn0.tZfb3KrUieH4afNGpjXPnNE7HRS6D7irLXwTqPCjICQ', 'username': 'demonuchy@gmail.com', 'session_id': '99832c2b5f5d439db56ff8dbc0bdf87e', 'access_token': 'eyJhbGciOiJIUzI1NiIsImtpZCI6ImtpZCIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NzI4MTUwMTgsImp0aSI6IjJhODNlZjQ5LWE3ZDgtNDYzYS04ZWU0LWVhMWRkNjEwZWJkZiIsInRva2VuX3R5cGUiOiJhY2Nlc3MiLCJ1c2VyX2lkIjoxLCJpYXQiOjE3NzI4MTQxMTgsInVzZXJfcm9sZSI6InJvb3QiLCJkZXZpY2VfaWQiOiI5OTgzMmMyYjVmNWQ0MzlkYjU2ZmY4ZGJjMGJkZjg3ZSIsImlwX2FkZHJlc3MiOiIxMjcuMC4wLjEifQ.dOl8eeCE0xgQW0AZat2oKANxzpuiZk4DfA0qHq_1Ymo', 'refresh_token ': 'eyJhbGciOiJIUzI1NiIsImtpZCI6ImtpZCIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NzE2OTI0NjUsImp0aSI6IjY1Mzc3ZTYyLTljODYtNDg5ZC05OGU0LWI5OThmZTQ3MWE0NSIsInRva2VuX3R5cGUiOiJyZWZyZXNoIiwidXNlcl9pZCI6NTQsImlhdCI6MTc3MTY4ODg2NSwidXNlcl9yb2xlIjoicm9vdCIsImRldmljZV9pZCI6IjI2Y2QyN2E1YzBkYzRlNDZhN2E0NDkwMmIzNTVjNGE3IiwiaXBfYWRkcmVzcyI6IjEyNy4wLjAuMSJ9.a6YPth_L_bPHRN18Aa09np19qxwrxP1YwZYlVK_H254', 'refresh_token': 'eyJhbGciOiJIUzI1NiIsImtpZCI6ImtpZCIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NzI4MTc3MTgsImp0aSI6IjE4M2MzNGRkLThiNjAtNGYyNi05ODM0LWI2YzkyZTZmNWY4NSIsInRva2VuX3R5cGUiOiJyZWZyZXNoIiwidXNlcl9pZCI6MSwiaWF0IjoxNzcyODE0MTE4LCJ1c2VyX3JvbGUiOiJyb290IiwiZGV2aWNlX2lkIjoiOTk4MzJjMmI1ZjVkNDM5ZGI1NmZmOGRiYzBiZGY4N2UiLCJpcF9hZGRyZXNzIjoiMTI3LjAuMC4xIn0.kNCcZFlTLbYlS17FCVjIJ5DKGVwiVHv2QzZJdTyrn4o'}
+DEBUG: 2026-03-06 16:22:00 - Open transaction ...
+DEBUG: 2026-03-06 16:22:00 - Verefy access token
+DEBUG: 2026-03-06 16:22:00 - Verification of access token registration
+DEBUG: 2026-03-06 16:22:00 - Redis session started
+DEBUG: 2026-03-06 16:22:00 - Value retrieved from Redis: 1:2a83ef49-a7d8-463a-8ee4-ea1dd610ebdf:99832c2b5f5d439db56ff8dbc0bdf87e
+DEBUG: 2026-03-06 16:22:00 - Redis session ended
+DEBUG: 2026-03-06 16:22:00 - serialize token payload ...
+DEBUG: 2026-03-06 16:22:00 - Payload : user_id=1 user_role='root' iat=datetime.datetime(2026, 3, 6, 16, 21, 58, 286392) jti='2a83ef49-a7d8-463a-8ee4-ea1dd610ebdf' exp=datetime.datetime(2026, 3, 6, 16, 36, 58, 286323) token_type='access' device_id='99832c2b5f5d439db56ff8dbc0bdf87e' ip_address='127.0.0.1' is_rework=False
+DEBUG: 2026-03-06 16:22:00 - Access token is valid
+DEBUG: 2026-03-06 16:22:00 - Commit
+DEBUG: 2026-03-06 16:22:00 - Session close
+DEBUG: 2026-03-06 16:22:00 - Check user role ...
+DEBUG: 2026-03-06 16:22:01 - session : {'token': 'eyJhbGciOiJIUzI1NiIsImtpZCI6ImtpZCIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NzE2ODUzNTQsImp0aSI6ImNjYTRjMDJlLTg0MTEtNDNiNy04YWMzLTE3NWY2YmU0NjFiNCIsInRva2VuX3R5cGUiOiJhY2Nlc3MiLCJ1c2VyX2lkIjo1NCwiaWF0IjoxNzcxNjg0NDU0LCJ1c2VyX3JvbGUiOiJyb290IiwiZGV2aWNlX2lkIjoiZjlkYzZlMTIwMDJjNDVmNWFlMDg3OWRhZTEyMTQ0ZmIiLCJpcF9hZGRyZXNzIjoiMTI3LjAuMC4xIn0.tZfb3KrUieH4afNGpjXPnNE7HRS6D7irLXwTqPCjICQ', 'username': 'demonuchy@gmail.com', 'session_id': '99832c2b5f5d439db56ff8dbc0bdf87e', 'access_token': 'eyJhbGciOiJIUzI1NiIsImtpZCI6ImtpZCIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NzI4MTUwMTgsImp0aSI6IjJhODNlZjQ5LWE3ZDgtNDYzYS04ZWU0LWVhMWRkNjEwZWJkZiIsInRva2VuX3R5cGUiOiJhY2Nlc3MiLCJ1c2VyX2lkIjoxLCJpYXQiOjE3NzI4MTQxMTgsInVzZXJfcm9sZSI6InJvb3QiLCJkZXZpY2VfaWQiOiI5OTgzMmMyYjVmNWQ0MzlkYjU2ZmY4ZGJjMGJkZjg3ZSIsImlwX2FkZHJlc3MiOiIxMjcuMC4wLjEifQ.dOl8eeCE0xgQW0AZat2oKANxzpuiZk4DfA0qHq_1Ymo', 'refresh_token ': 'eyJhbGciOiJIUzI1NiIsImtpZCI6ImtpZCIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NzE2OTI0NjUsImp0aSI6IjY1Mzc3ZTYyLTljODYtNDg5ZC05OGU0LWI5OThmZTQ3MWE0NSIsInRva2VuX3R5cGUiOiJyZWZyZXNoIiwidXNlcl9pZCI6NTQsImlhdCI6MTc3MTY4ODg2NSwidXNlcl9yb2xlIjoicm9vdCIsImRldmljZV9pZCI6IjI2Y2QyN2E1YzBkYzRlNDZhN2E0NDkwMmIzNTVjNGE3IiwiaXBfYWRkcmVzcyI6IjEyNy4wLjAuMSJ9.a6YPth_L_bPHRN18Aa09np19qxwrxP1YwZYlVK_H254', 'refresh_token': 'eyJhbGciOiJIUzI1NiIsImtpZCI6ImtpZCIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NzI4MTc3MTgsImp0aSI6IjE4M2MzNGRkLThiNjAtNGYyNi05ODM0LWI2YzkyZTZmNWY4NSIsInRva2VuX3R5cGUiOiJyZWZyZXNoIiwidXNlcl9pZCI6MSwiaWF0IjoxNzcyODE0MTE4LCJ1c2VyX3JvbGUiOiJyb290IiwiZGV2aWNlX2lkIjoiOTk4MzJjMmI1ZjVkNDM5ZGI1NmZmOGRiYzBiZGY4N2UiLCJpcF9hZGRyZXNzIjoiMTI3LjAuMC4xIn0.kNCcZFlTLbYlS17FCVjIJ5DKGVwiVHv2QzZJdTyrn4o'}
+DEBUG: 2026-03-06 16:22:01 - Open transaction ...
+DEBUG: 2026-03-06 16:22:01 - Verefy access token
+DEBUG: 2026-03-06 16:22:01 - Verification of access token registration
+DEBUG: 2026-03-06 16:22:01 - Redis session started
+DEBUG: 2026-03-06 16:22:01 - Value retrieved from Redis: 1:2a83ef49-a7d8-463a-8ee4-ea1dd610ebdf:99832c2b5f5d439db56ff8dbc0bdf87e
+DEBUG: 2026-03-06 16:22:01 - Redis session ended
+DEBUG: 2026-03-06 16:22:01 - serialize token payload ...
+DEBUG: 2026-03-06 16:22:01 - Payload : user_id=1 user_role='root' iat=datetime.datetime(2026, 3, 6, 16, 21, 58, 286392) jti='2a83ef49-a7d8-463a-8ee4-ea1dd610ebdf' exp=datetime.datetime(2026, 3, 6, 16, 36, 58, 286323) token_type='access' device_id='99832c2b5f5d439db56ff8dbc0bdf87e' ip_address='127.0.0.1' is_rework=False
+DEBUG: 2026-03-06 16:22:01 - Access token is valid
+DEBUG: 2026-03-06 16:22:01 - Commit
+DEBUG: 2026-03-06 16:22:01 - Session close
+DEBUG: 2026-03-06 16:22:01 - Check user role ...
+DEBUG: 2026-03-06 16:22:02 - session : {'token': 'eyJhbGciOiJIUzI1NiIsImtpZCI6ImtpZCIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NzE2ODUzNTQsImp0aSI6ImNjYTRjMDJlLTg0MTEtNDNiNy04YWMzLTE3NWY2YmU0NjFiNCIsInRva2VuX3R5cGUiOiJhY2Nlc3MiLCJ1c2VyX2lkIjo1NCwiaWF0IjoxNzcxNjg0NDU0LCJ1c2VyX3JvbGUiOiJyb290IiwiZGV2aWNlX2lkIjoiZjlkYzZlMTIwMDJjNDVmNWFlMDg3OWRhZTEyMTQ0ZmIiLCJpcF9hZGRyZXNzIjoiMTI3LjAuMC4xIn0.tZfb3KrUieH4afNGpjXPnNE7HRS6D7irLXwTqPCjICQ', 'username': 'demonuchy@gmail.com', 'session_id': '99832c2b5f5d439db56ff8dbc0bdf87e', 'access_token': 'eyJhbGciOiJIUzI1NiIsImtpZCI6ImtpZCIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NzI4MTUwMTgsImp0aSI6IjJhODNlZjQ5LWE3ZDgtNDYzYS04ZWU0LWVhMWRkNjEwZWJkZiIsInRva2VuX3R5cGUiOiJhY2Nlc3MiLCJ1c2VyX2lkIjoxLCJpYXQiOjE3NzI4MTQxMTgsInVzZXJfcm9sZSI6InJvb3QiLCJkZXZpY2VfaWQiOiI5OTgzMmMyYjVmNWQ0MzlkYjU2ZmY4ZGJjMGJkZjg3ZSIsImlwX2FkZHJlc3MiOiIxMjcuMC4wLjEifQ.dOl8eeCE0xgQW0AZat2oKANxzpuiZk4DfA0qHq_1Ymo', 'refresh_token ': 'eyJhbGciOiJIUzI1NiIsImtpZCI6ImtpZCIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NzE2OTI0NjUsImp0aSI6IjY1Mzc3ZTYyLTljODYtNDg5ZC05OGU0LWI5OThmZTQ3MWE0NSIsInRva2VuX3R5cGUiOiJyZWZyZXNoIiwidXNlcl9pZCI6NTQsImlhdCI6MTc3MTY4ODg2NSwidXNlcl9yb2xlIjoicm9vdCIsImRldmljZV9pZCI6IjI2Y2QyN2E1YzBkYzRlNDZhN2E0NDkwMmIzNTVjNGE3IiwiaXBfYWRkcmVzcyI6IjEyNy4wLjAuMSJ9.a6YPth_L_bPHRN18Aa09np19qxwrxP1YwZYlVK_H254', 'refresh_token': 'eyJhbGciOiJIUzI1NiIsImtpZCI6ImtpZCIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NzI4MTc3MTgsImp0aSI6IjE4M2MzNGRkLThiNjAtNGYyNi05ODM0LWI2YzkyZTZmNWY4NSIsInRva2VuX3R5cGUiOiJyZWZyZXNoIiwidXNlcl9pZCI6MSwiaWF0IjoxNzcyODE0MTE4LCJ1c2VyX3JvbGUiOiJyb290IiwiZGV2aWNlX2lkIjoiOTk4MzJjMmI1ZjVkNDM5ZGI1NmZmOGRiYzBiZGY4N2UiLCJpcF9hZGRyZXNzIjoiMTI3LjAuMC4xIn0.kNCcZFlTLbYlS17FCVjIJ5DKGVwiVHv2QzZJdTyrn4o'}
+DEBUG: 2026-03-06 16:22:03 - Open transaction ...
+DEBUG: 2026-03-06 16:22:03 - Verefy access token
+DEBUG: 2026-03-06 16:22:03 - Verification of access token registration
+DEBUG: 2026-03-06 16:22:03 - Redis session started
+DEBUG: 2026-03-06 16:22:03 - Value retrieved from Redis: 1:2a83ef49-a7d8-463a-8ee4-ea1dd610ebdf:99832c2b5f5d439db56ff8dbc0bdf87e
+DEBUG: 2026-03-06 16:22:03 - Redis session ended
+DEBUG: 2026-03-06 16:22:03 - serialize token payload ...
+DEBUG: 2026-03-06 16:22:03 - Payload : user_id=1 user_role='root' iat=datetime.datetime(2026, 3, 6, 16, 21, 58, 286392) jti='2a83ef49-a7d8-463a-8ee4-ea1dd610ebdf' exp=datetime.datetime(2026, 3, 6, 16, 36, 58, 286323) token_type='access' device_id='99832c2b5f5d439db56ff8dbc0bdf87e' ip_address='127.0.0.1' is_rework=False
+DEBUG: 2026-03-06 16:22:03 - Access token is valid
+DEBUG: 2026-03-06 16:22:03 - Commit
+DEBUG: 2026-03-06 16:22:03 - Session close
+DEBUG: 2026-03-06 16:22:03 - Check user role ...
+DEBUG: 2026-03-06 16:22:03 - session : {'token': 'eyJhbGciOiJIUzI1NiIsImtpZCI6ImtpZCIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NzE2ODUzNTQsImp0aSI6ImNjYTRjMDJlLTg0MTEtNDNiNy04YWMzLTE3NWY2YmU0NjFiNCIsInRva2VuX3R5cGUiOiJhY2Nlc3MiLCJ1c2VyX2lkIjo1NCwiaWF0IjoxNzcxNjg0NDU0LCJ1c2VyX3JvbGUiOiJyb290IiwiZGV2aWNlX2lkIjoiZjlkYzZlMTIwMDJjNDVmNWFlMDg3OWRhZTEyMTQ0ZmIiLCJpcF9hZGRyZXNzIjoiMTI3LjAuMC4xIn0.tZfb3KrUieH4afNGpjXPnNE7HRS6D7irLXwTqPCjICQ', 'username': 'demonuchy@gmail.com', 'session_id': '99832c2b5f5d439db56ff8dbc0bdf87e', 'access_token': 'eyJhbGciOiJIUzI1NiIsImtpZCI6ImtpZCIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NzI4MTUwMTgsImp0aSI6IjJhODNlZjQ5LWE3ZDgtNDYzYS04ZWU0LWVhMWRkNjEwZWJkZiIsInRva2VuX3R5cGUiOiJhY2Nlc3MiLCJ1c2VyX2lkIjoxLCJpYXQiOjE3NzI4MTQxMTgsInVzZXJfcm9sZSI6InJvb3QiLCJkZXZpY2VfaWQiOiI5OTgzMmMyYjVmNWQ0MzlkYjU2ZmY4ZGJjMGJkZjg3ZSIsImlwX2FkZHJlc3MiOiIxMjcuMC4wLjEifQ.dOl8eeCE0xgQW0AZat2oKANxzpuiZk4DfA0qHq_1Ymo', 'refresh_token ': 'eyJhbGciOiJIUzI1NiIsImtpZCI6ImtpZCIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NzE2OTI0NjUsImp0aSI6IjY1Mzc3ZTYyLTljODYtNDg5ZC05OGU0LWI5OThmZTQ3MWE0NSIsInRva2VuX3R5cGUiOiJyZWZyZXNoIiwidXNlcl9pZCI6NTQsImlhdCI6MTc3MTY4ODg2NSwidXNlcl9yb2xlIjoicm9vdCIsImRldmljZV9pZCI6IjI2Y2QyN2E1YzBkYzRlNDZhN2E0NDkwMmIzNTVjNGE3IiwiaXBfYWRkcmVzcyI6IjEyNy4wLjAuMSJ9.a6YPth_L_bPHRN18Aa09np19qxwrxP1YwZYlVK_H254', 'refresh_token': 'eyJhbGciOiJIUzI1NiIsImtpZCI6ImtpZCIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NzI4MTc3MTgsImp0aSI6IjE4M2MzNGRkLThiNjAtNGYyNi05ODM0LWI2YzkyZTZmNWY4NSIsInRva2VuX3R5cGUiOiJyZWZyZXNoIiwidXNlcl9pZCI6MSwiaWF0IjoxNzcyODE0MTE4LCJ1c2VyX3JvbGUiOiJyb290IiwiZGV2aWNlX2lkIjoiOTk4MzJjMmI1ZjVkNDM5ZGI1NmZmOGRiYzBiZGY4N2UiLCJpcF9hZGRyZXNzIjoiMTI3LjAuMC4xIn0.kNCcZFlTLbYlS17FCVjIJ5DKGVwiVHv2QzZJdTyrn4o'}
+DEBUG: 2026-03-06 16:22:03 - Open transaction ...
+DEBUG: 2026-03-06 16:22:03 - Verefy access token
+DEBUG: 2026-03-06 16:22:03 - Verification of access token registration
+DEBUG: 2026-03-06 16:22:04 - Redis session started
+DEBUG: 2026-03-06 16:22:04 - Value retrieved from Redis: 1:2a83ef49-a7d8-463a-8ee4-ea1dd610ebdf:99832c2b5f5d439db56ff8dbc0bdf87e
+DEBUG: 2026-03-06 16:22:04 - Redis session ended
+DEBUG: 2026-03-06 16:22:04 - serialize token payload ...
+DEBUG: 2026-03-06 16:22:04 - Payload : user_id=1 user_role='root' iat=datetime.datetime(2026, 3, 6, 16, 21, 58, 286392) jti='2a83ef49-a7d8-463a-8ee4-ea1dd610ebdf' exp=datetime.datetime(2026, 3, 6, 16, 36, 58, 286323) token_type='access' device_id='99832c2b5f5d439db56ff8dbc0bdf87e' ip_address='127.0.0.1' is_rework=False
+DEBUG: 2026-03-06 16:22:04 - Access token is valid
+DEBUG: 2026-03-06 16:22:04 - Commit
+DEBUG: 2026-03-06 16:22:04 - Session close
+DEBUG: 2026-03-06 16:22:04 - Check user role ...
+DEBUG: 2026-03-06 16:22:04 - session : {'token': 'eyJhbGciOiJIUzI1NiIsImtpZCI6ImtpZCIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NzE2ODUzNTQsImp0aSI6ImNjYTRjMDJlLTg0MTEtNDNiNy04YWMzLTE3NWY2YmU0NjFiNCIsInRva2VuX3R5cGUiOiJhY2Nlc3MiLCJ1c2VyX2lkIjo1NCwiaWF0IjoxNzcxNjg0NDU0LCJ1c2VyX3JvbGUiOiJyb290IiwiZGV2aWNlX2lkIjoiZjlkYzZlMTIwMDJjNDVmNWFlMDg3OWRhZTEyMTQ0ZmIiLCJpcF9hZGRyZXNzIjoiMTI3LjAuMC4xIn0.tZfb3KrUieH4afNGpjXPnNE7HRS6D7irLXwTqPCjICQ', 'username': 'demonuchy@gmail.com', 'session_id': '99832c2b5f5d439db56ff8dbc0bdf87e', 'access_token': 'eyJhbGciOiJIUzI1NiIsImtpZCI6ImtpZCIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NzI4MTUwMTgsImp0aSI6IjJhODNlZjQ5LWE3ZDgtNDYzYS04ZWU0LWVhMWRkNjEwZWJkZiIsInRva2VuX3R5cGUiOiJhY2Nlc3MiLCJ1c2VyX2lkIjoxLCJpYXQiOjE3NzI4MTQxMTgsInVzZXJfcm9sZSI6InJvb3QiLCJkZXZpY2VfaWQiOiI5OTgzMmMyYjVmNWQ0MzlkYjU2ZmY4ZGJjMGJkZjg3ZSIsImlwX2FkZHJlc3MiOiIxMjcuMC4wLjEifQ.dOl8eeCE0xgQW0AZat2oKANxzpuiZk4DfA0qHq_1Ymo', 'refresh_token ': 'eyJhbGciOiJIUzI1NiIsImtpZCI6ImtpZCIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NzE2OTI0NjUsImp0aSI6IjY1Mzc3ZTYyLTljODYtNDg5ZC05OGU0LWI5OThmZTQ3MWE0NSIsInRva2VuX3R5cGUiOiJyZWZyZXNoIiwidXNlcl9pZCI6NTQsImlhdCI6MTc3MTY4ODg2NSwidXNlcl9yb2xlIjoicm9vdCIsImRldmljZV9pZCI6IjI2Y2QyN2E1YzBkYzRlNDZhN2E0NDkwMmIzNTVjNGE3IiwiaXBfYWRkcmVzcyI6IjEyNy4wLjAuMSJ9.a6YPth_L_bPHRN18Aa09np19qxwrxP1YwZYlVK_H254', 'refresh_token': 'eyJhbGciOiJIUzI1NiIsImtpZCI6ImtpZCIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NzI4MTc3MTgsImp0aSI6IjE4M2MzNGRkLThiNjAtNGYyNi05ODM0LWI2YzkyZTZmNWY4NSIsInRva2VuX3R5cGUiOiJyZWZyZXNoIiwidXNlcl9pZCI6MSwiaWF0IjoxNzcyODE0MTE4LCJ1c2VyX3JvbGUiOiJyb290IiwiZGV2aWNlX2lkIjoiOTk4MzJjMmI1ZjVkNDM5ZGI1NmZmOGRiYzBiZGY4N2UiLCJpcF9hZGRyZXNzIjoiMTI3LjAuMC4xIn0.kNCcZFlTLbYlS17FCVjIJ5DKGVwiVHv2QzZJdTyrn4o'}
+DEBUG: 2026-03-06 16:22:04 - Open transaction ...
+DEBUG: 2026-03-06 16:22:04 - Verefy access token
+DEBUG: 2026-03-06 16:22:04 - Verification of access token registration
+DEBUG: 2026-03-06 16:22:04 - Redis session started
+DEBUG: 2026-03-06 16:22:04 - Value retrieved from Redis: 1:2a83ef49-a7d8-463a-8ee4-ea1dd610ebdf:99832c2b5f5d439db56ff8dbc0bdf87e
+DEBUG: 2026-03-06 16:22:04 - Redis session ended
+DEBUG: 2026-03-06 16:22:04 - serialize token payload ...
+DEBUG: 2026-03-06 16:22:04 - Payload : user_id=1 user_role='root' iat=datetime.datetime(2026, 3, 6, 16, 21, 58, 286392) jti='2a83ef49-a7d8-463a-8ee4-ea1dd610ebdf' exp=datetime.datetime(2026, 3, 6, 16, 36, 58, 286323) token_type='access' device_id='99832c2b5f5d439db56ff8dbc0bdf87e' ip_address='127.0.0.1' is_rework=False
+DEBUG: 2026-03-06 16:22:05 - Access token is valid
+DEBUG: 2026-03-06 16:22:05 - Commit
+DEBUG: 2026-03-06 16:22:05 - Session close
+DEBUG: 2026-03-06 16:22:05 - Check user role ...
+DEBUG: 2026-03-06 16:22:58 - Open transaction ...
+DEBUG: 2026-03-06 16:22:58 - Verefy access token
+DEBUG: 2026-03-06 16:22:58 - Verification of access token registration
+DEBUG: 2026-03-06 16:22:58 - Redis session started
+DEBUG: 2026-03-06 16:22:58 - Value retrieved from Redis: 1:f11831a0-64e7-428c-812e-c8ce2dd4c073:3b764055afbdc00fffd41bec66c0b5e4
+DEBUG: 2026-03-06 16:22:58 - Redis session ended
+DEBUG: 2026-03-06 16:22:58 - serialize token payload ...
+DEBUG: 2026-03-06 16:22:58 - Payload : user_id=1 user_role='user' iat=datetime.datetime(2026, 3, 6, 16, 20, 27, 950728) jti='f11831a0-64e7-428c-812e-c8ce2dd4c073' exp=datetime.datetime(2026, 3, 6, 16, 35, 27, 950642) token_type='access' device_id='3b764055afbdc00fffd41bec66c0b5e4' ip_address='172.18.0.6' is_rework=False
+DEBUG: 2026-03-06 16:22:58 - Access token is valid
+DEBUG: 2026-03-06 16:22:58 - Commit
+DEBUG: 2026-03-06 16:22:58 - Session close
+DEBUG: 2026-03-06 16:22:58 - Open transaction ...
+DEBUG: 2026-03-06 16:22:58 - Get me ... id : 1
+DEBUG: 2026-03-06 16:22:58 - Serialize ...
+DEBUG: 2026-03-06 16:22:58 - Commit
+DEBUG: 2026-03-06 16:22:58 - Session close
+DEBUG: 2026-03-06 16:22:59 - Open transaction ...
+WARNING: 2026-03-06 16:22:59 - News not found
+WARNING: 2026-03-06 16:22:59 - Discard change rollback...
+DEBUG: 2026-03-06 16:22:59 - Session close
+DEBUG: 2026-03-06 16:22:59 - Open transaction ...
+WARNING: 2026-03-06 16:22:59 - News not found
+WARNING: 2026-03-06 16:22:59 - Discard change rollback...
+DEBUG: 2026-03-06 16:22:59 - Session close
+DEBUG: 2026-03-06 16:24:38 - Open transaction ...
+DEBUG: 2026-03-06 16:24:38 - Verefy access token
+DEBUG: 2026-03-06 16:24:38 - Verification of access token registration
+DEBUG: 2026-03-06 16:24:38 - Redis session started
+DEBUG: 2026-03-06 16:24:38 - Value retrieved from Redis: 1:f11831a0-64e7-428c-812e-c8ce2dd4c073:3b764055afbdc00fffd41bec66c0b5e4
+DEBUG: 2026-03-06 16:24:38 - Redis session ended
+DEBUG: 2026-03-06 16:24:38 - serialize token payload ...
+DEBUG: 2026-03-06 16:24:38 - Payload : user_id=1 user_role='user' iat=datetime.datetime(2026, 3, 6, 16, 20, 27, 950728) jti='f11831a0-64e7-428c-812e-c8ce2dd4c073' exp=datetime.datetime(2026, 3, 6, 16, 35, 27, 950642) token_type='access' device_id='3b764055afbdc00fffd41bec66c0b5e4' ip_address='172.18.0.6' is_rework=False
+DEBUG: 2026-03-06 16:24:38 - Access token is valid
+DEBUG: 2026-03-06 16:24:38 - Commit
+DEBUG: 2026-03-06 16:24:38 - Session close
+DEBUG: 2026-03-06 16:24:38 - Open transaction ...
+DEBUG: 2026-03-06 16:24:38 - Publish news...
+DEBUG: 2026-03-06 16:24:38 - Данные успешно загружены как 'photo_2026-03-05_08-47-35_e5fa4144-3c85-47b0-9819-5e80858aa2d6.jpg' в бакет 'news-images'
+DEBUG: 2026-03-06 16:24:38 - ✅ Successfully uploaded 1 images
+DEBUG: 2026-03-06 16:24:38 - Open transaction ...
+DEBUG: 2026-03-06 16:24:38 - Commit
+DEBUG: 2026-03-06 16:24:38 - Session close
+DEBUG: 2026-03-06 16:24:39 - Load images ...
+DEBUG: 2026-03-06 16:24:39 - Файл 'photo_2026-03-05_08-47-35_e5fa4144-3c85-47b0-9819-5e80858aa2d6.jpg' успешно прочитан (105612 байт)
+DEBUG: 2026-03-06 16:24:39 - Image loaded
+DEBUG: 2026-03-06 16:24:39 - Commit
+DEBUG: 2026-03-06 16:24:39 - Session close
+DEBUG: 2026-03-06 16:24:47 - Open transaction ...
+DEBUG: 2026-03-06 16:24:47 - Load images ...
+DEBUG: 2026-03-06 16:24:47 - Файл 'photo_2026-03-05_08-47-35_e5fa4144-3c85-47b0-9819-5e80858aa2d6.jpg' успешно прочитан (105612 байт)
+DEBUG: 2026-03-06 16:24:47 - Image loaded
+DEBUG: 2026-03-06 16:24:47 - Commit
+DEBUG: 2026-03-06 16:24:47 - Session close
+DEBUG: 2026-03-06 16:24:47 - Open transaction ...
+DEBUG: 2026-03-06 16:24:47 - Load images ...
+DEBUG: 2026-03-06 16:24:47 - Файл 'photo_2026-03-05_08-47-35_e5fa4144-3c85-47b0-9819-5e80858aa2d6.jpg' успешно прочитан (105612 байт)
+DEBUG: 2026-03-06 16:24:47 - Image loaded
+DEBUG: 2026-03-06 16:24:47 - Commit
+DEBUG: 2026-03-06 16:24:48 - Session close
+DEBUG: 2026-03-06 16:24:51 - Open transaction ...
+DEBUG: 2026-03-06 16:24:51 - Verefy access token
+DEBUG: 2026-03-06 16:24:51 - Verification of access token registration
+DEBUG: 2026-03-06 16:24:51 - Redis session started
+DEBUG: 2026-03-06 16:24:51 - Value retrieved from Redis: 1:f11831a0-64e7-428c-812e-c8ce2dd4c073:3b764055afbdc00fffd41bec66c0b5e4
+DEBUG: 2026-03-06 16:24:51 - Redis session ended
+DEBUG: 2026-03-06 16:24:51 - serialize token payload ...
+DEBUG: 2026-03-06 16:24:51 - Payload : user_id=1 user_role='user' iat=datetime.datetime(2026, 3, 6, 16, 20, 27, 950728) jti='f11831a0-64e7-428c-812e-c8ce2dd4c073' exp=datetime.datetime(2026, 3, 6, 16, 35, 27, 950642) token_type='access' device_id='3b764055afbdc00fffd41bec66c0b5e4' ip_address='172.18.0.6' is_rework=False
+DEBUG: 2026-03-06 16:24:51 - Access token is valid
+DEBUG: 2026-03-06 16:24:51 - Commit
+DEBUG: 2026-03-06 16:24:51 - Session close
+DEBUG: 2026-03-06 16:24:51 - Open transaction ...
+DEBUG: 2026-03-06 16:24:51 - Get me ... id : 1
+DEBUG: 2026-03-06 16:24:51 - Serialize ...
+DEBUG: 2026-03-06 16:24:51 - Commit
+DEBUG: 2026-03-06 16:24:51 - Session close
+DEBUG: 2026-03-06 16:24:51 - Open transaction ...
+DEBUG: 2026-03-06 16:24:51 - Load images ...
+DEBUG: 2026-03-06 16:24:51 - Файл 'photo_2026-03-05_08-47-35_e5fa4144-3c85-47b0-9819-5e80858aa2d6.jpg' успешно прочитан (105612 байт)
+DEBUG: 2026-03-06 16:24:52 - Image loaded
+DEBUG: 2026-03-06 16:24:52 - Commit
+DEBUG: 2026-03-06 16:24:52 - Session close
+DEBUG: 2026-03-06 16:24:52 - Open transaction ...
+DEBUG: 2026-03-06 16:24:52 - Load images ...
+DEBUG: 2026-03-06 16:24:52 - Файл 'photo_2026-03-05_08-47-35_e5fa4144-3c85-47b0-9819-5e80858aa2d6.jpg' успешно прочитан (105612 байт)
+DEBUG: 2026-03-06 16:24:52 - Image loaded
+DEBUG: 2026-03-06 16:24:52 - Commit
+DEBUG: 2026-03-06 16:24:52 - Session close
+DEBUG: 2026-03-06 16:24:54 - Open transaction ...
+DEBUG: 2026-03-06 16:24:54 - Verefy access token
+DEBUG: 2026-03-06 16:24:54 - Verification of access token registration
+DEBUG: 2026-03-06 16:24:54 - Redis session started
+DEBUG: 2026-03-06 16:24:54 - Value retrieved from Redis: 1:f11831a0-64e7-428c-812e-c8ce2dd4c073:3b764055afbdc00fffd41bec66c0b5e4
+DEBUG: 2026-03-06 16:24:54 - Redis session ended
+DEBUG: 2026-03-06 16:24:54 - serialize token payload ...
+DEBUG: 2026-03-06 16:24:54 - Payload : user_id=1 user_role='user' iat=datetime.datetime(2026, 3, 6, 16, 20, 27, 950728) jti='f11831a0-64e7-428c-812e-c8ce2dd4c073' exp=datetime.datetime(2026, 3, 6, 16, 35, 27, 950642) token_type='access' device_id='3b764055afbdc00fffd41bec66c0b5e4' ip_address='172.18.0.6' is_rework=False
+DEBUG: 2026-03-06 16:24:54 - Access token is valid
+DEBUG: 2026-03-06 16:24:54 - Commit
+DEBUG: 2026-03-06 16:24:54 - Session close
+DEBUG: 2026-03-06 16:24:54 - Open transaction ...
+DEBUG: 2026-03-06 16:24:54 - Get me ... id : 1
+DEBUG: 2026-03-06 16:24:54 - Serialize ...
+DEBUG: 2026-03-06 16:24:54 - Commit
+DEBUG: 2026-03-06 16:24:54 - Session close
+DEBUG: 2026-03-06 16:24:54 - Open transaction ...
+DEBUG: 2026-03-06 16:24:54 - Load images ...
+DEBUG: 2026-03-06 16:24:54 - Файл 'photo_2026-03-05_08-47-35_e5fa4144-3c85-47b0-9819-5e80858aa2d6.jpg' успешно прочитан (105612 байт)
+DEBUG: 2026-03-06 16:24:54 - Image loaded
+DEBUG: 2026-03-06 16:24:54 - Commit
+DEBUG: 2026-03-06 16:24:54 - Session close
+DEBUG: 2026-03-06 16:24:54 - Open transaction ...
+DEBUG: 2026-03-06 16:24:54 - Load images ...
+DEBUG: 2026-03-06 16:24:54 - Файл 'photo_2026-03-05_08-47-35_e5fa4144-3c85-47b0-9819-5e80858aa2d6.jpg' успешно прочитан (105612 байт)
+DEBUG: 2026-03-06 16:24:54 - Image loaded
+DEBUG: 2026-03-06 16:24:54 - Commit
+DEBUG: 2026-03-06 16:24:54 - Session close
+DEBUG: 2026-03-06 16:26:07 - Open transaction ...
+DEBUG: 2026-03-06 16:26:07 - Load images ...
+DEBUG: 2026-03-06 16:26:07 - Файл 'photo_2026-03-05_08-47-35_e5fa4144-3c85-47b0-9819-5e80858aa2d6.jpg' успешно прочитан (105612 байт)
+DEBUG: 2026-03-06 16:26:07 - Image loaded
+DEBUG: 2026-03-06 16:26:07 - Commit
+DEBUG: 2026-03-06 16:26:07 - Session close
+DEBUG: 2026-03-06 16:26:07 - Open transaction ...
+DEBUG: 2026-03-06 16:26:07 - Load images ...
+DEBUG: 2026-03-06 16:26:07 - Файл 'photo_2026-03-05_08-47-35_e5fa4144-3c85-47b0-9819-5e80858aa2d6.jpg' успешно прочитан (105612 байт)
+DEBUG: 2026-03-06 16:26:07 - Image loaded
+DEBUG: 2026-03-06 16:26:07 - Commit
+DEBUG: 2026-03-06 16:26:07 - Session close
+DEBUG: 2026-03-06 16:29:07 - Open transaction ...
+DEBUG: 2026-03-06 16:29:07 - Load images ...
+DEBUG: 2026-03-06 16:29:07 - Файл 'photo_2026-03-05_08-47-35_e5fa4144-3c85-47b0-9819-5e80858aa2d6.jpg' успешно прочитан (105612 байт)
+DEBUG: 2026-03-06 16:29:07 - Image loaded
+DEBUG: 2026-03-06 16:29:07 - Commit
+DEBUG: 2026-03-06 16:29:07 - Session close
+DEBUG: 2026-03-06 16:29:07 - Open transaction ...
+DEBUG: 2026-03-06 16:29:07 - Load images ...
+DEBUG: 2026-03-06 16:29:07 - Файл 'photo_2026-03-05_08-47-35_e5fa4144-3c85-47b0-9819-5e80858aa2d6.jpg' успешно прочитан (105612 байт)
+DEBUG: 2026-03-06 16:29:07 - Image loaded
+DEBUG: 2026-03-06 16:29:07 - Commit
+DEBUG: 2026-03-06 16:29:07 - Session close
+DEBUG: 2026-03-06 16:32:42 - Open transaction ...
+DEBUG: 2026-03-06 16:32:42 - Load images ...
+DEBUG: 2026-03-06 16:32:42 - Файл 'photo_2026-03-05_08-47-35_e5fa4144-3c85-47b0-9819-5e80858aa2d6.jpg' успешно прочитан (105612 байт)
+DEBUG: 2026-03-06 16:32:42 - Image loaded
+DEBUG: 2026-03-06 16:32:42 - Commit
+DEBUG: 2026-03-06 16:32:42 - Session close
+DEBUG: 2026-03-06 16:32:42 - Open transaction ...
+DEBUG: 2026-03-06 16:32:42 - Load images ...
+DEBUG: 2026-03-06 16:32:42 - Файл 'photo_2026-03-05_08-47-35_e5fa4144-3c85-47b0-9819-5e80858aa2d6.jpg' успешно прочитан (105612 байт)
+DEBUG: 2026-03-06 16:32:42 - Image loaded
+DEBUG: 2026-03-06 16:32:42 - Commit
+DEBUG: 2026-03-06 16:32:42 - Session close
+DEBUG: 2026-03-06 16:40:35 - Open transaction ...
+DEBUG: 2026-03-06 16:40:35 - Verefy access token
+WARNING: 2026-03-06 16:40:35 - Токен просрочен!
+WARNING: 2026-03-06 16:40:35 - Error invalid token
+WARNING: 2026-03-06 16:40:35 - Discard change rollback...
+DEBUG: 2026-03-06 16:40:35 - Session close
+DEBUG: 2026-03-06 16:40:35 - Open transaction ...
+DEBUG: 2026-03-06 16:40:35 - Verefy refresh token
+DEBUG: 2026-03-06 16:40:35 - Verification of refresh token registration
+DEBUG: 2026-03-06 16:40:35 - Revoking the access token
+DEBUG: 2026-03-06 16:40:35 - Redis session started
+DEBUG: 2026-03-06 16:40:35 - Found 0 keys matching pattern: 1:*:3b764055afbdc00fffd41bec66c0b5e4
+DEBUG: 2026-03-06 16:40:35 - Redis session ended
+DEBUG: 2026-03-06 16:40:35 - Revork 0 tokens
+DEBUG: 2026-03-06 16:40:35 - Create access token ...
+DEBUG: 2026-03-06 16:40:35 - Accouting access token
+DEBUG: 2026-03-06 16:40:35 - Redis session started
+DEBUG: 2026-03-06 16:40:35 - saved to Redis: 1:dbcadc91-fcb6-4988-9576-6c7d2fc80c46:3b764055afbdc00fffd41bec66c0b5e4, TTL: 0:15:00s
+DEBUG: 2026-03-06 16:40:35 - Redis session ended
+DEBUG: 2026-03-06 16:40:35 - Commit
+DEBUG: 2026-03-06 16:40:35 - Session close
+DEBUG: 2026-03-06 16:40:36 - Open transaction ...
+DEBUG: 2026-03-06 16:40:36 - Verefy access token
+DEBUG: 2026-03-06 16:40:36 - Verification of access token registration
+DEBUG: 2026-03-06 16:40:36 - Redis session started
+DEBUG: 2026-03-06 16:40:36 - Value retrieved from Redis: 1:dbcadc91-fcb6-4988-9576-6c7d2fc80c46:3b764055afbdc00fffd41bec66c0b5e4
+DEBUG: 2026-03-06 16:40:36 - Redis session ended
+DEBUG: 2026-03-06 16:40:36 - serialize token payload ...
+DEBUG: 2026-03-06 16:40:36 - Payload : user_id=1 user_role='user' iat=datetime.datetime(2026, 3, 6, 16, 40, 35, 885011) jti='dbcadc91-fcb6-4988-9576-6c7d2fc80c46' exp=datetime.datetime(2026, 3, 6, 16, 55, 35, 884941) token_type='access' device_id='3b764055afbdc00fffd41bec66c0b5e4' ip_address='172.18.0.6' is_rework=False
+DEBUG: 2026-03-06 16:40:36 - Access token is valid
+DEBUG: 2026-03-06 16:40:36 - Commit
+DEBUG: 2026-03-06 16:40:36 - Session close
+DEBUG: 2026-03-06 16:40:36 - Open transaction ...
+DEBUG: 2026-03-06 16:40:36 - Open transaction ...
+DEBUG: 2026-03-06 16:40:36 - Get me ... id : 1
+DEBUG: 2026-03-06 16:40:36 - Serialize ...
+DEBUG: 2026-03-06 16:40:36 - Commit
+DEBUG: 2026-03-06 16:40:36 - Session close
+DEBUG: 2026-03-06 16:40:36 - Load images ...
+DEBUG: 2026-03-06 16:40:36 - Файл 'photo_2026-03-05_08-47-35_e5fa4144-3c85-47b0-9819-5e80858aa2d6.jpg' успешно прочитан (105612 байт)
+DEBUG: 2026-03-06 16:40:36 - Image loaded
+DEBUG: 2026-03-06 16:40:36 - Commit
+DEBUG: 2026-03-06 16:40:36 - Session close
+DEBUG: 2026-03-06 16:40:36 - Open transaction ...
+DEBUG: 2026-03-06 16:40:36 - Load images ...
+DEBUG: 2026-03-06 16:40:36 - Файл 'photo_2026-03-05_08-47-35_e5fa4144-3c85-47b0-9819-5e80858aa2d6.jpg' успешно прочитан (105612 байт)
+DEBUG: 2026-03-06 16:40:36 - Image loaded
+DEBUG: 2026-03-06 16:40:36 - Commit
+DEBUG: 2026-03-06 16:40:36 - Session close
+DEBUG: 2026-03-06 16:40:36 - Open transaction ...
+DEBUG: 2026-03-06 16:40:36 - Load images ...
+DEBUG: 2026-03-06 16:40:36 - Файл 'photo_2026-03-05_08-47-35_e5fa4144-3c85-47b0-9819-5e80858aa2d6.jpg' успешно прочитан (105612 байт)
+DEBUG: 2026-03-06 16:40:36 - Image loaded
+DEBUG: 2026-03-06 16:40:37 - Commit
+DEBUG: 2026-03-06 16:40:37 - Session close
+DEBUG: 2026-03-06 17:00:53 - Open transaction ...
+DEBUG: 2026-03-06 17:00:53 - Verefy access token
+WARNING: 2026-03-06 17:00:53 - Токен просрочен!
+WARNING: 2026-03-06 17:00:53 - Error invalid token
+WARNING: 2026-03-06 17:00:53 - Discard change rollback...
+DEBUG: 2026-03-06 17:00:53 - Session close
+DEBUG: 2026-03-06 17:00:54 - Open transaction ...
+DEBUG: 2026-03-06 17:00:54 - Verefy refresh token
+DEBUG: 2026-03-06 17:00:54 - Verification of refresh token registration
+DEBUG: 2026-03-06 17:00:54 - Revoking the access token
+DEBUG: 2026-03-06 17:00:54 - Redis session started
+DEBUG: 2026-03-06 17:00:54 - Found 0 keys matching pattern: 1:*:3b764055afbdc00fffd41bec66c0b5e4
+DEBUG: 2026-03-06 17:00:54 - Redis session ended
+DEBUG: 2026-03-06 17:00:54 - Revork 0 tokens
+DEBUG: 2026-03-06 17:00:54 - Create access token ...
+DEBUG: 2026-03-06 17:00:54 - Accouting access token
+DEBUG: 2026-03-06 17:00:54 - Redis session started
+DEBUG: 2026-03-06 17:00:54 - saved to Redis: 1:f17a04cd-ffbd-4b30-92ab-d241fd101d87:3b764055afbdc00fffd41bec66c0b5e4, TTL: 0:15:00s
+DEBUG: 2026-03-06 17:00:54 - Redis session ended
+DEBUG: 2026-03-06 17:00:54 - Commit
+DEBUG: 2026-03-06 17:00:54 - Session close
+DEBUG: 2026-03-06 17:00:54 - Open transaction ...
+DEBUG: 2026-03-06 17:00:54 - Verefy access token
+DEBUG: 2026-03-06 17:00:54 - Verification of access token registration
+DEBUG: 2026-03-06 17:00:54 - Redis session started
+DEBUG: 2026-03-06 17:00:54 - Value retrieved from Redis: 1:f17a04cd-ffbd-4b30-92ab-d241fd101d87:3b764055afbdc00fffd41bec66c0b5e4
+DEBUG: 2026-03-06 17:00:54 - Redis session ended
+DEBUG: 2026-03-06 17:00:54 - serialize token payload ...
+DEBUG: 2026-03-06 17:00:54 - Payload : user_id=1 user_role='user' iat=datetime.datetime(2026, 3, 6, 17, 0, 54, 34691) jti='f17a04cd-ffbd-4b30-92ab-d241fd101d87' exp=datetime.datetime(2026, 3, 6, 17, 15, 54, 34608) token_type='access' device_id='3b764055afbdc00fffd41bec66c0b5e4' ip_address='172.18.0.6' is_rework=False
+DEBUG: 2026-03-06 17:00:54 - Access token is valid
+DEBUG: 2026-03-06 17:00:54 - Commit
+DEBUG: 2026-03-06 17:00:54 - Session close
+DEBUG: 2026-03-06 17:00:54 - Open transaction ...
+DEBUG: 2026-03-06 17:00:54 - Get me ... id : 1
+DEBUG: 2026-03-06 17:00:54 - Serialize ...
+DEBUG: 2026-03-06 17:00:54 - Commit
+DEBUG: 2026-03-06 17:00:54 - Session close
+DEBUG: 2026-03-06 17:01:04 - Open transaction ...
+DEBUG: 2026-03-06 17:01:04 - Load images ...
+DEBUG: 2026-03-06 17:01:04 - Файл 'photo_2026-03-05_08-47-35_e5fa4144-3c85-47b0-9819-5e80858aa2d6.jpg' успешно прочитан (105612 байт)
+DEBUG: 2026-03-06 17:01:04 - Image loaded
+DEBUG: 2026-03-06 17:01:04 - Commit
+DEBUG: 2026-03-06 17:01:04 - Session close
+DEBUG: 2026-03-06 17:01:04 - Open transaction ...
+DEBUG: 2026-03-06 17:01:04 - Load images ...
+DEBUG: 2026-03-06 17:01:05 - Файл 'photo_2026-03-05_08-47-35_e5fa4144-3c85-47b0-9819-5e80858aa2d6.jpg' успешно прочитан (105612 байт)
+DEBUG: 2026-03-06 17:01:05 - Image loaded
+DEBUG: 2026-03-06 17:01:05 - Commit
+DEBUG: 2026-03-06 17:01:05 - Session close
+DEBUG: 2026-03-06 17:01:28 - Open transaction ...
+DEBUG: 2026-03-06 17:01:28 - Load images ...
+DEBUG: 2026-03-06 17:01:28 - Файл 'photo_2026-03-05_08-47-35_e5fa4144-3c85-47b0-9819-5e80858aa2d6.jpg' успешно прочитан (105612 байт)
+DEBUG: 2026-03-06 17:01:28 - Image loaded
+DEBUG: 2026-03-06 17:01:28 - Commit
+DEBUG: 2026-03-06 17:01:28 - Session close
+DEBUG: 2026-03-06 17:01:28 - Open transaction ...
+DEBUG: 2026-03-06 17:01:28 - Load images ...
+DEBUG: 2026-03-06 17:01:28 - Файл 'photo_2026-03-05_08-47-35_e5fa4144-3c85-47b0-9819-5e80858aa2d6.jpg' успешно прочитан (105612 байт)
+DEBUG: 2026-03-06 17:01:28 - Image loaded
+DEBUG: 2026-03-06 17:01:28 - Commit
+DEBUG: 2026-03-06 17:01:28 - Session close
+DEBUG: 2026-03-06 17:01:33 - Open transaction ...
+DEBUG: 2026-03-06 17:01:33 - Load images ...
+DEBUG: 2026-03-06 17:01:33 - Файл 'photo_2026-03-05_08-47-35_e5fa4144-3c85-47b0-9819-5e80858aa2d6.jpg' успешно прочитан (105612 байт)
+DEBUG: 2026-03-06 17:01:33 - Image loaded
+DEBUG: 2026-03-06 17:01:33 - Commit
+DEBUG: 2026-03-06 17:01:33 - Session close
+DEBUG: 2026-03-06 17:01:33 - Open transaction ...
+DEBUG: 2026-03-06 17:01:33 - Load images ...
+DEBUG: 2026-03-06 17:01:33 - Файл 'photo_2026-03-05_08-47-35_e5fa4144-3c85-47b0-9819-5e80858aa2d6.jpg' успешно прочитан (105612 байт)
+DEBUG: 2026-03-06 17:01:33 - Image loaded
+DEBUG: 2026-03-06 17:01:33 - Commit
+DEBUG: 2026-03-06 17:01:34 - Session close
+DEBUG: 2026-03-06 17:06:52 - Open transaction ...
+DEBUG: 2026-03-06 17:06:52 - Verefy access token
+DEBUG: 2026-03-06 17:06:52 - Verification of access token registration
+DEBUG: 2026-03-06 17:06:52 - Redis session started
+DEBUG: 2026-03-06 17:06:52 - Value retrieved from Redis: 1:f17a04cd-ffbd-4b30-92ab-d241fd101d87:3b764055afbdc00fffd41bec66c0b5e4
+DEBUG: 2026-03-06 17:06:52 - Redis session ended
+DEBUG: 2026-03-06 17:06:52 - serialize token payload ...
+DEBUG: 2026-03-06 17:06:52 - Payload : user_id=1 user_role='user' iat=datetime.datetime(2026, 3, 6, 17, 0, 54, 34691) jti='f17a04cd-ffbd-4b30-92ab-d241fd101d87' exp=datetime.datetime(2026, 3, 6, 17, 15, 54, 34608) token_type='access' device_id='3b764055afbdc00fffd41bec66c0b5e4' ip_address='172.18.0.6' is_rework=False
+DEBUG: 2026-03-06 17:06:52 - Access token is valid
+DEBUG: 2026-03-06 17:06:52 - Commit
+DEBUG: 2026-03-06 17:06:52 - Session close
+DEBUG: 2026-03-06 17:06:52 - Open transaction ...
+DEBUG: 2026-03-06 17:06:52 - Get me ... id : 1
+DEBUG: 2026-03-06 17:06:52 - Serialize ...
+DEBUG: 2026-03-06 17:06:52 - Commit
+DEBUG: 2026-03-06 17:06:52 - Session close
+DEBUG: 2026-03-06 17:10:27 - Open transaction ...
+DEBUG: 2026-03-06 17:10:27 - Verefy access token
+DEBUG: 2026-03-06 17:10:27 - Verification of access token registration
+DEBUG: 2026-03-06 17:10:27 - Redis session started
+DEBUG: 2026-03-06 17:10:27 - Value retrieved from Redis: 1:f17a04cd-ffbd-4b30-92ab-d241fd101d87:3b764055afbdc00fffd41bec66c0b5e4
+DEBUG: 2026-03-06 17:10:27 - Redis session ended
+DEBUG: 2026-03-06 17:10:27 - serialize token payload ...
+DEBUG: 2026-03-06 17:10:27 - Payload : user_id=1 user_role='user' iat=datetime.datetime(2026, 3, 6, 17, 0, 54, 34691) jti='f17a04cd-ffbd-4b30-92ab-d241fd101d87' exp=datetime.datetime(2026, 3, 6, 17, 15, 54, 34608) token_type='access' device_id='3b764055afbdc00fffd41bec66c0b5e4' ip_address='172.18.0.6' is_rework=False
+DEBUG: 2026-03-06 17:10:27 - Access token is valid
+DEBUG: 2026-03-06 17:10:27 - Commit
+DEBUG: 2026-03-06 17:10:27 - Session close
+DEBUG: 2026-03-06 17:10:27 - Open transaction ...
+DEBUG: 2026-03-06 17:10:27 - Get me ... id : 1
+DEBUG: 2026-03-06 17:10:27 - Serialize ...
+DEBUG: 2026-03-06 17:10:27 - Commit
+DEBUG: 2026-03-06 17:10:27 - Session close
+DEBUG: 2026-03-06 17:11:17 - Open transaction ...
+DEBUG: 2026-03-06 17:11:17 - Verefy access token
+DEBUG: 2026-03-06 17:11:17 - Verification of access token registration
+DEBUG: 2026-03-06 17:11:17 - Redis session started
+DEBUG: 2026-03-06 17:11:17 - Value retrieved from Redis: 1:f17a04cd-ffbd-4b30-92ab-d241fd101d87:3b764055afbdc00fffd41bec66c0b5e4
+DEBUG: 2026-03-06 17:11:17 - Redis session ended
+DEBUG: 2026-03-06 17:11:17 - serialize token payload ...
+DEBUG: 2026-03-06 17:11:17 - Payload : user_id=1 user_role='user' iat=datetime.datetime(2026, 3, 6, 17, 0, 54, 34691) jti='f17a04cd-ffbd-4b30-92ab-d241fd101d87' exp=datetime.datetime(2026, 3, 6, 17, 15, 54, 34608) token_type='access' device_id='3b764055afbdc00fffd41bec66c0b5e4' ip_address='172.18.0.6' is_rework=False
+DEBUG: 2026-03-06 17:11:17 - Access token is valid
+DEBUG: 2026-03-06 17:11:17 - Commit
+DEBUG: 2026-03-06 17:11:17 - Session close
+DEBUG: 2026-03-06 17:11:17 - Open transaction ...
+DEBUG: 2026-03-06 17:11:17 - Get me ... id : 1
+DEBUG: 2026-03-06 17:11:17 - Serialize ...
+DEBUG: 2026-03-06 17:11:17 - Commit
+DEBUG: 2026-03-06 17:11:17 - Session close
+DEBUG: 2026-03-06 17:11:28 - Open transaction ...
+DEBUG: 2026-03-06 17:11:28 - Login attemp dima@gmail.com - D2i0m0a5
+DEBUG: 2026-03-06 17:11:28 - Check login attemmp ...
+DEBUG: 2026-03-06 17:11:28 - Check user ...
+DEBUG: 2026-03-06 17:11:28 - Check tokens
+DEBUG: 2026-03-06 17:11:28 - Revoking the refresh token
+DEBUG: 2026-03-06 17:11:28 - Revoking the access token
+DEBUG: 2026-03-06 17:11:28 - Redis session started
+DEBUG: 2026-03-06 17:11:28 - Found 1 keys matching pattern: 1:*:3b764055afbdc00fffd41bec66c0b5e4
+DEBUG: 2026-03-06 17:11:28 - Redis session ended
+DEBUG: 2026-03-06 17:11:28 - Redis session started
+DEBUG: 2026-03-06 17:11:28 - Deleted 1 keys matching pattern: 1:*:3b764055afbdc00fffd41bec66c0b5e4
+DEBUG: 2026-03-06 17:11:28 - Redis session ended
+DEBUG: 2026-03-06 17:11:28 - Revork 1 tokens
+DEBUG: 2026-03-06 17:11:28 - calculate expire ...
+DEBUG: 2026-03-06 17:11:28 - exoire 28800
+DEBUG: 2026-03-06 17:11:28 - Create token pair ...
+DEBUG: 2026-03-06 17:11:28 - Accouting refresh token
+DEBUG: 2026-03-06 17:11:28 - Accouting access token
+DEBUG: 2026-03-06 17:11:28 - Redis session started
+DEBUG: 2026-03-06 17:11:28 - saved to Redis: 1:e10e1c42-9f93-4b98-8e80-2456d2f5e86f:3b764055afbdc00fffd41bec66c0b5e4, TTL: 0:15:00s
+DEBUG: 2026-03-06 17:11:28 - Redis session ended
+DEBUG: 2026-03-06 17:11:28 - User login
+DEBUG: 2026-03-06 17:11:28 - Commit
+DEBUG: 2026-03-06 17:11:28 - Session close
+DEBUG: 2026-03-06 17:11:28 - Open transaction ...
+DEBUG: 2026-03-06 17:11:28 - Verefy access token
+DEBUG: 2026-03-06 17:11:28 - Verification of access token registration
+DEBUG: 2026-03-06 17:11:28 - Redis session started
+DEBUG: 2026-03-06 17:11:28 - Value retrieved from Redis: 1:e10e1c42-9f93-4b98-8e80-2456d2f5e86f:3b764055afbdc00fffd41bec66c0b5e4
+DEBUG: 2026-03-06 17:11:28 - Redis session ended
+DEBUG: 2026-03-06 17:11:28 - serialize token payload ...
+DEBUG: 2026-03-06 17:11:28 - Payload : user_id=1 user_role='root' iat=datetime.datetime(2026, 3, 6, 17, 11, 28, 235382) jti='e10e1c42-9f93-4b98-8e80-2456d2f5e86f' exp=datetime.datetime(2026, 3, 6, 17, 26, 28, 235293) token_type='access' device_id='3b764055afbdc00fffd41bec66c0b5e4' ip_address='172.18.0.6' is_rework=False
+DEBUG: 2026-03-06 17:11:28 - Access token is valid
+DEBUG: 2026-03-06 17:11:28 - Commit
+DEBUG: 2026-03-06 17:11:28 - Session close
+DEBUG: 2026-03-06 17:11:28 - Open transaction ...
+DEBUG: 2026-03-06 17:11:28 - Get me ... id : 1
+DEBUG: 2026-03-06 17:11:28 - Serialize ...
+DEBUG: 2026-03-06 17:11:28 - Commit
+DEBUG: 2026-03-06 17:11:28 - Session close
+DEBUG: 2026-03-06 17:11:28 - Open transaction ...
+DEBUG: 2026-03-06 17:11:28 - Load images ...
+DEBUG: 2026-03-06 17:11:28 - Файл 'photo_2026-03-05_08-47-35_e5fa4144-3c85-47b0-9819-5e80858aa2d6.jpg' успешно прочитан (105612 байт)
+DEBUG: 2026-03-06 17:11:28 - Image loaded
+DEBUG: 2026-03-06 17:11:28 - Commit
+DEBUG: 2026-03-06 17:11:28 - Session close
+DEBUG: 2026-03-06 17:11:28 - Open transaction ...
+DEBUG: 2026-03-06 17:11:28 - Load images ...
+DEBUG: 2026-03-06 17:11:28 - Файл 'photo_2026-03-05_08-47-35_e5fa4144-3c85-47b0-9819-5e80858aa2d6.jpg' успешно прочитан (105612 байт)
+DEBUG: 2026-03-06 17:11:28 - Image loaded
+DEBUG: 2026-03-06 17:11:28 - Commit
+DEBUG: 2026-03-06 17:11:28 - Session close
+DEBUG: 2026-03-06 17:12:43 - Open transaction ...
+DEBUG: 2026-03-06 17:12:43 - Load images ...
+DEBUG: 2026-03-06 17:12:43 - Файл 'photo_2026-03-05_08-47-35_e5fa4144-3c85-47b0-9819-5e80858aa2d6.jpg' успешно прочитан (105612 байт)
+DEBUG: 2026-03-06 17:12:43 - Image loaded
+DEBUG: 2026-03-06 17:12:43 - Commit
+DEBUG: 2026-03-06 17:12:43 - Session close
+DEBUG: 2026-03-06 17:13:53 - Open transaction ...
+DEBUG: 2026-03-06 17:13:53 - Get news 1
+DEBUG: 2026-03-06 17:13:53 - Get news ogj...
+DEBUG: 2026-03-06 17:13:53 - Load images ...
+DEBUG: 2026-03-06 17:13:53 - Файл 'photo_2026-03-05_08-47-35_e5fa4144-3c85-47b0-9819-5e80858aa2d6.jpg' успешно прочитан (105612 байт)
+DEBUG: 2026-03-06 17:13:53 - Image loaded
+DEBUG: 2026-03-06 17:13:53 - Commit
+DEBUG: 2026-03-06 17:13:53 - Session close
+DEBUG: 2026-03-06 17:13:53 - Open transaction ...
+DEBUG: 2026-03-06 17:13:53 - Get news 1
+DEBUG: 2026-03-06 17:13:53 - Get news ogj...
+DEBUG: 2026-03-06 17:13:53 - Load images ...
+DEBUG: 2026-03-06 17:13:53 - Файл 'photo_2026-03-05_08-47-35_e5fa4144-3c85-47b0-9819-5e80858aa2d6.jpg' успешно прочитан (105612 байт)
+DEBUG: 2026-03-06 17:13:53 - Image loaded
+DEBUG: 2026-03-06 17:13:53 - Commit
+DEBUG: 2026-03-06 17:13:53 - Session close
+DEBUG: 2026-03-06 17:13:57 - Open transaction ...
+DEBUG: 2026-03-06 17:13:57 - Load images ...
+DEBUG: 2026-03-06 17:13:57 - Файл 'photo_2026-03-05_08-47-35_e5fa4144-3c85-47b0-9819-5e80858aa2d6.jpg' успешно прочитан (105612 байт)
+DEBUG: 2026-03-06 17:13:57 - Image loaded
+DEBUG: 2026-03-06 17:13:57 - Commit
+DEBUG: 2026-03-06 17:13:57 - Session close
+DEBUG: 2026-03-06 17:13:57 - Open transaction ...
+DEBUG: 2026-03-06 17:13:57 - Load images ...
+DEBUG: 2026-03-06 17:13:57 - Файл 'photo_2026-03-05_08-47-35_e5fa4144-3c85-47b0-9819-5e80858aa2d6.jpg' успешно прочитан (105612 байт)
+DEBUG: 2026-03-06 17:13:58 - Image loaded
+DEBUG: 2026-03-06 17:13:58 - Commit
+DEBUG: 2026-03-06 17:13:58 - Session close
+DEBUG: 2026-03-06 17:14:07 - Open transaction ...
+DEBUG: 2026-03-06 17:14:07 - Load images ...
+DEBUG: 2026-03-06 17:14:07 - Файл 'photo_2026-03-05_08-47-35_e5fa4144-3c85-47b0-9819-5e80858aa2d6.jpg' успешно прочитан (105612 байт)
+DEBUG: 2026-03-06 17:14:07 - Image loaded
+DEBUG: 2026-03-06 17:14:07 - Commit
+DEBUG: 2026-03-06 17:14:07 - Session close
+DEBUG: 2026-03-06 17:14:07 - Open transaction ...
+DEBUG: 2026-03-06 17:14:07 - Load images ...
+DEBUG: 2026-03-06 17:14:07 - Файл 'photo_2026-03-05_08-47-35_e5fa4144-3c85-47b0-9819-5e80858aa2d6.jpg' успешно прочитан (105612 байт)
+DEBUG: 2026-03-06 17:14:07 - Image loaded
+DEBUG: 2026-03-06 17:14:07 - Commit
+DEBUG: 2026-03-06 17:14:07 - Session close
+DEBUG: 2026-03-06 17:14:47 - Open transaction ...
+DEBUG: 2026-03-06 17:14:47 - Load images ...
+DEBUG: 2026-03-06 17:14:47 - Файл 'photo_2026-03-05_08-47-35_e5fa4144-3c85-47b0-9819-5e80858aa2d6.jpg' успешно прочитан (105612 байт)
+DEBUG: 2026-03-06 17:14:47 - Image loaded
+DEBUG: 2026-03-06 17:14:47 - Commit
+DEBUG: 2026-03-06 17:14:47 - Session close
+DEBUG: 2026-03-06 17:14:47 - Open transaction ...
+DEBUG: 2026-03-06 17:14:47 - Load images ...
+DEBUG: 2026-03-06 17:14:47 - Файл 'photo_2026-03-05_08-47-35_e5fa4144-3c85-47b0-9819-5e80858aa2d6.jpg' успешно прочитан (105612 байт)
+DEBUG: 2026-03-06 17:14:47 - Image loaded
+DEBUG: 2026-03-06 17:14:47 - Commit
+DEBUG: 2026-03-06 17:14:47 - Session close
+DEBUG: 2026-03-06 17:14:49 - Open transaction ...
+DEBUG: 2026-03-06 17:14:49 - Load images ...
+DEBUG: 2026-03-06 17:14:49 - Файл 'photo_2026-03-05_08-47-35_e5fa4144-3c85-47b0-9819-5e80858aa2d6.jpg' успешно прочитан (105612 байт)
+DEBUG: 2026-03-06 17:14:49 - Image loaded
+DEBUG: 2026-03-06 17:14:49 - Commit
+DEBUG: 2026-03-06 17:14:49 - Session close
+DEBUG: 2026-03-06 17:14:49 - Open transaction ...
+DEBUG: 2026-03-06 17:14:49 - Load images ...
+DEBUG: 2026-03-06 17:14:49 - Файл 'photo_2026-03-05_08-47-35_e5fa4144-3c85-47b0-9819-5e80858aa2d6.jpg' успешно прочитан (105612 байт)
+DEBUG: 2026-03-06 17:14:49 - Image loaded
+DEBUG: 2026-03-06 17:14:49 - Commit
+DEBUG: 2026-03-06 17:14:49 - Session close
+DEBUG: 2026-03-06 17:14:52 - Open transaction ...
+DEBUG: 2026-03-06 17:14:52 - Verefy access token
+DEBUG: 2026-03-06 17:14:52 - Verification of access token registration
+DEBUG: 2026-03-06 17:14:52 - Redis session started
+DEBUG: 2026-03-06 17:14:52 - Value retrieved from Redis: 1:e10e1c42-9f93-4b98-8e80-2456d2f5e86f:3b764055afbdc00fffd41bec66c0b5e4
+DEBUG: 2026-03-06 17:14:52 - Redis session ended
+DEBUG: 2026-03-06 17:14:52 - serialize token payload ...
+DEBUG: 2026-03-06 17:14:52 - Payload : user_id=1 user_role='root' iat=datetime.datetime(2026, 3, 6, 17, 11, 28, 235382) jti='e10e1c42-9f93-4b98-8e80-2456d2f5e86f' exp=datetime.datetime(2026, 3, 6, 17, 26, 28, 235293) token_type='access' device_id='3b764055afbdc00fffd41bec66c0b5e4' ip_address='172.18.0.6' is_rework=False
+DEBUG: 2026-03-06 17:14:52 - Access token is valid
+DEBUG: 2026-03-06 17:14:52 - Commit
+DEBUG: 2026-03-06 17:14:53 - Session close
+DEBUG: 2026-03-06 17:14:53 - Open transaction ...
+DEBUG: 2026-03-06 17:14:53 - Get me ... id : 1
+DEBUG: 2026-03-06 17:14:53 - Serialize ...
+DEBUG: 2026-03-06 17:14:53 - Commit
+DEBUG: 2026-03-06 17:14:53 - Session close
+DEBUG: 2026-03-06 17:14:53 - Open transaction ...
+DEBUG: 2026-03-06 17:14:53 - Load images ...
+DEBUG: 2026-03-06 17:14:53 - Файл 'photo_2026-03-05_08-47-35_e5fa4144-3c85-47b0-9819-5e80858aa2d6.jpg' успешно прочитан (105612 байт)
+DEBUG: 2026-03-06 17:14:53 - Image loaded
+DEBUG: 2026-03-06 17:14:53 - Commit
+DEBUG: 2026-03-06 17:14:53 - Session close
+DEBUG: 2026-03-06 17:14:53 - Open transaction ...
+DEBUG: 2026-03-06 17:14:53 - Load images ...
+DEBUG: 2026-03-06 17:14:53 - Файл 'photo_2026-03-05_08-47-35_e5fa4144-3c85-47b0-9819-5e80858aa2d6.jpg' успешно прочитан (105612 байт)
+DEBUG: 2026-03-06 17:14:53 - Image loaded
+DEBUG: 2026-03-06 17:14:53 - Commit
+DEBUG: 2026-03-06 17:14:53 - Session close
+INFO: 2026-03-06 19:52:27 - [TokenCleanup] ✅ Фоновый процесс запущен (поток: TokenCleanup, ID: 125496425903808)
+INFO: 2026-03-06 19:52:27 - [TokenCleanup] Синхронный engine инициализирован
+INFO: 2026-03-06 19:52:27 - [TokenCleanup] 🚀 Поток очистки запущен (интервал: 60 мин, поток: TokenCleanup)
+INFO: 2026-03-06 19:52:27 - [TokenCleanup] 🧹 Начинаем очистку...
+DEBUG: 2026-03-06 19:52:27 - [TokenCleanup] Удалено 1 токенов (батч #1)
+INFO: 2026-03-06 19:52:27 - [TokenCleanup] ✅ Очистка завершена: удалено 1 токенов за 1 батчей за 0.23с
+DEBUG: 2026-03-06 19:52:27 - [TokenCleanup] Ожидание 60 мин...
+DEBUG: 2026-03-06 19:52:46 - Open transaction ...
+DEBUG: 2026-03-06 19:52:47 - Load images ...
+DEBUG: 2026-03-06 19:52:47 - Файл 'photo_2026-03-05_08-47-35_e5fa4144-3c85-47b0-9819-5e80858aa2d6.jpg' успешно прочитан (105612 байт)
+DEBUG: 2026-03-06 19:52:47 - Image loaded
+DEBUG: 2026-03-06 19:52:47 - Commit
+DEBUG: 2026-03-06 19:52:47 - Session close
+DEBUG: 2026-03-06 19:52:47 - Open transaction ...
+DEBUG: 2026-03-06 19:52:47 - Load images ...
+DEBUG: 2026-03-06 19:52:47 - Файл 'photo_2026-03-05_08-47-35_e5fa4144-3c85-47b0-9819-5e80858aa2d6.jpg' успешно прочитан (105612 байт)
+DEBUG: 2026-03-06 19:52:47 - Image loaded
+DEBUG: 2026-03-06 19:52:47 - Commit
+DEBUG: 2026-03-06 19:52:47 - Session close
+DEBUG: 2026-03-06 19:53:11 - Open transaction ...
+DEBUG: 2026-03-06 19:53:11 - Verefy access token
+WARNING: 2026-03-06 19:53:11 - Токен просрочен!
+WARNING: 2026-03-06 19:53:11 - Error invalid token
+WARNING: 2026-03-06 19:53:11 - Discard change rollback...
+DEBUG: 2026-03-06 19:53:11 - Session close
+DEBUG: 2026-03-06 19:53:11 - Open transaction ...
+DEBUG: 2026-03-06 19:53:11 - Verefy refresh token
+DEBUG: 2026-03-06 19:53:11 - Verification of refresh token registration
+DEBUG: 2026-03-06 19:53:11 - Revoking the access token
+DEBUG: 2026-03-06 19:53:11 - Redis session started
+DEBUG: 2026-03-06 19:53:11 - Found 0 keys matching pattern: 1:*:3b764055afbdc00fffd41bec66c0b5e4
+DEBUG: 2026-03-06 19:53:12 - Redis session ended
+DEBUG: 2026-03-06 19:53:12 - Revork 0 tokens
+DEBUG: 2026-03-06 19:53:12 - Create access token ...
+DEBUG: 2026-03-06 19:53:12 - Accouting access token
+DEBUG: 2026-03-06 19:53:12 - Redis session started
+DEBUG: 2026-03-06 19:53:12 - saved to Redis: 1:c35afd1c-3184-4f10-89a6-b8f0e4f24506:3b764055afbdc00fffd41bec66c0b5e4, TTL: 0:15:00s
+DEBUG: 2026-03-06 19:53:12 - Redis session ended
+DEBUG: 2026-03-06 19:53:12 - Commit
+DEBUG: 2026-03-06 19:53:12 - Session close
+DEBUG: 2026-03-06 19:53:12 - Open transaction ...
+DEBUG: 2026-03-06 19:53:12 - Verefy access token
+DEBUG: 2026-03-06 19:53:12 - Verification of access token registration
+DEBUG: 2026-03-06 19:53:12 - Redis session started
+DEBUG: 2026-03-06 19:53:12 - Value retrieved from Redis: 1:c35afd1c-3184-4f10-89a6-b8f0e4f24506:3b764055afbdc00fffd41bec66c0b5e4
+DEBUG: 2026-03-06 19:53:12 - Redis session ended
+DEBUG: 2026-03-06 19:53:12 - serialize token payload ...
+DEBUG: 2026-03-06 19:53:12 - Payload : user_id=1 user_role='root' iat=datetime.datetime(2026, 3, 6, 19, 53, 12, 25227) jti='c35afd1c-3184-4f10-89a6-b8f0e4f24506' exp=datetime.datetime(2026, 3, 6, 20, 8, 12, 25148) token_type='access' device_id='3b764055afbdc00fffd41bec66c0b5e4' ip_address='172.18.0.6' is_rework=False
+DEBUG: 2026-03-06 19:53:12 - Access token is valid
+DEBUG: 2026-03-06 19:53:12 - Commit
+DEBUG: 2026-03-06 19:53:12 - Session close
+DEBUG: 2026-03-06 19:53:12 - Open transaction ...
+DEBUG: 2026-03-06 19:53:13 - Get me ... id : 1
+DEBUG: 2026-03-06 19:53:13 - Serialize ...
+DEBUG: 2026-03-06 19:53:13 - Commit
+DEBUG: 2026-03-06 19:53:13 - Session close
+DEBUG: 2026-03-06 19:53:14 - Open transaction ...
+DEBUG: 2026-03-06 19:53:14 - Load images ...
+DEBUG: 2026-03-06 19:53:14 - Файл 'photo_2026-03-05_08-47-35_e5fa4144-3c85-47b0-9819-5e80858aa2d6.jpg' успешно прочитан (105612 байт)
+DEBUG: 2026-03-06 19:53:14 - Image loaded
+DEBUG: 2026-03-06 19:53:14 - Commit
+DEBUG: 2026-03-06 19:53:14 - Session close
+DEBUG: 2026-03-06 19:53:14 - Open transaction ...
+DEBUG: 2026-03-06 19:53:14 - Load images ...
+DEBUG: 2026-03-06 19:53:14 - Файл 'photo_2026-03-05_08-47-35_e5fa4144-3c85-47b0-9819-5e80858aa2d6.jpg' успешно прочитан (105612 байт)
+DEBUG: 2026-03-06 19:53:14 - Image loaded
+DEBUG: 2026-03-06 19:53:14 - Commit
+DEBUG: 2026-03-06 19:53:14 - Session close
+DEBUG: 2026-03-06 20:09:55 - Open transaction ...
+DEBUG: 2026-03-06 20:09:55 - Verefy access token
+WARNING: 2026-03-06 20:09:55 - Токен просрочен!
+WARNING: 2026-03-06 20:09:55 - Error invalid token
+WARNING: 2026-03-06 20:09:55 - Discard change rollback...
+DEBUG: 2026-03-06 20:09:55 - Session close
+DEBUG: 2026-03-06 20:09:55 - Open transaction ...
+DEBUG: 2026-03-06 20:09:55 - Verefy refresh token
+DEBUG: 2026-03-06 20:09:55 - Verification of refresh token registration
+DEBUG: 2026-03-06 20:09:55 - Revoking the access token
+DEBUG: 2026-03-06 20:09:55 - Redis session started
+DEBUG: 2026-03-06 20:09:55 - Found 0 keys matching pattern: 1:*:3b764055afbdc00fffd41bec66c0b5e4
+DEBUG: 2026-03-06 20:09:55 - Redis session ended
+DEBUG: 2026-03-06 20:09:55 - Revork 0 tokens
+DEBUG: 2026-03-06 20:09:55 - Create access token ...
+DEBUG: 2026-03-06 20:09:55 - Accouting access token
+DEBUG: 2026-03-06 20:09:55 - Redis session started
+DEBUG: 2026-03-06 20:09:55 - saved to Redis: 1:08540c4e-d74a-4d55-af18-8bf4b8f0f03e:3b764055afbdc00fffd41bec66c0b5e4, TTL: 0:15:00s
+DEBUG: 2026-03-06 20:09:55 - Redis session ended
+DEBUG: 2026-03-06 20:09:55 - Commit
+DEBUG: 2026-03-06 20:09:55 - Session close
+DEBUG: 2026-03-06 20:09:55 - Open transaction ...
+DEBUG: 2026-03-06 20:09:55 - Verefy access token
+DEBUG: 2026-03-06 20:09:55 - Verification of access token registration
+DEBUG: 2026-03-06 20:09:55 - Redis session started
+DEBUG: 2026-03-06 20:09:55 - Value retrieved from Redis: 1:08540c4e-d74a-4d55-af18-8bf4b8f0f03e:3b764055afbdc00fffd41bec66c0b5e4
+DEBUG: 2026-03-06 20:09:55 - Redis session ended
+DEBUG: 2026-03-06 20:09:55 - serialize token payload ...
+DEBUG: 2026-03-06 20:09:55 - Payload : user_id=1 user_role='root' iat=datetime.datetime(2026, 3, 6, 20, 9, 55, 450739) jti='08540c4e-d74a-4d55-af18-8bf4b8f0f03e' exp=datetime.datetime(2026, 3, 6, 20, 24, 55, 450672) token_type='access' device_id='3b764055afbdc00fffd41bec66c0b5e4' ip_address='172.18.0.6' is_rework=False
+DEBUG: 2026-03-06 20:09:55 - Access token is valid
+DEBUG: 2026-03-06 20:09:55 - Commit
+DEBUG: 2026-03-06 20:09:55 - Session close
+DEBUG: 2026-03-06 20:09:55 - Open transaction ...
+DEBUG: 2026-03-06 20:09:55 - Get me ... id : 1
+DEBUG: 2026-03-06 20:09:55 - Serialize ...
+DEBUG: 2026-03-06 20:09:55 - Commit
+DEBUG: 2026-03-06 20:09:55 - Session close
+DEBUG: 2026-03-06 20:17:31 - Open transaction ...
+DEBUG: 2026-03-06 20:17:31 - Verefy access token
+DEBUG: 2026-03-06 20:17:31 - Verification of access token registration
+DEBUG: 2026-03-06 20:17:31 - Redis session started
+DEBUG: 2026-03-06 20:17:31 - Value retrieved from Redis: 1:08540c4e-d74a-4d55-af18-8bf4b8f0f03e:3b764055afbdc00fffd41bec66c0b5e4
+DEBUG: 2026-03-06 20:17:31 - Redis session ended
+DEBUG: 2026-03-06 20:17:31 - serialize token payload ...
+DEBUG: 2026-03-06 20:17:31 - Payload : user_id=1 user_role='root' iat=datetime.datetime(2026, 3, 6, 20, 9, 55, 450739) jti='08540c4e-d74a-4d55-af18-8bf4b8f0f03e' exp=datetime.datetime(2026, 3, 6, 20, 24, 55, 450672) token_type='access' device_id='3b764055afbdc00fffd41bec66c0b5e4' ip_address='172.18.0.6' is_rework=False
+DEBUG: 2026-03-06 20:17:31 - Access token is valid
+DEBUG: 2026-03-06 20:17:31 - Commit
+DEBUG: 2026-03-06 20:17:31 - Session close
+DEBUG: 2026-03-06 20:17:31 - Open transaction ...
+DEBUG: 2026-03-06 20:17:31 - Get me ... id : 1
+DEBUG: 2026-03-06 20:17:31 - Serialize ...
+DEBUG: 2026-03-06 20:17:31 - Commit
+DEBUG: 2026-03-06 20:17:31 - Session close
+DEBUG: 2026-03-06 20:24:17 - Open transaction ...
+DEBUG: 2026-03-06 20:24:17 - Verefy access token
+DEBUG: 2026-03-06 20:24:17 - Verification of access token registration
+DEBUG: 2026-03-06 20:24:17 - Redis session started
+DEBUG: 2026-03-06 20:24:17 - Value retrieved from Redis: 1:08540c4e-d74a-4d55-af18-8bf4b8f0f03e:3b764055afbdc00fffd41bec66c0b5e4
+DEBUG: 2026-03-06 20:24:17 - Redis session ended
+DEBUG: 2026-03-06 20:24:17 - serialize token payload ...
+DEBUG: 2026-03-06 20:24:17 - Payload : user_id=1 user_role='root' iat=datetime.datetime(2026, 3, 6, 20, 9, 55, 450739) jti='08540c4e-d74a-4d55-af18-8bf4b8f0f03e' exp=datetime.datetime(2026, 3, 6, 20, 24, 55, 450672) token_type='access' device_id='3b764055afbdc00fffd41bec66c0b5e4' ip_address='172.18.0.6' is_rework=False
+DEBUG: 2026-03-06 20:24:17 - Access token is valid
+DEBUG: 2026-03-06 20:24:17 - Commit
+DEBUG: 2026-03-06 20:24:17 - Session close
+DEBUG: 2026-03-06 20:24:17 - Open transaction ...
+DEBUG: 2026-03-06 20:24:17 - Get me ... id : 1
+DEBUG: 2026-03-06 20:24:17 - Serialize ...
+DEBUG: 2026-03-06 20:24:17 - Commit
+DEBUG: 2026-03-06 20:24:17 - Session close
+DEBUG: 2026-03-06 20:24:32 - Open transaction ...
+DEBUG: 2026-03-06 20:24:32 - Verefy access token
+DEBUG: 2026-03-06 20:24:32 - Verification of access token registration
+DEBUG: 2026-03-06 20:24:32 - Redis session started
+DEBUG: 2026-03-06 20:24:32 - Value retrieved from Redis: 1:08540c4e-d74a-4d55-af18-8bf4b8f0f03e:3b764055afbdc00fffd41bec66c0b5e4
+DEBUG: 2026-03-06 20:24:32 - Redis session ended
+DEBUG: 2026-03-06 20:24:32 - serialize token payload ...
+DEBUG: 2026-03-06 20:24:32 - Payload : user_id=1 user_role='root' iat=datetime.datetime(2026, 3, 6, 20, 9, 55, 450739) jti='08540c4e-d74a-4d55-af18-8bf4b8f0f03e' exp=datetime.datetime(2026, 3, 6, 20, 24, 55, 450672) token_type='access' device_id='3b764055afbdc00fffd41bec66c0b5e4' ip_address='172.18.0.6' is_rework=False
+DEBUG: 2026-03-06 20:24:32 - Access token is valid
+DEBUG: 2026-03-06 20:24:32 - Commit
+DEBUG: 2026-03-06 20:24:32 - Session close
+DEBUG: 2026-03-06 20:24:32 - Open transaction ...
+DEBUG: 2026-03-06 20:24:32 - Get me ... id : 1
+DEBUG: 2026-03-06 20:24:32 - Serialize ...
+DEBUG: 2026-03-06 20:24:32 - Commit
+DEBUG: 2026-03-06 20:24:32 - Session close
+DEBUG: 2026-03-06 20:25:30 - Open transaction ...
+DEBUG: 2026-03-06 20:25:30 - Verefy access token
+WARNING: 2026-03-06 20:25:30 - Токен просрочен!
+WARNING: 2026-03-06 20:25:30 - Error invalid token
+WARNING: 2026-03-06 20:25:30 - Discard change rollback...
+DEBUG: 2026-03-06 20:25:30 - Session close
+DEBUG: 2026-03-06 20:25:30 - Open transaction ...
+DEBUG: 2026-03-06 20:25:30 - Verefy refresh token
+DEBUG: 2026-03-06 20:25:30 - Verification of refresh token registration
+DEBUG: 2026-03-06 20:25:30 - Revoking the access token
+DEBUG: 2026-03-06 20:25:30 - Redis session started
+DEBUG: 2026-03-06 20:25:30 - Found 0 keys matching pattern: 1:*:3b764055afbdc00fffd41bec66c0b5e4
+DEBUG: 2026-03-06 20:25:30 - Redis session ended
+DEBUG: 2026-03-06 20:25:30 - Revork 0 tokens
+DEBUG: 2026-03-06 20:25:30 - Create access token ...
+DEBUG: 2026-03-06 20:25:30 - Accouting access token
+DEBUG: 2026-03-06 20:25:30 - Redis session started
+DEBUG: 2026-03-06 20:25:30 - saved to Redis: 1:83508096-272b-467b-bb86-307693bb912f:3b764055afbdc00fffd41bec66c0b5e4, TTL: 0:15:00s
+DEBUG: 2026-03-06 20:25:30 - Redis session ended
+DEBUG: 2026-03-06 20:25:30 - Commit
+DEBUG: 2026-03-06 20:25:30 - Session close
+DEBUG: 2026-03-06 20:25:30 - Open transaction ...
+DEBUG: 2026-03-06 20:25:30 - Verefy access token
+DEBUG: 2026-03-06 20:25:30 - Verification of access token registration
+DEBUG: 2026-03-06 20:25:30 - Redis session started
+DEBUG: 2026-03-06 20:25:30 - Value retrieved from Redis: 1:83508096-272b-467b-bb86-307693bb912f:3b764055afbdc00fffd41bec66c0b5e4
+DEBUG: 2026-03-06 20:25:30 - Redis session ended
+DEBUG: 2026-03-06 20:25:30 - serialize token payload ...
+DEBUG: 2026-03-06 20:25:30 - Payload : user_id=1 user_role='root' iat=datetime.datetime(2026, 3, 6, 20, 25, 30, 744943) jti='83508096-272b-467b-bb86-307693bb912f' exp=datetime.datetime(2026, 3, 6, 20, 40, 30, 744878) token_type='access' device_id='3b764055afbdc00fffd41bec66c0b5e4' ip_address='172.18.0.6' is_rework=False
+DEBUG: 2026-03-06 20:25:30 - Access token is valid
+DEBUG: 2026-03-06 20:25:30 - Commit
+DEBUG: 2026-03-06 20:25:30 - Session close
+DEBUG: 2026-03-06 20:25:30 - Open transaction ...
+DEBUG: 2026-03-06 20:25:30 - Get me ... id : 1
+DEBUG: 2026-03-06 20:25:30 - Serialize ...
+DEBUG: 2026-03-06 20:25:30 - Commit
+DEBUG: 2026-03-06 20:25:30 - Session close
+DEBUG: 2026-03-06 20:25:35 - Open transaction ...
+DEBUG: 2026-03-06 20:25:35 - Verefy access token
+DEBUG: 2026-03-06 20:25:35 - Verification of access token registration
+DEBUG: 2026-03-06 20:25:35 - Redis session started
+DEBUG: 2026-03-06 20:25:35 - Value retrieved from Redis: 1:83508096-272b-467b-bb86-307693bb912f:3b764055afbdc00fffd41bec66c0b5e4
+DEBUG: 2026-03-06 20:25:35 - Redis session ended
+DEBUG: 2026-03-06 20:25:35 - serialize token payload ...
+DEBUG: 2026-03-06 20:25:35 - Payload : user_id=1 user_role='root' iat=datetime.datetime(2026, 3, 6, 20, 25, 30, 744943) jti='83508096-272b-467b-bb86-307693bb912f' exp=datetime.datetime(2026, 3, 6, 20, 40, 30, 744878) token_type='access' device_id='3b764055afbdc00fffd41bec66c0b5e4' ip_address='172.18.0.6' is_rework=False
+DEBUG: 2026-03-06 20:25:35 - Access token is valid
+DEBUG: 2026-03-06 20:25:35 - Commit
+DEBUG: 2026-03-06 20:25:35 - Session close
+DEBUG: 2026-03-06 20:25:35 - Open transaction ...
+DEBUG: 2026-03-06 20:25:35 - Get me ... id : 1
+DEBUG: 2026-03-06 20:25:35 - Serialize ...
+DEBUG: 2026-03-06 20:25:35 - Commit
+DEBUG: 2026-03-06 20:25:35 - Session close
+DEBUG: 2026-03-06 20:27:34 - Open transaction ...
+DEBUG: 2026-03-06 20:27:34 - Verefy access token
+DEBUG: 2026-03-06 20:27:34 - Verification of access token registration
+DEBUG: 2026-03-06 20:27:34 - Redis session started
+DEBUG: 2026-03-06 20:27:34 - Value retrieved from Redis: 1:83508096-272b-467b-bb86-307693bb912f:3b764055afbdc00fffd41bec66c0b5e4
+DEBUG: 2026-03-06 20:27:34 - Redis session ended
+DEBUG: 2026-03-06 20:27:34 - serialize token payload ...
+DEBUG: 2026-03-06 20:27:34 - Payload : user_id=1 user_role='root' iat=datetime.datetime(2026, 3, 6, 20, 25, 30, 744943) jti='83508096-272b-467b-bb86-307693bb912f' exp=datetime.datetime(2026, 3, 6, 20, 40, 30, 744878) token_type='access' device_id='3b764055afbdc00fffd41bec66c0b5e4' ip_address='172.18.0.6' is_rework=False
+DEBUG: 2026-03-06 20:27:34 - Access token is valid
+DEBUG: 2026-03-06 20:27:34 - Commit
+DEBUG: 2026-03-06 20:27:34 - Session close
+DEBUG: 2026-03-06 20:27:34 - Open transaction ...
+DEBUG: 2026-03-06 20:27:34 - Get me ... id : 1
+DEBUG: 2026-03-06 20:27:34 - Serialize ...
+DEBUG: 2026-03-06 20:27:34 - Commit
+DEBUG: 2026-03-06 20:27:35 - Session close
+DEBUG: 2026-03-06 20:28:46 - Open transaction ...
+DEBUG: 2026-03-06 20:28:46 - Verefy access token
+DEBUG: 2026-03-06 20:28:46 - Verification of access token registration
+DEBUG: 2026-03-06 20:28:46 - Redis session started
+DEBUG: 2026-03-06 20:28:46 - Value retrieved from Redis: 1:83508096-272b-467b-bb86-307693bb912f:3b764055afbdc00fffd41bec66c0b5e4
+DEBUG: 2026-03-06 20:28:46 - Redis session ended
+DEBUG: 2026-03-06 20:28:46 - serialize token payload ...
+DEBUG: 2026-03-06 20:28:46 - Payload : user_id=1 user_role='root' iat=datetime.datetime(2026, 3, 6, 20, 25, 30, 744943) jti='83508096-272b-467b-bb86-307693bb912f' exp=datetime.datetime(2026, 3, 6, 20, 40, 30, 744878) token_type='access' device_id='3b764055afbdc00fffd41bec66c0b5e4' ip_address='172.18.0.6' is_rework=False
+DEBUG: 2026-03-06 20:28:46 - Access token is valid
+DEBUG: 2026-03-06 20:28:46 - Commit
+DEBUG: 2026-03-06 20:28:46 - Session close
+DEBUG: 2026-03-06 20:28:46 - Open transaction ...
+DEBUG: 2026-03-06 20:28:46 - Get me ... id : 1
+DEBUG: 2026-03-06 20:28:46 - Serialize ...
+DEBUG: 2026-03-06 20:28:46 - Commit
+DEBUG: 2026-03-06 20:28:46 - Session close
+DEBUG: 2026-03-06 20:29:00 - Open transaction ...
+DEBUG: 2026-03-06 20:29:00 - Verefy access token
+DEBUG: 2026-03-06 20:29:00 - Verification of access token registration
+DEBUG: 2026-03-06 20:29:00 - Redis session started
+DEBUG: 2026-03-06 20:29:00 - Value retrieved from Redis: 1:83508096-272b-467b-bb86-307693bb912f:3b764055afbdc00fffd41bec66c0b5e4
+DEBUG: 2026-03-06 20:29:00 - Redis session ended
+DEBUG: 2026-03-06 20:29:00 - serialize token payload ...
+DEBUG: 2026-03-06 20:29:00 - Payload : user_id=1 user_role='root' iat=datetime.datetime(2026, 3, 6, 20, 25, 30, 744943) jti='83508096-272b-467b-bb86-307693bb912f' exp=datetime.datetime(2026, 3, 6, 20, 40, 30, 744878) token_type='access' device_id='3b764055afbdc00fffd41bec66c0b5e4' ip_address='172.18.0.6' is_rework=False
+DEBUG: 2026-03-06 20:29:00 - Access token is valid
+DEBUG: 2026-03-06 20:29:00 - Commit
+DEBUG: 2026-03-06 20:29:00 - Session close
+DEBUG: 2026-03-06 20:29:00 - Open transaction ...
+DEBUG: 2026-03-06 20:29:00 - Get me ... id : 1
+DEBUG: 2026-03-06 20:29:00 - Serialize ...
+DEBUG: 2026-03-06 20:29:01 - Commit
+DEBUG: 2026-03-06 20:29:01 - Session close
+DEBUG: 2026-03-06 20:31:33 - Open transaction ...
+DEBUG: 2026-03-06 20:31:33 - Verefy access token
+DEBUG: 2026-03-06 20:31:33 - Verification of access token registration
+DEBUG: 2026-03-06 20:31:33 - Redis session started
+DEBUG: 2026-03-06 20:31:33 - Value retrieved from Redis: 1:83508096-272b-467b-bb86-307693bb912f:3b764055afbdc00fffd41bec66c0b5e4
+DEBUG: 2026-03-06 20:31:33 - Redis session ended
+DEBUG: 2026-03-06 20:31:33 - serialize token payload ...
+DEBUG: 2026-03-06 20:31:33 - Payload : user_id=1 user_role='root' iat=datetime.datetime(2026, 3, 6, 20, 25, 30, 744943) jti='83508096-272b-467b-bb86-307693bb912f' exp=datetime.datetime(2026, 3, 6, 20, 40, 30, 744878) token_type='access' device_id='3b764055afbdc00fffd41bec66c0b5e4' ip_address='172.18.0.6' is_rework=False
+DEBUG: 2026-03-06 20:31:33 - Access token is valid
+DEBUG: 2026-03-06 20:31:33 - Commit
+DEBUG: 2026-03-06 20:31:33 - Session close
+DEBUG: 2026-03-06 20:31:33 - Open transaction ...
+DEBUG: 2026-03-06 20:31:33 - Get me ... id : 1
+DEBUG: 2026-03-06 20:31:33 - Serialize ...
+DEBUG: 2026-03-06 20:31:33 - Commit
+DEBUG: 2026-03-06 20:31:33 - Session close
+DEBUG: 2026-03-06 20:31:44 - Open transaction ...
+DEBUG: 2026-03-06 20:31:44 - Verefy access token
+DEBUG: 2026-03-06 20:31:44 - Verification of access token registration
+DEBUG: 2026-03-06 20:31:44 - Redis session started
+DEBUG: 2026-03-06 20:31:44 - Value retrieved from Redis: 1:83508096-272b-467b-bb86-307693bb912f:3b764055afbdc00fffd41bec66c0b5e4
+DEBUG: 2026-03-06 20:31:44 - Redis session ended
+DEBUG: 2026-03-06 20:31:44 - serialize token payload ...
+DEBUG: 2026-03-06 20:31:44 - Payload : user_id=1 user_role='root' iat=datetime.datetime(2026, 3, 6, 20, 25, 30, 744943) jti='83508096-272b-467b-bb86-307693bb912f' exp=datetime.datetime(2026, 3, 6, 20, 40, 30, 744878) token_type='access' device_id='3b764055afbdc00fffd41bec66c0b5e4' ip_address='172.18.0.6' is_rework=False
+DEBUG: 2026-03-06 20:31:44 - Access token is valid
+DEBUG: 2026-03-06 20:31:44 - Commit
+DEBUG: 2026-03-06 20:31:45 - Session close
+DEBUG: 2026-03-06 20:31:45 - Open transaction ...
+DEBUG: 2026-03-06 20:31:45 - Get me ... id : 1
+DEBUG: 2026-03-06 20:31:45 - Serialize ...
+DEBUG: 2026-03-06 20:31:45 - Commit
+DEBUG: 2026-03-06 20:31:45 - Session close
+DEBUG: 2026-03-06 20:31:51 - Open transaction ...
+DEBUG: 2026-03-06 20:31:51 - Load images ...
+DEBUG: 2026-03-06 20:31:51 - Файл 'photo_2026-03-05_08-47-35_e5fa4144-3c85-47b0-9819-5e80858aa2d6.jpg' успешно прочитан (105612 байт)
+DEBUG: 2026-03-06 20:31:51 - Image loaded
+DEBUG: 2026-03-06 20:31:51 - Commit
+DEBUG: 2026-03-06 20:31:51 - Session close
+DEBUG: 2026-03-06 20:31:51 - Open transaction ...
+DEBUG: 2026-03-06 20:31:51 - Load images ...
+DEBUG: 2026-03-06 20:31:51 - Файл 'photo_2026-03-05_08-47-35_e5fa4144-3c85-47b0-9819-5e80858aa2d6.jpg' успешно прочитан (105612 байт)
+DEBUG: 2026-03-06 20:31:51 - Image loaded
+DEBUG: 2026-03-06 20:31:51 - Commit
+DEBUG: 2026-03-06 20:31:51 - Session close
+DEBUG: 2026-03-06 20:33:35 - Open transaction ...
+DEBUG: 2026-03-06 20:33:35 - Verefy access token
+DEBUG: 2026-03-06 20:33:35 - Verification of access token registration
+DEBUG: 2026-03-06 20:33:35 - Redis session started
+DEBUG: 2026-03-06 20:33:35 - Value retrieved from Redis: 1:83508096-272b-467b-bb86-307693bb912f:3b764055afbdc00fffd41bec66c0b5e4
+DEBUG: 2026-03-06 20:33:35 - Redis session ended
+DEBUG: 2026-03-06 20:33:35 - serialize token payload ...
+DEBUG: 2026-03-06 20:33:35 - Payload : user_id=1 user_role='root' iat=datetime.datetime(2026, 3, 6, 20, 25, 30, 744943) jti='83508096-272b-467b-bb86-307693bb912f' exp=datetime.datetime(2026, 3, 6, 20, 40, 30, 744878) token_type='access' device_id='3b764055afbdc00fffd41bec66c0b5e4' ip_address='172.18.0.6' is_rework=False
+DEBUG: 2026-03-06 20:33:35 - Access token is valid
+DEBUG: 2026-03-06 20:33:35 - Commit
+DEBUG: 2026-03-06 20:33:35 - Session close
+DEBUG: 2026-03-06 20:33:35 - Open transaction ...
+DEBUG: 2026-03-06 20:33:35 - Get me ... id : 1
+DEBUG: 2026-03-06 20:33:35 - Serialize ...
+DEBUG: 2026-03-06 20:33:36 - Commit
+DEBUG: 2026-03-06 20:33:36 - Session close
+DEBUG: 2026-03-06 20:33:36 - Open transaction ...
+DEBUG: 2026-03-06 20:33:36 - Load images ...
+DEBUG: 2026-03-06 20:33:36 - Файл 'photo_2026-03-05_08-47-35_e5fa4144-3c85-47b0-9819-5e80858aa2d6.jpg' успешно прочитан (105612 байт)
+DEBUG: 2026-03-06 20:33:36 - Image loaded
+DEBUG: 2026-03-06 20:33:36 - Commit
+DEBUG: 2026-03-06 20:33:36 - Session close
+DEBUG: 2026-03-06 20:33:36 - Open transaction ...
+DEBUG: 2026-03-06 20:33:36 - Load images ...
+DEBUG: 2026-03-06 20:33:36 - Файл 'photo_2026-03-05_08-47-35_e5fa4144-3c85-47b0-9819-5e80858aa2d6.jpg' успешно прочитан (105612 байт)
+DEBUG: 2026-03-06 20:33:36 - Image loaded
+DEBUG: 2026-03-06 20:33:36 - Commit
+DEBUG: 2026-03-06 20:33:36 - Session close
+DEBUG: 2026-03-06 20:36:49 - Open transaction ...
+DEBUG: 2026-03-06 20:36:49 - Open transaction ...
+DEBUG: 2026-03-06 20:36:49 - Verefy access token
+DEBUG: 2026-03-06 20:36:49 - Verification of access token registration
+DEBUG: 2026-03-06 20:36:49 - Redis session started
+DEBUG: 2026-03-06 20:36:49 - Value retrieved from Redis: 1:83508096-272b-467b-bb86-307693bb912f:3b764055afbdc00fffd41bec66c0b5e4
+DEBUG: 2026-03-06 20:36:49 - Redis session ended
+DEBUG: 2026-03-06 20:36:50 - serialize token payload ...
+DEBUG: 2026-03-06 20:36:50 - Payload : user_id=1 user_role='root' iat=datetime.datetime(2026, 3, 6, 20, 25, 30, 744943) jti='83508096-272b-467b-bb86-307693bb912f' exp=datetime.datetime(2026, 3, 6, 20, 40, 30, 744878) token_type='access' device_id='3b764055afbdc00fffd41bec66c0b5e4' ip_address='172.18.0.6' is_rework=False
+DEBUG: 2026-03-06 20:36:50 - Access token is valid
+DEBUG: 2026-03-06 20:36:50 - Commit
+DEBUG: 2026-03-06 20:36:50 - Session close
+DEBUG: 2026-03-06 20:36:50 - Open transaction ...
+DEBUG: 2026-03-06 20:36:50 - Get me ... id : 1
+DEBUG: 2026-03-06 20:36:50 - Load images ...
+DEBUG: 2026-03-06 20:36:50 - Файл 'photo_2026-03-05_08-47-35_e5fa4144-3c85-47b0-9819-5e80858aa2d6.jpg' успешно прочитан (105612 байт)
+DEBUG: 2026-03-06 20:36:50 - Image loaded
+DEBUG: 2026-03-06 20:36:50 - Commit
+DEBUG: 2026-03-06 20:36:50 - Session close
+DEBUG: 2026-03-06 20:36:50 - Open transaction ...
+DEBUG: 2026-03-06 20:36:50 - Load images ...
+DEBUG: 2026-03-06 20:36:50 - Файл 'photo_2026-03-05_08-47-35_e5fa4144-3c85-47b0-9819-5e80858aa2d6.jpg' успешно прочитан (105612 байт)
+DEBUG: 2026-03-06 20:36:50 - Image loaded
+DEBUG: 2026-03-06 20:36:50 - Commit
+DEBUG: 2026-03-06 20:36:50 - Session close
+DEBUG: 2026-03-06 20:36:50 - Serialize ...
+DEBUG: 2026-03-06 20:36:50 - Commit
+DEBUG: 2026-03-06 20:36:50 - Session close
+DEBUG: 2026-03-06 20:36:50 - Open transaction ...
+DEBUG: 2026-03-06 20:36:50 - Load images ...
+DEBUG: 2026-03-06 20:36:50 - Файл 'photo_2026-03-05_08-47-35_e5fa4144-3c85-47b0-9819-5e80858aa2d6.jpg' успешно прочитан (105612 байт)
+DEBUG: 2026-03-06 20:36:50 - Image loaded
+DEBUG: 2026-03-06 20:36:50 - Commit
+DEBUG: 2026-03-06 20:36:50 - Session close
+DEBUG: 2026-03-06 20:37:12 - Open transaction ...
+DEBUG: 2026-03-06 20:37:12 - Verefy access token
+DEBUG: 2026-03-06 20:37:12 - Verification of access token registration
+DEBUG: 2026-03-06 20:37:12 - Redis session started
+DEBUG: 2026-03-06 20:37:12 - Value retrieved from Redis: 1:83508096-272b-467b-bb86-307693bb912f:3b764055afbdc00fffd41bec66c0b5e4
+DEBUG: 2026-03-06 20:37:12 - Redis session ended
+DEBUG: 2026-03-06 20:37:12 - serialize token payload ...
+DEBUG: 2026-03-06 20:37:12 - Payload : user_id=1 user_role='root' iat=datetime.datetime(2026, 3, 6, 20, 25, 30, 744943) jti='83508096-272b-467b-bb86-307693bb912f' exp=datetime.datetime(2026, 3, 6, 20, 40, 30, 744878) token_type='access' device_id='3b764055afbdc00fffd41bec66c0b5e4' ip_address='172.18.0.6' is_rework=False
+DEBUG: 2026-03-06 20:37:12 - Access token is valid
+DEBUG: 2026-03-06 20:37:12 - Commit
+DEBUG: 2026-03-06 20:37:12 - Session close
+DEBUG: 2026-03-06 20:37:12 - Open transaction ...
+DEBUG: 2026-03-06 20:37:12 - Get me ... id : 1
+DEBUG: 2026-03-06 20:37:12 - Serialize ...
+DEBUG: 2026-03-06 20:37:12 - Commit
+DEBUG: 2026-03-06 20:37:12 - Session close
+DEBUG: 2026-03-06 20:37:12 - Open transaction ...
+DEBUG: 2026-03-06 20:37:12 - Load images ...
+DEBUG: 2026-03-06 20:37:12 - Файл 'photo_2026-03-05_08-47-35_e5fa4144-3c85-47b0-9819-5e80858aa2d6.jpg' успешно прочитан (105612 байт)
+DEBUG: 2026-03-06 20:37:12 - Image loaded
+DEBUG: 2026-03-06 20:37:12 - Commit
+DEBUG: 2026-03-06 20:37:12 - Session close
+DEBUG: 2026-03-06 20:37:12 - Open transaction ...
+DEBUG: 2026-03-06 20:37:12 - Load images ...
+DEBUG: 2026-03-06 20:37:12 - Файл 'photo_2026-03-05_08-47-35_e5fa4144-3c85-47b0-9819-5e80858aa2d6.jpg' успешно прочитан (105612 байт)
+DEBUG: 2026-03-06 20:37:12 - Image loaded
+DEBUG: 2026-03-06 20:37:12 - Commit
+DEBUG: 2026-03-06 20:37:12 - Session close
+DEBUG: 2026-03-06 20:37:56 - Open transaction ...
+DEBUG: 2026-03-06 20:37:57 - Verefy access token
+DEBUG: 2026-03-06 20:37:57 - Verification of access token registration
+DEBUG: 2026-03-06 20:37:57 - Redis session started
+DEBUG: 2026-03-06 20:37:57 - Value retrieved from Redis: 1:83508096-272b-467b-bb86-307693bb912f:3b764055afbdc00fffd41bec66c0b5e4
+DEBUG: 2026-03-06 20:37:57 - Redis session ended
+DEBUG: 2026-03-06 20:37:57 - serialize token payload ...
+DEBUG: 2026-03-06 20:37:57 - Payload : user_id=1 user_role='root' iat=datetime.datetime(2026, 3, 6, 20, 25, 30, 744943) jti='83508096-272b-467b-bb86-307693bb912f' exp=datetime.datetime(2026, 3, 6, 20, 40, 30, 744878) token_type='access' device_id='3b764055afbdc00fffd41bec66c0b5e4' ip_address='172.18.0.6' is_rework=False
+DEBUG: 2026-03-06 20:37:57 - Access token is valid
+DEBUG: 2026-03-06 20:37:57 - Commit
+DEBUG: 2026-03-06 20:37:57 - Session close
+DEBUG: 2026-03-06 20:37:57 - Open transaction ...
+DEBUG: 2026-03-06 20:37:57 - Get me ... id : 1
+DEBUG: 2026-03-06 20:37:57 - Serialize ...
+DEBUG: 2026-03-06 20:37:57 - Commit
+DEBUG: 2026-03-06 20:37:57 - Session close
+DEBUG: 2026-03-06 20:37:57 - Open transaction ...
+DEBUG: 2026-03-06 20:37:57 - Load images ...
+DEBUG: 2026-03-06 20:37:57 - Файл 'photo_2026-03-05_08-47-35_e5fa4144-3c85-47b0-9819-5e80858aa2d6.jpg' успешно прочитан (105612 байт)
+DEBUG: 2026-03-06 20:37:57 - Image loaded
+DEBUG: 2026-03-06 20:37:57 - Commit
+DEBUG: 2026-03-06 20:37:57 - Session close
+DEBUG: 2026-03-06 20:37:57 - Open transaction ...
+DEBUG: 2026-03-06 20:37:57 - Load images ...
+DEBUG: 2026-03-06 20:37:57 - Файл 'photo_2026-03-05_08-47-35_e5fa4144-3c85-47b0-9819-5e80858aa2d6.jpg' успешно прочитан (105612 байт)
+DEBUG: 2026-03-06 20:37:57 - Image loaded
+DEBUG: 2026-03-06 20:37:57 - Commit
+DEBUG: 2026-03-06 20:37:57 - Session close
+DEBUG: 2026-03-06 20:38:12 - Open transaction ...
+DEBUG: 2026-03-06 20:38:12 - Verefy access token
+DEBUG: 2026-03-06 20:38:12 - Verification of access token registration
+DEBUG: 2026-03-06 20:38:12 - Redis session started
+DEBUG: 2026-03-06 20:38:12 - Value retrieved from Redis: 1:83508096-272b-467b-bb86-307693bb912f:3b764055afbdc00fffd41bec66c0b5e4
+DEBUG: 2026-03-06 20:38:12 - Redis session ended
+DEBUG: 2026-03-06 20:38:12 - serialize token payload ...
+DEBUG: 2026-03-06 20:38:12 - Payload : user_id=1 user_role='root' iat=datetime.datetime(2026, 3, 6, 20, 25, 30, 744943) jti='83508096-272b-467b-bb86-307693bb912f' exp=datetime.datetime(2026, 3, 6, 20, 40, 30, 744878) token_type='access' device_id='3b764055afbdc00fffd41bec66c0b5e4' ip_address='172.18.0.6' is_rework=False
+DEBUG: 2026-03-06 20:38:12 - Access token is valid
+DEBUG: 2026-03-06 20:38:12 - Commit
+DEBUG: 2026-03-06 20:38:12 - Session close
+DEBUG: 2026-03-06 20:38:12 - Open transaction ...
+DEBUG: 2026-03-06 20:38:12 - Get me ... id : 1
+DEBUG: 2026-03-06 20:38:12 - Serialize ...
+DEBUG: 2026-03-06 20:38:12 - Commit
+DEBUG: 2026-03-06 20:38:12 - Session close
+DEBUG: 2026-03-06 20:38:12 - Open transaction ...
+DEBUG: 2026-03-06 20:38:12 - Load images ...
+DEBUG: 2026-03-06 20:38:12 - Файл 'photo_2026-03-05_08-47-35_e5fa4144-3c85-47b0-9819-5e80858aa2d6.jpg' успешно прочитан (105612 байт)
+DEBUG: 2026-03-06 20:38:12 - Image loaded
+DEBUG: 2026-03-06 20:38:12 - Commit
+DEBUG: 2026-03-06 20:38:12 - Session close
+DEBUG: 2026-03-06 20:38:12 - Open transaction ...
+DEBUG: 2026-03-06 20:38:12 - Load images ...
+DEBUG: 2026-03-06 20:38:12 - Файл 'photo_2026-03-05_08-47-35_e5fa4144-3c85-47b0-9819-5e80858aa2d6.jpg' успешно прочитан (105612 байт)
+DEBUG: 2026-03-06 20:38:12 - Image loaded
+DEBUG: 2026-03-06 20:38:12 - Commit
+DEBUG: 2026-03-06 20:38:12 - Session close
+DEBUG: 2026-03-06 20:39:18 - Open transaction ...
+DEBUG: 2026-03-06 20:39:18 - Verefy access token
+DEBUG: 2026-03-06 20:39:19 - Verification of access token registration
+DEBUG: 2026-03-06 20:39:19 - Redis session started
+DEBUG: 2026-03-06 20:39:19 - Value retrieved from Redis: 1:83508096-272b-467b-bb86-307693bb912f:3b764055afbdc00fffd41bec66c0b5e4
+DEBUG: 2026-03-06 20:39:19 - Redis session ended
+DEBUG: 2026-03-06 20:39:19 - serialize token payload ...
+DEBUG: 2026-03-06 20:39:19 - Payload : user_id=1 user_role='root' iat=datetime.datetime(2026, 3, 6, 20, 25, 30, 744943) jti='83508096-272b-467b-bb86-307693bb912f' exp=datetime.datetime(2026, 3, 6, 20, 40, 30, 744878) token_type='access' device_id='3b764055afbdc00fffd41bec66c0b5e4' ip_address='172.18.0.6' is_rework=False
+DEBUG: 2026-03-06 20:39:19 - Access token is valid
+DEBUG: 2026-03-06 20:39:19 - Commit
+DEBUG: 2026-03-06 20:39:19 - Session close
+DEBUG: 2026-03-06 20:39:19 - Open transaction ...
+DEBUG: 2026-03-06 20:39:19 - Open transaction ...
+DEBUG: 2026-03-06 20:39:19 - Get me ... id : 1
+DEBUG: 2026-03-06 20:39:19 - Load images ...
+DEBUG: 2026-03-06 20:39:19 - Serialize ...
+DEBUG: 2026-03-06 20:39:19 - Файл 'photo_2026-03-05_08-47-35_e5fa4144-3c85-47b0-9819-5e80858aa2d6.jpg' успешно прочитан (105612 байт)
+DEBUG: 2026-03-06 20:39:19 - Commit
+DEBUG: 2026-03-06 20:39:19 - Session close
+DEBUG: 2026-03-06 20:39:19 - Image loaded
+DEBUG: 2026-03-06 20:39:19 - Commit
+DEBUG: 2026-03-06 20:39:19 - Session close
+DEBUG: 2026-03-06 20:39:19 - Open transaction ...
+DEBUG: 2026-03-06 20:39:19 - Load images ...
+DEBUG: 2026-03-06 20:39:19 - Файл 'photo_2026-03-05_08-47-35_e5fa4144-3c85-47b0-9819-5e80858aa2d6.jpg' успешно прочитан (105612 байт)
+DEBUG: 2026-03-06 20:39:19 - Image loaded
+DEBUG: 2026-03-06 20:39:19 - Commit
+DEBUG: 2026-03-06 20:39:19 - Session close
+DEBUG: 2026-03-06 20:39:19 - Open transaction ...
+DEBUG: 2026-03-06 20:39:19 - Load images ...
+DEBUG: 2026-03-06 20:39:19 - Файл 'photo_2026-03-05_08-47-35_e5fa4144-3c85-47b0-9819-5e80858aa2d6.jpg' успешно прочитан (105612 байт)
+DEBUG: 2026-03-06 20:39:19 - Image loaded
+DEBUG: 2026-03-06 20:39:19 - Commit
+DEBUG: 2026-03-06 20:39:19 - Session close
+DEBUG: 2026-03-06 20:41:31 - Open transaction ...
+DEBUG: 2026-03-06 20:41:31 - Verefy access token
+WARNING: 2026-03-06 20:41:31 - Токен просрочен!
+WARNING: 2026-03-06 20:41:31 - Error invalid token
+WARNING: 2026-03-06 20:41:31 - Discard change rollback...
+DEBUG: 2026-03-06 20:41:31 - Session close
+DEBUG: 2026-03-06 20:41:31 - Open transaction ...
+DEBUG: 2026-03-06 20:41:31 - Verefy refresh token
+DEBUG: 2026-03-06 20:41:31 - Verification of refresh token registration
+DEBUG: 2026-03-06 20:41:31 - Open transaction ...
+DEBUG: 2026-03-06 20:41:31 - Revoking the access token
+DEBUG: 2026-03-06 20:41:31 - Redis session started
+DEBUG: 2026-03-06 20:41:31 - Found 0 keys matching pattern: 1:*:3b764055afbdc00fffd41bec66c0b5e4
+DEBUG: 2026-03-06 20:41:31 - Redis session ended
+DEBUG: 2026-03-06 20:41:31 - Revork 0 tokens
+DEBUG: 2026-03-06 20:41:31 - Create access token ...
+DEBUG: 2026-03-06 20:41:31 - Accouting access token
+DEBUG: 2026-03-06 20:41:31 - Redis session started
+DEBUG: 2026-03-06 20:41:31 - saved to Redis: 1:07206186-0430-4fe1-ac72-bb122d4934d8:3b764055afbdc00fffd41bec66c0b5e4, TTL: 0:15:00s
+DEBUG: 2026-03-06 20:41:31 - Redis session ended
+DEBUG: 2026-03-06 20:41:31 - Commit
+DEBUG: 2026-03-06 20:41:31 - Session close
+DEBUG: 2026-03-06 20:41:32 - Open transaction ...
+DEBUG: 2026-03-06 20:41:32 - Verefy access token
+DEBUG: 2026-03-06 20:41:32 - Verification of access token registration
+DEBUG: 2026-03-06 20:41:32 - Redis session started
+DEBUG: 2026-03-06 20:41:32 - Load images ...
+DEBUG: 2026-03-06 20:41:32 - Value retrieved from Redis: 1:07206186-0430-4fe1-ac72-bb122d4934d8:3b764055afbdc00fffd41bec66c0b5e4
+DEBUG: 2026-03-06 20:41:32 - Файл 'photo_2026-03-05_08-47-35_e5fa4144-3c85-47b0-9819-5e80858aa2d6.jpg' успешно прочитан (105612 байт)
+DEBUG: 2026-03-06 20:41:32 - Redis session ended
+DEBUG: 2026-03-06 20:41:32 - serialize token payload ...
+DEBUG: 2026-03-06 20:41:32 - Payload : user_id=1 user_role='root' iat=datetime.datetime(2026, 3, 6, 20, 41, 31, 935206) jti='07206186-0430-4fe1-ac72-bb122d4934d8' exp=datetime.datetime(2026, 3, 6, 20, 56, 31, 934918) token_type='access' device_id='3b764055afbdc00fffd41bec66c0b5e4' ip_address='172.18.0.6' is_rework=False
+DEBUG: 2026-03-06 20:41:32 - Access token is valid
+DEBUG: 2026-03-06 20:41:32 - Commit
+DEBUG: 2026-03-06 20:41:32 - Session close
+DEBUG: 2026-03-06 20:41:32 - Image loaded
+DEBUG: 2026-03-06 20:41:32 - Commit
+DEBUG: 2026-03-06 20:41:32 - Session close
+DEBUG: 2026-03-06 20:41:32 - Open transaction ...
+DEBUG: 2026-03-06 20:41:32 - Get me ... id : 1
+DEBUG: 2026-03-06 20:41:32 - Open transaction ...
+DEBUG: 2026-03-06 20:41:32 - Serialize ...
+DEBUG: 2026-03-06 20:41:32 - Commit
+DEBUG: 2026-03-06 20:41:32 - Session close
+DEBUG: 2026-03-06 20:41:32 - Load images ...
+DEBUG: 2026-03-06 20:41:32 - Файл 'photo_2026-03-05_08-47-35_e5fa4144-3c85-47b0-9819-5e80858aa2d6.jpg' успешно прочитан (105612 байт)
+DEBUG: 2026-03-06 20:41:32 - Image loaded
+DEBUG: 2026-03-06 20:41:32 - Commit
+DEBUG: 2026-03-06 20:41:32 - Session close
+DEBUG: 2026-03-06 20:41:32 - Open transaction ...
+DEBUG: 2026-03-06 20:41:32 - Load images ...
+DEBUG: 2026-03-06 20:41:32 - Файл 'photo_2026-03-05_08-47-35_e5fa4144-3c85-47b0-9819-5e80858aa2d6.jpg' успешно прочитан (105612 байт)
+DEBUG: 2026-03-06 20:41:32 - Image loaded
+DEBUG: 2026-03-06 20:41:32 - Commit
+DEBUG: 2026-03-06 20:41:32 - Session close
+DEBUG: 2026-03-06 20:43:31 - Open transaction ...
+DEBUG: 2026-03-06 20:43:31 - Load images ...
+DEBUG: 2026-03-06 20:43:31 - Файл 'photo_2026-03-05_08-47-35_e5fa4144-3c85-47b0-9819-5e80858aa2d6.jpg' успешно прочитан (105612 байт)
+DEBUG: 2026-03-06 20:43:31 - Image loaded
+DEBUG: 2026-03-06 20:43:31 - Commit
+DEBUG: 2026-03-06 20:43:31 - Session close
+DEBUG: 2026-03-06 20:43:31 - Open transaction ...
+DEBUG: 2026-03-06 20:43:31 - Load images ...
+DEBUG: 2026-03-06 20:43:31 - Файл 'photo_2026-03-05_08-47-35_e5fa4144-3c85-47b0-9819-5e80858aa2d6.jpg' успешно прочитан (105612 байт)
+DEBUG: 2026-03-06 20:43:31 - Image loaded
+DEBUG: 2026-03-06 20:43:31 - Commit
+DEBUG: 2026-03-06 20:43:31 - Session close
+DEBUG: 2026-03-06 20:43:50 - Open transaction ...
+DEBUG: 2026-03-06 20:43:50 - Verefy access token
+DEBUG: 2026-03-06 20:43:50 - Verification of access token registration
+DEBUG: 2026-03-06 20:43:50 - Redis session started
+DEBUG: 2026-03-06 20:43:50 - Value retrieved from Redis: 1:07206186-0430-4fe1-ac72-bb122d4934d8:3b764055afbdc00fffd41bec66c0b5e4
+DEBUG: 2026-03-06 20:43:50 - Redis session ended
+DEBUG: 2026-03-06 20:43:50 - serialize token payload ...
+DEBUG: 2026-03-06 20:43:50 - Payload : user_id=1 user_role='root' iat=datetime.datetime(2026, 3, 6, 20, 41, 31, 935206) jti='07206186-0430-4fe1-ac72-bb122d4934d8' exp=datetime.datetime(2026, 3, 6, 20, 56, 31, 934918) token_type='access' device_id='3b764055afbdc00fffd41bec66c0b5e4' ip_address='172.18.0.6' is_rework=False
+DEBUG: 2026-03-06 20:43:50 - Access token is valid
+DEBUG: 2026-03-06 20:43:50 - Commit
+DEBUG: 2026-03-06 20:43:50 - Session close
+DEBUG: 2026-03-06 20:43:50 - Open transaction ...
+DEBUG: 2026-03-06 20:43:50 - Get me ... id : 1
+DEBUG: 2026-03-06 20:43:50 - Serialize ...
+DEBUG: 2026-03-06 20:43:50 - Commit
+DEBUG: 2026-03-06 20:43:50 - Session close
+DEBUG: 2026-03-06 20:43:50 - Open transaction ...
+DEBUG: 2026-03-06 20:43:50 - Load images ...
+DEBUG: 2026-03-06 20:43:50 - Файл 'photo_2026-03-05_08-47-35_e5fa4144-3c85-47b0-9819-5e80858aa2d6.jpg' успешно прочитан (105612 байт)
+DEBUG: 2026-03-06 20:43:50 - Image loaded
+DEBUG: 2026-03-06 20:43:50 - Commit
+DEBUG: 2026-03-06 20:43:50 - Session close
+DEBUG: 2026-03-06 20:43:50 - Open transaction ...
+DEBUG: 2026-03-06 20:43:50 - Load images ...
+DEBUG: 2026-03-06 20:43:50 - Файл 'photo_2026-03-05_08-47-35_e5fa4144-3c85-47b0-9819-5e80858aa2d6.jpg' успешно прочитан (105612 байт)
+DEBUG: 2026-03-06 20:43:51 - Image loaded
+DEBUG: 2026-03-06 20:43:51 - Commit
+DEBUG: 2026-03-06 20:43:51 - Session close
+DEBUG: 2026-03-06 20:44:53 - Open transaction ...
+DEBUG: 2026-03-06 20:44:53 - Verefy access token
+DEBUG: 2026-03-06 20:44:53 - Verification of access token registration
+DEBUG: 2026-03-06 20:44:53 - Redis session started
+DEBUG: 2026-03-06 20:44:53 - Value retrieved from Redis: 1:07206186-0430-4fe1-ac72-bb122d4934d8:3b764055afbdc00fffd41bec66c0b5e4
+DEBUG: 2026-03-06 20:44:53 - Redis session ended
+DEBUG: 2026-03-06 20:44:53 - serialize token payload ...
+DEBUG: 2026-03-06 20:44:53 - Payload : user_id=1 user_role='root' iat=datetime.datetime(2026, 3, 6, 20, 41, 31, 935206) jti='07206186-0430-4fe1-ac72-bb122d4934d8' exp=datetime.datetime(2026, 3, 6, 20, 56, 31, 934918) token_type='access' device_id='3b764055afbdc00fffd41bec66c0b5e4' ip_address='172.18.0.6' is_rework=False
+DEBUG: 2026-03-06 20:44:53 - Access token is valid
+DEBUG: 2026-03-06 20:44:53 - Commit
+DEBUG: 2026-03-06 20:44:53 - Session close
+DEBUG: 2026-03-06 20:44:53 - Open transaction ...
+DEBUG: 2026-03-06 20:44:53 - Get me ... id : 1
+DEBUG: 2026-03-06 20:44:53 - Serialize ...
+DEBUG: 2026-03-06 20:44:53 - Commit
+DEBUG: 2026-03-06 20:44:53 - Session close
+DEBUG: 2026-03-06 20:44:54 - Open transaction ...
+DEBUG: 2026-03-06 20:44:54 - Load images ...
+DEBUG: 2026-03-06 20:44:54 - Файл 'photo_2026-03-05_08-47-35_e5fa4144-3c85-47b0-9819-5e80858aa2d6.jpg' успешно прочитан (105612 байт)
+DEBUG: 2026-03-06 20:44:54 - Image loaded
+DEBUG: 2026-03-06 20:44:54 - Commit
+DEBUG: 2026-03-06 20:44:54 - Session close
+DEBUG: 2026-03-06 20:44:54 - Open transaction ...
+DEBUG: 2026-03-06 20:44:54 - Load images ...
+DEBUG: 2026-03-06 20:44:54 - Файл 'photo_2026-03-05_08-47-35_e5fa4144-3c85-47b0-9819-5e80858aa2d6.jpg' успешно прочитан (105612 байт)
+DEBUG: 2026-03-06 20:44:54 - Image loaded
+DEBUG: 2026-03-06 20:44:54 - Commit
+DEBUG: 2026-03-06 20:44:54 - Session close
+DEBUG: 2026-03-06 20:48:02 - Open transaction ...
+DEBUG: 2026-03-06 20:48:02 - Load images ...
+DEBUG: 2026-03-06 20:48:02 - Файл 'photo_2026-03-05_08-47-35_e5fa4144-3c85-47b0-9819-5e80858aa2d6.jpg' успешно прочитан (105612 байт)
+DEBUG: 2026-03-06 20:48:02 - Image loaded
+DEBUG: 2026-03-06 20:48:02 - Commit
+DEBUG: 2026-03-06 20:48:02 - Session close
+DEBUG: 2026-03-06 20:48:02 - Open transaction ...
+DEBUG: 2026-03-06 20:48:02 - Load images ...
+DEBUG: 2026-03-06 20:48:02 - Файл 'photo_2026-03-05_08-47-35_e5fa4144-3c85-47b0-9819-5e80858aa2d6.jpg' успешно прочитан (105612 байт)
+DEBUG: 2026-03-06 20:48:02 - Image loaded
+DEBUG: 2026-03-06 20:48:02 - Commit
+DEBUG: 2026-03-06 20:48:02 - Session close
+DEBUG: 2026-03-06 20:48:38 - Open transaction ...
+DEBUG: 2026-03-06 20:48:38 - Verefy access token
+DEBUG: 2026-03-06 20:48:38 - Verification of access token registration
+DEBUG: 2026-03-06 20:48:38 - Redis session started
+DEBUG: 2026-03-06 20:48:38 - Value retrieved from Redis: 1:07206186-0430-4fe1-ac72-bb122d4934d8:3b764055afbdc00fffd41bec66c0b5e4
+DEBUG: 2026-03-06 20:48:38 - Redis session ended
+DEBUG: 2026-03-06 20:48:38 - serialize token payload ...
+DEBUG: 2026-03-06 20:48:38 - Payload : user_id=1 user_role='root' iat=datetime.datetime(2026, 3, 6, 20, 41, 31, 935206) jti='07206186-0430-4fe1-ac72-bb122d4934d8' exp=datetime.datetime(2026, 3, 6, 20, 56, 31, 934918) token_type='access' device_id='3b764055afbdc00fffd41bec66c0b5e4' ip_address='172.18.0.6' is_rework=False
+DEBUG: 2026-03-06 20:48:38 - Access token is valid
+DEBUG: 2026-03-06 20:48:38 - Commit
+DEBUG: 2026-03-06 20:48:38 - Session close
+DEBUG: 2026-03-06 20:48:38 - Open transaction ...
+DEBUG: 2026-03-06 20:48:38 - Publish news...
+DEBUG: 2026-03-06 20:48:39 - Данные успешно загружены как '9ed114b4-4773-5c50-b682-38cb9490db9a_3d1f1088-8822-423b-9cbd-00d069f9fd62.jfif' в бакет 'news-images'
+DEBUG: 2026-03-06 20:48:39 - ✅ Successfully uploaded 1 images
+DEBUG: 2026-03-06 20:48:39 - Commit
+DEBUG: 2026-03-06 20:48:39 - Session close
+DEBUG: 2026-03-06 20:48:39 - Open transaction ...
+DEBUG: 2026-03-06 20:48:39 - Load images ...
+DEBUG: 2026-03-06 20:48:39 - Файл 'photo_2026-03-05_08-47-35_e5fa4144-3c85-47b0-9819-5e80858aa2d6.jpg' успешно прочитан (105612 байт)
+DEBUG: 2026-03-06 20:48:39 - Image loaded
+DEBUG: 2026-03-06 20:48:39 - Файл '9ed114b4-4773-5c50-b682-38cb9490db9a_3d1f1088-8822-423b-9cbd-00d069f9fd62.jfif' успешно прочитан (311439 байт)
+DEBUG: 2026-03-06 20:48:39 - Image loaded
+DEBUG: 2026-03-06 20:48:39 - Commit
+DEBUG: 2026-03-06 20:48:39 - Session close
+DEBUG: 2026-03-06 20:52:59 - Open transaction ...
+DEBUG: 2026-03-06 20:52:59 - Verefy access token
+DEBUG: 2026-03-06 20:52:59 - Verification of access token registration
+DEBUG: 2026-03-06 20:52:59 - Redis session started
+DEBUG: 2026-03-06 20:52:59 - Value retrieved from Redis: 1:07206186-0430-4fe1-ac72-bb122d4934d8:3b764055afbdc00fffd41bec66c0b5e4
+DEBUG: 2026-03-06 20:52:59 - Redis session ended
+DEBUG: 2026-03-06 20:52:59 - serialize token payload ...
+DEBUG: 2026-03-06 20:52:59 - Payload : user_id=1 user_role='root' iat=datetime.datetime(2026, 3, 6, 20, 41, 31, 935206) jti='07206186-0430-4fe1-ac72-bb122d4934d8' exp=datetime.datetime(2026, 3, 6, 20, 56, 31, 934918) token_type='access' device_id='3b764055afbdc00fffd41bec66c0b5e4' ip_address='172.18.0.6' is_rework=False
+DEBUG: 2026-03-06 20:52:59 - Access token is valid
+DEBUG: 2026-03-06 20:52:59 - Commit
+DEBUG: 2026-03-06 20:52:59 - Session close
+DEBUG: 2026-03-06 20:52:59 - Open transaction ...
+DEBUG: 2026-03-06 20:52:59 - Get me ... id : 1
+DEBUG: 2026-03-06 20:52:59 - Serialize ...
+DEBUG: 2026-03-06 20:52:59 - Commit
+DEBUG: 2026-03-06 20:52:59 - Session close
+DEBUG: 2026-03-06 20:53:00 - Open transaction ...
+DEBUG: 2026-03-06 20:53:00 - Load images ...
+DEBUG: 2026-03-06 20:53:00 - Файл 'photo_2026-03-05_08-47-35_e5fa4144-3c85-47b0-9819-5e80858aa2d6.jpg' успешно прочитан (105612 байт)
+DEBUG: 2026-03-06 20:53:00 - Image loaded
+DEBUG: 2026-03-06 20:53:00 - Файл '9ed114b4-4773-5c50-b682-38cb9490db9a_3d1f1088-8822-423b-9cbd-00d069f9fd62.jfif' успешно прочитан (311439 байт)
+DEBUG: 2026-03-06 20:53:00 - Image loaded
+DEBUG: 2026-03-06 20:53:00 - Commit
+DEBUG: 2026-03-06 20:53:00 - Session close
+DEBUG: 2026-03-06 20:53:00 - Open transaction ...
+DEBUG: 2026-03-06 20:53:00 - Load images ...
+DEBUG: 2026-03-06 20:53:00 - Файл 'photo_2026-03-05_08-47-35_e5fa4144-3c85-47b0-9819-5e80858aa2d6.jpg' успешно прочитан (105612 байт)
+DEBUG: 2026-03-06 20:53:00 - Image loaded
+DEBUG: 2026-03-06 20:53:00 - Файл '9ed114b4-4773-5c50-b682-38cb9490db9a_3d1f1088-8822-423b-9cbd-00d069f9fd62.jfif' успешно прочитан (311439 байт)
+DEBUG: 2026-03-06 20:53:00 - Image loaded
+DEBUG: 2026-03-06 20:53:00 - Commit
+DEBUG: 2026-03-06 20:53:00 - Session close
+DEBUG: 2026-03-06 20:53:03 - Open transaction ...
+DEBUG: 2026-03-06 20:53:03 - Verefy access token
+DEBUG: 2026-03-06 20:53:03 - Verification of access token registration
+DEBUG: 2026-03-06 20:53:03 - Redis session started
+DEBUG: 2026-03-06 20:53:03 - Value retrieved from Redis: 1:07206186-0430-4fe1-ac72-bb122d4934d8:3b764055afbdc00fffd41bec66c0b5e4
+DEBUG: 2026-03-06 20:53:03 - Redis session ended
+DEBUG: 2026-03-06 20:53:03 - serialize token payload ...
+DEBUG: 2026-03-06 20:53:03 - Payload : user_id=1 user_role='root' iat=datetime.datetime(2026, 3, 6, 20, 41, 31, 935206) jti='07206186-0430-4fe1-ac72-bb122d4934d8' exp=datetime.datetime(2026, 3, 6, 20, 56, 31, 934918) token_type='access' device_id='3b764055afbdc00fffd41bec66c0b5e4' ip_address='172.18.0.6' is_rework=False
+DEBUG: 2026-03-06 20:53:03 - Access token is valid
+DEBUG: 2026-03-06 20:53:03 - Commit
+DEBUG: 2026-03-06 20:53:03 - Session close
+DEBUG: 2026-03-06 20:53:03 - Open transaction ...
+DEBUG: 2026-03-06 20:53:03 - Get me ... id : 1
+DEBUG: 2026-03-06 20:53:03 - Serialize ...
+DEBUG: 2026-03-06 20:53:03 - Commit
+DEBUG: 2026-03-06 20:53:03 - Session close
+DEBUG: 2026-03-06 20:53:04 - Open transaction ...
+DEBUG: 2026-03-06 20:53:04 - Load images ...
+DEBUG: 2026-03-06 20:53:04 - Файл 'photo_2026-03-05_08-47-35_e5fa4144-3c85-47b0-9819-5e80858aa2d6.jpg' успешно прочитан (105612 байт)
+DEBUG: 2026-03-06 20:53:04 - Image loaded
+DEBUG: 2026-03-06 20:53:04 - Файл '9ed114b4-4773-5c50-b682-38cb9490db9a_3d1f1088-8822-423b-9cbd-00d069f9fd62.jfif' успешно прочитан (311439 байт)
+DEBUG: 2026-03-06 20:53:04 - Image loaded
+DEBUG: 2026-03-06 20:53:04 - Commit
+DEBUG: 2026-03-06 20:53:04 - Session close
+DEBUG: 2026-03-06 20:53:04 - Open transaction ...
+DEBUG: 2026-03-06 20:53:04 - Load images ...
+DEBUG: 2026-03-06 20:53:04 - Файл 'photo_2026-03-05_08-47-35_e5fa4144-3c85-47b0-9819-5e80858aa2d6.jpg' успешно прочитан (105612 байт)
+DEBUG: 2026-03-06 20:53:04 - Image loaded
+DEBUG: 2026-03-06 20:53:04 - Файл '9ed114b4-4773-5c50-b682-38cb9490db9a_3d1f1088-8822-423b-9cbd-00d069f9fd62.jfif' успешно прочитан (311439 байт)
+DEBUG: 2026-03-06 20:53:04 - Image loaded
+DEBUG: 2026-03-06 20:53:04 - Commit
+DEBUG: 2026-03-06 20:53:04 - Session close
+DEBUG: 2026-03-06 20:53:09 - Open transaction ...
+DEBUG: 2026-03-06 20:53:09 - Verefy access token
+DEBUG: 2026-03-06 20:53:09 - Verification of access token registration
+DEBUG: 2026-03-06 20:53:09 - Redis session started
+DEBUG: 2026-03-06 20:53:09 - Value retrieved from Redis: 1:07206186-0430-4fe1-ac72-bb122d4934d8:3b764055afbdc00fffd41bec66c0b5e4
+DEBUG: 2026-03-06 20:53:09 - Redis session ended
+DEBUG: 2026-03-06 20:53:09 - serialize token payload ...
+DEBUG: 2026-03-06 20:53:10 - Payload : user_id=1 user_role='root' iat=datetime.datetime(2026, 3, 6, 20, 41, 31, 935206) jti='07206186-0430-4fe1-ac72-bb122d4934d8' exp=datetime.datetime(2026, 3, 6, 20, 56, 31, 934918) token_type='access' device_id='3b764055afbdc00fffd41bec66c0b5e4' ip_address='172.18.0.6' is_rework=False
+DEBUG: 2026-03-06 20:53:10 - Access token is valid
+DEBUG: 2026-03-06 20:53:10 - Commit
+DEBUG: 2026-03-06 20:53:10 - Session close
+DEBUG: 2026-03-06 20:53:10 - Open transaction ...
+DEBUG: 2026-03-06 20:53:10 - Get me ... id : 1
+DEBUG: 2026-03-06 20:53:10 - Serialize ...
+DEBUG: 2026-03-06 20:53:10 - Commit
+DEBUG: 2026-03-06 20:53:10 - Session close
+DEBUG: 2026-03-06 20:53:10 - Open transaction ...
+DEBUG: 2026-03-06 20:53:10 - Load images ...
+DEBUG: 2026-03-06 20:53:10 - Файл 'photo_2026-03-05_08-47-35_e5fa4144-3c85-47b0-9819-5e80858aa2d6.jpg' успешно прочитан (105612 байт)
+DEBUG: 2026-03-06 20:53:10 - Image loaded
+DEBUG: 2026-03-06 20:53:10 - Файл '9ed114b4-4773-5c50-b682-38cb9490db9a_3d1f1088-8822-423b-9cbd-00d069f9fd62.jfif' успешно прочитан (311439 байт)
+DEBUG: 2026-03-06 20:53:10 - Image loaded
+DEBUG: 2026-03-06 20:53:10 - Commit
+DEBUG: 2026-03-06 20:53:10 - Session close
+DEBUG: 2026-03-06 20:53:10 - Open transaction ...
+DEBUG: 2026-03-06 20:53:10 - Load images ...
+DEBUG: 2026-03-06 20:53:10 - Файл 'photo_2026-03-05_08-47-35_e5fa4144-3c85-47b0-9819-5e80858aa2d6.jpg' успешно прочитан (105612 байт)
+DEBUG: 2026-03-06 20:53:10 - Image loaded
+DEBUG: 2026-03-06 20:53:10 - Файл '9ed114b4-4773-5c50-b682-38cb9490db9a_3d1f1088-8822-423b-9cbd-00d069f9fd62.jfif' успешно прочитан (311439 байт)
+DEBUG: 2026-03-06 20:53:10 - Image loaded
+DEBUG: 2026-03-06 20:53:10 - Commit
+DEBUG: 2026-03-06 20:53:10 - Session close
+DEBUG: 2026-03-06 20:53:10 - Open transaction ...
+DEBUG: 2026-03-06 20:53:10 - Load images ...
+DEBUG: 2026-03-06 20:53:10 - Файл 'photo_2026-03-05_08-47-35_e5fa4144-3c85-47b0-9819-5e80858aa2d6.jpg' успешно прочитан (105612 байт)
+DEBUG: 2026-03-06 20:53:10 - Image loaded
+DEBUG: 2026-03-06 20:53:10 - Файл '9ed114b4-4773-5c50-b682-38cb9490db9a_3d1f1088-8822-423b-9cbd-00d069f9fd62.jfif' успешно прочитан (311439 байт)
+DEBUG: 2026-03-06 20:53:10 - Image loaded
+DEBUG: 2026-03-06 20:53:10 - Commit
+DEBUG: 2026-03-06 20:53:11 - Session close
+INFO: 2026-03-06 20:53:13 - [TokenCleanup] 🧹 Начинаем очистку...
+INFO: 2026-03-06 20:53:13 - [TokenCleanup] ✅ Истекших токенов не найдено
+DEBUG: 2026-03-06 20:53:13 - [TokenCleanup] Ожидание 60 мин...
+DEBUG: 2026-03-06 20:55:45 - Open transaction ...
+DEBUG: 2026-03-06 20:55:45 - Verefy access token
+DEBUG: 2026-03-06 20:55:45 - Verification of access token registration
+DEBUG: 2026-03-06 20:55:45 - Redis session started
+DEBUG: 2026-03-06 20:55:45 - Value retrieved from Redis: 1:07206186-0430-4fe1-ac72-bb122d4934d8:3b764055afbdc00fffd41bec66c0b5e4
+DEBUG: 2026-03-06 20:55:45 - Redis session ended
+DEBUG: 2026-03-06 20:55:45 - serialize token payload ...
+DEBUG: 2026-03-06 20:55:45 - Payload : user_id=1 user_role='root' iat=datetime.datetime(2026, 3, 6, 20, 41, 31, 935206) jti='07206186-0430-4fe1-ac72-bb122d4934d8' exp=datetime.datetime(2026, 3, 6, 20, 56, 31, 934918) token_type='access' device_id='3b764055afbdc00fffd41bec66c0b5e4' ip_address='172.18.0.6' is_rework=False
+DEBUG: 2026-03-06 20:55:45 - Access token is valid
+DEBUG: 2026-03-06 20:55:45 - Commit
+DEBUG: 2026-03-06 20:55:45 - Session close
+DEBUG: 2026-03-06 20:55:45 - Open transaction ...
+DEBUG: 2026-03-06 20:55:45 - Get me ... id : 1
+DEBUG: 2026-03-06 20:55:45 - Serialize ...
+DEBUG: 2026-03-06 20:55:45 - Commit
+DEBUG: 2026-03-06 20:55:45 - Session close
+DEBUG: 2026-03-06 20:55:46 - Open transaction ...
+DEBUG: 2026-03-06 20:55:46 - Load images ...
+DEBUG: 2026-03-06 20:55:46 - Файл 'photo_2026-03-05_08-47-35_e5fa4144-3c85-47b0-9819-5e80858aa2d6.jpg' успешно прочитан (105612 байт)
+DEBUG: 2026-03-06 20:55:46 - Image loaded
+DEBUG: 2026-03-06 20:55:46 - Файл '9ed114b4-4773-5c50-b682-38cb9490db9a_3d1f1088-8822-423b-9cbd-00d069f9fd62.jfif' успешно прочитан (311439 байт)
+DEBUG: 2026-03-06 20:55:46 - Image loaded
+DEBUG: 2026-03-06 20:55:46 - Commit
+DEBUG: 2026-03-06 20:55:47 - Session close
+DEBUG: 2026-03-06 20:55:47 - Open transaction ...
+DEBUG: 2026-03-06 20:55:47 - Load images ...
+DEBUG: 2026-03-06 20:55:47 - Файл 'photo_2026-03-05_08-47-35_e5fa4144-3c85-47b0-9819-5e80858aa2d6.jpg' успешно прочитан (105612 байт)
+DEBUG: 2026-03-06 20:55:47 - Image loaded
+DEBUG: 2026-03-06 20:55:47 - Файл '9ed114b4-4773-5c50-b682-38cb9490db9a_3d1f1088-8822-423b-9cbd-00d069f9fd62.jfif' успешно прочитан (311439 байт)
+DEBUG: 2026-03-06 20:55:47 - Image loaded
+DEBUG: 2026-03-06 20:55:48 - Commit
+DEBUG: 2026-03-06 20:55:48 - Session close
+DEBUG: 2026-03-06 21:02:40 - Open transaction ...
+DEBUG: 2026-03-06 21:02:40 - Load images ...
+DEBUG: 2026-03-06 21:02:40 - Файл 'photo_2026-03-05_08-47-35_e5fa4144-3c85-47b0-9819-5e80858aa2d6.jpg' успешно прочитан (105612 байт)
+DEBUG: 2026-03-06 21:02:40 - Image loaded
+DEBUG: 2026-03-06 21:02:40 - Файл '9ed114b4-4773-5c50-b682-38cb9490db9a_3d1f1088-8822-423b-9cbd-00d069f9fd62.jfif' успешно прочитан (311439 байт)
+DEBUG: 2026-03-06 21:02:40 - Image loaded
+DEBUG: 2026-03-06 21:02:40 - Commit
+DEBUG: 2026-03-06 21:02:40 - Session close
+DEBUG: 2026-03-06 21:02:53 - Open transaction ...
+DEBUG: 2026-03-06 21:02:53 - Load images ...
+DEBUG: 2026-03-06 21:02:53 - Файл 'photo_2026-03-05_08-47-35_e5fa4144-3c85-47b0-9819-5e80858aa2d6.jpg' успешно прочитан (105612 байт)
+DEBUG: 2026-03-06 21:02:53 - Image loaded
+DEBUG: 2026-03-06 21:02:53 - Файл '9ed114b4-4773-5c50-b682-38cb9490db9a_3d1f1088-8822-423b-9cbd-00d069f9fd62.jfif' успешно прочитан (311439 байт)
+DEBUG: 2026-03-06 21:02:53 - Image loaded
+DEBUG: 2026-03-06 21:02:53 - Commit
+DEBUG: 2026-03-06 21:02:53 - Session close
+DEBUG: 2026-03-06 21:03:05 - Open transaction ...
+DEBUG: 2026-03-06 21:03:05 - Load images ...
+DEBUG: 2026-03-06 21:03:05 - Файл 'photo_2026-03-05_08-47-35_e5fa4144-3c85-47b0-9819-5e80858aa2d6.jpg' успешно прочитан (105612 байт)
+DEBUG: 2026-03-06 21:03:05 - Image loaded
+DEBUG: 2026-03-06 21:03:05 - Файл '9ed114b4-4773-5c50-b682-38cb9490db9a_3d1f1088-8822-423b-9cbd-00d069f9fd62.jfif' успешно прочитан (311439 байт)
+DEBUG: 2026-03-06 21:03:05 - Image loaded
+DEBUG: 2026-03-06 21:03:05 - Commit
+DEBUG: 2026-03-06 21:03:05 - Session close
+DEBUG: 2026-03-06 21:03:07 - Open transaction ...
+DEBUG: 2026-03-06 21:03:07 - Load images ...
+DEBUG: 2026-03-06 21:03:07 - Файл 'photo_2026-03-05_08-47-35_e5fa4144-3c85-47b0-9819-5e80858aa2d6.jpg' успешно прочитан (105612 байт)
+DEBUG: 2026-03-06 21:03:07 - Image loaded
+DEBUG: 2026-03-06 21:03:07 - Файл '9ed114b4-4773-5c50-b682-38cb9490db9a_3d1f1088-8822-423b-9cbd-00d069f9fd62.jfif' успешно прочитан (311439 байт)
+DEBUG: 2026-03-06 21:03:07 - Image loaded
+DEBUG: 2026-03-06 21:03:07 - Commit
+DEBUG: 2026-03-06 21:03:07 - Session close
+DEBUG: 2026-03-06 21:03:11 - Open transaction ...
+DEBUG: 2026-03-06 21:03:11 - Load images ...
+DEBUG: 2026-03-06 21:03:11 - Файл 'photo_2026-03-05_08-47-35_e5fa4144-3c85-47b0-9819-5e80858aa2d6.jpg' успешно прочитан (105612 байт)
+DEBUG: 2026-03-06 21:03:11 - Image loaded
+DEBUG: 2026-03-06 21:03:11 - Файл '9ed114b4-4773-5c50-b682-38cb9490db9a_3d1f1088-8822-423b-9cbd-00d069f9fd62.jfif' успешно прочитан (311439 байт)
+DEBUG: 2026-03-06 21:03:11 - Image loaded
+DEBUG: 2026-03-06 21:03:11 - Commit
+DEBUG: 2026-03-06 21:03:11 - Session close
+DEBUG: 2026-03-06 21:03:12 - Open transaction ...
+DEBUG: 2026-03-06 21:03:13 - Load images ...
+DEBUG: 2026-03-06 21:03:13 - Файл 'photo_2026-03-05_08-47-35_e5fa4144-3c85-47b0-9819-5e80858aa2d6.jpg' успешно прочитан (105612 байт)
+DEBUG: 2026-03-06 21:03:13 - Image loaded
+DEBUG: 2026-03-06 21:03:13 - Файл '9ed114b4-4773-5c50-b682-38cb9490db9a_3d1f1088-8822-423b-9cbd-00d069f9fd62.jfif' успешно прочитан (311439 байт)
+DEBUG: 2026-03-06 21:03:13 - Image loaded
+DEBUG: 2026-03-06 21:03:13 - Commit
+DEBUG: 2026-03-06 21:03:13 - Session close
+DEBUG: 2026-03-06 21:03:16 - Open transaction ...
+DEBUG: 2026-03-06 21:03:16 - Load images ...
+DEBUG: 2026-03-06 21:03:16 - Файл 'photo_2026-03-05_08-47-35_e5fa4144-3c85-47b0-9819-5e80858aa2d6.jpg' успешно прочитан (105612 байт)
+DEBUG: 2026-03-06 21:03:16 - Image loaded
+DEBUG: 2026-03-06 21:03:16 - Файл '9ed114b4-4773-5c50-b682-38cb9490db9a_3d1f1088-8822-423b-9cbd-00d069f9fd62.jfif' успешно прочитан (311439 байт)
+DEBUG: 2026-03-06 21:03:16 - Image loaded
+DEBUG: 2026-03-06 21:03:16 - Commit
+DEBUG: 2026-03-06 21:03:16 - Session close
+DEBUG: 2026-03-06 21:03:24 - Open transaction ...
+DEBUG: 2026-03-06 21:03:24 - Load images ...
+DEBUG: 2026-03-06 21:03:24 - Файл 'photo_2026-03-05_08-47-35_e5fa4144-3c85-47b0-9819-5e80858aa2d6.jpg' успешно прочитан (105612 байт)
+DEBUG: 2026-03-06 21:03:24 - Image loaded
+DEBUG: 2026-03-06 21:03:24 - Файл '9ed114b4-4773-5c50-b682-38cb9490db9a_3d1f1088-8822-423b-9cbd-00d069f9fd62.jfif' успешно прочитан (311439 байт)
+DEBUG: 2026-03-06 21:03:24 - Image loaded
+DEBUG: 2026-03-06 21:03:24 - Commit
+DEBUG: 2026-03-06 21:03:24 - Session close
+DEBUG: 2026-03-06 21:03:33 - Open transaction ...
+DEBUG: 2026-03-06 21:03:33 - Verefy access token
+WARNING: 2026-03-06 21:03:33 - Токен просрочен!
+WARNING: 2026-03-06 21:03:33 - Error invalid token
+WARNING: 2026-03-06 21:03:33 - Discard change rollback...
+DEBUG: 2026-03-06 21:03:33 - Session close
+DEBUG: 2026-03-06 21:03:33 - Open transaction ...
+DEBUG: 2026-03-06 21:03:33 - Verefy refresh token
+DEBUG: 2026-03-06 21:03:33 - Verification of refresh token registration
+DEBUG: 2026-03-06 21:03:33 - Revoking the access token
+DEBUG: 2026-03-06 21:03:33 - Redis session started
+DEBUG: 2026-03-06 21:03:33 - Found 0 keys matching pattern: 1:*:3b764055afbdc00fffd41bec66c0b5e4
+DEBUG: 2026-03-06 21:03:33 - Redis session ended
+DEBUG: 2026-03-06 21:03:33 - Revork 0 tokens
+DEBUG: 2026-03-06 21:03:33 - Create access token ...
+DEBUG: 2026-03-06 21:03:33 - Accouting access token
+DEBUG: 2026-03-06 21:03:33 - Redis session started
+DEBUG: 2026-03-06 21:03:33 - saved to Redis: 1:1e621ca0-50c6-4c5f-b256-aee03f0d9af7:3b764055afbdc00fffd41bec66c0b5e4, TTL: 0:15:00s
+DEBUG: 2026-03-06 21:03:33 - Redis session ended
+DEBUG: 2026-03-06 21:03:33 - Commit
+DEBUG: 2026-03-06 21:03:33 - Session close
+DEBUG: 2026-03-06 21:03:33 - Open transaction ...
+DEBUG: 2026-03-06 21:03:33 - Verefy access token
+DEBUG: 2026-03-06 21:03:33 - Verification of access token registration
+DEBUG: 2026-03-06 21:03:33 - Redis session started
+DEBUG: 2026-03-06 21:03:33 - Value retrieved from Redis: 1:1e621ca0-50c6-4c5f-b256-aee03f0d9af7:3b764055afbdc00fffd41bec66c0b5e4
+DEBUG: 2026-03-06 21:03:33 - Redis session ended
+DEBUG: 2026-03-06 21:03:33 - serialize token payload ...
+DEBUG: 2026-03-06 21:03:33 - Payload : user_id=1 user_role='root' iat=datetime.datetime(2026, 3, 6, 21, 3, 33, 411225) jti='1e621ca0-50c6-4c5f-b256-aee03f0d9af7' exp=datetime.datetime(2026, 3, 6, 21, 18, 33, 411177) token_type='access' device_id='3b764055afbdc00fffd41bec66c0b5e4' ip_address='172.18.0.6' is_rework=False
+DEBUG: 2026-03-06 21:03:33 - Access token is valid
+DEBUG: 2026-03-06 21:03:33 - Commit
+DEBUG: 2026-03-06 21:03:33 - Session close
+DEBUG: 2026-03-06 21:03:33 - Open transaction ...
+DEBUG: 2026-03-06 21:03:33 - Get me ... id : 1
+DEBUG: 2026-03-06 21:03:33 - Serialize ...
+DEBUG: 2026-03-06 21:03:33 - Commit
+DEBUG: 2026-03-06 21:03:33 - Session close
+DEBUG: 2026-03-06 21:03:33 - Open transaction ...
+DEBUG: 2026-03-06 21:03:33 - Load images ...
+DEBUG: 2026-03-06 21:03:33 - Файл 'photo_2026-03-05_08-47-35_e5fa4144-3c85-47b0-9819-5e80858aa2d6.jpg' успешно прочитан (105612 байт)
+DEBUG: 2026-03-06 21:03:33 - Image loaded
+DEBUG: 2026-03-06 21:03:33 - Файл '9ed114b4-4773-5c50-b682-38cb9490db9a_3d1f1088-8822-423b-9cbd-00d069f9fd62.jfif' успешно прочитан (311439 байт)
+DEBUG: 2026-03-06 21:03:33 - Image loaded
+DEBUG: 2026-03-06 21:03:33 - Commit
+DEBUG: 2026-03-06 21:03:33 - Session close
+DEBUG: 2026-03-06 21:03:33 - Open transaction ...
+DEBUG: 2026-03-06 21:03:33 - Load images ...
+DEBUG: 2026-03-06 21:03:33 - Файл 'photo_2026-03-05_08-47-35_e5fa4144-3c85-47b0-9819-5e80858aa2d6.jpg' успешно прочитан (105612 байт)
+DEBUG: 2026-03-06 21:03:33 - Image loaded
+DEBUG: 2026-03-06 21:03:33 - Файл '9ed114b4-4773-5c50-b682-38cb9490db9a_3d1f1088-8822-423b-9cbd-00d069f9fd62.jfif' успешно прочитан (311439 байт)
+DEBUG: 2026-03-06 21:03:33 - Image loaded
+DEBUG: 2026-03-06 21:03:34 - Commit
+DEBUG: 2026-03-06 21:03:34 - Session close
+DEBUG: 2026-03-06 21:06:26 - Open transaction ...
+DEBUG: 2026-03-06 21:06:26 - Load images ...
+DEBUG: 2026-03-06 21:06:26 - Файл 'photo_2026-03-05_08-47-35_e5fa4144-3c85-47b0-9819-5e80858aa2d6.jpg' успешно прочитан (105612 байт)
+DEBUG: 2026-03-06 21:06:26 - Image loaded
+DEBUG: 2026-03-06 21:06:26 - Файл '9ed114b4-4773-5c50-b682-38cb9490db9a_3d1f1088-8822-423b-9cbd-00d069f9fd62.jfif' успешно прочитан (311439 байт)
+DEBUG: 2026-03-06 21:06:26 - Image loaded
+DEBUG: 2026-03-06 21:06:26 - Commit
+DEBUG: 2026-03-06 21:06:26 - Session close
+DEBUG: 2026-03-06 21:06:36 - Open transaction ...
+DEBUG: 2026-03-06 21:06:36 - Load images ...
+DEBUG: 2026-03-06 21:06:36 - Файл 'photo_2026-03-05_08-47-35_e5fa4144-3c85-47b0-9819-5e80858aa2d6.jpg' успешно прочитан (105612 байт)
+DEBUG: 2026-03-06 21:06:36 - Image loaded
+DEBUG: 2026-03-06 21:06:36 - Файл '9ed114b4-4773-5c50-b682-38cb9490db9a_3d1f1088-8822-423b-9cbd-00d069f9fd62.jfif' успешно прочитан (311439 байт)
+DEBUG: 2026-03-06 21:06:36 - Image loaded
+DEBUG: 2026-03-06 21:06:36 - Commit
+DEBUG: 2026-03-06 21:06:36 - Session close
+DEBUG: 2026-03-06 21:06:40 - Open transaction ...
+DEBUG: 2026-03-06 21:06:40 - Load images ...
+DEBUG: 2026-03-06 21:06:40 - Файл 'photo_2026-03-05_08-47-35_e5fa4144-3c85-47b0-9819-5e80858aa2d6.jpg' успешно прочитан (105612 байт)
+DEBUG: 2026-03-06 21:06:40 - Image loaded
+DEBUG: 2026-03-06 21:06:40 - Файл '9ed114b4-4773-5c50-b682-38cb9490db9a_3d1f1088-8822-423b-9cbd-00d069f9fd62.jfif' успешно прочитан (311439 байт)
+DEBUG: 2026-03-06 21:06:40 - Image loaded
+DEBUG: 2026-03-06 21:06:40 - Commit
+DEBUG: 2026-03-06 21:06:40 - Session close
+DEBUG: 2026-03-06 21:06:43 - Open transaction ...
+DEBUG: 2026-03-06 21:06:43 - Load images ...
+DEBUG: 2026-03-06 21:06:43 - Файл 'photo_2026-03-05_08-47-35_e5fa4144-3c85-47b0-9819-5e80858aa2d6.jpg' успешно прочитан (105612 байт)
+DEBUG: 2026-03-06 21:06:43 - Image loaded
+DEBUG: 2026-03-06 21:06:44 - Файл '9ed114b4-4773-5c50-b682-38cb9490db9a_3d1f1088-8822-423b-9cbd-00d069f9fd62.jfif' успешно прочитан (311439 байт)
+DEBUG: 2026-03-06 21:06:44 - Image loaded
+DEBUG: 2026-03-06 21:06:44 - Commit
+DEBUG: 2026-03-06 21:06:44 - Session close
+DEBUG: 2026-03-06 21:06:46 - Open transaction ...
+DEBUG: 2026-03-06 21:06:46 - Verefy access token
+DEBUG: 2026-03-06 21:06:46 - Verification of access token registration
+DEBUG: 2026-03-06 21:06:46 - Redis session started
+DEBUG: 2026-03-06 21:06:46 - Value retrieved from Redis: 1:1e621ca0-50c6-4c5f-b256-aee03f0d9af7:3b764055afbdc00fffd41bec66c0b5e4
+DEBUG: 2026-03-06 21:06:46 - Redis session ended
+DEBUG: 2026-03-06 21:06:46 - serialize token payload ...
+DEBUG: 2026-03-06 21:06:46 - Payload : user_id=1 user_role='root' iat=datetime.datetime(2026, 3, 6, 21, 3, 33, 411225) jti='1e621ca0-50c6-4c5f-b256-aee03f0d9af7' exp=datetime.datetime(2026, 3, 6, 21, 18, 33, 411177) token_type='access' device_id='3b764055afbdc00fffd41bec66c0b5e4' ip_address='172.18.0.6' is_rework=False
+DEBUG: 2026-03-06 21:06:46 - Access token is valid
+DEBUG: 2026-03-06 21:06:46 - Commit
+DEBUG: 2026-03-06 21:06:46 - Session close
+DEBUG: 2026-03-06 21:06:46 - Open transaction ...
+DEBUG: 2026-03-06 21:06:46 - Get me ... id : 1
+DEBUG: 2026-03-06 21:06:46 - Serialize ...
+DEBUG: 2026-03-06 21:06:46 - Commit
+DEBUG: 2026-03-06 21:06:46 - Session close
+DEBUG: 2026-03-06 21:06:46 - Open transaction ...
+DEBUG: 2026-03-06 21:06:46 - Load images ...
+DEBUG: 2026-03-06 21:06:46 - Файл 'photo_2026-03-05_08-47-35_e5fa4144-3c85-47b0-9819-5e80858aa2d6.jpg' успешно прочитан (105612 байт)
+DEBUG: 2026-03-06 21:06:46 - Image loaded
+DEBUG: 2026-03-06 21:06:46 - Файл '9ed114b4-4773-5c50-b682-38cb9490db9a_3d1f1088-8822-423b-9cbd-00d069f9fd62.jfif' успешно прочитан (311439 байт)
+DEBUG: 2026-03-06 21:06:46 - Image loaded
+DEBUG: 2026-03-06 21:06:47 - Commit
+DEBUG: 2026-03-06 21:06:47 - Session close
+DEBUG: 2026-03-06 21:06:47 - Open transaction ...
+DEBUG: 2026-03-06 21:06:47 - Load images ...
+DEBUG: 2026-03-06 21:06:47 - Файл 'photo_2026-03-05_08-47-35_e5fa4144-3c85-47b0-9819-5e80858aa2d6.jpg' успешно прочитан (105612 байт)
+DEBUG: 2026-03-06 21:06:47 - Image loaded
+DEBUG: 2026-03-06 21:06:47 - Файл '9ed114b4-4773-5c50-b682-38cb9490db9a_3d1f1088-8822-423b-9cbd-00d069f9fd62.jfif' успешно прочитан (311439 байт)
+DEBUG: 2026-03-06 21:06:47 - Image loaded
+DEBUG: 2026-03-06 21:06:47 - Commit
+DEBUG: 2026-03-06 21:06:47 - Session close
+DEBUG: 2026-03-06 21:07:11 - Open transaction ...
+DEBUG: 2026-03-06 21:07:11 - Verefy access token
+DEBUG: 2026-03-06 21:07:11 - Verification of access token registration
+DEBUG: 2026-03-06 21:07:11 - Redis session started
+DEBUG: 2026-03-06 21:07:11 - Value retrieved from Redis: 1:1e621ca0-50c6-4c5f-b256-aee03f0d9af7:3b764055afbdc00fffd41bec66c0b5e4
+DEBUG: 2026-03-06 21:07:11 - Redis session ended
+DEBUG: 2026-03-06 21:07:11 - serialize token payload ...
+DEBUG: 2026-03-06 21:07:11 - Payload : user_id=1 user_role='root' iat=datetime.datetime(2026, 3, 6, 21, 3, 33, 411225) jti='1e621ca0-50c6-4c5f-b256-aee03f0d9af7' exp=datetime.datetime(2026, 3, 6, 21, 18, 33, 411177) token_type='access' device_id='3b764055afbdc00fffd41bec66c0b5e4' ip_address='172.18.0.6' is_rework=False
+DEBUG: 2026-03-06 21:07:11 - Access token is valid
+DEBUG: 2026-03-06 21:07:11 - Commit
+DEBUG: 2026-03-06 21:07:11 - Session close
+DEBUG: 2026-03-06 21:07:11 - Open transaction ...
+DEBUG: 2026-03-06 21:07:11 - Delete news 1
+DEBUG: 2026-03-06 21:07:11 - Delete image from file storage
+DEBUG: 2026-03-06 21:07:11 - Объект 'photo_2026-03-05_08-47-35_e5fa4144-3c85-47b0-9819-5e80858aa2d6.jpg' удален из бакета 'news-images'
+DEBUG: 2026-03-06 21:07:11 - Delete news..
+DEBUG: 2026-03-06 21:07:11 - ✅ News deleted...
+DEBUG: 2026-03-06 21:07:11 - Commit
+DEBUG: 2026-03-06 21:07:11 - Session close
+DEBUG: 2026-03-06 21:07:14 - Open transaction ...
+DEBUG: 2026-03-06 21:07:14 - Verefy access token
+DEBUG: 2026-03-06 21:07:14 - Verification of access token registration
+DEBUG: 2026-03-06 21:07:14 - Redis session started
+DEBUG: 2026-03-06 21:07:14 - Value retrieved from Redis: 1:1e621ca0-50c6-4c5f-b256-aee03f0d9af7:3b764055afbdc00fffd41bec66c0b5e4
+DEBUG: 2026-03-06 21:07:14 - Redis session ended
+DEBUG: 2026-03-06 21:07:14 - serialize token payload ...
+DEBUG: 2026-03-06 21:07:14 - Payload : user_id=1 user_role='root' iat=datetime.datetime(2026, 3, 6, 21, 3, 33, 411225) jti='1e621ca0-50c6-4c5f-b256-aee03f0d9af7' exp=datetime.datetime(2026, 3, 6, 21, 18, 33, 411177) token_type='access' device_id='3b764055afbdc00fffd41bec66c0b5e4' ip_address='172.18.0.6' is_rework=False
+DEBUG: 2026-03-06 21:07:14 - Access token is valid
+DEBUG: 2026-03-06 21:07:14 - Commit
+DEBUG: 2026-03-06 21:07:14 - Session close
+DEBUG: 2026-03-06 21:07:14 - Open transaction ...
+DEBUG: 2026-03-06 21:07:14 - Delete news 2
+DEBUG: 2026-03-06 21:07:14 - Delete image from file storage
+DEBUG: 2026-03-06 21:07:14 - Объект '9ed114b4-4773-5c50-b682-38cb9490db9a_3d1f1088-8822-423b-9cbd-00d069f9fd62.jfif' удален из бакета 'news-images'
+DEBUG: 2026-03-06 21:07:14 - Delete news..
+DEBUG: 2026-03-06 21:07:14 - ✅ News deleted...
+DEBUG: 2026-03-06 21:07:14 - Commit
+DEBUG: 2026-03-06 21:07:14 - Session close
+DEBUG: 2026-03-06 21:07:25 - Open transaction ...
+DEBUG: 2026-03-06 21:07:25 - Verefy access token
+DEBUG: 2026-03-06 21:07:25 - Verification of access token registration
+DEBUG: 2026-03-06 21:07:25 - Redis session started
+DEBUG: 2026-03-06 21:07:25 - Value retrieved from Redis: 1:1e621ca0-50c6-4c5f-b256-aee03f0d9af7:3b764055afbdc00fffd41bec66c0b5e4
+DEBUG: 2026-03-06 21:07:25 - Redis session ended
+DEBUG: 2026-03-06 21:07:25 - serialize token payload ...
+DEBUG: 2026-03-06 21:07:25 - Payload : user_id=1 user_role='root' iat=datetime.datetime(2026, 3, 6, 21, 3, 33, 411225) jti='1e621ca0-50c6-4c5f-b256-aee03f0d9af7' exp=datetime.datetime(2026, 3, 6, 21, 18, 33, 411177) token_type='access' device_id='3b764055afbdc00fffd41bec66c0b5e4' ip_address='172.18.0.6' is_rework=False
+DEBUG: 2026-03-06 21:07:25 - Access token is valid
+DEBUG: 2026-03-06 21:07:25 - Commit
+DEBUG: 2026-03-06 21:07:25 - Session close
+DEBUG: 2026-03-06 21:07:25 - Open transaction ...
+DEBUG: 2026-03-06 21:07:25 - Get me ... id : 1
+DEBUG: 2026-03-06 21:07:25 - Serialize ...
+DEBUG: 2026-03-06 21:07:25 - Commit
+DEBUG: 2026-03-06 21:07:25 - Session close
+DEBUG: 2026-03-06 21:07:25 - Open transaction ...
+WARNING: 2026-03-06 21:07:25 - News not found
+WARNING: 2026-03-06 21:07:26 - Discard change rollback...
+DEBUG: 2026-03-06 21:07:26 - Session close
+DEBUG: 2026-03-06 21:07:26 - Open transaction ...
+WARNING: 2026-03-06 21:07:26 - News not found
+WARNING: 2026-03-06 21:07:26 - Discard change rollback...
+DEBUG: 2026-03-06 21:07:26 - Session close
+DEBUG: 2026-03-06 21:07:29 - Open transaction ...
+DEBUG: 2026-03-06 21:07:29 - Verefy access token
+DEBUG: 2026-03-06 21:07:29 - Verification of access token registration
+DEBUG: 2026-03-06 21:07:29 - Redis session started
+DEBUG: 2026-03-06 21:07:29 - Value retrieved from Redis: 1:1e621ca0-50c6-4c5f-b256-aee03f0d9af7:3b764055afbdc00fffd41bec66c0b5e4
+DEBUG: 2026-03-06 21:07:29 - Redis session ended
+DEBUG: 2026-03-06 21:07:29 - serialize token payload ...
+DEBUG: 2026-03-06 21:07:29 - Payload : user_id=1 user_role='root' iat=datetime.datetime(2026, 3, 6, 21, 3, 33, 411225) jti='1e621ca0-50c6-4c5f-b256-aee03f0d9af7' exp=datetime.datetime(2026, 3, 6, 21, 18, 33, 411177) token_type='access' device_id='3b764055afbdc00fffd41bec66c0b5e4' ip_address='172.18.0.6' is_rework=False
+DEBUG: 2026-03-06 21:07:29 - Access token is valid
+DEBUG: 2026-03-06 21:07:29 - Commit
+DEBUG: 2026-03-06 21:07:29 - Session close
+DEBUG: 2026-03-06 21:07:29 - Open transaction ...
+DEBUG: 2026-03-06 21:07:29 - Get me ... id : 1
+DEBUG: 2026-03-06 21:07:29 - Serialize ...
+DEBUG: 2026-03-06 21:07:29 - Commit
+DEBUG: 2026-03-06 21:07:29 - Session close
+DEBUG: 2026-03-06 21:07:29 - Open transaction ...
+WARNING: 2026-03-06 21:07:29 - News not found
+WARNING: 2026-03-06 21:07:29 - Discard change rollback...
+DEBUG: 2026-03-06 21:07:29 - Session close
+DEBUG: 2026-03-06 21:07:29 - Open transaction ...
+WARNING: 2026-03-06 21:07:29 - News not found
+WARNING: 2026-03-06 21:07:29 - Discard change rollback...
+DEBUG: 2026-03-06 21:07:29 - Session close
+DEBUG: 2026-03-06 21:12:08 - Open transaction ...
+WARNING: 2026-03-06 21:12:08 - News not found
+WARNING: 2026-03-06 21:12:08 - Discard change rollback...
+DEBUG: 2026-03-06 21:12:08 - Session close
+DEBUG: 2026-03-06 21:12:08 - Open transaction ...
+WARNING: 2026-03-06 21:12:08 - News not found
+WARNING: 2026-03-06 21:12:08 - Discard change rollback...
+DEBUG: 2026-03-06 21:12:08 - Session close
+DEBUG: 2026-03-06 21:13:26 - Open transaction ...
+DEBUG: 2026-03-06 21:13:26 - Verefy access token
+DEBUG: 2026-03-06 21:13:26 - Verification of access token registration
+DEBUG: 2026-03-06 21:13:26 - Redis session started
+DEBUG: 2026-03-06 21:13:26 - Value retrieved from Redis: 1:1e621ca0-50c6-4c5f-b256-aee03f0d9af7:3b764055afbdc00fffd41bec66c0b5e4
+DEBUG: 2026-03-06 21:13:26 - Redis session ended
+DEBUG: 2026-03-06 21:13:26 - serialize token payload ...
+DEBUG: 2026-03-06 21:13:26 - Payload : user_id=1 user_role='root' iat=datetime.datetime(2026, 3, 6, 21, 3, 33, 411225) jti='1e621ca0-50c6-4c5f-b256-aee03f0d9af7' exp=datetime.datetime(2026, 3, 6, 21, 18, 33, 411177) token_type='access' device_id='3b764055afbdc00fffd41bec66c0b5e4' ip_address='172.18.0.6' is_rework=False
+DEBUG: 2026-03-06 21:13:26 - Access token is valid
+DEBUG: 2026-03-06 21:13:26 - Commit
+DEBUG: 2026-03-06 21:13:26 - Session close
+DEBUG: 2026-03-06 21:13:27 - Open transaction ...
+DEBUG: 2026-03-06 21:13:27 - Publish news...
+DEBUG: 2026-03-06 21:13:27 - Данные успешно загружены как '17. Мост_f2a77a17-6b5a-4f88-a08b-06b9e2171928.jpg' в бакет 'news-images'
+DEBUG: 2026-03-06 21:13:27 - Данные успешно загружены как '11. Закат_f2b46eb6-345e-4ad6-9031-27b1c4e57709.jpg' в бакет 'news-images'
+DEBUG: 2026-03-06 21:13:27 - Данные успешно загружены как '16. Город_8adf8188-2aa3-4ae7-ae39-0e5f248d98a8.jpg' в бакет 'news-images'
+DEBUG: 2026-03-06 21:13:27 - Данные успешно загружены как '13. Камни_346e1979-1020-44ff-aaa2-0b93f6d82993.jpg' в бакет 'news-images'
+DEBUG: 2026-03-06 21:13:27 - Данные успешно загружены как '18. Замок Химэдзи_a6cc46f7-f478-4174-8ff9-8a4aca483b2c.jpg' в бакет 'news-images'
+DEBUG: 2026-03-06 21:13:27 - Данные успешно загружены как '12. Вода_b0030818-4501-47f7-80a4-5885553e7360.jpg' в бакет 'news-images'
+DEBUG: 2026-03-06 21:13:27 - Данные успешно загружены как '8. Божья коровка_3f214973-43dd-415c-b055-2b9cf0e69af1.jpg' в бакет 'news-images'
+DEBUG: 2026-03-06 21:13:27 - ✅ Successfully uploaded 7 images
+DEBUG: 2026-03-06 21:13:27 - Commit
+DEBUG: 2026-03-06 21:13:27 - Session close
+DEBUG: 2026-03-06 21:13:27 - Open transaction ...
+DEBUG: 2026-03-06 21:13:27 - Load images ...
+DEBUG: 2026-03-06 21:13:28 - Файл '17. Мост_f2a77a17-6b5a-4f88-a08b-06b9e2171928.jpg' успешно прочитан (673383 байт)
+DEBUG: 2026-03-06 21:13:28 - Image loaded
+DEBUG: 2026-03-06 21:13:28 - Commit
+DEBUG: 2026-03-06 21:13:28 - Session close
+INFO: 2026-03-06 21:15:07 - [TokenCleanup] 🛑 Останавливаем фоновый процесс...
+INFO: 2026-03-06 21:15:07 - [TokenCleanup] Соединения с БД закрыты
+INFO: 2026-03-06 21:15:07 - [TokenCleanup] 👋 Поток очистки остановлен
+INFO: 2026-03-06 21:15:07 - [TokenCleanup] Поток успешно завершен
