@@ -43,7 +43,7 @@ class NewsService:
                 self._executor,
                 self.minio_manager.get_obj,
                 image.bucket_name,
-                image.filename
+                image.url,
             )
             logger.debug("Image loaded")
             image.base64 = base64.b64encode(image_bytes).decode('utf-8')
@@ -60,22 +60,29 @@ class NewsService:
                 self._executor, 
                 self.minio_manager.delete_obj, 
                 image.bucket_name,
-                image.filename
+                image.url
                 ))
         await asyncio.gather(*minio_task)
         logger.debug("Delete news..")
         await self.news_repository.delete(news_id)
         logger.debug("✅ News deleted...")
     
-    async def create_news(self, user_id, title: str, body: str, upload_images: List[UploadFile]) -> None:
+    async def create_news(
+            self, 
+            user_id, 
+            title: str, 
+            body: str, 
+            upload_images: List[UploadFile], 
+            news_bucket_name: str = "news-images"
+            ) -> None:
         """Создание новости"""
         logger.debug("Publish news...")
-        news_bucket_name = "news-images"
         news = await self.news_repository.create(
             user_id=user_id, 
             title=title, 
             body=body
         )
+        news_folder = f"{news_bucket_name}/{news.id}"
         if not upload_images:
             return news
         read_tasks = [image.read() for image in upload_images]
@@ -89,28 +96,32 @@ class NewsService:
                 name, ext = os.path.splitext(image.filename)
                 filename = f"{name}_{uuid.uuid4()}{ext}"
             image_type = {
-                "image/jpeg" : ImageType.JPEG, 
-                "image/jpg" : ImageType.JPEG,
-                "image/png" : ImageType.PNG,
+                "image/jpeg": ImageType.JPEG,
+                "image/jpg": ImageType.JPEG,
+                "image/png": ImageType.PNG,
                 "image/webp": ImageType.WEBP
-                }
+            }
             try:
                 db_records.append({
                     'news_id': news.id,
                     'bucket_name': news_bucket_name,
                     'filename': filename,
+                    'url' : f"{news.id}/{filename}",
                     'content_type': image_type[image.content_type],
                     'order': order
                 })
             except KeyError:
-                logger.warn("This type is not supported")
-                raise HTTPException(status_code=status.HTTP_415_UNSUPPORTED_MEDIA_TYPE, detail="This type is not supported")
+                logger.warn(f"Unsupported image type: {image.content_type}")
+                raise HTTPException(
+                    status_code=status.HTTP_415_UNSUPPORTED_MEDIA_TYPE, 
+                    detail=f"Image type {image.content_type} is not supported. Supported types: JPEG, PNG, WEBP"
+                )
             minio_tasks.append(
                 asyncio.get_event_loop().run_in_executor(
                     self._executor,
-                    self.minio_manager.save_obj_bytes,
-                    news_bucket_name,
-                    filename,
+                    self.minio_manager.save_obj_bytes_with_url,
+                    news_bucket_name, 
+                    f"{news.id}/{filename}",
                     content,
                     image.content_type
                 )
@@ -119,7 +130,8 @@ class NewsService:
         await asyncio.gather(*minio_tasks)
         for image in upload_images:
             await image.seek(0)
-        logger.debug(f"✅ Successfully uploaded {len(upload_images)} images")
+        logger.debug(f"✅ Successfully uploaded {len(upload_images)} images to folder {news_folder}")
+        return news
 
     async def get_all_news(self) -> List:
         news_list = await self.news_repository.get_all_with_image(order=1)
@@ -154,4 +166,6 @@ class NewsService:
             upload_images: Optional[List[UploadFile]]
             ) -> None:
         logger.debug("Updated news ...")
-        
+        logger.debug(title)
+        logger.debug(body)
+        logger.debug(upload_images)

@@ -1,4 +1,5 @@
 import io
+from datetime import timedelta
 from abc import ABC, abstractmethod
 from minio import Minio
 from minio.error import S3Error
@@ -156,6 +157,20 @@ class MinioManager(AbstractMinioManager):
             logger.warn(f"Неизвестная ошибка: {e}")
             raise
 
+    def get_image_url(self, bucket_name: str, news_id: int, filename: str) -> str:
+        """Получение URL изображения"""
+        try:
+            object_path = f"{news_id}/{filename}"
+            url = self.client.presigned_get_object(
+                bucket_name=bucket_name,
+                object_name=object_path,
+                expires=timedelta(hours=1)  # Ссылка действительна 1 час
+            )
+            return url
+        except Exception as e:
+            logger.error(f"Error getting image URL: {e}")
+            return None
+
     def save_obj_bytes(
         self,
         bucket_name: str,
@@ -181,6 +196,35 @@ class MinioManager(AbstractMinioManager):
             raise
         except Exception as e:
             logger.warn(f"Неизвестная ошибка: {e}")
+            raise
+
+    def save_obj_bytes_with_url(
+        self,
+        bucket_name: str,
+        object_path: str,  
+        data: bytes,
+        content_type: str = "application/octet-stream"
+    ) -> bool:
+        try:
+            if not self.client.bucket_exists(bucket_name):
+                self.client.make_bucket(bucket_name)
+                logger.debug(f"Created bucket: {bucket_name}")
+            
+            data_stream = io.BytesIO(data)
+            self.client.put_object(
+                bucket_name=bucket_name,
+                object_name=object_path, 
+                data=data_stream,
+                length=len(data),
+                content_type=content_type
+            )
+            logger.debug(f"✅ Successfully uploaded to {bucket_name}/{object_path}")
+            return True
+        except S3Error as e:
+            logger.error(f"MinIO S3 error: {e}")
+            raise
+        except Exception as e:
+            logger.error(f"Unknown error while saving to MinIO: {e}")
             raise
     
     def list_objects(self, bucket_name: str, prefix: str = "") -> list:
