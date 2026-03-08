@@ -102,7 +102,6 @@ async def refresh(
     device_id = Header(..., alias="X-Device-Id")
     ):
     """Верефикация refresh токена"""
-    print("-------------------------------------------------------------------------------")
     refresh_token = credentials.credentials
     access_token = await service.refresh(
         device_id=device_id,
