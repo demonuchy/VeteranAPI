@@ -1,5 +1,5 @@
-from typing import Any, List
-from sqlalchemy import select, delete
+from typing import Any, List, Optional
+from sqlalchemy import select, delete, func
 from sqlalchemy.orm import selectinload, contains_eager
 from .models import User, News, NewsImages, Comment, Token
 from .base import BaseSQLAlchemyRepository
@@ -87,6 +87,22 @@ class NewsImagesRepository(BaseSQLAlchemyRepository[NewsImages]):
         await self.session.flush()
         return objects
     
+    async def delete_by_filename(self, news_id: int, filename: str) -> None:
+        """Удаляет запись изображения по имени файла"""
+        query = delete(self.model).where(
+            self.model.news_id == news_id,
+            self.model.filename == filename
+        )
+        await self.session.execute(query)
+        await self.session.commit()
+        logger.debug(f"Deleted image {filename} for news {news_id}")
+
+    async def get_max_order(self, news_id: int) -> Optional[int]:
+        """Возвращает максимальный order для новости"""
+        query = select(func.max(self.model.order)).where(self.model.news_id == news_id)
+        result = await self.session.execute(query)
+        return result.scalar_one_or_none()
+        
 
 class CommentRepository(BaseSQLAlchemyRepository[Comment]):
     def __init__(self, session):

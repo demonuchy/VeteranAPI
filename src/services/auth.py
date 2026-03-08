@@ -179,12 +179,20 @@ class AuthService:
         await self.token_storage.accouting_token_with_DTO(access_token.payload)
         return access_token.token
 
-    async def logout(self, user_id : int):
+    async def logout(self, user_id : int, device_id : str):
         logger.debug("Logout attemp")
-        ...
+        logger.debug("Revoking the refresh token")
+        await self.token_repository.delete_by_fields(user_id = user_id, device_id = device_id)
+        logger.debug("Revoking the access token")
+        revork_count = await self.token_storage.delete_by_pattern(f"{user_id}:*:{device_id}")
+        logger.debug(f"Revork {revork_count} tokens")
         logger.debug("User logout")
 
-    async def logout_all(self, use_id : int ):
+    async def logout_all(self, user_id : int ):
         logger.debug("Logout all attemp")
-        ...
+        logger.debug("Revoking the refresh token")
+        await self.token_repository.delete_by_fields(user_id = user_id)
+        logger.debug("Revoking the access token")
+        revork_count = await self.token_storage.delete_by_pattern(f"{user_id}:*:*")
+        logger.debug(f"Revork {revork_count} tokens")
         logger.debug("User logout all")

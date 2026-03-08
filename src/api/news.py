@@ -75,11 +75,16 @@ async def delete_news(service : NewsServiceDep, news_id : int):
 async def update_news(
     service : NewsServiceDep, 
     news_id : int,
-    title: str = Optional[Form(..., min_length=3, max_length=200)],
-    body: str = Optional[Form(..., min_length=10)],
+    title: Optional[str] = Form(None),
+    body: Optional[str] = Form(None),
     images: Optional[List[UploadFile]] = File(default=[]),
     ):
-    await service.update_news()
+    await service.update_news(
+        news_id=int(news_id), 
+        title=title, 
+        body=body, 
+        upload_images=images
+        )
     return JSONResponse(
         status_code=status.HTTP_200_OK, 
         content={"detail" : "Ok"}

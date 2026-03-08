@@ -102,6 +102,7 @@ async def refresh(
     device_id = Header(..., alias="X-Device-Id")
     ):
     """Верефикация refresh токена"""
+    print("-------------------------------------------------------------------------------")
     refresh_token = credentials.credentials
     access_token = await service.refresh(
         device_id=device_id,
@@ -121,8 +122,13 @@ async def refresh(
 
 
 @auth_route.post("/logout")
-async def logout(service : AuthServiceDep):
+async def logout(
+    service : AuthServiceDep, 
+    user_id = Header(..., alias="X-User-Id"), 
+    device_id = Header(..., alias="X-Device-Id")
+    ):
     """Выход из системы"""
+    service.logout(user_id=int(user_id), device_id=device_id)
     return JSONResponse(
         status_code=status.HTTP_200_OK, 
         content={"detail" : "Ok"}
