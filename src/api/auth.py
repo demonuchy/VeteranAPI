@@ -127,7 +127,19 @@ async def logout(
     device_id = Header(..., alias="X-Device-Id")
     ):
     """Выход из системы"""
-    service.logout(user_id=int(user_id), device_id=device_id)
+    await service.logout(user_id=int(user_id), device_id=device_id)
+    return JSONResponse(
+        status_code=status.HTTP_200_OK, 
+        content={"detail" : "Ok"}
+        )
+
+@auth_route.post("/logout-all")
+async def logout(
+    service : AuthServiceDep, 
+    user_id = Header(..., alias="X-User-Id"), 
+    ):
+    """Выход из системы"""
+    await service.logout_all(user_id=int(user_id))
     return JSONResponse(
         status_code=status.HTTP_200_OK, 
         content={"detail" : "Ok"}

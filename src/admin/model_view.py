@@ -1,4 +1,6 @@
 # admin/views.py
+import os
+import httpx
 from sqladmin import ModelView
 from starlette.requests import Request
 from typing import Any, Optional
@@ -7,7 +9,7 @@ from datetime import datetime
 from database.models import User, Token, News, NewsImages, Comment
 from database.fields import Role, TokenType, ImageType
 from shared.logger.logger import logger
-from utils.jwt_manager import TokenStorage
+
 
 class UserAdmin(ModelView, model=User):
     """Админ-панель для пользователей"""
@@ -97,7 +99,14 @@ class UserAdmin(ModelView, model=User):
     async def on_model_change(self, data: dict, model: User, is_created: bool, request: Request) -> None:
         logger.debug(f"Detect change {data}")
         if not is_created:
-            data["role"]
+            logger.debug("Logout ....")
+            api_url= os.getenv("API_URL", "http://localhost:8000")
+            async with httpx.AsyncClient() as client:
+                await client.post(
+                        f"{api_url}/api/v1/auth/logout-all",
+                        headers={"X-User-Id": f"{model.id}"}
+                    )
+            logger.debug(f"User id : {model.id} logout all sucsess")
         
 
 
@@ -334,7 +343,7 @@ class CommentAdmin(ModelView, model=Comment):
     
     column_list = [
         Comment.id,
-        Comment.new_id,
+        Comment.news_id,
         Comment.user_id,
         Comment.body,
         Comment.created_at,
@@ -342,7 +351,7 @@ class CommentAdmin(ModelView, model=Comment):
     
     column_sortable_list = [
         Comment.id,
-        Comment.new_id,
+        Comment.news_id,
         Comment.user_id,
         Comment.created_at,
     ]
@@ -356,7 +365,7 @@ class CommentAdmin(ModelView, model=Comment):
     
     column_labels = {
         Comment.id: "ID",
-        Comment.new_id: "ID новости",
+        Comment.news_id: "ID новости",
         Comment.user_id: "ID пользователя",
         Comment.body: "Текст",
         Comment.created_at: "Дата создания",
@@ -370,7 +379,7 @@ class CommentAdmin(ModelView, model=Comment):
     # Детальный просмотр
     column_details_list = [
         Comment.id,
-        Comment.new_id,
+        Comment.news_id,
         Comment.user_id,
         Comment.body,
         Comment.created_at,
@@ -378,7 +387,7 @@ class CommentAdmin(ModelView, model=Comment):
     
     # Форма создания/редактирования
     form_columns = [
-        Comment.new_id,
+        Comment.news_id,
         Comment.user_id,
         Comment.body,
     ]

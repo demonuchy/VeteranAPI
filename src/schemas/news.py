@@ -21,6 +21,24 @@ class NewsImageSchema(BaseModel):
     @field_serializer('created_at')
     def serialize_datetime(self, dt: datetime, _info):
         return dt.isoformat()
+    
+
+class CommentShema(BaseModel):
+    id : int
+    user_id : int
+    news_id : int 
+    body : str
+    like : int
+    order : int 
+    created_at: datetime
+
+    class Config:
+        from_attributes = True
+
+    @field_serializer('created_at')
+    def serialize_datetime(self, dt: datetime, _info):
+        return dt.isoformat()
+    
 
 class NewsSchema(BaseModel):
     id: int
@@ -28,9 +46,11 @@ class NewsSchema(BaseModel):
     title: str
     body: str
     views: int
+    like : int 
     created_at: datetime
     updated_at: datetime
     images: List[NewsImageSchema] = []
+    comments : List[CommentShema] = []
 
     class Config:
         from_attributes = True

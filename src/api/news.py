@@ -94,24 +94,25 @@ async def update_news(
 @news_route.post("/{news_id}/comment")
 async def leave_comment(
     service : NewsServiceDep, 
-    comment : str,
+    content : str,
     news_id : int, 
     user_id : int = Header(..., alias="X-User-Id"),
     ):
-    await service.leave_comment()
+    await service.leave_comment(user_id=int(user_id), news_id=int(news_id), content=content)
     return JSONResponse(
         status_code=status.HTTP_200_OK, 
         content={"detail" : "Ok"}
         )
 
 
-@news_route.delete("/{news_id}/comment")
+@news_route.delete("/{news_id}/comment/{comment_id}")
 async def delete_comment(
     service : NewsServiceDep,
-    news_id : int, 
+    comment_id : int,
+    news_id : int,
     user_id : int = Header(..., alias="X-User-Id"),
     ):
-    await service.delete_comment()
+    await service.delete_comment(user_id=int(user_id), comment_id=comment_id)
     return JSONResponse(
         status_code=status.HTTP_200_OK, 
         content={"detail" : "Ok"}

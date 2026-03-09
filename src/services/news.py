@@ -18,10 +18,12 @@ class NewsService:
     def __init__(self, 
                  news_repository : BaseSQLAlchemyRepository, 
                  image_repository : BaseSQLAlchemyRepository,
+                 comment_repository : BaseSQLAlchemyRepository,
                  minio_manager : AbstractMinioManager
                  ):
         self._executor = ThreadPoolExecutor(max_workers=10)  # Пул потоков
         self._news_repository = news_repository
+        self._comment_repository = comment_repository
         self._image_repository = image_repository
         self._minio_manager = minio_manager
 
@@ -36,6 +38,10 @@ class NewsService:
     @property
     def minio_manager(self):
         return self._minio_manager
+    
+    @property
+    def comment_repository(self):
+        return self._comment_repository
     
     async def _load_image(self, news):     
         for image in news.images:
@@ -162,7 +168,7 @@ class NewsService:
     async def get_news(self, news_id) -> dict:
         logger.debug(f"Get news {news_id}")
         logger.debug("Get news ogj...")
-        news = await self.news_repository.get_with_image(news_id)
+        news = await self.news_repository.get_with_image_comment(news_id)
         if not news:
             logger.warn("News not found")
             raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="News not found")
@@ -203,7 +209,28 @@ class NewsService:
             if files_to_add:
                 await self._upload_images(news_id, files_to_add, bucket_name)
         logger.debug(f"✅ News {news_id} updated successfully")
+    
+    async def leave_comment(
+            self, 
+            user_id : int, 
+            news_id : int, 
+            content : str
+        ):
+        logger.debug(f"Leave comment user {user_id}")
+        await self.comment_repository.create(user_id=user_id, news_id=news_id, body=content)
+        logger.debug(f"Leave comment sucsess")
+        
+    async def delete_comment(
+            self, 
+            user_id : int, 
+            comment_id : int
+        ):
+        logger.debug(f"Delete comment user {user_id} comment {comment_id}")
+        await self.comment_repository.delete(id=comment_id)
+        logger.debug(f"Delete comment sucsess")
+
 
    
+
 
 

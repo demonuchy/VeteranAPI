@@ -74,6 +74,16 @@ class NewsRepository(BaseSQLAlchemyRepository[News]):
         stmt = select(self.model).where(self.model.id == id).options(selectinload(self.model.images))
         result = await self.session.execute(stmt)
         return result.scalar_one()
+    
+    async def get_with_image_comment(self, id):
+        stmt = select(self.model
+            ).where(self.model.id == id
+            ).options(selectinload(self.model.images)
+            ).options(selectinload(self.model.comments)
+        )
+        result = await self.session.execute(stmt)
+        return result.scalar_one()
+
 
 
 class NewsImagesRepository(BaseSQLAlchemyRepository[NewsImages]):

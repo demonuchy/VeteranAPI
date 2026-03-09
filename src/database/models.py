@@ -58,6 +58,7 @@ class News(Base):
     title : Mapped[str] = mapped_column(String(200), unique=False, nullable=False)
     body : Mapped[str] = mapped_column(String, unique=False, nullable=False)
     views : Mapped[int] = mapped_column(Integer, unique=False, nullable=False, default=0)
+    like : Mapped[int] = mapped_column(Integer, unique=False, nullable=False, default=0)
 
     images: Mapped[List["NewsImages"]] = relationship(
         "NewsImages",
@@ -65,6 +66,14 @@ class News(Base):
         order_by="NewsImages.order",
         cascade="all, delete-orphan",
         lazy="selectin"  # Для быстрой загрузки при запросах
+    )
+
+    comments: Mapped[List["Comment"]] = relationship(
+        "Comment",
+        back_populates="news",
+        order_by="Comment.order",
+        cascade="all, delete-orphan",
+        lazy="selectin" 
     )
     
     created_at : Mapped[CreatedAt]
@@ -101,9 +110,12 @@ class Comment(Base):
     __tablename__ = "comments"
 
     id : Mapped[PK]
-    new_id : Mapped[int] = mapped_column(ForeignKey("news.id", ondelete="CASCADE"), nullable=False)
+    news_id : Mapped[int] = mapped_column(ForeignKey("news.id", ondelete="CASCADE"), nullable=False, index=True)
     user_id : Mapped[int] = mapped_column(ForeignKey("users.id", ondelete="CASCADE"), nullable=False)
 
+    order : Mapped[int] = mapped_column(Integer, unique=False, nullable=False, default=0)
     body : Mapped[str] = mapped_column(String(1000), unique=False, nullable=False)
+    like : Mapped[int] = mapped_column(Integer, unique=False, nullable=False, default=0)
+    news: Mapped["News"] = relationship("News", back_populates="comments")
 
     created_at : Mapped[CreatedAt]
