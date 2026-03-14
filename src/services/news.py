@@ -19,12 +19,14 @@ class NewsService:
                  news_repository : BaseSQLAlchemyRepository, 
                  image_repository : BaseSQLAlchemyRepository,
                  comment_repository : BaseSQLAlchemyRepository,
+                 news_like_repository : BaseSQLAlchemyRepository,
                  minio_manager : AbstractMinioManager
                  ):
         self._executor = ThreadPoolExecutor(max_workers=10)  # Пул потоков
         self._news_repository = news_repository
         self._comment_repository = comment_repository
         self._image_repository = image_repository
+        self._news_like_repository = news_like_repository
         self._minio_manager = minio_manager
 
     @property
@@ -42,6 +44,10 @@ class NewsService:
     @property
     def comment_repository(self):
         return self._comment_repository
+    
+    @property
+    def news_like_repository(self):
+        return self._news_like_repository
     
     async def _load_image(self, news):     
         for image in news.images:
@@ -184,7 +190,7 @@ class NewsService:
         body: Optional[str], 
         upload_images: Optional[List[UploadFile]]
     ) -> None:
-        # 1. Обновляем текстовые поля новости
+        logger.debug(f"Update news id : {news_id}")
         await self.news_repository.update(news_id, title=title, body=body)
         if upload_images is not None:
             bucket_name = "news-images"
@@ -215,7 +221,7 @@ class NewsService:
             user_id : int, 
             news_id : int, 
             content : str
-        ):
+        ) -> None:
         logger.debug(f"Leave comment user {user_id}")
         await self.comment_repository.create(user_id=user_id, news_id=news_id, body=content)
         logger.debug(f"Leave comment sucsess")
@@ -224,11 +230,16 @@ class NewsService:
             self, 
             user_id : int, 
             comment_id : int
-        ):
+        )-> None:
         logger.debug(f"Delete comment user {user_id} comment {comment_id}")
         await self.comment_repository.delete(id=comment_id)
         logger.debug(f"Delete comment sucsess")
 
+    async def like_news(self, news_id : int, user_id : int) -> None:
+        logger.debug(f"Like news id : {news_id}")
+        await self.news_repository.increment_likes(news_id)
+        await self .news_like_repository.create(news_id=news_id, user_id=user_id)
+        logger.debug(f"News like success")
 
    
 

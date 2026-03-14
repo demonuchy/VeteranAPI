@@ -1,7 +1,7 @@
 from typing import Any, List, Optional
-from sqlalchemy import select, delete, func
+from sqlalchemy import select, delete, func, update
 from sqlalchemy.orm import selectinload, contains_eager
-from .models import User, News, NewsImages, Comment, Token
+from .models import User, News, NewsImages, Comment, Token, NewsLike
 from .base import BaseSQLAlchemyRepository
 from .fields import TokenType
 from schemas.auth import TokenPyload
@@ -83,6 +83,13 @@ class NewsRepository(BaseSQLAlchemyRepository[News]):
         )
         result = await self.session.execute(stmt)
         return result.scalar_one()
+    
+    async def increment_likes(self, news_id: int):
+        stmt = update(self.model
+                ).where(self.model.id == news_id
+                ).values(like=self.model.like + 1
+            )
+        await self.session.execute(stmt)
 
 
 
@@ -117,4 +124,8 @@ class NewsImagesRepository(BaseSQLAlchemyRepository[NewsImages]):
 class CommentRepository(BaseSQLAlchemyRepository[Comment]):
     def __init__(self, session):
         super().__init__(session=session, model=Comment)
+    
         
+class NewsLikeRepository(BaseSQLAlchemyRepository[NewsLike]):
+    def __init__(self, session):
+        super().__init__(session=session, model=NewsLike)

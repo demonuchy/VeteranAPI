@@ -1,6 +1,6 @@
 from typing import List
 from datetime import datetime
-from sqlalchemy import String, Boolean, Enum, ForeignKey, Integer, DateTime
+from sqlalchemy import String, Boolean, Enum, ForeignKey, Integer, DateTime, UniqueConstraint
 from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column, relationship
 from sqlalchemy.ext.asyncio import AsyncAttrs
 
@@ -80,7 +80,6 @@ class News(Base):
     updated_at : Mapped[UpdatedAt]
 
 
-
 class NewsImages(Base):
     """Модель для хранения изображений для новости"""
     __tablename__ = "news_images"
@@ -103,8 +102,6 @@ class NewsImages(Base):
     created_at : Mapped[CreatedAt]
 
 
-
-
 class Comment(Base):
     """Модель коментария"""
     __tablename__ = "comments"
@@ -119,3 +116,15 @@ class Comment(Base):
     news: Mapped["News"] = relationship("News", back_populates="comments")
 
     created_at : Mapped[CreatedAt]
+
+
+class NewsLike(Base):
+    __tablename__ = "news_likes"
+
+    id : Mapped[PK]
+    news_id : Mapped[int] = mapped_column(ForeignKey("news.id", ondelete="CASCADE"), nullable=False, index=True)
+    user_id : Mapped[int] = mapped_column(ForeignKey("users.id", ondelete="CASCADE"), nullable=False)
+
+    __table_args__ = (
+        UniqueConstraint('news_id', 'user_id', name='unique_news_user_like'),
+    )

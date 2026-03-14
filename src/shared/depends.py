@@ -5,7 +5,7 @@ from sqlalchemy.ext.asyncio import AsyncSession
 
 from utils.jwt_manager import PyJWTTokenManager, TokenStorage
 from utils.minio_manger import MinioManager
-from database.repository import UserRepository, TokenRepository, NewsRepository, NewsImagesRepository, CommentRepository
+from database.repository import UserRepository, TokenRepository, NewsRepository, NewsImagesRepository, CommentRepository, NewsLikeRepository
 from services.auth import AuthService
 from services.news import NewsService
 from services.user import UserService
@@ -54,6 +54,7 @@ async def get_news_service(session : AsyncSession = Depends(get_session)) -> Aut
         news_repository=NewsRepository(session),
         image_repository=NewsImagesRepository(session),
         comment_repository=CommentRepository(session),
+        news_like_repository=NewsLikeRepository(session),
         minio_manager=MinioManager()
     )
 

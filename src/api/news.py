@@ -1,6 +1,6 @@
 from typing import List, Optional
 from fastapi import APIRouter, Form, File, UploadFile, Header, status
-from fastapi.responses import JSONResponse
+from fastapi.responses import JSONResponse, Response
 
 
 from shared.depends import NewsServiceDep
@@ -63,11 +63,8 @@ async def get_news(service : NewsServiceDep, news_id : int):
 @news_route.delete("/{news_id}")
 async def delete_news(service : NewsServiceDep, news_id : int):
     await service.delete_news(news_id)
-    return JSONResponse(
-        status_code=status.HTTP_200_OK, 
-        content={
-            "detail" : "Ok", 
-            }
+    return Response(
+        status_code=status.HTTP_204_NO_CONTENT, 
         )
 
 
@@ -91,16 +88,29 @@ async def update_news(
         )
 
 
+@news_route.post("/{news_id}/like")
+async def like_news(
+    service : NewsServiceDep, 
+    news_id : int,
+    user_id : int = Header(..., alias="X-User-Id"),
+    ):
+    await service.like_news(news_id=news_id, user_id=int(user_id))
+    return JSONResponse(
+        status_code=status.HTTP_201_CREATED, 
+        content={"detail" : "Ok"}
+        )
+
+
 @news_route.post("/{news_id}/comment")
 async def leave_comment(
     service : NewsServiceDep, 
-    content : str,
     news_id : int, 
     user_id : int = Header(..., alias="X-User-Id"),
+    content: str = Form(..., min_length=1, max_length=1000),
     ):
     await service.leave_comment(user_id=int(user_id), news_id=int(news_id), content=content)
     return JSONResponse(
-        status_code=status.HTTP_200_OK, 
+        status_code=status.HTTP_201_CREATED, 
         content={"detail" : "Ok"}
         )
 
@@ -113,7 +123,6 @@ async def delete_comment(
     user_id : int = Header(..., alias="X-User-Id"),
     ):
     await service.delete_comment(user_id=int(user_id), comment_id=comment_id)
-    return JSONResponse(
-        status_code=status.HTTP_200_OK, 
-        content={"detail" : "Ok"}
+    return Response(
+        status_code=status.HTTP_204_NO_CONTENT, 
         )
