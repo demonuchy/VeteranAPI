@@ -38,6 +38,10 @@ class Config(BaseSettings):
     MINIO_USERNAME : str
     MINIO_PASSWORD : str
 
+    ELASTICSEARCH_HOST : str
+    ELASTICSEARCH_CONTAINER_NAME : str
+    ELASTICSEARCH_PORT : str
+
     ADMIN_SECRET_TOKEN : str
 
     TOKEN_CEANUP_INTERVAL : int
@@ -63,6 +67,15 @@ class Config(BaseSettings):
         if os.getenv('IN_DOCKER'):
             host = self.MINIO_CONTAINER_NAME
         return host
+    
+    @property
+    def ElasticsearchUrl(self):
+        host = self.ELASTICSEARCH_HOST
+        if os.getenv('IN_DOCKER'):
+            host = self.ELASTICSEARCH_CONTAINER_NAME
+        return f"http://{host}:{self.ELASTICSEARCH_PORT}"
+    
+
     
     model_config = SettingsConfigDict(
         env_file=ENV_PATH,

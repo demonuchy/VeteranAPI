@@ -1,0 +1,10 @@
+http.host: "0.0.0.0"
+config.reload.automatic: true
+config.reload.interval: 3s
+log.level: info
+pipeline.workers: 2
+pipeline.batch.size: 125
+pipeline.batch.delay: 50
+path.data: /usr/share/logstash/data
+path.logs: /usr/share/logstash/logs
+config.support_escapes: true

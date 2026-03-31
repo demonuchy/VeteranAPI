@@ -6,6 +6,7 @@ volumes:
   postgres-data:
   redis-data:
   minio-data:
+  elasticsearch-data:
 
 services:
 
@@ -56,6 +57,79 @@ services:
       start_period: 20s
     ports:
       - "5432:5432"
+    networks:
+      - app-net
+
+  logstash:
+    image: docker.elastic.co/logstash/logstash:8.11.0
+    container_name: logstash
+    volumes:
+      - ./logstash/pipeline:/usr/share/logstash/pipeline:ro
+      - ./logstash/config/logstash.yml:/usr/share/logstash/config/logstash.yml:ro
+      - ./logstash/postgresql-42.7.1.jar:/usr/share/logstash/logstash-core/lib/jars/postgresql.jar:ro
+    ports:
+      - "5000:5000"  
+    environment:
+      - LS_JAVA_OPTS=-Xmx256m -Xms256m
+    depends_on:
+      db:
+        condition: service_healthy
+      elasticsearch:
+        condition: service_healthy
+    networks:
+      - app-net
+
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:8.11.0
+    container_name: elasticsearch
+    restart: unless-stopped
+    environment:
+      - node.name=elasticsearch
+      - cluster.name=docker-cluster
+      - discovery.type=single-node
+      - bootstrap.memory_lock=true
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+      - xpack.security.enabled=false #!!!!
+      - xpack.security.enrollment.enabled=false
+      - xpack.monitoring.collection.enabled=true
+
+      - ES_LOG_LEVEL=error
+      - ES_LOG_APPENDER=console
+      - logger.level=error  # Глобальный уровень WARN
+      - logger.org.elasticsearch=error  # Все пакеты Elasticsearch на WARN
+      - logger.org.elasticsearch.plugins=error  # Плагины только ERROR
+      - logger.org.elasticsearch.bootstrap=error  # Bootstrap только ERROR
+      - logger.org.elasticsearch.node=error  # Node только ERROR
+      # Специфичные настройки для разных пакетов
+      - logger.org.elasticsearch.index=error
+      - logger.org.elasticsearch.indices=error
+      - logger.org.elasticsearch.cluster=error
+      - logger.org.elasticsearch.discovery=error
+      - logger.org.elasticsearch.gateway=error
+      - logger.org.elasticsearch.http=error
+      - logger.org.elasticsearch.transport=error
+      - logger.org.elasticsearch.threadpool=error
+      # Мониторинг оставляем для важных метрик
+      - logger.org.elasticsearch.monitor=info
+      - logger.org.elasticsearch.monitor.jvm=info
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+      nofile:
+        soft: 65536
+        hard: 65536
+    volumes:
+      - elasticsearch-data:/usr/share/elasticsearch/data
+    ports:
+      - "9200:9200"  # HTTP API
+      - "9300:9300"  # Transport protocol
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9200/_cluster/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 40s
     networks:
       - app-net
 
