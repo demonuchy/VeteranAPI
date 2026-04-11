@@ -60,25 +60,7 @@ services:
     networks:
       - app-net
 
-  logstash:
-    image: docker.elastic.co/logstash/logstash:8.11.0
-    container_name: logstash
-    volumes:
-      - ./logstash/pipeline:/usr/share/logstash/pipeline:ro
-      - ./logstash/config/logstash.yml:/usr/share/logstash/config/logstash.yml:ro
-      - ./logstash/postgresql-42.7.1.jar:/usr/share/logstash/logstash-core/lib/jars/postgresql.jar:ro
-    ports:
-      - "5000:5000"  
-    environment:
-      - LS_JAVA_OPTS=-Xmx256m -Xms256m
-    depends_on:
-      db:
-        condition: service_healthy
-      elasticsearch:
-        condition: service_healthy
-    networks:
-      - app-net
-
+  
   elasticsearch:
     image: docker.elastic.co/elasticsearch/elasticsearch:8.11.0
     container_name: elasticsearch

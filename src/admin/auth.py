@@ -12,7 +12,7 @@ class AuthBackend(AuthenticationBackend):
     def __init__(self, secret_key: str):
         super().__init__(secret_key)
         # URL вашего API (можно через переменные окружения)
-        self.api_url = os.getenv("API_URL", "http://localhost:8000")
+        self.api_url = os.getenv("API_URL", "http://nginx:80")
     
     async def login(self, request: Request) -> bool:
         """Вызывается при отправке формы входа в SQLAdmin"""
@@ -21,6 +21,7 @@ class AuthBackend(AuthenticationBackend):
         password = form.get("password")
         logger.debug(f"Admin login attemp username : {username}, password : {password}")
         if not username or not password:
+            logger.warn("Not username || password")
             return False
         try:
             async with httpx.AsyncClient() as client:
@@ -38,13 +39,14 @@ class AuthBackend(AuthenticationBackend):
                         }
                 )
                 if response.status_code != 200:
-                    logger.warn("Forbbiden")
+                    logger.warn(f"Forbbiden : {response.json()}")
                     return False
                 logger.debug("Parse responce ... ")
                 data = response.json()
                # logger.debug(f"Data : {data}")
                 request.session.update(
-                    {
+                    {   
+                        "user" : data["data"]["user"],
                         "access_token": data["data"]["access_token"],
                         "refresh_token" : data["data"]["refresh_token"],
                         "session_id" : session_id
@@ -110,20 +112,26 @@ class AuthBackend(AuthenticationBackend):
                     return False
                 return True
         except Exception as e:
-            print(f"Authentication error: {e}")
+            logger.warn(f"Authentication error: {e}")
             return False
 
     async def logout(self, request: Request) -> bool:
         """Выход из системы"""
-        token = request.session.get("token")
-        if token:
-            try:
-                async with httpx.AsyncClient() as client:
-                    await client.post(
-                        f"{self.api_url}/api/v1/auth/logout",
-                        headers={"Authorization": f"Bearer {token}"}
-                    )
-            except Exception as e:
-                print(f"Logout error: {e}")
-                request.session.clear()
-                return True
+        logger.debug("Admin logout...")
+        access_token = request.session.get("access_token")
+        if not access_token:
+            logger.warn("access token not found")
+            return False
+        try:
+            async with httpx.AsyncClient() as client:
+                await client.post(
+                    f"{self.api_url}/api/v1/auth/logout",
+                    headers={
+                        "Authorization": f"Bearer {access_token}",
+                        "X-Device-Id" : f"{request.session.get('session_id')}"
+                        }
+                )
+        except Exception as e:
+            logger.warn(f"Logout error: {e}")
+            request.session.clear()
+            return True

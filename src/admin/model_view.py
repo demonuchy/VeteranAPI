@@ -1,8 +1,12 @@
 # admin/views.py
 import os
+import json
+import base64
 import httpx
-from sqladmin import ModelView
+from sqladmin import ModelView, expose
+from starlette import status
 from starlette.requests import Request
+from starlette.responses import RedirectResponse
 from typing import Any, Optional
 from datetime import datetime
 
@@ -100,7 +104,7 @@ class UserAdmin(ModelView, model=User):
         logger.debug(f"Detect change {data}")
         if not is_created:
             logger.debug("Logout ....")
-            api_url= os.getenv("API_URL", "http://localhost:8000")
+            api_url= os.getenv("API_URL", "http://nginx:80")
             async with httpx.AsyncClient() as client:
                 await client.post(
                         f"{api_url}/api/v1/auth/logout-all",
@@ -200,6 +204,7 @@ class NewsAdmin(ModelView, model=News):
     ]
     
     column_searchable_list = [
+        News.user_id,
         News.title,
         News.body,
     ]
@@ -241,15 +246,100 @@ class NewsAdmin(ModelView, model=News):
     
     # Форма создания/редактирования
     form_columns = [
-        News.user_id,
         News.title,
         News.body,
+        News.user_id,
         News.views,
     ]
     
     # Экспорт данных
     can_export = True
     export_colums = [News.id, News.title, News.views, News.created_at]
+
+    @expose("/custom-create", methods=["POST"])
+    async def create_view(self, request: Request):
+        """КАстомный запрос создания модели"""
+        try:
+            logger.debug("Create news admin...")
+            logger.debug(f"Data : {request.headers}")
+            api_url= os.getenv("API_URL", "http://api:8000")
+            form_data = await request.form()
+            logger.debug(f"Form data keys: {list(form_data.keys())}")
+            title = form_data.get("title", "").strip()
+            body = form_data.get("body", "").strip()
+            images_json = form_data.get("images_data")
+            files = []
+            if images_json and images_json not in ["", "[]", "null"]:
+                images = json.loads(images_json)
+                logger.debug(f"Processing {len(images)} images")
+                for idx, img_data in enumerate(images):
+                    image_bytes = base64.b64decode(img_data['data'])
+                    files.append(
+                        ("images", (img_data['name'], image_bytes, img_data['type']))
+                    )
+                    logger.debug(f"Added image {idx+1}: {img_data['name']}")
+            async with httpx.AsyncClient() as client:
+                user = request.session.get("user")
+                logger.debug(f"User : {user}")
+                response = await client.post(
+                    f"{api_url}/api/v1/news/",
+                    headers={"X-User-Id": str(user["id"])},
+                    data={"title": title, "body": body},
+                    files=files,
+                    )
+                if response.status_code == 201:
+                    logger.debug("News create success")
+                    return RedirectResponse(
+                        url=request.url_for("admin:list", identity=self.identity),
+                        status_code=status.HTTP_302_FOUND
+                    )
+                else:
+                    logger.warn("News create error")
+        except Exception as e:
+            logger.error(f"Error : {e}", exc_info=True)
+
+    @expose("/custom-update", methods=["PATCH"])
+    async def update_view(self, request: Request):
+        "Кастомное обновления моделии"
+        try:
+            logger.debug("Update news admin...")
+            logger.debug(f"Data : {request}")
+            api_url= os.getenv("API_URL", "http://api:8000")
+            form_data = await request.form()
+            logger.debug(f"Form data keys: {list(form_data.keys())}")
+            title = form_data.get("title", "").strip()
+            body = form_data.get("body", "").strip()
+            news_id = form_data.get("news_id", "").strip()
+            images_json = form_data.get("new_images_data")
+            files = []
+            if images_json and images_json not in ["", "[]", "null"]:
+                images = json.loads(images_json)
+                logger.debug(f"Processing {len(images)} images")
+                for idx, img_data in enumerate(images):
+                    image_bytes = base64.b64decode(img_data['data'])
+                    files.append(
+                        ("images", (img_data['name'], image_bytes, img_data['type']))
+                    )
+                    logger.debug(f"Added image {idx+1}: {img_data['name']}")
+            async with httpx.AsyncClient() as client:
+                user = request.session.get("user")
+                logger.debug(f"User : {user}")
+                response = await client.patch(
+                    f"{api_url}/api/v1/news/{news_id}",
+                    headers={"X-User-Id": str(user["id"])},
+                    data={"title": title, "body": body},
+                    files=files,
+                    )
+                if response.status_code == 200:
+                    logger.debug("News create success")
+                    return RedirectResponse(
+                        url=request.url_for("admin:list", identity=self.identity),
+                        status_code=status.HTTP_302_FOUND
+                    )
+                else:
+                    logger.warn("News create error")
+        except Exception as e:
+            logger.error(f"Error : {e}", exc_info=True)
 
 
 class NewsImagesAdmin(ModelView, model=NewsImages):

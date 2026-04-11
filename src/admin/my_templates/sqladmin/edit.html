@@ -1,22 +1,118 @@
 {% extends "sqladmin/layout.html" %}
 {% from 'sqladmin/_macros.html' import render_form_fields %}
+
 {% block content %}
+<style>
+  /* Те же стили, что и в create.html */
+  .drop-zone {
+    border: 2px dashed #ddd;
+    border-radius: 8px;
+    padding: 30px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+  
+  .drop-zone.drag-active {
+    border-color: #4caf50;
+    background-color: rgba(76, 175, 80, 0.05);
+  }
+  
+  .image-preview-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 16px;
+  }
+  
+  .image-preview {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid #ddd;
+  }
+  
+  .image-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .remove-image {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    background: rgba(255, 0, 0, 0.8);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+  }
+  
+  .section-label {
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 8px;
+  }
+</style>
+
 <div class="col-12">
   <div class="card">
     <div class="card-header">
-      <h3 class="card-title">Edit {{ model_view.name }}</h3>
+      <h3 class="card-title">Редактировать новость</h3>
     </div>
     <div class="card-body border-bottom py-3">
-      <form action="{{ model_view._build_url_for('admin:edit', request, obj) }}" method="POST"
-        enctype="multipart/form-data">
-        <div class="row">
-          {% if error %}
-          <div class="alert alert-danger" role="alert">{{ error }}</div>
-          {% endif %}
-        </div>
+      <form action="/api/v2/admin/news/custom-update" 
+        method="PATCH" 
+        enctype="multipart/form-data"
+        id="newsForm">
+        
+        {% if error %}
+        <div class="alert alert-danger" role="alert">{{ error }}</div>
+        {% endif %}
+
         <fieldset class="form-fieldset">
           {{ render_form_fields(form, form_opts=form_opts) }}
+          {% if model_view.identity == "news" %}
+          <div class="form-group mb-3">
+            <label>Изображения</label>
+            
+            <!-- Существующие изображения -->
+            <div id="existingImagesSection" style="display:none;">
+              <p class="section-label">Текущие изображения:</p>
+              <div id="existingImagesContainer" class="image-preview-container"></div>
+            </div>
+            
+            <!-- Зона загрузки новых изображений -->
+            <div id="dropZone" class="drop-zone">
+              <input type="file" id="fileInput" multiple accept="image/*" style="display:none" />
+              <div class="drop-zone-content">
+                <svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                  <polyline points="17 8 12 3 7 8" />
+                  <line x1="12" y1="3" x2="12" y2="15" />
+                </svg>
+                <p>Перетащите изображения сюда или кликните для выбора</p>
+                <span class="hint">Поддерживаются JPG, PNG, GIF</span>
+              </div>
+            </div>
+            
+            <!-- Новые изображения -->
+            <div id="newImagesContainer" class="image-preview-container"></div>
+            
+            <!-- Скрытые поля -->
+            <input type="hidden" name="existing_images" id="existingImages" />
+            <input type="hidden" name="new_images_data" id="newImagesData" />
+            <input type="hidden" name="deleted_images" id="deletedImages" />
+            <input type="hidden" name="news_id" id="newsId" value="{{ news_id }}" />
+          </div>
+          {% endif %}
         </fieldset>
+        
         <div class="row">
           <div class="col-md-2">
             <a href="{{ url_for('admin:list', identity=model_view.identity) }}" class="btn">
@@ -24,16 +120,9 @@
             </a>
           </div>
           <div class="col-md-6">
-            <div class="btn-group flex-wrap" data-toggle="buttons">
-              <input type="submit" name="save" value="Save" class="btn">
-              <input type="submit" name="save" value="Save and continue editing" class="btn">
-              {% if model_view.can_create %}
-              {% if model_view.save_as %}
-              <input type="submit" name="save" value="Save as new" class="btn">
-              {% else %}
-              <input type="submit" name="save" value="Save and add another" class="btn">
-              {% endif %}
-              {% endif %}
+            <div class="btn-group flex-wrap">
+              <input type="submit" name="save" value="Save" class="btn btn-primary">
+              <input type="submit" name="save" value="Save and continue editing" class="btn btn-secondary">
             </div>
           </div>
         </div>
@@ -41,4 +130,271 @@
     </div>
   </div>
 </div>
+
+<script>
+  // Получаем ID новости из URL или из скрытого поля
+  const newsId = document.getElementById('newsId')?.value || window.location.pathname.split('/').pop();
+  
+  // Глобальные переменные
+  let existingImages = [];
+  let newImages = [];
+  let deletedImages = [];
+  
+  // Drag & Drop для новых изображений
+  const dropZone = document.getElementById('dropZone');
+  const fileInput = document.getElementById('fileInput');
+  const newImagesContainer = document.getElementById('newImagesContainer');
+  const existingImagesContainer = document.getElementById('existingImagesContainer');
+  const existingImagesSection = document.getElementById('existingImagesSection');
+  
+  // Загрузка данных новости при загрузке страницы
+  async function loadNewsData() {
+    try {
+      const response = await fetch(`/api/v1/news/${newsId}`);
+      const result = await response.json();
+      
+      if (result.detail === "Ok" && result.data.news) {
+        const news = result.data.news;
+        
+        // Заполняем форму существующими данными
+        fillFormFields(news);
+        
+        // Загружаем существующие изображения
+        if (news.images && news.images.length > 0) {
+          existingImages = news.images.map(img => ({
+            id: img.id,
+            url: img.url,
+            name: img.name
+          }));
+          renderExistingImages();
+        }
+      }
+    } catch (error) {
+      console.error('Ошибка загрузки новости:', error);
+    }
+  }
+  
+  // Заполнение полей формы
+  function fillFormFields(news) {
+    // Находим все поля формы и заполняем их значениями
+    const form = document.getElementById('newsForm');
+    
+    // Заполняем текстовые поля
+    if (news.title) {
+      const titleField = form.querySelector('[name="title"]');
+      if (titleField) titleField.value = news.title;
+    }
+    
+    if (news.content) {
+      const contentField = form.querySelector('[name="content"]');
+      if (contentField) contentField.value = news.content;
+    }
+    
+    if (news.description) {
+      const descField = form.querySelector('[name="description"]');
+      if (descField) descField.value = news.description;
+    }
+    
+    // Заполняем другие поля, если они есть
+    if (news.author) {
+      const authorField = form.querySelector('[name="author"]');
+      if (authorField) authorField.value = news.author;
+    }
+    
+    if (news.status !== undefined) {
+      const statusField = form.querySelector('[name="status"]');
+      if (statusField) statusField.value = news.status;
+    }
+    
+    // Если есть кастомные поля, заполняем их
+    for (const [key, value] of Object.entries(news)) {
+      const field = form.querySelector(`[name="${key}"]`);
+      if (field && !['id', 'images', 'created_at', 'updated_at'].includes(key)) {
+        field.value = value;
+      }
+    }
+  }
+  
+  // Отображение существующих изображений
+  function renderExistingImages() {
+    if (existingImages.length === 0) return;
+    
+    existingImagesSection.style.display = 'block';
+    existingImagesContainer.innerHTML = '';
+    
+    existingImages.forEach(image => {
+      const previewDiv = createImagePreview(image.url, image.id, true);
+      existingImagesContainer.appendChild(previewDiv);
+    });
+  }
+  
+  // Создание превью изображения
+  function createImagePreview(src, id, isExisting = false) {
+    const previewDiv = document.createElement('div');
+    previewDiv.className = 'image-preview';
+    previewDiv.id = `${isExisting ? 'existing' : 'new'}-${id}`;
+    
+    const img = document.createElement('img');
+    img.src = src;
+    
+    const removeBtn = document.createElement('button');
+    removeBtn.className = 'remove-image';
+    removeBtn.innerHTML = '&times;';
+    
+    if (isExisting) {
+      removeBtn.onclick = () => removeExistingImage(id);
+    } else {
+      removeBtn.onclick = () => removeNewImage(id);
+    }
+    
+    previewDiv.appendChild(img);
+    previewDiv.appendChild(removeBtn);
+    
+    return previewDiv;
+  }
+  
+  // Удаление существующего изображения
+  function removeExistingImage(imageId) {
+    const imageToRemove = existingImages.find(img => img.id === imageId);
+    if (imageToRemove) {
+      deletedImages.push(imageToRemove);
+      existingImages = existingImages.filter(img => img.id !== imageId);
+      
+      // Удаляем из DOM
+      const previewElement = document.getElementById(`existing-${imageId}`);
+      if (previewElement) previewElement.remove();
+      
+      // Если не осталось изображений, скрываем секцию
+      if (existingImages.length === 0) {
+        existingImagesSection.style.display = 'none';
+      }
+      
+      updateDeletedImages();
+    }
+  }
+  
+  // Удаление нового изображения
+  function removeNewImage(imageId) {
+    newImages = newImages.filter(img => img.id !== imageId);
+    const previewElement = document.getElementById(`new-${imageId}`);
+    if (previewElement) previewElement.remove();
+    updateNewImagesData();
+  }
+  
+  // Обновление списка удаленных изображений
+  function updateDeletedImages() {
+    document.getElementById('deletedImages').value = JSON.stringify(
+      deletedImages.map(img => img.id)
+    );
+  }
+  
+  // Обработка файлов
+  function handleFiles(files) {
+    const imageFiles = files.filter(f => f.type.startsWith('image/'));
+    
+    imageFiles.forEach(file => {
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        const imageData = {
+          id: Date.now() + Math.random(),
+          file: file,
+          preview: e.target.result
+        };
+        newImages.push(imageData);
+        
+        const previewDiv = createImagePreview(imageData.preview, imageData.id, false);
+        newImagesContainer.appendChild(previewDiv);
+        updateNewImagesData();
+      };
+      reader.readAsDataURL(file);
+    });
+  }
+  
+  // Обновление данных новых изображений
+  function updateNewImagesData() {
+    const imagesData = newImages.map(img => ({
+      name: img.file.name,
+      type: img.file.type,
+      size: img.file.size,
+      data: img.preview.split(',')[1]
+    }));
+    document.getElementById('newImagesData').value = JSON.stringify(imagesData);
+  }
+  
+  // Обновление существующих изображений в скрытом поле
+  function updateExistingImages() {
+    document.getElementById('existingImages').value = JSON.stringify(
+      existingImages.map(img => img.id)
+    );
+  }
+  
+  // Event Listeners
+  dropZone.addEventListener('click', () => fileInput.click());
+  dropZone.addEventListener('dragover', (e) => {
+    e.preventDefault();
+    dropZone.classList.add('drag-active');
+  });
+  
+  dropZone.addEventListener('dragleave', () => {
+    dropZone.classList.remove('drag-active');
+  });
+  
+  dropZone.addEventListener('drop', (e) => {
+    e.preventDefault();
+    dropZone.classList.remove('drag-active');
+    handleFiles(Array.from(e.dataTransfer.files));
+  });
+  
+  fileInput.addEventListener('change', (e) => {
+    handleFiles(Array.from(e.target.files));
+    fileInput.value = '';
+  });
+  
+  // Обработка отправки формы
+  document.getElementById('newsForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    
+    // Обновляем скрытые поля перед отправкой
+    updateExistingImages();
+    updateDeletedImages();
+    updateNewImagesData();
+    
+    // Отправляем форму
+    const formData = new FormData(e.target);
+    formData.append('news_id', newsId);
+    
+    try {
+      const response = await fetch('/api/v2/admin/news/custom-update', {
+        method: 'PATCH',
+        body: formData
+      });
+      
+      const result = await response.json();
+      
+      if (response.ok) {
+        // Обработка успешного сохранения
+        const submitter = e.submitter;
+        if (submitter && submitter.value === 'Save and continue editing') {
+          // Остаемся на странице редактирования
+          window.location.reload();
+        } else {
+          // Переходим на список
+          window.location.href = "{{ url_for('admin:list', identity=model_view.identity) }}";
+        }
+      } else {
+        // Показываем ошибку
+        const errorDiv = document.createElement('div');
+        errorDiv.className = 'alert alert-danger';
+        errorDiv.textContent = result.detail || 'Ошибка при сохранении';
+        document.querySelector('.card-body').insertBefore(errorDiv, document.querySelector('form'));
+        setTimeout(() => errorDiv.remove(), 5000);
+      }
+    } catch (error) {
+      console.error('Ошибка при отправке формы:', error);
+    }
+  });
+  
+  // Загружаем данные при загрузке страницы
+  document.addEventListener('DOMContentLoaded', loadNewsData);
+</script>
 {% endblock %}
