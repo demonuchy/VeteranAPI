@@ -41,7 +41,7 @@ class Token(Base):
     token_type : Mapped['TokenType'] = mapped_column(Enum(TokenType), unique=False, nullable=False)
     
     ip_address : Mapped[str] = mapped_column(String, unique=False, nullable=False)
-    device_id : Mapped[str] = mapped_column(String, unique=True, nullable=False, index=True)
+    device_id : Mapped[str] = mapped_column(String, unique=False, nullable=False, index=True)
 
     is_active : Mapped[bool] = mapped_column(Boolean, unique=False, nullable=False, default=True)
     is_rework : Mapped[bool] = mapped_column(Boolean, unique=False, nullable=False, default=False)

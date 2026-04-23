@@ -7,6 +7,28 @@ from shared.depends import NewsServiceDep
 
 
 news_route = APIRouter(prefix="/api/v1/news")
+news_route_v2 = APIRouter(prefix="/api/v2/news")
+
+@news_route_v2.patch("/{news_id}")
+async def update_news(
+    service : NewsServiceDep, 
+    news_id : int,
+    title : Optional[str] = Form(None),
+    body : Optional[str] = Form(None),
+    upload_images : Optional[List[UploadFile]] = File(default=[]),
+    remove_images : Optional[List[str]] = None
+    ):
+    await service.update_news_optimized(
+        news_id=int(news_id), 
+        title=title, 
+        body=body, 
+        upload_images=upload_images,
+        remove_images=remove_images
+        )
+    return JSONResponse(
+        status_code=status.HTTP_200_OK, 
+        content={"detail" : "Ok"}
+        )
 
 
 @news_route.get("/private")

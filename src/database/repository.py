@@ -1,6 +1,6 @@
 from typing import Any, List, Optional
 from sqlalchemy import select, delete, func, update
-from sqlalchemy.orm import selectinload, contains_eager
+from sqlalchemy.orm import selectinload, contains_eager, load_only
 from .models import User, News, NewsImages, Comment, Token, NewsLike
 from .base import BaseSQLAlchemyRepository
 from .fields import TokenType
@@ -12,10 +12,9 @@ class TokenRepository(BaseSQLAlchemyRepository[Token]):
         super().__init__(session=session, model=Token)
 
     async def accouting_rfresh_token_with_DTO(self, token_payload : TokenPyload):
-
-        print("Token pyload", token_payload)
+        logger.debug("Token pyload", token_payload)
         token_data = token_payload.for_db()
-        print("Token pyload after serialize", token_data)
+        logger.debug("Token pyload after serialize", token_data)
         token_data['created_at'] = token_data.pop('iat')
         await self.create(**token_data)
     
@@ -63,12 +62,25 @@ class NewsRepository(BaseSQLAlchemyRepository[News]):
         super().__init__(session=session, model=News)
 
     async def get_all_with_image(self, order):
-        stmt = select(self.model
-                    ).options(
-                        selectinload(self.model.images.and_(NewsImages.order == order))
-                        )
+        stmt = select(self.model).options(
+        load_only(
+            self.model.id,
+            self.model.title,
+            self.model.user_id,
+            self.model.created_at
+        ),
+            contains_eager(self.model.images)
+        ).join(
+            NewsImages,
+            self.model.id == NewsImages.news_id
+        ).where(
+            NewsImages.order == order
+        ).order_by(
+            self.model.created_at.desc() 
+        )
         result = await self.session.execute(stmt)
-        return result.scalars().all()
+        news_list = result.unique().scalars().all()
+        return news_list
     
     async def get_with_image(self, id):
         stmt = select(self.model).where(self.model.id == id).options(selectinload(self.model.images))

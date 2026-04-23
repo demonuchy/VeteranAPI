@@ -1,58 +1,69 @@
 import os
+from weakref import WeakKeyDictionary
 import base64
 import asyncio
 import uuid
 from fastapi import HTTPException, status, UploadFile
-from typing import List, Optional
+from sqlalchemy.ext.asyncio import AsyncSession
+from typing import List, Optional, Self
 
 from concurrent.futures import ThreadPoolExecutor
 
 from database.fields import ImageType
 from database.base import BaseSQLAlchemyRepository
 from utils.minio_manger import AbstractMinioManager
-from schemas.news import NewsSchema
+from utils.elasticsearch_manager import AbstractElasticsearchManager
+from schemas.news import NewsSchema, CropedNewsShema
 from shared.logger.logger import logger
 
+from .base import BaseService
 
-class NewsService:
+
+class NewsService(BaseService):    
     def __init__(self, 
+                 session : AsyncSession,
                  news_repository : BaseSQLAlchemyRepository, 
                  image_repository : BaseSQLAlchemyRepository,
                  comment_repository : BaseSQLAlchemyRepository,
                  news_like_repository : BaseSQLAlchemyRepository,
-                 minio_manager : AbstractMinioManager
+                 minio_manager : AbstractMinioManager, 
+                 elasticsearch_manager : AbstractElasticsearchManager
                  ):
-        self._executor = ThreadPoolExecutor(max_workers=10)  # Пул потоков
+        super().__init__(session=session)
         self._news_repository = news_repository
         self._comment_repository = comment_repository
         self._image_repository = image_repository
         self._news_like_repository = news_like_repository
         self._minio_manager = minio_manager
+        self._elasticsearch_manager = elasticsearch_manager
 
     @property
-    def news_repository(self):
-        return self._news_repository
+    def news_repository(self) -> BaseSQLAlchemyRepository:
+        return self._get_depends(self._news_repository, self._session)
 
     @property
-    def image_repository(self):
-        return self._image_repository
+    def image_repository(self) -> BaseSQLAlchemyRepository:
+        return self._get_depends(self._image_repository, self._session)
 
     @property
-    def minio_manager(self):
-        return self._minio_manager
+    def minio_manager(self) -> AbstractMinioManager:
+        return self._get_depends(self._minio_manager)
     
     @property
-    def comment_repository(self):
-        return self._comment_repository
+    def comment_repository(self) -> BaseSQLAlchemyRepository:
+        return self._get_depends(self._comment_repository, self._session)
+
+    @property
+    def news_like_repository(self) -> BaseSQLAlchemyRepository:
+        return self._get_depends(self._news_like_repository, self._session)
     
     @property
-    def news_like_repository(self):
-        return self._news_like_repository
+    def elasticsearch_manager(self) -> AbstractElasticsearchManager:
+       return self._get_depends(self._elasticsearch_manager)
     
     async def _load_image(self, news):     
         for image in news.images:
-            image_bytes = await asyncio.get_event_loop().run_in_executor(
-                self._executor,
+            image_bytes = await asyncio.to_thread(
                 self.minio_manager.get_obj,
                 image.bucket_name,
                 image.url,
@@ -99,8 +110,7 @@ class NewsService:
                 continue
             object_path = f"{news_id}/{filename}"
             minio_tasks.append(
-                asyncio.get_event_loop().run_in_executor(
-                    self._executor,
+                asyncio.to_thread(
                     self.minio_manager.save_obj_bytes_with_url,
                     bucket_name, 
                     f"{news_id}/{filename}",
@@ -118,21 +128,36 @@ class NewsService:
         for image in upload_images:
             await image.seek(0)
 
-    
+    async def _delete_images(
+            self, 
+            files_name : List[str], 
+            bucket_name : str = "news-images", 
+            prefix : Optional[str] = "", 
+            with_db : bool = False
+            ) -> None:
+        minio_task = []
+        db_task = []
+        for file in files_name:
+            path = file
+            if prefix:
+                path = f"{prefix}/{file}"
+            minio_task.append(asyncio.to_thread(
+                self.minio_manager.delete_obj, 
+                bucket_name,
+                path
+                ))
+            if with_db:
+                logger.debug(f"Delete image in database file : {file}")
+                db_task.append(self.image_repository.delete_by_field("filename", file))
+        await asyncio.gather(*minio_task)
+        if db_task: await asyncio.gather(*db_task)
+
     async def delete_news(self, news_id) -> None:
         """Удаление новости"""
         logger.debug(f"Delete news {news_id}")
         news = await self.news_repository.get_with_image(news_id)
         logger.debug("Delete image from file storage")
-        minio_task = []
-        for image in news.images:
-            minio_task.append(asyncio.get_event_loop().run_in_executor(
-                self._executor, 
-                self.minio_manager.delete_obj, 
-                image.bucket_name,
-                image.url
-                ))
-        await asyncio.gather(*minio_task)
+        await self._delete_images(bucket_name="news-images", files_name=[file.url for file in news.images])
         logger.debug("Delete news..")
         await self.news_repository.delete(news_id)
         logger.debug("✅ News deleted...")
@@ -143,20 +168,24 @@ class NewsService:
             title: str, 
             body: str, 
             upload_images: List[UploadFile], 
-            news_bucket_name: str = "news-images"
     ) -> None:
         """Создание новости"""
-        logger.debug("Publish news...")
-        news = await self.news_repository.create(
-            user_id=user_id, 
-            title=title, 
-            body=body
-        )
-        if not upload_images:
+        try:
+            logger.debug("Publish news...")
+            news = await self.news_repository.create(
+                user_id=user_id, 
+                title=title, 
+                body=body
+            )
+            logger.debug("Save to elasticsearch")
+            if not upload_images:
+                return news
+            await self._upload_images(news_id=news.id, upload_images=upload_images)
+            logger.debug(f"✅ Successfully uploaded {len(upload_images)}")
             return news
-        await self._upload_images(news_id=news.id, upload_images=upload_images)
-        logger.debug(f"✅ Successfully uploaded {len(upload_images)}")
-        return news
+        except:
+            logger.warn("Error rollback ...")
+            raise
 
     async def get_all_news(self) -> List:
         news_list = await self.news_repository.get_all_with_image(order=1)
@@ -167,7 +196,7 @@ class NewsService:
         serialize_news_list = []
         for news in news_list:
             news = await self._load_image(news)
-            serialize_news = NewsSchema.model_validate(news).model_dump()
+            serialize_news = CropedNewsShema.model_validate(news).model_dump()
             serialize_news_list.append(serialize_news)
         return serialize_news_list
 
@@ -215,7 +244,26 @@ class NewsService:
             if files_to_add:
                 await self._upload_images(news_id, files_to_add, bucket_name)
         logger.debug(f"✅ News {news_id} updated successfully")
-    
+
+
+    async def update_news_optimized(
+            self, 
+            news_id : int, 
+            title : Optional[str], 
+            body : Optional[str], 
+            remove_images : Optional[List[str]], 
+            upload_images : Optional[List[UploadFile]]
+            ) -> None:
+        logger.debug(f"Remove images : {remove_images}")
+        if title is not None:
+            await self.news_repository.update(news_id, title=title)
+        if body is not None:
+            await self.news_repository.update(news_id, body=body)
+        if remove_images is not None:
+            await self._delete_images(files_name=remove_images, prefix=str(news_id), with_db=True)
+        if upload_images is not None:
+            await self._upload_images(news_id=news_id, upload_images=upload_images)
+
     async def leave_comment(
             self, 
             user_id : int, 

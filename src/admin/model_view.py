@@ -7,7 +7,7 @@ from sqladmin import ModelView, expose
 from starlette import status
 from starlette.requests import Request
 from starlette.responses import RedirectResponse
-from typing import Any, Optional
+from typing import Any, Optional, Callable
 from datetime import datetime
 
 from database.models import User, Token, News, NewsImages, Comment
@@ -256,6 +256,20 @@ class NewsAdmin(ModelView, model=News):
     can_export = True
     export_colums = [News.id, News.title, News.views, News.created_at]
 
+    async def _upload_image(self, images_json):
+        files = []
+        if images_json and images_json not in ["", "[]", "null"]:
+            images = json.loads(images_json)
+            logger.debug(f"Processing {len(images)} images")
+            for idx, img_data in enumerate(images):
+                image_bytes = base64.b64decode(img_data['data'])
+                files.append(
+                    ("images", (img_data['name'], image_bytes, img_data['type']))
+                )
+                logger.debug(f"Added image {idx+1}: {img_data['name']}")
+            return files
+        return None
+
     @expose("/custom-create", methods=["POST"])
     async def create_view(self, request: Request):
         """КАстомный запрос создания модели"""
@@ -268,16 +282,7 @@ class NewsAdmin(ModelView, model=News):
             title = form_data.get("title", "").strip()
             body = form_data.get("body", "").strip()
             images_json = form_data.get("images_data")
-            files = []
-            if images_json and images_json not in ["", "[]", "null"]:
-                images = json.loads(images_json)
-                logger.debug(f"Processing {len(images)} images")
-                for idx, img_data in enumerate(images):
-                    image_bytes = base64.b64decode(img_data['data'])
-                    files.append(
-                        ("images", (img_data['name'], image_bytes, img_data['type']))
-                    )
-                    logger.debug(f"Added image {idx+1}: {img_data['name']}")
+            files = await self._upload_image(images_json)
             async with httpx.AsyncClient() as client:
                 user = request.session.get("user")
                 logger.debug(f"User : {user}")
@@ -311,16 +316,9 @@ class NewsAdmin(ModelView, model=News):
             body = form_data.get("body", "").strip()
             news_id = form_data.get("news_id", "").strip()
             images_json = form_data.get("new_images_data")
-            files = []
-            if images_json and images_json not in ["", "[]", "null"]:
-                images = json.loads(images_json)
-                logger.debug(f"Processing {len(images)} images")
-                for idx, img_data in enumerate(images):
-                    image_bytes = base64.b64decode(img_data['data'])
-                    files.append(
-                        ("images", (img_data['name'], image_bytes, img_data['type']))
-                    )
-                    logger.debug(f"Added image {idx+1}: {img_data['name']}")
+            
+            files = await self._upload_image(images_json)
+            logger.debug(f"Type news images : {type(files)}")
             async with httpx.AsyncClient() as client:
                 user = request.session.get("user")
                 logger.debug(f"User : {user}")

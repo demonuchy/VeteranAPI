@@ -5,6 +5,7 @@ from sqlalchemy.ext.asyncio import AsyncSession
 
 from utils.jwt_manager import PyJWTTokenManager, TokenStorage
 from utils.minio_manger import MinioManager
+from utils.elasticsearch_manager import ElasticsearchManager
 from database.repository import UserRepository, TokenRepository, NewsRepository, NewsImagesRepository, CommentRepository, NewsLikeRepository
 from services.auth import AuthService
 from services.news import NewsService
@@ -41,21 +42,24 @@ async def get_session():
 async def get_auth_service(session : AsyncSession = Depends(get_session)) -> AuthService:
     """DI сервиса"""
     return AuthService(
-        user_repository=UserRepository(session), 
-        token_repository=TokenRepository(session),
-        token_storage=TokenStorage(),
-        token_manager=PyJWTTokenManager()
+        session=session,
+        user_repository=UserRepository, 
+        token_repository=TokenRepository,
+        token_storage=TokenStorage,
+        token_manager=PyJWTTokenManager
     )
 
 
 async def get_news_service(session : AsyncSession = Depends(get_session)) -> AuthService:
     """DI сервиса"""
     return NewsService(
-        news_repository=NewsRepository(session),
-        image_repository=NewsImagesRepository(session),
-        comment_repository=CommentRepository(session),
-        news_like_repository=NewsLikeRepository(session),
-        minio_manager=MinioManager()
+        session=session,
+        news_repository=NewsRepository,
+        image_repository=NewsImagesRepository,
+        comment_repository=CommentRepository,
+        news_like_repository=NewsLikeRepository,
+        minio_manager=MinioManager,
+        elasticsearch_manager=ElasticsearchManager
     )
 
 

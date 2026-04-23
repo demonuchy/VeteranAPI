@@ -8,7 +8,7 @@ from contextlib import asynccontextmanager
 from starlette.middleware.sessions import SessionMiddleware
 
 from api.auth import auth_route
-from api.news import news_route
+from api.news import news_route, news_route_v2
 from api.user import user_route
 from admin.setup import AdminSetup
 from database.engine import engine
@@ -60,6 +60,7 @@ admin = AdminSetup(app, engine)
 app.include_router(auth_route)
 app.include_router(news_route)
 app.include_router(user_route)
+app.include_router(news_route_v2)
 
 @app.get("/health")
 async def health(request : Request):

@@ -1,4 +1,5 @@
 from fastapi import HTTPException, status
+from sqlalchemy.ext.asyncio import AsyncSession
 
 from shared.logger.logger import logger
 from shared.config import config
@@ -8,37 +9,40 @@ from utils.password_hash import hash_password, is_password_valid
 from database.base import BaseSQLAlchemyRepository
 from database.repository import TokenRepository
 from database.fields import Role
+from .base import BaseService
 
 
-class AuthService:
+class AuthService(BaseService):
     """Сервисный слой (бизнес логика регистрация/вход/верефикация сесси/логаут)"""
     def __init__(
             self,
+            session : AsyncSession,
             user_repository : BaseSQLAlchemyRepository, 
             token_storage : AbstractTokenStorage,
             token_manager : AbstractTokenManager,
             token_repository : TokenRepository
             ):
+        super().__init__(session=session)
         self._user_repository : BaseSQLAlchemyRepository = user_repository
         self._token_repository : TokenRepository = token_repository
         self._token_storage : AbstractTokenStorage = token_storage
         self._token_manager : AbstractTokenManager = token_manager
 
     @property
-    def user_repository(self):
-        return self._user_repository
+    def user_repository(self) -> BaseSQLAlchemyRepository:
+        return self._get_depends(self._user_repository, self._session)
     
     @property
-    def token_repository(self):
-        return self._token_repository
+    def token_repository(self) -> BaseSQLAlchemyRepository:
+        return self._get_depends(self._token_repository, self._session)
     
     @property
-    def token_storage(self):
-        return self._token_storage
+    def token_storage(self) -> AbstractTokenStorage:
+        return self._get_depends(self._token_storage)
     
     @property
-    def token_manager(self):
-        return self._token_manager
+    def token_manager(self) -> AbstractTokenManager:
+        return self._get_depends(self._token_manager)
        
     async def register(
             self, 
@@ -98,10 +102,10 @@ class AuthService:
             logger.warn("Error user invalid credentials")
             raise HTTPException(detail="User invalid credentials", status_code=status.HTTP_401_UNAUTHORIZED)
         logger.debug("Check tokens")
-        logger.debug("Revoking the refresh token")
-        await self.token_repository.delete_by_fields(user_id = user.id, device_id = device_id)
         logger.debug("Revoking the access token")
         revork_count = await self.token_storage.delete_by_pattern(f"{user.id}:*:{device_id}")
+        logger.debug("Revoking the refresh token")
+        await self.token_repository.delete_by_fields(user_id = user.id, device_id = device_id)
         logger.debug(f"Revork {revork_count} tokens")
         logger.debug("calculate expire ...")
         refresh_expire_minutes=config.JWT_REFRESH_EXPIRE_MINUTES

@@ -99,6 +99,19 @@ class AbstractMinioManager(ABC):
     def delete_obj(self, bucket_name: str, object_name: str) -> bool:
         pass
 
+    @abstractmethod
+    def delete_objects_by_prefix(self, bucket_name: str, prefix: str) -> int:
+        """
+        Удаление всех объектов с определенным префиксом (папкой)
+        
+        Args:
+            bucket_name: Имя бакета (например "news-images")
+            prefix: Префикс (например "15/" для удаления папки 15)
+        
+        Returns:
+            int: Количество удаленных объектов
+        """
+
 
 class MinioManager(AbstractMinioManager):
     def __init__(
@@ -244,4 +257,34 @@ class MinioManager(AbstractMinioManager):
             return True
         except S3Error as e:
             logger.warn(f"Ошибка при удалении объекта: {e}")
+            raise
+
+    def delete_objects_by_prefix(self, bucket_name: str, prefix: str) -> int:
+        """
+        Удаление всех объектов с определенным префиксом (папкой)
+        
+        Args:
+            bucket_name: Имя бакета (например "news-images")
+            prefix: Префикс (например "15/" для удаления папки 15)
+        
+        Returns:
+            int: Количество удаленных объектов
+        """
+        try:
+            if not self.client.bucket_exists(bucket_name):
+                logger.warning(f"Bucket '{bucket_name}' does not exist")
+                return 0
+            objects = self.client.list_objects(bucket_name, prefix=prefix, recursive=True)
+            objects_to_remove = [obj.object_name for obj in objects]
+            if objects_to_remove:
+                self.client.remove_objects(bucket_name, objects_to_remove)
+                logger.debug(f"Deleted {len(objects_to_remove)} objects from '{prefix}' in bucket '{bucket_name}'")
+            else:
+                logger.debug(f"No objects found with prefix '{prefix}'")
+            return len(objects_to_remove)
+        except S3Error as e:
+            logger.error(f"Error deleting objects with prefix '{prefix}': {e}")
+            raise
+        except Exception as e:
+            logger.error(f"Unknown error: {e}")
             raise

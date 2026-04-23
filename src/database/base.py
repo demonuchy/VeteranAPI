@@ -177,6 +177,7 @@ class BaseSQLAlchemyRepository(abc.ABC, Generic[T]):
 
     async def delete_by_field(self, field_name: str, value: Any) -> bool:
         """Удалить объекты по значению поля"""
+        logger.debug(f"🔍 Deleting from {self.model.__name__} where {field_name} = '{value}'")
         if not hasattr(self.model, field_name):
             raise ValueError(f"Field {field_name} does not exist in {self.model.__name__}")
         stmt = delete(self.model).where(getattr(self.model, field_name) == value)
