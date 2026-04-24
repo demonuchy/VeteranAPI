@@ -62,6 +62,14 @@ class NewsRepository(BaseSQLAlchemyRepository[News]):
         super().__init__(session=session, model=News)
 
     async def get_all_with_image(self, order):
+        stmt = select(self.model
+                    ).options(
+                        selectinload(self.model.images.and_(NewsImages.order == order))
+                        )
+        result = await self.session.execute(stmt)
+        return result.scalars().all()
+    
+    async def get_all_with_image_optimize(self):
         stmt = select(self.model).options(
         load_only(
             self.model.id,
@@ -69,14 +77,13 @@ class NewsRepository(BaseSQLAlchemyRepository[News]):
             self.model.user_id,
             self.model.created_at
         ),
-            contains_eager(self.model.images)
-        ).join(
+        contains_eager(self.model.images)
+        ).outerjoin(
             NewsImages,
             self.model.id == NewsImages.news_id
-        ).where(
-            NewsImages.order == order
         ).order_by(
-            self.model.created_at.desc() 
+            self.model.created_at.desc(),
+            NewsImages.order.asc()  
         )
         result = await self.session.execute(stmt)
         news_list = result.unique().scalars().all()

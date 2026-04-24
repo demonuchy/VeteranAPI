@@ -1,6 +1,6 @@
 from typing import List, Optional
 from fastapi import APIRouter, Form, File, UploadFile, Header, status
-from fastapi.responses import JSONResponse, Response
+from fastapi.responses import JSONResponse, Response, StreamingResponse
 
 
 from shared.depends import NewsServiceDep
@@ -29,6 +29,42 @@ async def update_news(
         status_code=status.HTTP_200_OK, 
         content={"detail" : "Ok"}
         )
+
+
+@news_route_v2.get("/")
+async def get_all_news_v2(service : NewsServiceDep):
+    news = await service.get_all_news_with_stream()
+    return JSONResponse(
+        status_code=status.HTTP_200_OK, 
+        content={
+            "detail" : "Ok", 
+            "data" : {
+                "news" : news
+                }
+            }
+        )
+
+
+
+@news_route_v2.get("/{news_id}")
+async def get_news_v2(service : NewsServiceDep, news_id : int):
+    news = await service.get_news_with_stream(news_id)
+    return JSONResponse(
+        status_code=status.HTTP_200_OK, 
+        content={
+            "detail" : "Ok", 
+            "data" : {
+                "news" : news
+                }
+            }
+        )
+
+@news_route_v2.get("/{news_id}/image/{img_id}")
+async def get_news_image(service : NewsServiceDep, img_id : int):
+    image = await service.image_repository.get_by_id(img_id)
+    stream = await service.stream_load_chunk(image.bucket_name, image.url)
+    return StreamingResponse(stream(), media_type="image/jpeg")
+    
 
 
 @news_route.get("/private")

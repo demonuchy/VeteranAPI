@@ -1,6 +1,7 @@
 import os
 from weakref import WeakKeyDictionary
 import base64
+import threading
 import asyncio
 import uuid
 from fastapi import HTTPException, status, UploadFile
@@ -60,8 +61,8 @@ class NewsService(BaseService):
     @property
     def elasticsearch_manager(self) -> AbstractElasticsearchManager:
        return self._get_depends(self._elasticsearch_manager)
-    
-    async def _load_image(self, news):     
+        
+    async def _load_image(self, news) -> None:     
         for image in news.images:
             image_bytes = await asyncio.to_thread(
                 self.minio_manager.get_obj,
@@ -69,9 +70,8 @@ class NewsService(BaseService):
                 image.url,
             )
             logger.debug("Image loaded")
-            image.base64 = base64.b64encode(image_bytes).decode('utf-8')
-        return news
-    
+            image.base64 = f"data:{image.content_type};base64,{base64.b64encode(image_bytes).decode('utf-8')}"
+
     async def _upload_images(
         self, 
         news_id: int, 
@@ -187,6 +187,56 @@ class NewsService(BaseService):
             logger.warn("Error rollback ...")
             raise
 
+    async def stream_load_chunk(self, bucket_name: str, object_name: str):
+        async def _stream():
+            logger.debug(f"Начало стриминга изображения: {object_name}")
+            queue = asyncio.Queue(maxsize=5)
+            loop = asyncio.get_event_loop()
+            def _read_and_put():
+                logger.debug(f"Запущен поток чтения для: {object_name}")
+                response = None
+                try:
+                    logger.debug(f"Получаем объект из MinIO: {bucket_name}/{object_name}")
+                    response = self.client.get_object(bucket_name, object_name)
+                    logger.debug(f"Объект получен, начинаем чтение чанками")
+                    chunk_count = 0
+                    while True:
+                        chunk = response.read(65536)
+                        if not chunk:
+                            logger.debug(f"Чтение завершено, прочитано {chunk_count} чанков")
+                            break
+                        chunk_count += 1
+                        logger.debug(f"Прочитан чанк {chunk_count}, размер {len(chunk)} байт")
+                        future = asyncio.run_coroutine_threadsafe(queue.put(chunk), loop)
+                        future.result()
+                        logger.debug(f"Чанк {chunk_count} положен в очередь")
+                except Exception as e:
+                    logger.error(f"Ошибка при чтении: {e}")
+                    asyncio.run_coroutine_threadsafe(queue.put(e), loop).result()
+                finally:
+                    if response:
+                        response.close()
+                        response.release_conn()
+                        logger.debug(f"Соединение закрыто")
+                    asyncio.run_coroutine_threadsafe(queue.put(None), loop).result()
+                    logger.debug(f"Отправлен сигнал завершения (None)")
+            threading.Thread(target=_read_and_put, daemon=True).start()
+            logger.debug(f"Поток чтения запущен, начинаем вычитывать из очереди")
+            chunk_index = 0
+            while True:
+                chunk = await queue.get()
+                if chunk is None:
+                    logger.debug(f"Получен сигнал завершения, выходим из цикла")
+                    break
+                if isinstance(chunk, Exception):
+                    logger.error(f"Получено исключение: {chunk}")
+                    raise chunk
+                chunk_index += 1
+                logger.debug(f"Отдаем чанк {chunk_index}, размер {len(chunk)} байт")
+                yield chunk
+            logger.debug(f"Стриминг завершен, отправлено {chunk_index} чанков")
+        return _stream
+
     async def get_all_news(self) -> List:
         news_list = await self.news_repository.get_all_with_image(order=1)
         if not news_list:
@@ -195,9 +245,24 @@ class NewsService(BaseService):
         logger.debug("Load images ...")
         serialize_news_list = []
         for news in news_list:
-            news = await self._load_image(news)
+            await self._load_image(news)
             serialize_news = CropedNewsShema.model_validate(news).model_dump()
             serialize_news_list.append(serialize_news)
+        return serialize_news_list
+    
+    async def get_all_news_with_stream(self, version_api = "v2") -> List:
+        news_list = await self.news_repository.get_all_with_image_optimize()
+        if not news_list:
+            logger.warn("News not found")
+            raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="News not found")
+        logger.debug("Load images ...")
+        serialize_news_list = []
+        for news in news_list:
+            serialize_news = CropedNewsShema.model_validate(news)
+            if serialize_news.images:
+                serialize_news.images = serialize_news.images[:1]
+                serialize_news.images[0].url = f"/api/{version_api}/news/{serialize_news.id}/image/{serialize_news.images[0].id}"
+            serialize_news_list.append(serialize_news.model_dump())
         return serialize_news_list
 
     async def get_news(self, news_id) -> dict:
@@ -211,6 +276,20 @@ class NewsService(BaseService):
         await self._load_image(news)
         serialize_news = NewsSchema.model_validate(news).model_dump()
         return serialize_news
+    
+    async def get_news_with_stream(self, news_id, version_api = "v2") -> dict:
+        logger.debug(f"Get news {news_id}")
+        logger.debug("Get news ogj...")
+        news = await self.news_repository.get_with_image_comment(news_id)
+        if not news:
+            logger.warn("News not found")
+            raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="News not found")
+        logger.debug("Load images ...")
+        serialize_news = NewsSchema.model_validate(news)
+        logger.debug(f"News {serialize_news.model_dump()}")
+        for image in serialize_news.images:
+            image.url = f"/api/{version_api}/news/{news_id}/image/{image.id}"
+        return serialize_news.model_dump()
     
     async def update_news(
         self, 
@@ -260,8 +339,10 @@ class NewsService(BaseService):
         if body is not None:
             await self.news_repository.update(news_id, body=body)
         if remove_images is not None:
+            logger.debug("Remove exeting image")
             await self._delete_images(files_name=remove_images, prefix=str(news_id), with_db=True)
         if upload_images is not None:
+            logger.debug("Upload image")
             await self._upload_images(news_id=news_id, upload_images=upload_images)
 
     async def leave_comment(

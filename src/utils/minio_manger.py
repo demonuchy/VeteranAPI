@@ -1,11 +1,16 @@
 import io
+import asyncio
+import threading
 from datetime import timedelta
 from abc import ABC, abstractmethod
 from minio import Minio
 from minio.error import S3Error
 from typing import BinaryIO
+from aiobotocore.session import get_session
+
 from shared.logger.logger import logger
 from shared.config import config
+
 
 
 class AbstractMinioManager(ABC):
@@ -288,3 +293,35 @@ class MinioManager(AbstractMinioManager):
         except Exception as e:
             logger.error(f"Unknown error: {e}")
             raise
+
+
+class StreamMinIOManager(MinioManager):
+    def __init__(
+        self,
+        endpoint: str = f"{config.MinioHost}:9000",
+        access_key: str = config.MINIO_USERNAME,
+        secret_key: str = config.MINIO_PASSWORD,
+        secure: bool = False
+    ):
+        super().__init__(endpoint, access_key, secret_key, secure)
+
+    
+    
+
+class AsyncMinIOManager:
+    def __init__(self):
+        self._client = ...
+
+    async def stream_upload_chunk(self, bucket_name : str, file : BinaryIO, obj_name : str):
+        async def _stream_upload():
+            file.file.seek(0)
+            self.client.put_object(
+                bucket_name=bucket_name, 
+                object_name=obj_name, 
+                data=file.file, 
+                length=-1, 
+                part_size=65536,
+                content_type=file.content_type
+            )
+        threading.Thread(target=_stream_upload, daemon=True).start()
+
