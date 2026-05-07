@@ -4,16 +4,17 @@ from datetime import datetime
 from typing import List, Optional
 
 class NewsImageSchema(BaseModel):
-    id: int
+    id: Optional[int] = None
     url: str
     filename: str
     bucket_name: str
     content_type: str
     order: int
     base64: Optional[str] = None
+    binary : Optional[bytes] = None
     width: Optional[int] = None
     height: Optional[int] = None
-    created_at: datetime
+    created_at: Optional[datetime] = None
 
     class Config:
         from_attributes = True  # для SQLAlchemy 2.0 (раньше было orm_mode=True)

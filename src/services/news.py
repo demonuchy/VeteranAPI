@@ -12,9 +12,9 @@ from concurrent.futures import ThreadPoolExecutor
 
 from database.fields import ImageType
 from database.base import BaseSQLAlchemyRepository
-from utils.minio_manger import AbstractMinioManager
+from utils.minio_manger import AsyncMinIOManager
 from utils.elasticsearch_manager import AbstractElasticsearchManager
-from schemas.news import NewsSchema, CropedNewsShema
+from schemas.news import NewsSchema, CropedNewsShema, NewsImageSchema
 from shared.logger.logger import logger
 
 from .base import BaseService
@@ -27,7 +27,7 @@ class NewsService(BaseService):
                  image_repository : BaseSQLAlchemyRepository,
                  comment_repository : BaseSQLAlchemyRepository,
                  news_like_repository : BaseSQLAlchemyRepository,
-                 minio_manager : AbstractMinioManager, 
+                 minio_manager : AsyncMinIOManager, 
                  elasticsearch_manager : AbstractElasticsearchManager
                  ):
         super().__init__(session=session)
@@ -47,8 +47,8 @@ class NewsService(BaseService):
         return self._get_depends(self._image_repository, self._session)
 
     @property
-    def minio_manager(self) -> AbstractMinioManager:
-        return self._get_depends(self._minio_manager)
+    def minio_manager(self) -> AsyncMinIOManager:
+        return self._get_depends(self._minio_manager, "news-images")
     
     @property
     def comment_repository(self) -> BaseSQLAlchemyRepository:
@@ -64,19 +64,45 @@ class NewsService(BaseService):
         
     async def _load_image(self, news) -> None:     
         for image in news.images:
-            image_bytes = await asyncio.to_thread(
-                self.minio_manager.get_obj,
-                image.bucket_name,
-                image.url,
-            )
+            image_bytes = await self.minio_manager.get_obj(image.url)
             logger.debug("Image loaded")
             image.base64 = f"data:{image.content_type};base64,{base64.b64encode(image_bytes).decode('utf-8')}"
+
+
+    async def _upload_images_optimize(
+        self, 
+        news_id: int, 
+        upload_images: List[UploadFile], 
+    ) -> None:
+        db_records = []
+        current_max_order = await self.image_repository.get_max_order(news_id) or 0
+        async with self.minio_manager._get_client() as client:
+            task = []
+            for order, file in enumerate(upload_images, start=current_max_order+1):
+                filename = await self._minio_manager.generate_filename(file)
+                path = f"{news_id}/{filename}"
+                task.append(self.minio_manager.stream_upload_chunk(
+                    client=client, 
+                    object_name = path,
+                    file_obj = file.file,
+                    bucket_name = None,
+                    content_type = file.content_type
+                    ))
+                db_records.append({'news_id': news_id,
+                    'bucket_name': self.minio_manager.bucket_name,
+                    'filename': filename,
+                    'url' : path,
+                    'content_type': ImageType.get_image_type(file.content_type),
+                    'order': order
+                    }
+                )
+            await asyncio.gather(*task)
+        await self.image_repository.bulk_create(db_records)
 
     async def _upload_images(
         self, 
         news_id: int, 
         upload_images: List[UploadFile], 
-        bucket_name: str = "news-images"
     ) -> None:
         """Вспомогательный метод для загрузки изображений"""
         read_tasks = [image.read() for image in upload_images]
@@ -99,7 +125,7 @@ class NewsService(BaseService):
             try:
                 db_records.append({
                     'news_id': news_id,
-                    'bucket_name': bucket_name,
+                    'bucket_name': self.minio_manager.bucket_name,
                     'filename': filename,
                     'url' : f"{news_id}/{filename}",
                     'content_type': image_type[image.content_type],
@@ -110,11 +136,10 @@ class NewsService(BaseService):
                 continue
             object_path = f"{news_id}/{filename}"
             minio_tasks.append(
-                asyncio.to_thread(
-                    self.minio_manager.save_obj_bytes_with_url,
-                    bucket_name, 
-                    f"{news_id}/{filename}",
-                    content,
+                self.minio_manager.save_obj_bytes(
+                    f"{news_id}/{filename}", 
+                    content, 
+                    None, 
                     image.content_type
                 )
             )
@@ -131,7 +156,6 @@ class NewsService(BaseService):
     async def _delete_images(
             self, 
             files_name : List[str], 
-            bucket_name : str = "news-images", 
             prefix : Optional[str] = "", 
             with_db : bool = False
             ) -> None:
@@ -141,11 +165,7 @@ class NewsService(BaseService):
             path = file
             if prefix:
                 path = f"{prefix}/{file}"
-            minio_task.append(asyncio.to_thread(
-                self.minio_manager.delete_obj, 
-                bucket_name,
-                path
-                ))
+            minio_task.append(self.minio_manager.delete_obj(path))
             if with_db:
                 logger.debug(f"Delete image in database file : {file}")
                 db_task.append(self.image_repository.delete_by_field("filename", file))
@@ -180,62 +200,12 @@ class NewsService(BaseService):
             logger.debug("Save to elasticsearch")
             if not upload_images:
                 return news
-            await self._upload_images(news_id=news.id, upload_images=upload_images)
+            await self._upload_images_optimize(news_id=news.id, upload_images=upload_images)
             logger.debug(f"✅ Successfully uploaded {len(upload_images)}")
             return news
         except:
             logger.warn("Error rollback ...")
             raise
-
-    async def stream_load_chunk(self, bucket_name: str, object_name: str):
-        async def _stream():
-            logger.debug(f"Начало стриминга изображения: {object_name}")
-            queue = asyncio.Queue(maxsize=5)
-            loop = asyncio.get_event_loop()
-            def _read_and_put():
-                logger.debug(f"Запущен поток чтения для: {object_name}")
-                response = None
-                try:
-                    logger.debug(f"Получаем объект из MinIO: {bucket_name}/{object_name}")
-                    response = self.client.get_object(bucket_name, object_name)
-                    logger.debug(f"Объект получен, начинаем чтение чанками")
-                    chunk_count = 0
-                    while True:
-                        chunk = response.read(65536)
-                        if not chunk:
-                            logger.debug(f"Чтение завершено, прочитано {chunk_count} чанков")
-                            break
-                        chunk_count += 1
-                        logger.debug(f"Прочитан чанк {chunk_count}, размер {len(chunk)} байт")
-                        future = asyncio.run_coroutine_threadsafe(queue.put(chunk), loop)
-                        future.result()
-                        logger.debug(f"Чанк {chunk_count} положен в очередь")
-                except Exception as e:
-                    logger.error(f"Ошибка при чтении: {e}")
-                    asyncio.run_coroutine_threadsafe(queue.put(e), loop).result()
-                finally:
-                    if response:
-                        response.close()
-                        response.release_conn()
-                        logger.debug(f"Соединение закрыто")
-                    asyncio.run_coroutine_threadsafe(queue.put(None), loop).result()
-                    logger.debug(f"Отправлен сигнал завершения (None)")
-            threading.Thread(target=_read_and_put, daemon=True).start()
-            logger.debug(f"Поток чтения запущен, начинаем вычитывать из очереди")
-            chunk_index = 0
-            while True:
-                chunk = await queue.get()
-                if chunk is None:
-                    logger.debug(f"Получен сигнал завершения, выходим из цикла")
-                    break
-                if isinstance(chunk, Exception):
-                    logger.error(f"Получено исключение: {chunk}")
-                    raise chunk
-                chunk_index += 1
-                logger.debug(f"Отдаем чанк {chunk_index}, размер {len(chunk)} байт")
-                yield chunk
-            logger.debug(f"Стриминг завершен, отправлено {chunk_index} чанков")
-        return _stream
 
     async def get_all_news(self) -> List:
         news_list = await self.news_repository.get_all_with_image(order=1)
@@ -302,7 +272,7 @@ class NewsService(BaseService):
         await self.news_repository.update(news_id, title=title, body=body)
         if upload_images is not None:
             bucket_name = "news-images"
-            current_file_paths = self.minio_manager.list_objects(bucket_name, prefix=f"{news_id}/")
+            current_file_paths = await self.minio_manager.list_objects(bucket_name, prefix=f"{news_id}/")
             current_filenames = [os.path.basename(f) for f in current_file_paths]
             new_filenames = [file.filename for file in upload_images if file.filename]
             files_to_remove = [f for f in current_filenames if f not in new_filenames]

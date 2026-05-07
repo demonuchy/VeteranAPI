@@ -62,8 +62,8 @@ async def get_news_v2(service : NewsServiceDep, news_id : int):
 @news_route_v2.get("/{news_id}/image/{img_id}")
 async def get_news_image(service : NewsServiceDep, img_id : int):
     image = await service.image_repository.get_by_id(img_id)
-    stream = await service.stream_load_chunk(image.bucket_name, image.url)
-    return StreamingResponse(stream(), media_type="image/jpeg")
+    stream = service.minio_manager.stream_load_chunk(image.url)
+    return StreamingResponse(stream, media_type="image/jpeg")
     
 
 

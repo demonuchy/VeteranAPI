@@ -1,5 +1,5 @@
 import enum
-from typing import Annotated
+from typing import Annotated, Optional
 from datetime import datetime
 from sqlalchemy import String, BigInteger, Boolean, DateTime, Enum, func
 from sqlalchemy.orm import mapped_column
@@ -15,6 +15,16 @@ class ImageType(enum.Enum):
     JPEG = "image/jpeg"
     WEBP = "image/webp"
 
+    @classmethod
+    def get_image_type(cls, content_type: str) -> Optional['ImageType']:
+        """Маппинг MIME-типов в ImageType"""
+        mapping = {
+            "image/jpeg": cls.JPEG,
+            "image/jpg": cls.JPEG,
+            "image/png": cls.PNG,
+            "image/webp": cls.WEBP
+        }
+        return mapping.get(content_type)
 
 class Role(enum.Enum):
     USER = "user"

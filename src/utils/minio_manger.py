@@ -1,17 +1,23 @@
 import io
 import asyncio
 import threading
+import os
+import uuid
+from functools import wraps
 from datetime import timedelta
 from abc import ABC, abstractmethod
 from minio import Minio
 from minio.error import S3Error
-from typing import BinaryIO
-from aiobotocore.session import get_session
+from typing import BinaryIO, AsyncGenerator, Optional, List, Callable
+from aiobotocore.session import get_session, ClientCreatorContext
+from botocore.exceptions import ClientError
+from contextlib import asynccontextmanager
+from fastapi import HTTPException, status, UploadFile
+from concurrent.futures import ThreadPoolExecutor
+
 
 from shared.logger.logger import logger
 from shared.config import config
-
-
 
 class AbstractMinioManager(ABC):
     def __init__(
@@ -227,7 +233,6 @@ class MinioManager(AbstractMinioManager):
             if not self.client.bucket_exists(bucket_name):
                 self.client.make_bucket(bucket_name)
                 logger.debug(f"Created bucket: {bucket_name}")
-            
             data_stream = io.BytesIO(data)
             self.client.put_object(
                 bucket_name=bucket_name,
@@ -294,34 +299,368 @@ class MinioManager(AbstractMinioManager):
             logger.error(f"Unknown error: {e}")
             raise
 
-
-class StreamMinIOManager(MinioManager):
+class AsyncMinIOManager:
     def __init__(
         self,
+        bucket_name: str,
         endpoint: str = f"{config.MinioHost}:9000",
         access_key: str = config.MINIO_USERNAME,
         secret_key: str = config.MINIO_PASSWORD,
-        secure: bool = False
+        secure: bool = False,
+        region: str = "us-east-1"
     ):
-        super().__init__(endpoint, access_key, secret_key, secure)
+        """
+        Асинхронный менеджер для работы с MinIO используя aiobotocore
+        
+        Args:
+            bucket_name: Имя бакета по умолчанию
+            endpoint: Адрес Minio сервера
+            access_key: Ключ доступа
+            secret_key: Секретный ключ
+            secure: Использовать HTTPS
+            region: Регион (для совместимости с S3 API)
+        """
+        self.bucket_name = bucket_name
+        self.endpoint = endpoint
+        self.access_key = access_key
+        self.secret_key = secret_key
+        self.secure = secure
+        self.region = region
+        self.endpoint_url = f"{'https' if secure else 'http'}://{endpoint}"
 
+    @staticmethod
+    def with_client(func: Callable) -> Callable:
+        """Декоратор для методов, которым нужен клиент"""
+        @wraps(func)
+        async def wrapper(self, *args, **kwargs):
+            if kwargs.get("client") is not None:
+                return await func(self, *args, **kwargs)
+            async with self._get_client() as client:
+                return await func(self, client, *args, **kwargs)
+        return wrapper
+  
+    def _get_session_config(self):
+        """Получение конфигурации для сессии"""
+        return {
+            'aws_access_key_id': self.access_key,
+            'aws_secret_access_key': self.secret_key,
+            'endpoint_url': self.endpoint_url,
+            'region_name': self.region,
+        }
     
+    @asynccontextmanager
+    async def _get_client(self) -> AsyncGenerator[ClientCreatorContext, None]:
+        """Контекстный менеджер для получения S3 клиента"""
+        session = get_session()
+        async with session.create_client('s3', **self._get_session_config()) as client:
+            yield client
     
+    @with_client
+    async def bucket_exists(self, client, bucket_name: Optional[str] = None) -> bool:
+        """Проверка существования бакета"""
+        bucket = bucket_name or self.bucket_name
+        try:
+            await client.head_bucket(Bucket=bucket)
+            return True
+        except ClientError as e:
+            error_code = e.response['Error']['Code']
+            if error_code == '404':
+                return False
+            logger.error(f"Error checking bucket existence: {e}")
+            raise
+      
+    @with_client
+    async def make_bucket(self, client, bucket_name: Optional[str] = None):
+        """Создание бакета"""
+        bucket = bucket_name or self.bucket_name
+        try:
+            await client.create_bucket(Bucket=bucket)
+            logger.debug(f"Bucket '{bucket}' created successfully")
+        except ClientError as e:
+            if e.response['Error']['Code'] == 'BucketAlreadyOwnedByYou':
+                logger.debug(f"Bucket '{bucket}' already exists")
+            else:
+                logger.error(f"Error creating bucket: {e}")
+                raise
 
-class AsyncMinIOManager:
-    def __init__(self):
-        self._client = ...
+    @staticmethod
+    async def generate_filename(file : UploadFile) -> None:
+        if not file.filename:
+            return f"{uuid.uuid4()}.jpg"
+        name, ext = os.path.splitext(file.filename)
+        return f"{name}_{uuid.uuid4()}{ext}"
+    
+    @with_client
+    async def save_obj(
+        self,
+        client,
+        object_name: str,
+        source_file: str,
+        bucket_name: Optional[str] = None,
+        content_type: str = "application/octet-stream"
+    ) -> None:
+        """
+        Сохранение файла в MinIO
+        Args:
+            object_name: Имя файла в MinIO
+            source_file: Путь к исходному файлу
+            bucket_name: Имя бакета (если не указан, используется default)
+            content_type: MIME тип файла
+        """
+        bucket = bucket_name or self.bucket_name
+        try:
+            with open(source_file, 'rb') as file_data:
+                await client.put_object(
+                    Bucket=bucket,
+                    Key=object_name,
+                    Body=file_data,
+                    ContentType=content_type
+                )
+            logger.debug(f"File '{source_file}' uploaded as '{object_name}' to bucket '{bucket}'")
+        except ClientError as e:
+            logger.error(f"Error saving file to MinIO: {e}")
+            raise
+        except FileNotFoundError:
+            logger.error(f"File not found: {source_file}")
+            raise
+        except Exception as e:
+            logger.error(f"Unknown error: {e}")
+            raise
 
-    async def stream_upload_chunk(self, bucket_name : str, file : BinaryIO, obj_name : str):
-        async def _stream_upload():
-            file.file.seek(0)
-            self.client.put_object(
-                bucket_name=bucket_name, 
-                object_name=obj_name, 
-                data=file.file, 
-                length=-1, 
-                part_size=65536,
-                content_type=file.content_type
+    @with_client
+    async def save_obj_bytes(
+        self,
+        client,
+        object_name: str,
+        data: bytes,
+        bucket_name: Optional[str] = None,
+        content_type: str = "application/octet-stream"
+    ) -> None:
+        """
+        Сохранение байтов в MinIO
+        
+        Args:
+            object_name: Имя файла в MinIO
+            data: Байты для сохранения
+            bucket_name: Имя бакета (если не указан, используется default)
+            content_type: MIME тип файла
+        """
+        bucket = bucket_name or self.bucket_name
+        try:
+            data_stream = io.BytesIO(data)
+            await client.put_object(
+                Bucket=bucket,
+                Key=object_name,
+                Body=data_stream,
+                ContentType=content_type
             )
-        threading.Thread(target=_stream_upload, daemon=True).start()
+            logger.debug(f"Data uploaded as '{object_name}' to bucket '{bucket}' ({len(data)} bytes)")  
+        except ClientError as e:
+            logger.error(f"Error saving bytes to MinIO: {e}")
+            raise
+        except Exception as e:
+            logger.error(f"Unknown error: {e}")
+            raise
 
+    @with_client
+    async def get_obj(
+        self,
+        client,
+        object_name: str,
+        bucket_name: Optional[str] = None
+    ) -> bytes:
+        """
+        Получение объекта из MinIO
+        
+        Args:
+            object_name: Имя объекта в MinIO
+            bucket_name: Имя бакета (если не указан, используется default)
+        
+        Returns:
+            bytes: Содержимое объекта
+        """
+        bucket = bucket_name or self.bucket_name
+        try:
+            response = await client.get_object(
+                Bucket=bucket,
+                Key=object_name
+            )
+            data = await response['Body'].read()
+            await response['Body'].close()
+            logger.debug(f"Object '{object_name}' retrieved from bucket '{bucket}' ({len(data)} bytes)")
+            return data
+        except ClientError as e:
+            logger.error(f"Error getting object from MinIO: {e}")
+            raise
+        except Exception as e:
+            logger.error(f"Unknown error: {e}")
+            raise
+
+    @with_client
+    async def delete_obj(
+        self,
+        client,
+        object_name: str,
+        bucket_name: Optional[str] = None
+    ) -> bool:
+        """
+        Удаление объекта из MinIO
+        
+        Args:
+            object_name: Имя объекта в MinIO
+            bucket_name: Имя бакета (если не указан, используется default)
+        """
+        bucket = bucket_name or self.bucket_name 
+        try:
+            await client.delete_object(
+                Bucket=bucket,
+                Key=object_name
+            )
+            logger.debug(f"Object '{object_name}' deleted from bucket '{bucket}'")
+            return True
+        except ClientError as e:
+            logger.error(f"Error deleting object: {e}")
+            raise
+        except Exception as e:
+            logger.error(f"Unknown error: {e}")
+            raise
+
+    @with_client
+    async def delete_objects_by_prefix(
+        self,
+        client,
+        prefix: str,
+        bucket_name: Optional[str] = None,
+        batch_size = 1000
+    ) -> int:
+        """
+        Удаление всех объектов с определенным префиксом
+        
+        Args:
+            prefix: Префикс для удаления
+            bucket_name: Имя бакета (если не указан, используется default)
+        
+        Returns:
+            int: Количество удаленных объектов
+        """
+        bucket = bucket_name or self.bucket_name
+        try:
+            if not await self.bucket_exists(client=client, bucket_name=bucket):
+                logger.warning(f"Bucket '{bucket}' does not exist")
+                return 0
+            objects_to_delete = []
+            paginator = client.get_paginator('list_objects_v2')
+            async for page in paginator.paginate(Bucket=bucket, Prefix=prefix):
+                if 'Contents' in page:
+                    for obj in page['Contents']:
+                        objects_to_delete.append({'Key': obj['Key']})
+            if objects_to_delete:
+                for i in range(0, len(objects_to_delete), batch_size):
+                    batch = objects_to_delete[i:i+1000]
+                    await client.delete_objects(
+                        Bucket=bucket,
+                        Delete={'Objects': batch, 'Quiet': True}
+                    )
+                logger.debug(f"Deleted {len(objects_to_delete)} objects with prefix '{prefix}' from bucket '{bucket}'")
+            else:
+                logger.debug(f"No objects found with prefix '{prefix}'")
+            return len(objects_to_delete)
+        except ClientError as e:
+            logger.error(f"Error deleting objects with prefix '{prefix}': {e}")
+            raise
+        except Exception as e:
+            logger.error(f"Unknown error: {e}")
+            raise
+
+    @with_client
+    async def list_objects(
+        self,
+        client,
+        prefix: str = "",
+        bucket_name: Optional[str] = None
+    ) -> List[str]:
+        """
+        Получение списка объектов в бакете
+        
+        Args:
+            prefix: Префикс для фильтрации
+            bucket_name: Имя бакета (если не указан, используется default)
+        
+        Returns:
+            List[str]: Список имен объектов
+        """
+        bucket = bucket_name or self.bucket_name
+        try:
+            if not await self.bucket_exists(client, bucket):
+                return []
+            objects = []
+            paginator = client.get_paginator('list_objects_v2')
+            async for page in paginator.paginate(Bucket=bucket, Prefix=prefix):
+                if 'Contents' in page:
+                    for obj in page['Contents']:
+                        objects.append(obj['Key'])
+            
+            logger.debug(f"Listed {len(objects)} objects in bucket '{bucket}' with prefix '{prefix}'")
+            return objects
+        except ClientError as e:
+            logger.error(f"Error listing objects: {e}")
+            raise
+
+    async def stream_load_chunk(
+        self,
+        object_name: str,
+        bucket_name: str | None = None,
+        chunk_size: int = 60 * 1024  # 64 KB
+    )-> AsyncGenerator[bytes, None]:
+        """
+        Асинхронный генератор для потокового чтения файла из MinIO.
+          Args:
+            object_name: Имя объекта в MinIO
+            file_obj: Файловый объект (BinaryIO), открытый в режиме 'rb'
+            bucket_name: Имя бакета (если не указан, используется default)
+            chunk_size: Размер чанка
+        Yield:
+           chunk
+        """
+        bucket = bucket_name or self.bucket_name
+        async with self._get_client() as client:
+            response = await client.get_object(
+                Bucket=bucket,
+                Key=object_name
+            )
+            async for chunk in response['Body'].iter_chunks(chunk_size):
+                yield chunk
+
+    @with_client
+    async def stream_upload_chunk(
+        self,
+        client,
+        object_name: str,
+        file_obj: BinaryIO,
+        bucket_name: Optional[str] = None,
+        content_type: str = "application/octet-stream"
+    ) -> None:
+        """
+        Загрузка файла в MinIO с использованием встроенного метода upload_fileobj.
+        Aiobotocore автоматически использует multipart upload для больших файлов.
+        
+        Args:
+            object_name: Имя объекта в MinIO
+            file_obj: Файловый объект (BinaryIO), открытый в режиме 'rb'
+            bucket_name: Имя бакета (если не указан, используется default)
+            content_type: MIME тип файла
+        
+        Returns:
+           None
+        """
+        bucket = bucket_name or self.bucket_name
+        file_content = file_obj.read()
+        await client.put_object(
+            Body=file_content,
+            Bucket=bucket,
+            Key=object_name,
+            ContentType = content_type
+        )
+        logger.debug(f"File successfully uploaded to {bucket}/{object_name}")
+   
+  
