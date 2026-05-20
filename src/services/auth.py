@@ -147,7 +147,7 @@ class AuthService(BaseService):
             raise HTTPException(detail="Invalid token", status_code=status.HTTP_401_UNAUTHORIZED)
         logger.debug("serialize token payload ...")
         serialize_token_payload = TokenPyload(**current_access_token)
-        logger.debug(f"Payload : {serialize_token_payload}")
+        # logger.debug(f"Payload : {serialize_token_payload}")
         logger.debug("Access token is valid")
         return ServiceVerifyResponce(
             user_id=serialize_token_payload.user_id, 

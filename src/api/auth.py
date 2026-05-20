@@ -1,12 +1,50 @@
-from  fastapi import APIRouter, Depends, status, Header
+from typing import Optional
+from  fastapi import APIRouter, Depends, status, Header, HTTPException
 from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
 from fastapi.requests import Request
 from fastapi.responses import JSONResponse
 
 from shared.depends import AuthServiceDep
 from schemas.auth import RegisterRequest, LoginRequest
+from shared.logger.logger import logger
 
-security = HTTPBearer()
+security = HTTPBearer(auto_error=False)
+
+async def get_token(
+        request : Request, 
+        credentials: Optional[HTTPAuthorizationCredentials] = Depends(security)
+        ) -> str:
+    """Получаем токен из запроса"""
+    logger.debug("Get token ...")
+    if credentials:
+        return credentials.credentials
+    token = request.session.get("access_token")
+    if token:
+        return token
+    logger.debug("Token not foun")
+    raise HTTPException(
+        status_code=status.HTTP_401_UNAUTHORIZED,
+        detail="Token not found in Authorization header or session",
+        headers={"WWW-Authenticate": "Bearer"},
+    )
+
+
+async def get_device_id(
+        request : Request, 
+        device_id : Optional[str] = Header(None, alias="X-Device-Id")
+        ) -> str:
+    logger.debug("Get device id ...")
+    if device_id:
+        return device_id
+    session_device_id = request.session.get("session_id")
+    if session_device_id:
+        return session_device_id
+    raise HTTPException(
+        status_code=status.HTTP_400_BAD_REQUEST,
+        detail="X-Device-Id header or session_id required"
+    )
+    
+
 auth_route = APIRouter(prefix="/api/v1/auth")
 
 
@@ -67,14 +105,13 @@ async def login(
 @auth_route.post("/verify")
 async def verify(
     service : AuthServiceDep, 
-    credentials: HTTPAuthorizationCredentials = Depends(security), 
-    device_id = Header(..., alias="X-Device-Id")
+    token: str = Depends(get_token), 
+    device_id: str = Depends(get_device_id)
     ):
     """Верефикация запроса на приватные маршурты (Проверка сесси/токена )"""
-    access_token = credentials.credentials
     res = await service.verify(
         device_id=device_id, 
-        access_token=access_token
+        access_token=token
         )
     return JSONResponse(
         status_code=status.HTTP_200_OK, 
@@ -98,14 +135,13 @@ async def verify(
 async def refresh(
     request : Request, 
     service : AuthServiceDep, 
-    credentials: HTTPAuthorizationCredentials = Depends(security), 
+    token: str = Depends(get_token), 
     device_id = Header(..., alias="X-Device-Id")
     ):
     """Верефикация refresh токена"""
-    refresh_token = credentials.credentials
     access_token = await service.refresh(
         device_id=device_id,
-        refresh_token=refresh_token, 
+        refresh_token=token, 
         ip_address=request.client.host
         )
     return JSONResponse(

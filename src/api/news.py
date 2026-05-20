@@ -1,15 +1,27 @@
 from typing import List, Optional
-from fastapi import APIRouter, Form, File, UploadFile, Header, status
+from fastapi import APIRouter, Form, File, UploadFile, Header, status, Depends, HTTPException
 from fastapi.responses import JSONResponse, Response, StreamingResponse
+from shared.logger.logger import logger
 
 
 from shared.depends import NewsServiceDep
 
 
+async def chek_role(role : str) -> bool:
+    return role.lower() in ("admin", "root")
+
+async def check_admin(role = Header(..., alias="X-User-Role")):  
+    logger.debug(f"Check adnmin recive role: {role} : {type(role)}")
+    if not role or not await chek_role(role):
+        raise HTTPException(status_code=status.HTTP_403_FORBIDDEN, detail="Access denied")    
+
+
 news_route = APIRouter(prefix="/api/v1/news")
 news_route_v2 = APIRouter(prefix="/api/v2/news")
+news_route_admin = APIRouter(prefix="/api/v2/news", dependencies = [Depends(check_admin)])
 
-@news_route_v2.patch("/{news_id}")
+
+@news_route_admin.patch("/{news_id}")
 async def update_news(
     service : NewsServiceDep, 
     news_id : int,
@@ -75,7 +87,7 @@ async def private():
         )
 
 
-@news_route.post("/")
+@news_route_admin.post("/")
 async def create_news( 
     service: NewsServiceDep,
     title: str = Form(..., min_length=3, max_length=200),
@@ -118,7 +130,7 @@ async def get_news(service : NewsServiceDep, news_id : int):
         )
 
 
-@news_route.delete("/{news_id}")
+@news_route_admin.delete("/{news_id}")
 async def delete_news(service : NewsServiceDep, news_id : int):
     await service.delete_news(news_id)
     return Response(
@@ -126,7 +138,7 @@ async def delete_news(service : NewsServiceDep, news_id : int):
         )
 
 
-@news_route.patch("/{news_id}")
+@news_route_admin.patch("/{news_id}")
 async def update_news(
     service : NewsServiceDep, 
     news_id : int,
@@ -184,3 +196,7 @@ async def delete_comment(
     return Response(
         status_code=status.HTTP_204_NO_CONTENT, 
         )
+
+@news_route.post("/{news_id}/views/")
+async def add_views(service : NewsServiceDep, news_id : int):
+    return JSONResponse(status_code=status.HTTP_200_OK, content={"detail" : "ok"})

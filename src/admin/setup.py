@@ -5,7 +5,7 @@ from typing import List, Type
 
 
 from .model_view import UserAdmin, TokenAdmin, NewsAdmin, NewsImagesAdmin, CommentAdmin
-from .auth import AuthBackend
+from .auth import AuthBackend, AuthBackendV2
 from shared.config import config
 
 class AdminSetup:
@@ -25,8 +25,8 @@ class AdminSetup:
             engine, 
             title="Veterans Admin", 
             base_url="/api/v2/admin", 
-            authentication_backend=AuthBackend(secret_key=config.ADMIN_SECRET_TOKEN),
-            templates_dir=templates_path
+            authentication_backend=AuthBackendV2(secret_key=config.ADMIN_SECRET_TOKEN),
+            templates_dir=templates_path,
             )
         self._custom_views: List[Type[ModelView]] = [
             UserAdmin, 

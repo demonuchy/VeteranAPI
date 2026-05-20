@@ -12,7 +12,7 @@ class TokenRepository(BaseSQLAlchemyRepository[Token]):
         super().__init__(session=session, model=Token)
 
     async def accouting_rfresh_token_with_DTO(self, token_payload : TokenPyload):
-        logger.debug("Token pyload", token_payload)
+        #logger.debug(f"Token pyloa {token_payload}")
         token_data = token_payload.for_db()
         logger.debug("Token pyload after serialize", token_data)
         token_data['created_at'] = token_data.pop('iat')

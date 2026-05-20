@@ -135,3 +135,22 @@ class AuthBackend(AuthenticationBackend):
             logger.warn(f"Logout error: {e}")
             request.session.clear()
             return True
+        
+
+class AuthBackendV2(AuthBackend):
+    def __init__(self, secret_key: str):
+        super().__init__(secret_key)
+
+    async def login(self, request: Request) -> bool:
+        return await super().login(request)
+    
+    async def logout(self, request: Request) -> bool:
+        return await super().logout(request)
+    
+    async def authenticate(self, request: Request) -> bool:
+        logger.debug("Chek role...")
+        role = request.headers.get("X-User-Role")
+        if role is None:
+            logger.warn("Error header key not found")
+            return False
+        return role.lower() == "root"
