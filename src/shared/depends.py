@@ -5,7 +5,7 @@ from sqlalchemy.ext.asyncio import AsyncSession
 
 from utils.jwt_manager import PyJWTTokenManager, TokenStorage
 from utils.minio_manger import MinioManager, AsyncMinIOManager
-from utils.elasticsearch_manager import ElasticsearchManager
+from utils.elasticsearch_manager import NewsElasticsearchManager
 from database.repository import UserRepository, TokenRepository, NewsRepository, NewsImagesRepository, CommentRepository, NewsLikeRepository
 from services.auth import AuthService
 from services.news import NewsService
@@ -59,7 +59,7 @@ async def get_news_service(session : AsyncSession = Depends(get_session)) -> Aut
         comment_repository=CommentRepository,
         news_like_repository=NewsLikeRepository,
         minio_manager=AsyncMinIOManager,
-        elasticsearch_manager=ElasticsearchManager
+        elasticsearch_manager=NewsElasticsearchManager
     )
 
 

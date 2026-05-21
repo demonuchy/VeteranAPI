@@ -46,6 +46,7 @@ class CropedNewsShema(BaseModel):
     title: str
     created_at: datetime
     images: Optional[List[NewsImageSchema]] = []
+    preview_image : Optional[NewsImageSchema] = None
 
     class Config:
         from_attributes = True
@@ -72,3 +73,5 @@ class NewsSchema(BaseModel):
     @field_serializer('created_at', 'updated_at')
     def serialize_datetime(self, dt: datetime, _info):
         return dt.isoformat()
+    
+    

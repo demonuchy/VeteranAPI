@@ -1,5 +1,5 @@
 from typing import List, Optional
-from fastapi import APIRouter, Form, File, UploadFile, Header, status, Depends, HTTPException
+from fastapi import APIRouter, Form, File, UploadFile, Header, status, Depends, HTTPException, Query
 from fastapi.responses import JSONResponse, Response, StreamingResponse
 from shared.logger.logger import logger
 
@@ -19,6 +19,25 @@ async def check_admin(role = Header(..., alias="X-User-Role")):
 news_route = APIRouter(prefix="/api/v1/news")
 news_route_v2 = APIRouter(prefix="/api/v2/news")
 news_route_admin = APIRouter(prefix="/api/v2/news", dependencies = [Depends(check_admin)])
+
+
+@news_route_v2.get("/search")
+async def search_by_title(
+    service : NewsServiceDep, 
+    title: str = Query(..., description="Заголовок для поиска", min_length=1),
+    limit: int = Query(20, description="Количество результатов", ge=1, le=100),
+    ):
+    result = await service.search_news_by_title(title=title, limit=limit)
+    return JSONResponse(
+        status_code=status.HTTP_200_OK, 
+        content={
+            "detail" : "ok", 
+            "data" : {
+                    "news" : result
+                }
+            }
+    )
+
 
 
 @news_route_admin.patch("/{news_id}")
