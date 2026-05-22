@@ -267,17 +267,14 @@ class BaseElasticsearchManager(AbstractElasticsearchManager, Generic[DocumentTyp
         """Удаляет объект из Elasticsearch"""
         try:
             await self._ensure_index_exists()
-            
             client = async_connections.get_connection()
             response = await client.delete(
                 index=self.index_name,
                 id=id,
                 refresh=True
             )
-            
             if response.get('result') == 'deleted':
                 logger.info(f"✅ Object with ID {id} deleted from {self.index_name}")
-            
         except NotFoundError:
             logger.warning(f"⚠️ Object with ID {id} not found for deletion in {self.index_name}")
         except Exception as e:

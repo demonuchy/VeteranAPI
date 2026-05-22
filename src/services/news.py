@@ -177,8 +177,9 @@ class NewsService(BaseService):
         logger.debug(f"Delete news {news_id}")
         news = await self.news_repository.get_with_image(news_id)
         logger.debug("Delete image from file storage")
-        await self._delete_images(bucket_name="news-images", files_name=[file.url for file in news.images])
+        await self._delete_images(files_name=[file.url for file in news.images])
         logger.debug("Delete news..")
+        await self.elasticsearch_manager.delete_obj(str(news_id))
         await self.news_repository.delete(news_id)
         logger.debug("✅ News deleted...")
     
@@ -198,21 +199,19 @@ class NewsService(BaseService):
                 body=body
             )
             logger.debug("Save to elasticsearch")
-            
-            if not upload_images:
-                await self.elasticsearch_manager.save_obj(NewsSchema.model_validate(news).model_dump(), str(news.id))
-                return news
-            await self._upload_images_optimize(news_id=news.id, upload_images=upload_images)
+            if  upload_images:
+                await self._upload_images_optimize(news_id=news.id, upload_images=upload_images)
+                logger.debug(f"✅ Successfully uploaded {len(upload_images)}")
             await self._session.refresh(news)
             logger.debug(f"news images {news.images}")
-            logger.debug(f"✅ Successfully uploaded {len(upload_images)}")
             serialize_news = NewsSchema.model_validate(news).model_dump()
             logger.debug(f"serialize news {serialize_news}")
             await self.elasticsearch_manager.save_obj(serialize_news, str(news.id))
             return news
         except:
             logger.warn("Error rollback ...")
-            raise
+            await self._delete_images(files_name=[file.url for file in news.images], with_db=True)
+            await self.elasticsearch_manager.delete_obj(str(news.id))
 
     async def get_all_news(self) -> List:
         news_list = await self.news_repository.get_all_with_image(order=1)
@@ -237,8 +236,8 @@ class NewsService(BaseService):
         for news in news_list:
             serialize_news = CropedNewsShema.model_validate(news)
             if serialize_news.images:
-                serialize_news.preview_image = serialize_news.images[:1]
-                serialize_news.preview_image[0].url = f"/api/{version_api}/news/{serialize_news.id}/image/{serialize_news.images[0].id}"
+                serialize_news.preview_image = serialize_news.images[:1][0]
+                serialize_news.preview_image.url = f"/api/{version_api}/news/{serialize_news.id}/image/{serialize_news.images[0].id}"
             serialize_news_list.append(serialize_news.model_dump())
         return serialize_news_list
 
@@ -274,7 +273,7 @@ class NewsService(BaseService):
         for news in result:
             if news.get("images") and len(news["images"]) > 0:
                 news["preview_image"] = news["images"][0] 
-                news["preview_image"]["url"] = f"/api/v2/{news['id']}/image/{news['images'][0]['id']}"
+                news["preview_image"]["url"] = f"/api/v2/news/{news['id']}/image/{news['images'][0]['id']}"
             else:
                 news["preview_image"] = None
         return result
