@@ -213,7 +213,7 @@ async def delete_comment(
     ):
     await service.delete_comment(user_id=int(user_id), comment_id=comment_id)
     return Response(
-        status_code=status.HTTP_204_NO_CONTENT, 
+        status_code=status.HTTP_204_NO_CONTENT,
         )
 
 @news_route.post("/{news_id}/views/")

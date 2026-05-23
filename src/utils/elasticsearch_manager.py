@@ -293,12 +293,8 @@ class BaseElasticsearchManager(AbstractElasticsearchManager, Generic[DocumentTyp
         """Поиск документов"""
         try:
             await self._ensure_index_exists()
-            
-            # Строим запрос
             must_conditions = []
             filter_conditions = []
-            
-            # Текстовый поиск
             if query:
                 search_fields = fields or ['title^3', 'body', 'content']
                 must_conditions.append({
@@ -309,8 +305,6 @@ class BaseElasticsearchManager(AbstractElasticsearchManager, Generic[DocumentTyp
                 })
             else:
                 must_conditions.append({"match_all": {}})
-            
-            # Фильтры
             if filters:
                 for field, value in filters.items():
                     if isinstance(value, dict):
@@ -325,13 +319,9 @@ class BaseElasticsearchManager(AbstractElasticsearchManager, Generic[DocumentTyp
                         filter_conditions.append({
                             "term": {field: value}
                         })
-            
-            # Собираем bool запрос
             bool_query = {"bool": {"must": must_conditions}}
             if filter_conditions:
                 bool_query["bool"]["filter"] = filter_conditions
-            
-            # Выполняем поиск
             client = async_connections.get_connection()
             response = await client.search(
                 index=self.index_name,
@@ -342,25 +332,108 @@ class BaseElasticsearchManager(AbstractElasticsearchManager, Generic[DocumentTyp
                     "sort": [sort_by]
                 }
             )
-            
-            # Преобразуем результаты
             results = []
             for hit in response.get('hits', {}).get('hits', []):
                 doc = hit.get('_source', {})
                 doc['id'] = hit.get('_id')
                 doc['_score'] = hit.get('_score')
                 results.append(doc)
-            
             total = response.get('hits', {}).get('total', {})
             total_count = total.get('value', 0) if isinstance(total, dict) else total
-            
             logger.info(f"✅ Search completed in {self.index_name}. Found {len(results)} of {total_count} results")
             return results
-            
         except Exception as e:
             logger.error(f"❌ Search failed: {e}", exc_info=True)
             return []
-    
+        
+    async def fuzzy_search(
+        self, 
+        query: str = None, 
+        fields: List[str] = None,
+        filters: Dict[str, Any] = None,
+        from_: int = 0,
+        size: int = 10,
+        sort_by: str = "created_at",
+        fuzziness: str = "AUTO",  # НОВЫЙ ПАРАМЕТР!
+        fuzzy_prefix_length: int = 1,  # Длина префикса, который не меняется
+        fuzzy_max_expansions: int = 50,
+        operator: str = "or"  # "and" или "or"
+    ) -> List[Dict[str, Any]]:
+        """Поиск документов с поддержкой опечаток и частичных совпадений"""
+        try:
+            await self._ensure_index_exists() 
+            must_conditions = []
+            filter_conditions = []
+            should_conditions = []
+            if query:
+                search_fields = fields or ['title^3', 'body', 'content', 'title.ru^2', 'body.ru']
+                must_conditions.append({
+                    "match": {
+                        "title": {
+                            "query": query,
+                            "fuzziness": fuzziness,  # "AUTO" - автонастройка!
+                            "operator": operator,
+                            "prefix_length": fuzzy_prefix_length,
+                            "max_expansions": fuzzy_max_expansions
+                        }
+                    }
+                })
+                must_conditions.append({
+                    "match": {
+                        "title.ngram": {
+                            "query": query,
+                            "operator": "and"
+                        }
+                    }
+                })     
+            else:
+                must_conditions.append({"match_all": {}})
+            if filters:
+                for field, value in filters.items():
+                    if isinstance(value, dict):
+                        filter_conditions.append({
+                            "range": {field: value}
+                        })
+                    elif isinstance(value, list):
+                        filter_conditions.append({
+                            "terms": {field: value}
+                        })
+                    else:
+                        filter_conditions.append({
+                            "term": {field: value}
+                        })
+            bool_query = {"bool": {"must": must_conditions}}
+            if should_conditions:
+                bool_query["bool"]["should"] = should_conditions
+            if filter_conditions:
+                bool_query["bool"]["filter"] = filter_conditions
+            bool_query["bool"]["minimum_should_match"] = 1
+            client = async_connections.get_connection()
+            response = await client.search(
+                index=self.index_name,
+                body={
+                    "query": bool_query,
+                    "from": from_,
+                    "size": size,
+                    "sort": [sort_by],
+                    "explain": False,  # Для отладки можно включить
+                    "track_scores": True
+                }
+            )
+            results = []
+            for hit in response.get('hits', {}).get('hits', []):
+                doc = hit.get('_source', {})
+                doc['id'] = hit.get('_id')
+                doc['_score'] = hit.get('_score')
+                results.append(doc)
+            total = response.get('hits', {}).get('total', {})
+            total_count = total.get('value', 0) if isinstance(total, dict) else total
+            logger.info(f"✅ Search completed in {self.index_name}. Found {len(results)} of {total_count} results (fuzziness={fuzziness})")
+            return results
+        except Exception as e:
+            logger.error(f"❌ Search failed: {e}", exc_info=True)
+            return []
+        
     async def refresh_index(self):
         """Принудительно обновляет индекс"""
         try:
@@ -597,3 +670,12 @@ class NewsElasticsearchManager(BaseElasticsearchManager[NewsDocument]):
             size=size,
             sort_by="created_at"
         )
+    
+    async def fuzzy_search_by_title(self, title : str, size : int = 100):
+        return await self.fuzzy_search(
+            query=title,
+            fields=['title^3', 'title.raw^2'],
+            size=size,
+            sort_by="created_at",
+            fuzziness="2"
+            )
