@@ -46,6 +46,53 @@ async def get_device_id(
     
 
 auth_route = APIRouter(prefix="/api/v1/auth")
+auth_route_v2 = APIRouter(prefix="/api/v2/auth")
+
+
+@auth_route_v2.post("/sign-up")
+async def register_wih(
+    service : AuthServiceDep, 
+    request : Request, 
+    data : RegisterRequest, 
+    device_id = Header(..., alias="X-Device-Id")
+    ):
+    token = await service.register_with_mail_verification( 
+        device_id=device_id, 
+        ip_address=request.client.host, 
+        **data.model_dump()
+    )
+    return JSONResponse(
+        status_code = status.HTTP_200_OK, 
+        content={
+            "detail" : "ok", 
+            "data" : {
+                "verification_token" : token.token,
+                "token_type": "bearer"
+                }
+            }
+        )
+
+
+@auth_route_v2.post('/verify-code')
+async def verefy_code( 
+    service : AuthServiceDep, 
+    code : str,
+    token : str = Depends(get_token) 
+    ):
+    access_token, refresh_token = await service.verify_code(token, code)
+    return JSONResponse(
+        status_code = status.HTTP_201_CREATED, 
+        content={
+            "detail" : "ok", 
+            "data" : {
+                "access_token" : access_token.token,
+                "refresh_token" : refresh_token.token,
+                "token_type": "bearer"
+                }
+            }
+        )
+
+
 
 
 @auth_route.post("/register")

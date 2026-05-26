@@ -6,6 +6,8 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from utils.jwt_manager import PyJWTTokenManager, TokenStorage
 from utils.minio_manger import MinioManager, AsyncMinIOManager
 from utils.elasticsearch_manager import NewsElasticsearchManager
+from utils.redis_manager import RedisManager
+from utils.mail_service import MailService
 from database.repository import UserRepository, TokenRepository, NewsRepository, NewsImagesRepository, CommentRepository, NewsLikeRepository
 from services.auth import AuthService
 from services.news import NewsService
@@ -43,6 +45,8 @@ async def get_auth_service(session : AsyncSession = Depends(get_session)) -> Aut
     """DI сервиса"""
     return AuthService(
         session=session,
+        mail_service=MailService,
+        redis_manager=RedisManager,
         user_repository=UserRepository, 
         token_repository=TokenRepository,
         token_storage=TokenStorage,

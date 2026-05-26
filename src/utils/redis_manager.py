@@ -115,10 +115,10 @@ class AbstractRedisManager(abc.ABC):
 class RedisManager(AbstractRedisManager):
     def __init__(
             self, 
-            host : str, 
-            password : str, 
-            max_connections : int, 
-            db: int 
+            host : str = cfg.RedisHost, 
+            password : str = cfg.REDIS_PASS, 
+            max_connections : int = 10, 
+            db: int = 0 
             ):
         super().__init__(
             host, 
@@ -192,7 +192,13 @@ class RedisManager(AbstractRedisManager):
                 logger.debug(f"Deleted {deleted} keys matching pattern: {pattern}")
                 return deleted
         return 0
-
+    
+    async def update_preserve_ttl(self, key: str, value: dict) -> bool:
+        """Обновляет значение, сохраняя TTL (Redis 6.2+)"""
+        async with self.redis_session() as client:
+            value_json = json.dumps(value)
+            result = await client.set(key, value_json, keepttl=True)
+            return result is True
 
 redis_manager = RedisManager(
     host=cfg.RedisHost, 

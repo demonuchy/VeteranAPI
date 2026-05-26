@@ -1,4 +1,4 @@
-from typing import Literal, Union
+from typing import Literal, Union, Optional
 from datetime import datetime
 from pydantic import BaseModel, EmailStr, field_serializer
 from .user import UserSchema
@@ -10,8 +10,9 @@ class LoginRequest(BaseModel):
     is_admin : bool = False
 
 
-class RegisterRequest(LoginRequest):
-    pass
+class RegisterRequest(BaseModel):
+    username : EmailStr
+    password : str
 
 
 class ServiceRegisteResponce(BaseModel):
@@ -33,6 +34,8 @@ class TokenPyload(BaseModel):
     """Единая модель для всех токенов"""
     user_id: int
     user_role: Union[Role, str]  
+    is_active : Optional[bool] = None
+    session_id : Optional[str] = None
     iat: datetime
     jti: str
     exp: datetime

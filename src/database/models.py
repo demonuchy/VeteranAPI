@@ -35,6 +35,7 @@ class Token(Base):
     id : Mapped[PK]
     user_id : Mapped[int] = mapped_column(ForeignKey("users.id", ondelete="CASCADE"), nullable=False, index=True)
     user_role : Mapped['Role'] = mapped_column(Enum(Role), unique=False, nullable=False, default=Role.USER)
+    session_id : Mapped[str] = mapped_column(String, unique=True, nullable=True)
 
     jti : Mapped[str] = mapped_column(String, unique=True, nullable=False)
     exp : Mapped[datetime] = mapped_column(DateTime, unique=False, nullable=False)
