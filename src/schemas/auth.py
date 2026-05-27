@@ -35,6 +35,7 @@ class TokenPyload(BaseModel):
     user_id: int
     user_role: Union[Role, str]  
     is_active : Optional[bool] = None
+    username : Optional[EmailStr] = None
     session_id : Optional[str] = None
     iat: datetime
     jti: str

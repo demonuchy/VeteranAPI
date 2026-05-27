@@ -1,5 +1,5 @@
 from typing import Optional
-from  fastapi import APIRouter, Depends, status, Header, HTTPException
+from fastapi import APIRouter, Depends, status, Header, HTTPException, BackgroundTasks
 from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
 from fastapi.requests import Request
 from fastapi.responses import JSONResponse
@@ -50,15 +50,17 @@ auth_route_v2 = APIRouter(prefix="/api/v2/auth")
 
 
 @auth_route_v2.post("/sign-up")
-async def register_wih(
+async def signup(
     service : AuthServiceDep, 
     request : Request, 
+    background_tasks : BackgroundTasks,
     data : RegisterRequest, 
     device_id = Header(..., alias="X-Device-Id")
     ):
     token = await service.register_with_mail_verification( 
         device_id=device_id, 
         ip_address=request.client.host, 
+        background_tasks=background_tasks,
         **data.model_dump()
     )
     return JSONResponse(
@@ -73,7 +75,7 @@ async def register_wih(
         )
 
 
-@auth_route_v2.post('/verify-code')
+@auth_route_v2.post('/code/verify')
 async def verefy_code( 
     service : AuthServiceDep, 
     code : str,
@@ -92,6 +94,31 @@ async def verefy_code(
             }
         )
 
+
+@auth_route_v2.get('/code')
+async def get_new_code( 
+    service : AuthServiceDep, 
+    request : Request, 
+    background_tasks : BackgroundTasks,
+    token : str = Depends(get_token),
+    device_id = Header(..., alias="X-Device-Id") 
+    ):
+    new_token = await service.get_new_code(
+        token=token, 
+        ip_address=request.client.host, 
+        device_id=device_id, 
+        background_tasks=background_tasks
+        )
+    return JSONResponse(
+        status_code = status.HTTP_200_OK, 
+        content={
+            "detail" : "ok", 
+            "data" : {
+                "verification_token" : new_token.token, 
+                "token_type": "bearer"
+                }
+            }
+        )
 
 
 

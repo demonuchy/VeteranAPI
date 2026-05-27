@@ -62,7 +62,7 @@ class AuthService(BaseService):
     
     
     #новый сценарий регистрации
-    async def register_with_mail_verification(self, username : str, password : str, ip_address : str, device_id : str):
+    async def register_with_mail_verification(self, username : str, password : str, ip_address : str, device_id : str, background_tasks: BackgroundTasks):
         """
         Регистрация с подтверждением почты
         1 Проверяем существование пользователя в базе по mail
@@ -92,11 +92,11 @@ class AuthService(BaseService):
             hash_password=hash_password(password),
             is_active=False
             )
-        logger.debug('generate code') 
+        logger.debug('Generate code') 
         code = self.mail_service.generate_code()
-        logger.debug('add background task')
-        await self.mail_service.send_code(code, username)
-        logger.debug('generate token id')
+        logger.debug('Add background task')
+        background_tasks.add_task(self.mail_service.send_code, code, username)
+        logger.debug('Generate token id')
         session_id = str(uuid.uuid4())
         logger.debug(f'Save code session {session_id}')
         await self.redis_manager.save_with_ttl(session_id, {'code' : code, 'attemps' : 1}, ttl=300)
@@ -109,7 +109,7 @@ class AuthService(BaseService):
             ip_address = ip_address,
             expire_minutes=5, 
             session_id=session_id, 
-            mail=username
+            username=username
             )
         logger.debug('Success')
         return verefy_code_token
@@ -142,7 +142,7 @@ class AuthService(BaseService):
         logger.debug(f'verefy code code: {user_code}')
         payload = self.token_manager.verify_token(token=token, token_type="access")
         if not payload:
-            raise
+            raise HTTPException(detail='Invalid token', status_code=status.HTTP_403_FORBIDDEN)
         session_id = payload.session_id
         logger.debug('Get code session ogj')
         code_session_obj = await self.redis_manager.get(session_id)
@@ -156,7 +156,7 @@ class AuthService(BaseService):
             logger.debug('Compair failed')
             attemp_count = code_session_obj.get('attemps')
             logger.debug('Check attemps')
-            if attemp_count > 3:
+            if attemp_count >= 3:
                 await self.redis_manager.delete(session_id)
                 logger.warn('Exceeded the limit attemps')
                 raise HTTPException(detail='Exceeded the limit attemps', status_code=status.HTTP_429_TOO_MANY_REQUESTS)
@@ -184,7 +184,7 @@ class AuthService(BaseService):
         return access_token, refresh_token
         
         
-    async def get_new_code(self):
+    async def get_new_code(self, token : str, ip_address : str, device_id : str, background_tasks : BackgroundTasks):
         """
         Повторная отправка кода
         1 Получаем и рассшифровываем токен
@@ -196,7 +196,31 @@ class AuthService(BaseService):
         7 Генерируем коротко живущий токен с Code_session_id , mail, uid
         8 Отдаем токен пользователю
         """
-       
+        logger.debug(f'Get new code')
+        payload = self.token_manager.verify_token(token=token, token_type="access")
+        if not payload:
+            raise HTTPException(detail='Invalid token', status_code=status.HTTP_403_FORBIDDEN)
+        code = self.mail_service.generate_code()
+        background_tasks.add_task(self.mail_service.send_code, code, payload.username)
+        session_id = str(uuid.uuid4())
+        logger.debug(f'Save code session {session_id}')
+        await self.redis_manager.save_with_ttl(session_id, {'code' : code, 'attemps' : 1}, ttl=300)
+        logger.debug('Create code token')
+        verefy_code_token = self.token_manager.create_access_token(
+            user_id=payload.user_id, 
+            user_role = payload.user_role,
+            is_active = payload.is_active,
+            device_id = device_id,
+            ip_address = ip_address,
+            expire_minutes=5, 
+            session_id=session_id, 
+            username=payload.username
+            )
+        logger.debug('Success')
+        return verefy_code_token
+
+
+
     async def register(
             self, 
             username : str, 

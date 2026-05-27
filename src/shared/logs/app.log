@@ -97232,3 +97232,1510 @@ INFO: 2026-05-26 21:43:45 - [TokenCleanup] 🛑 Останавливаем фо�
 INFO: 2026-05-26 21:43:45 - [TokenCleanup] Соединения с БД закрыты
 INFO: 2026-05-26 21:43:45 - [TokenCleanup] 👋 Поток очистки остановлен
 INFO: 2026-05-26 21:43:45 - [TokenCleanup] Поток успешно завершен
+INFO: 2026-05-27 07:03:59 - [TokenCleanup] ✅ Фоновый процесс запущен (поток: TokenCleanup, ID: 127466632079040)
+INFO: 2026-05-27 07:03:59 - [TokenCleanup] Синхронный engine инициализирован
+INFO: 2026-05-27 07:03:59 - [TokenCleanup] 🚀 Поток очистки запущен (интервал: 60 мин, поток: TokenCleanup)
+INFO: 2026-05-27 07:03:59 - [TokenCleanup] 🧹 Начинаем очистку...
+INFO: 2026-05-27 07:03:59 - [TokenCleanup] ✅ Истекших токенов не найдено
+DEBUG: 2026-05-27 07:03:59 - [TokenCleanup] Ожидание 60 мин...
+DEBUG: 2026-05-27 07:05:56 - Open transaction ...
+DEBUG: 2026-05-27 07:05:56 - Get token ...
+DEBUG: 2026-05-27 07:05:56 - Get device id ...
+DEBUG: 2026-05-27 07:05:56 - Verefy access token
+WARNING: 2026-05-27 07:05:56 - Токен просрочен!
+WARNING: 2026-05-27 07:05:56 - Error invalid token
+WARNING: 2026-05-27 07:05:56 - Discard change rollback...
+DEBUG: 2026-05-27 07:05:56 - Session close
+DEBUG: 2026-05-27 07:05:56 - Open transaction ...
+DEBUG: 2026-05-27 07:05:56 - Get token ...
+DEBUG: 2026-05-27 07:05:56 - Verefy refresh token
+DEBUG: 2026-05-27 07:05:56 - Verification of refresh token registration
+WARNING: 2026-05-27 07:05:57 - Tokenr not found key : 45:06ae2693-d626-414f-bbd3-13ea457d9f48:8610e39410aa9877c9cd76dd1d08f19e
+WARNING: 2026-05-27 07:05:57 - Discard change rollback...
+DEBUG: 2026-05-27 07:05:57 - Session close
+DEBUG: 2026-05-27 07:06:27 - Open transaction ...
+DEBUG: 2026-05-27 07:06:27 - News sign in
+DEBUG: 2026-05-27 07:06:27 - Create user ...
+DEBUG: 2026-05-27 07:06:27 - generate code
+DEBUG: 2026-05-27 07:06:27 - add background task
+DEBUG: 2026-05-27 07:06:27 - Send code, code : 470645
+DEBUG: 2026-05-27 07:06:32 - generate token id
+DEBUG: 2026-05-27 07:06:32 - Save code session 07a42720-bd13-45d0-a6f3-f31b693b9c6b
+DEBUG: 2026-05-27 07:06:32 - Redis session started
+DEBUG: 2026-05-27 07:06:32 - saved to Redis: 07a42720-bd13-45d0-a6f3-f31b693b9c6b, TTL: 300s
+DEBUG: 2026-05-27 07:06:32 - Redis session ended
+DEBUG: 2026-05-27 07:06:32 - Create code token
+DEBUG: 2026-05-27 07:06:32 - Success
+DEBUG: 2026-05-27 07:06:32 - Commit
+DEBUG: 2026-05-27 07:06:32 - Session close
+DEBUG: 2026-05-27 07:06:45 - Open transaction ...
+DEBUG: 2026-05-27 07:06:45 - Get token ...
+DEBUG: 2026-05-27 07:06:45 - verefy code code: 47064
+DEBUG: 2026-05-27 07:06:45 - Get code session ogj
+DEBUG: 2026-05-27 07:06:45 - Redis session started
+DEBUG: 2026-05-27 07:06:45 - Value retrieved from Redis: 07a42720-bd13-45d0-a6f3-f31b693b9c6b
+DEBUG: 2026-05-27 07:06:45 - Redis session ended
+DEBUG: 2026-05-27 07:06:45 - Compair code
+DEBUG: 2026-05-27 07:06:45 - Compair failed
+DEBUG: 2026-05-27 07:06:45 - Check attemps
+DEBUG: 2026-05-27 07:06:45 - Incriment attemps count
+DEBUG: 2026-05-27 07:06:45 - Redis session started
+DEBUG: 2026-05-27 07:06:45 - Redis session ended
+WARNING: 2026-05-27 07:06:45 - Code is not valid
+WARNING: 2026-05-27 07:06:45 - Discard change rollback...
+DEBUG: 2026-05-27 07:06:45 - Session close
+DEBUG: 2026-05-27 07:07:50 - Open transaction ...
+DEBUG: 2026-05-27 07:07:50 - Get token ...
+DEBUG: 2026-05-27 07:07:50 - verefy code code: 470645
+DEBUG: 2026-05-27 07:07:50 - Get code session ogj
+DEBUG: 2026-05-27 07:07:50 - Redis session started
+DEBUG: 2026-05-27 07:07:50 - Value retrieved from Redis: 07a42720-bd13-45d0-a6f3-f31b693b9c6b
+DEBUG: 2026-05-27 07:07:50 - Redis session ended
+DEBUG: 2026-05-27 07:07:50 - Compair code
+DEBUG: 2026-05-27 07:07:50 - Activate user
+DEBUG: 2026-05-27 07:07:50 - Delete old session
+DEBUG: 2026-05-27 07:07:50 - Redis session started
+DEBUG: 2026-05-27 07:07:50 - delete to Redis
+DEBUG: 2026-05-27 07:07:50 - Redis session ended
+DEBUG: 2026-05-27 07:07:50 - Create token pair
+DEBUG: 2026-05-27 07:07:50 - Accouting refresh token
+DEBUG: 2026-05-27 07:07:50 - Token pyload after serialize
+DEBUG: 2026-05-27 07:07:50 - Accouting access token
+DEBUG: 2026-05-27 07:07:50 - Redis session started
+DEBUG: 2026-05-27 07:07:50 - saved to Redis: 47:a0946ac8-43ac-483a-8c58-f77de8a831c7:8610e39410aa9877c9cd76dd1d08f19e, TTL: 0:15:00s
+DEBUG: 2026-05-27 07:07:50 - Redis session ended
+DEBUG: 2026-05-27 07:07:50 - Commit
+DEBUG: 2026-05-27 07:07:50 - Session close
+DEBUG: 2026-05-27 07:07:50 - Open transaction ...
+DEBUG: 2026-05-27 07:07:50 - Get token ...
+DEBUG: 2026-05-27 07:07:50 - Get device id ...
+DEBUG: 2026-05-27 07:07:50 - Verefy access token
+DEBUG: 2026-05-27 07:07:50 - Verification of access token registration
+DEBUG: 2026-05-27 07:07:50 - Redis session started
+DEBUG: 2026-05-27 07:07:50 - Value retrieved from Redis: 47:a0946ac8-43ac-483a-8c58-f77de8a831c7:8610e39410aa9877c9cd76dd1d08f19e
+DEBUG: 2026-05-27 07:07:50 - Redis session ended
+DEBUG: 2026-05-27 07:07:50 - serialize token payload ...
+DEBUG: 2026-05-27 07:07:51 - Access token is valid
+DEBUG: 2026-05-27 07:07:51 - Commit
+DEBUG: 2026-05-27 07:07:51 - Session close
+DEBUG: 2026-05-27 07:07:51 - Open transaction ...
+DEBUG: 2026-05-27 07:07:51 - Get me ... id : 47
+DEBUG: 2026-05-27 07:07:51 - Serialize ...
+DEBUG: 2026-05-27 07:07:51 - Commit
+DEBUG: 2026-05-27 07:07:51 - Session close
+DEBUG: 2026-05-27 07:07:51 - Open transaction ...
+WARNING: 2026-05-27 07:07:52 - News not found
+WARNING: 2026-05-27 07:07:52 - Discard change rollback...
+DEBUG: 2026-05-27 07:07:52 - Session close
+DEBUG: 2026-05-27 07:08:19 - Open transaction ...
+DEBUG: 2026-05-27 07:08:19 - Get token ...
+DEBUG: 2026-05-27 07:08:19 - Get device id ...
+DEBUG: 2026-05-27 07:08:19 - Verefy access token
+WARNING: 2026-05-27 07:08:19 - Токен просрочен!
+WARNING: 2026-05-27 07:08:19 - Error invalid token
+WARNING: 2026-05-27 07:08:19 - Discard change rollback...
+DEBUG: 2026-05-27 07:08:19 - Session close
+DEBUG: 2026-05-27 07:08:20 - Open transaction ...
+DEBUG: 2026-05-27 07:08:20 - Get token ...
+DEBUG: 2026-05-27 07:08:20 - Get device id ...
+DEBUG: 2026-05-27 07:08:20 - Verefy access token
+WARNING: 2026-05-27 07:08:20 - Токен просрочен!
+WARNING: 2026-05-27 07:08:20 - Error invalid token
+WARNING: 2026-05-27 07:08:20 - Discard change rollback...
+DEBUG: 2026-05-27 07:08:20 - Session close
+DEBUG: 2026-05-27 07:10:38 - Open transaction ...
+DEBUG: 2026-05-27 07:10:38 - Get token ...
+DEBUG: 2026-05-27 07:10:38 - Get device id ...
+DEBUG: 2026-05-27 07:10:38 - Verefy access token
+DEBUG: 2026-05-27 07:10:38 - Verification of access token registration
+DEBUG: 2026-05-27 07:10:38 - Redis session started
+DEBUG: 2026-05-27 07:10:38 - Value retrieved from Redis: 47:a0946ac8-43ac-483a-8c58-f77de8a831c7:8610e39410aa9877c9cd76dd1d08f19e
+DEBUG: 2026-05-27 07:10:38 - Redis session ended
+DEBUG: 2026-05-27 07:10:38 - serialize token payload ...
+DEBUG: 2026-05-27 07:10:38 - Access token is valid
+DEBUG: 2026-05-27 07:10:38 - Commit
+DEBUG: 2026-05-27 07:10:38 - Session close
+DEBUG: 2026-05-27 07:10:38 - Open transaction ...
+DEBUG: 2026-05-27 07:10:38 - Get me ... id : 47
+DEBUG: 2026-05-27 07:10:38 - Serialize ...
+DEBUG: 2026-05-27 07:10:38 - Commit
+DEBUG: 2026-05-27 07:10:38 - Session close
+DEBUG: 2026-05-27 07:10:39 - Open transaction ...
+WARNING: 2026-05-27 07:10:39 - News not found
+WARNING: 2026-05-27 07:10:39 - Discard change rollback...
+DEBUG: 2026-05-27 07:10:39 - Session close
+INFO: 2026-05-27 07:37:03 - [TokenCleanup] 🛑 Останавливаем фоновый процесс...
+INFO: 2026-05-27 07:37:04 - [TokenCleanup] Соединения с БД закрыты
+INFO: 2026-05-27 07:37:04 - [TokenCleanup] 👋 Поток очистки остановлен
+INFO: 2026-05-27 07:37:04 - [TokenCleanup] Поток успешно завершен
+INFO: 2026-05-27 07:38:54 - [TokenCleanup] ✅ Фоновый процесс запущен (поток: TokenCleanup, ID: 124833436686016)
+INFO: 2026-05-27 07:38:54 - [TokenCleanup] Синхронный engine инициализирован
+INFO: 2026-05-27 07:38:54 - [TokenCleanup] 🚀 Поток очистки запущен (интервал: 60 мин, поток: TokenCleanup)
+INFO: 2026-05-27 07:38:54 - [TokenCleanup] 🧹 Начинаем очистку...
+INFO: 2026-05-27 07:38:54 - [TokenCleanup] ✅ Истекших токенов не найдено
+DEBUG: 2026-05-27 07:38:54 - [TokenCleanup] Ожидание 60 мин...
+DEBUG: 2026-05-27 07:40:03 - Open transaction ...
+DEBUG: 2026-05-27 07:40:03 - Get token ...
+DEBUG: 2026-05-27 07:40:03 - Get device id ...
+DEBUG: 2026-05-27 07:40:03 - Verefy access token
+WARNING: 2026-05-27 07:40:03 - Токен просрочен!
+WARNING: 2026-05-27 07:40:03 - Error invalid token
+WARNING: 2026-05-27 07:40:03 - Discard change rollback...
+DEBUG: 2026-05-27 07:40:03 - Session close
+DEBUG: 2026-05-27 07:40:04 - Open transaction ...
+DEBUG: 2026-05-27 07:40:04 - Get token ...
+DEBUG: 2026-05-27 07:40:04 - Verefy refresh token
+DEBUG: 2026-05-27 07:40:04 - Verification of refresh token registration
+WARNING: 2026-05-27 07:40:04 - Tokenr not found key : 47:8f955f9c-b069-49ff-990a-a6c871a5304c:8610e39410aa9877c9cd76dd1d08f19e
+WARNING: 2026-05-27 07:40:04 - Discard change rollback...
+DEBUG: 2026-05-27 07:40:04 - Session close
+DEBUG: 2026-05-27 07:40:19 - Open transaction ...
+DEBUG: 2026-05-27 07:40:19 - News sign in
+DEBUG: 2026-05-27 07:40:19 - Create user ...
+DEBUG: 2026-05-27 07:40:19 - generate code
+DEBUG: 2026-05-27 07:40:19 - add background task
+DEBUG: 2026-05-27 07:40:19 - Send code, code : 676320
+DEBUG: 2026-05-27 07:40:19 - Path /app/src/utils/templates/email_template.html
+WARNING: 2026-05-27 07:40:19 - Discard change rollback...
+DEBUG: 2026-05-27 07:40:19 - Session close
+INFO: 2026-05-27 07:43:26 - [TokenCleanup] 🛑 Останавливаем фоновый процесс...
+INFO: 2026-05-27 07:43:26 - [TokenCleanup] Соединения с БД закрыты
+INFO: 2026-05-27 07:43:26 - [TokenCleanup] 👋 Поток очистки остановлен
+INFO: 2026-05-27 07:43:26 - [TokenCleanup] Поток успешно завершен
+INFO: 2026-05-27 07:43:35 - [TokenCleanup] ✅ Фоновый процесс запущен (поток: TokenCleanup, ID: 132009388783296)
+INFO: 2026-05-27 07:43:35 - [TokenCleanup] Синхронный engine инициализирован
+INFO: 2026-05-27 07:43:35 - [TokenCleanup] 🚀 Поток очистки запущен (интервал: 60 мин, поток: TokenCleanup)
+INFO: 2026-05-27 07:43:35 - [TokenCleanup] 🧹 Начинаем очистку...
+INFO: 2026-05-27 07:43:35 - [TokenCleanup] ✅ Истекших токенов не найдено
+DEBUG: 2026-05-27 07:43:35 - [TokenCleanup] Ожидание 60 мин...
+DEBUG: 2026-05-27 07:43:41 - Open transaction ...
+DEBUG: 2026-05-27 07:43:41 - News sign in
+DEBUG: 2026-05-27 07:43:42 - Create user ...
+DEBUG: 2026-05-27 07:43:42 - generate code
+DEBUG: 2026-05-27 07:43:42 - add background task
+DEBUG: 2026-05-27 07:43:42 - Send code, code : 009178
+ERROR: 2026-05-27 07:43:42 - Template file not found: /app/src/templates/email_template.html
+WARNING: 2026-05-27 07:43:42 - Discard change rollback...
+DEBUG: 2026-05-27 07:43:42 - Session close
+INFO: 2026-05-27 07:47:28 - [TokenCleanup] 🛑 Останавливаем фоновый процесс...
+INFO: 2026-05-27 07:47:28 - [TokenCleanup] Соединения с БД закрыты
+INFO: 2026-05-27 07:47:28 - [TokenCleanup] 👋 Поток очистки остановлен
+INFO: 2026-05-27 07:47:28 - [TokenCleanup] Поток успешно завершен
+INFO: 2026-05-27 07:47:50 - [TokenCleanup] ✅ Фоновый процесс запущен (поток: TokenCleanup, ID: 139128118474432)
+INFO: 2026-05-27 07:47:50 - [TokenCleanup] Синхронный engine инициализирован
+INFO: 2026-05-27 07:47:50 - [TokenCleanup] 🚀 Поток очистки запущен (интервал: 60 мин, поток: TokenCleanup)
+INFO: 2026-05-27 07:47:50 - [TokenCleanup] 🧹 Начинаем очистку...
+INFO: 2026-05-27 07:47:50 - [TokenCleanup] ✅ Истекших токенов не найдено
+DEBUG: 2026-05-27 07:47:50 - [TokenCleanup] Ожидание 60 мин...
+DEBUG: 2026-05-27 07:48:09 - Open transaction ...
+DEBUG: 2026-05-27 07:48:09 - News sign in
+DEBUG: 2026-05-27 07:48:09 - Create user ...
+DEBUG: 2026-05-27 07:48:09 - generate code
+DEBUG: 2026-05-27 07:48:09 - add background task
+DEBUG: 2026-05-27 07:48:09 - Send code, code : 866915
+DEBUG: 2026-05-27 07:48:09 - Curent file {current_file}
+DEBUG: 2026-05-27 07:48:09 - project_root /app/src/utils
+DEBUG: 2026-05-27 07:48:09 - template path /app/src/utils/templates/email_template.html
+ERROR: 2026-05-27 07:48:09 - Template file not found: /app/src/utils/templates/email_template.html
+WARNING: 2026-05-27 07:48:09 - Discard change rollback...
+DEBUG: 2026-05-27 07:48:09 - Session close
+INFO: 2026-05-27 07:49:08 - [TokenCleanup] 🛑 Останавливаем фоновый процесс...
+INFO: 2026-05-27 07:49:08 - [TokenCleanup] Соединения с БД закрыты
+INFO: 2026-05-27 07:49:08 - [TokenCleanup] 👋 Поток очистки остановлен
+INFO: 2026-05-27 07:49:08 - [TokenCleanup] Поток успешно завершен
+INFO: 2026-05-27 07:49:15 - [TokenCleanup] ✅ Фоновый процесс запущен (поток: TokenCleanup, ID: 129595384813248)
+INFO: 2026-05-27 07:49:15 - [TokenCleanup] Синхронный engine инициализирован
+INFO: 2026-05-27 07:49:15 - [TokenCleanup] 🚀 Поток очистки запущен (интервал: 60 мин, поток: TokenCleanup)
+INFO: 2026-05-27 07:49:15 - [TokenCleanup] 🧹 Начинаем очистку...
+INFO: 2026-05-27 07:49:15 - [TokenCleanup] ✅ Истекших токенов не найдено
+DEBUG: 2026-05-27 07:49:15 - [TokenCleanup] Ожидание 60 мин...
+DEBUG: 2026-05-27 07:49:22 - Open transaction ...
+DEBUG: 2026-05-27 07:49:22 - News sign in
+DEBUG: 2026-05-27 07:49:22 - Create user ...
+DEBUG: 2026-05-27 07:49:22 - generate code
+DEBUG: 2026-05-27 07:49:22 - add background task
+DEBUG: 2026-05-27 07:49:22 - Send code, code : 369741
+DEBUG: 2026-05-27 07:49:22 - Curent file /app/src/utils/mail_service.py
+DEBUG: 2026-05-27 07:49:22 - project_root /app/src
+DEBUG: 2026-05-27 07:49:22 - template path /app/src/templates/email_template.html
+ERROR: 2026-05-27 07:49:22 - Template file not found: /app/src/templates/email_template.html
+WARNING: 2026-05-27 07:49:22 - Discard change rollback...
+DEBUG: 2026-05-27 07:49:22 - Session close
+INFO: 2026-05-27 07:52:27 - [TokenCleanup] 🛑 Останавливаем фоновый процесс...
+INFO: 2026-05-27 07:52:28 - [TokenCleanup] Соединения с БД закрыты
+INFO: 2026-05-27 07:52:28 - [TokenCleanup] 👋 Поток очистки остановлен
+INFO: 2026-05-27 07:52:28 - [TokenCleanup] Поток успешно завершен
+INFO: 2026-05-27 07:52:34 - [TokenCleanup] ✅ Фоновый процесс запущен (поток: TokenCleanup, ID: 131889971476160)
+INFO: 2026-05-27 07:52:34 - [TokenCleanup] Синхронный engine инициализирован
+INFO: 2026-05-27 07:52:34 - [TokenCleanup] 🚀 Поток очистки запущен (интервал: 60 мин, поток: TokenCleanup)
+INFO: 2026-05-27 07:52:34 - [TokenCleanup] 🧹 Начинаем очистку...
+INFO: 2026-05-27 07:52:34 - [TokenCleanup] ✅ Истекших токенов не найдено
+DEBUG: 2026-05-27 07:52:34 - [TokenCleanup] Ожидание 60 мин...
+DEBUG: 2026-05-27 07:52:39 - Open transaction ...
+DEBUG: 2026-05-27 07:52:40 - News sign in
+DEBUG: 2026-05-27 07:52:40 - Create user ...
+DEBUG: 2026-05-27 07:52:40 - generate code
+DEBUG: 2026-05-27 07:52:40 - add background task
+DEBUG: 2026-05-27 07:52:40 - Send code, code : 722049
+DEBUG: 2026-05-27 07:52:40 - template path templates/email_template.html
+ERROR: 2026-05-27 07:52:40 - Template file not found: templates/email_template.html
+WARNING: 2026-05-27 07:52:40 - Discard change rollback...
+DEBUG: 2026-05-27 07:52:40 - Session close
+INFO: 2026-05-27 07:53:12 - [TokenCleanup] 🛑 Останавливаем фоновый процесс...
+INFO: 2026-05-27 07:53:13 - [TokenCleanup] Соединения с БД закрыты
+INFO: 2026-05-27 07:53:13 - [TokenCleanup] 👋 Поток очистки остановлен
+INFO: 2026-05-27 07:53:13 - [TokenCleanup] Поток успешно завершен
+INFO: 2026-05-27 07:53:20 - [TokenCleanup] ✅ Фоновый процесс запущен (поток: TokenCleanup, ID: 127860254406336)
+INFO: 2026-05-27 07:53:20 - [TokenCleanup] Синхронный engine инициализирован
+INFO: 2026-05-27 07:53:20 - [TokenCleanup] 🚀 Поток очистки запущен (интервал: 60 мин, поток: TokenCleanup)
+INFO: 2026-05-27 07:53:20 - [TokenCleanup] 🧹 Начинаем очистку...
+INFO: 2026-05-27 07:53:20 - [TokenCleanup] ✅ Истекших токенов не найдено
+DEBUG: 2026-05-27 07:53:20 - [TokenCleanup] Ожидание 60 мин...
+DEBUG: 2026-05-27 07:53:23 - Open transaction ...
+DEBUG: 2026-05-27 07:53:23 - News sign in
+DEBUG: 2026-05-27 07:53:23 - Create user ...
+DEBUG: 2026-05-27 07:53:23 - generate code
+DEBUG: 2026-05-27 07:53:23 - add background task
+DEBUG: 2026-05-27 07:53:23 - Send code, code : 938186
+DEBUG: 2026-05-27 07:53:23 - template path templates/email_template.html
+DEBUG: 2026-05-27 07:53:23 - Path templates/email_template.html
+WARNING: 2026-05-27 07:53:23 - Discard change rollback...
+DEBUG: 2026-05-27 07:53:23 - Session close
+INFO: 2026-05-27 07:55:48 - [TokenCleanup] 🛑 Останавливаем фоновый процесс...
+INFO: 2026-05-27 07:55:48 - [TokenCleanup] Соединения с БД закрыты
+INFO: 2026-05-27 07:55:48 - [TokenCleanup] 👋 Поток очистки остановлен
+INFO: 2026-05-27 07:55:48 - [TokenCleanup] Поток успешно завершен
+INFO: 2026-05-27 07:55:55 - [TokenCleanup] ✅ Фоновый процесс запущен (поток: TokenCleanup, ID: 129327339443904)
+INFO: 2026-05-27 07:55:55 - [TokenCleanup] Синхронный engine инициализирован
+INFO: 2026-05-27 07:55:55 - [TokenCleanup] 🚀 Поток очистки запущен (интервал: 60 мин, поток: TokenCleanup)
+INFO: 2026-05-27 07:55:55 - [TokenCleanup] 🧹 Начинаем очистку...
+INFO: 2026-05-27 07:55:55 - [TokenCleanup] ✅ Истекших токенов не найдено
+DEBUG: 2026-05-27 07:55:55 - [TokenCleanup] Ожидание 60 мин...
+DEBUG: 2026-05-27 07:56:08 - Open transaction ...
+DEBUG: 2026-05-27 07:56:08 - News sign in
+DEBUG: 2026-05-27 07:56:08 - Create user ...
+DEBUG: 2026-05-27 07:56:08 - generate code
+DEBUG: 2026-05-27 07:56:08 - add background task
+DEBUG: 2026-05-27 07:56:08 - Send code, code : 976744
+DEBUG: 2026-05-27 07:56:08 - Curent file /app/src/utils/mail_service.py
+DEBUG: 2026-05-27 07:56:08 - project_root /app/src
+DEBUG: 2026-05-27 07:56:08 - template path /app/src/templates/email_template.html
+DEBUG: 2026-05-27 07:56:10 - generate token id
+DEBUG: 2026-05-27 07:56:10 - Save code session 4b667dcb-0197-41b0-8cc8-0ed856e865dc
+DEBUG: 2026-05-27 07:56:10 - Redis session started
+DEBUG: 2026-05-27 07:56:11 - saved to Redis: 4b667dcb-0197-41b0-8cc8-0ed856e865dc, TTL: 300s
+DEBUG: 2026-05-27 07:56:11 - Redis session ended
+DEBUG: 2026-05-27 07:56:11 - Create code token
+DEBUG: 2026-05-27 07:56:11 - Success
+DEBUG: 2026-05-27 07:56:11 - Commit
+DEBUG: 2026-05-27 07:56:11 - Session close
+INFO: 2026-05-27 07:56:38 - [TokenCleanup] 🛑 Останавливаем фоновый процесс...
+INFO: 2026-05-27 07:56:39 - [TokenCleanup] Соединения с БД закрыты
+INFO: 2026-05-27 07:56:39 - [TokenCleanup] 👋 Поток очистки остановлен
+INFO: 2026-05-27 07:56:39 - [TokenCleanup] Поток успешно завершен
+INFO: 2026-05-27 07:56:47 - [TokenCleanup] ✅ Фоновый процесс запущен (поток: TokenCleanup, ID: 134294680725184)
+INFO: 2026-05-27 07:56:47 - [TokenCleanup] Синхронный engine инициализирован
+INFO: 2026-05-27 07:56:47 - [TokenCleanup] 🚀 Поток очистки запущен (интервал: 60 мин, поток: TokenCleanup)
+INFO: 2026-05-27 07:56:47 - [TokenCleanup] 🧹 Начинаем очистку...
+INFO: 2026-05-27 07:56:47 - [TokenCleanup] ✅ Истекших токенов не найдено
+DEBUG: 2026-05-27 07:56:47 - [TokenCleanup] Ожидание 60 мин...
+DEBUG: 2026-05-27 07:57:02 - Open transaction ...
+DEBUG: 2026-05-27 07:57:02 - News sign in
+WARNING: 2026-05-27 07:57:02 - Error user already exists
+WARNING: 2026-05-27 07:57:02 - Discard change rollback...
+DEBUG: 2026-05-27 07:57:02 - Session close
+DEBUG: 2026-05-27 07:57:18 - Open transaction ...
+DEBUG: 2026-05-27 07:57:18 - News sign in
+DEBUG: 2026-05-27 07:57:18 - Create user ...
+DEBUG: 2026-05-27 07:57:18 - generate code
+DEBUG: 2026-05-27 07:57:18 - add background task
+DEBUG: 2026-05-27 07:57:18 - Send code, code : 450241
+DEBUG: 2026-05-27 07:57:18 - Curent file /app/src/utils/mail_service.py
+DEBUG: 2026-05-27 07:57:18 - project_root /app/src
+DEBUG: 2026-05-27 07:57:18 - template path /app/src/templates/email_template.html
+WARNING: 2026-05-27 07:57:18 - Discard change rollback...
+DEBUG: 2026-05-27 07:57:18 - Session close
+INFO: 2026-05-27 08:00:39 - [TokenCleanup] 🛑 Останавливаем фоновый процесс...
+INFO: 2026-05-27 08:00:40 - [TokenCleanup] Соединения с БД закрыты
+INFO: 2026-05-27 08:00:40 - [TokenCleanup] 👋 Поток очистки остановлен
+INFO: 2026-05-27 08:00:40 - [TokenCleanup] Поток успешно завершен
+INFO: 2026-05-27 08:00:50 - [TokenCleanup] ✅ Фоновый процесс запущен (поток: TokenCleanup, ID: 137377239873216)
+INFO: 2026-05-27 08:00:50 - [TokenCleanup] Синхронный engine инициализирован
+INFO: 2026-05-27 08:00:50 - [TokenCleanup] 🚀 Поток очистки запущен (интервал: 60 мин, поток: TokenCleanup)
+INFO: 2026-05-27 08:00:50 - [TokenCleanup] 🧹 Начинаем очистку...
+INFO: 2026-05-27 08:00:50 - [TokenCleanup] ✅ Истекших токенов не найдено
+DEBUG: 2026-05-27 08:00:50 - [TokenCleanup] Ожидание 60 мин...
+DEBUG: 2026-05-27 08:01:09 - Open transaction ...
+DEBUG: 2026-05-27 08:01:09 - News sign in
+DEBUG: 2026-05-27 08:01:09 - Create user ...
+DEBUG: 2026-05-27 08:01:09 - generate code
+DEBUG: 2026-05-27 08:01:09 - add background task
+DEBUG: 2026-05-27 08:01:09 - Send code, code : 098000
+DEBUG: 2026-05-27 08:01:09 - Curent file /app/src/utils/mail_service.py
+DEBUG: 2026-05-27 08:01:09 - project_root /app/src
+DEBUG: 2026-05-27 08:01:09 - template path /app/src/templates/email_template.html
+DEBUG: 2026-05-27 08:01:13 - generate token id
+DEBUG: 2026-05-27 08:01:13 - Save code session d05a53d4-0867-4516-b5f8-600a1ea97cbe
+DEBUG: 2026-05-27 08:01:13 - Redis session started
+DEBUG: 2026-05-27 08:01:13 - saved to Redis: d05a53d4-0867-4516-b5f8-600a1ea97cbe, TTL: 300s
+DEBUG: 2026-05-27 08:01:13 - Redis session ended
+DEBUG: 2026-05-27 08:01:13 - Create code token
+DEBUG: 2026-05-27 08:01:13 - Success
+DEBUG: 2026-05-27 08:01:13 - Commit
+DEBUG: 2026-05-27 08:01:13 - Session close
+INFO: 2026-05-27 08:02:59 - [TokenCleanup] 🛑 Останавливаем фоновый процесс...
+INFO: 2026-05-27 08:03:00 - [TokenCleanup] Соединения с БД закрыты
+INFO: 2026-05-27 08:03:00 - [TokenCleanup] 👋 Поток очистки остановлен
+INFO: 2026-05-27 08:03:00 - [TokenCleanup] Поток успешно завершен
+INFO: 2026-05-27 08:03:09 - [TokenCleanup] ✅ Фоновый процесс запущен (поток: TokenCleanup, ID: 136113028630208)
+INFO: 2026-05-27 08:03:09 - [TokenCleanup] Синхронный engine инициализирован
+INFO: 2026-05-27 08:03:09 - [TokenCleanup] 🚀 Поток очистки запущен (интервал: 60 мин, поток: TokenCleanup)
+INFO: 2026-05-27 08:03:09 - [TokenCleanup] 🧹 Начинаем очистку...
+INFO: 2026-05-27 08:03:09 - [TokenCleanup] ✅ Истекших токенов не найдено
+DEBUG: 2026-05-27 08:03:09 - [TokenCleanup] Ожидание 60 мин...
+DEBUG: 2026-05-27 08:03:29 - Open transaction ...
+DEBUG: 2026-05-27 08:03:29 - News sign in
+DEBUG: 2026-05-27 08:03:30 - Create user ...
+DEBUG: 2026-05-27 08:03:30 - generate code
+DEBUG: 2026-05-27 08:03:30 - add background task
+DEBUG: 2026-05-27 08:03:30 - Send code, code : 343342
+DEBUG: 2026-05-27 08:03:30 - Curent file /app/src/utils/mail_service.py
+DEBUG: 2026-05-27 08:03:30 - project_root /app/src
+DEBUG: 2026-05-27 08:03:30 - template path /app/src/templates/email_template.html
+DEBUG: 2026-05-27 08:03:32 - generate token id
+DEBUG: 2026-05-27 08:03:32 - Save code session b094b26f-fe16-4d01-a114-61b3ed9a9162
+DEBUG: 2026-05-27 08:03:32 - Redis session started
+DEBUG: 2026-05-27 08:03:32 - saved to Redis: b094b26f-fe16-4d01-a114-61b3ed9a9162, TTL: 300s
+DEBUG: 2026-05-27 08:03:32 - Redis session ended
+DEBUG: 2026-05-27 08:03:32 - Create code token
+DEBUG: 2026-05-27 08:03:32 - Success
+DEBUG: 2026-05-27 08:03:32 - Commit
+DEBUG: 2026-05-27 08:03:32 - Session close
+DEBUG: 2026-05-27 08:04:07 - Open transaction ...
+DEBUG: 2026-05-27 08:04:07 - Get token ...
+DEBUG: 2026-05-27 08:04:07 - verefy code code: 34334
+DEBUG: 2026-05-27 08:04:07 - Get code session ogj
+DEBUG: 2026-05-27 08:04:07 - Redis session started
+DEBUG: 2026-05-27 08:04:07 - Value retrieved from Redis: b094b26f-fe16-4d01-a114-61b3ed9a9162
+DEBUG: 2026-05-27 08:04:07 - Redis session ended
+DEBUG: 2026-05-27 08:04:07 - Compair code
+DEBUG: 2026-05-27 08:04:07 - Compair failed
+DEBUG: 2026-05-27 08:04:07 - Check attemps
+DEBUG: 2026-05-27 08:04:07 - Incriment attemps count
+DEBUG: 2026-05-27 08:04:07 - Redis session started
+DEBUG: 2026-05-27 08:04:07 - Redis session ended
+WARNING: 2026-05-27 08:04:07 - Code is not valid
+WARNING: 2026-05-27 08:04:07 - Discard change rollback...
+DEBUG: 2026-05-27 08:04:07 - Session close
+DEBUG: 2026-05-27 08:04:08 - Open transaction ...
+DEBUG: 2026-05-27 08:04:08 - Get token ...
+DEBUG: 2026-05-27 08:04:08 - verefy code code: 343342
+DEBUG: 2026-05-27 08:04:08 - Get code session ogj
+DEBUG: 2026-05-27 08:04:08 - Redis session started
+DEBUG: 2026-05-27 08:04:08 - Value retrieved from Redis: b094b26f-fe16-4d01-a114-61b3ed9a9162
+DEBUG: 2026-05-27 08:04:08 - Redis session ended
+DEBUG: 2026-05-27 08:04:08 - Compair code
+DEBUG: 2026-05-27 08:04:08 - Activate user
+DEBUG: 2026-05-27 08:04:08 - Delete old session
+DEBUG: 2026-05-27 08:04:08 - Redis session started
+DEBUG: 2026-05-27 08:04:08 - delete to Redis
+DEBUG: 2026-05-27 08:04:08 - Redis session ended
+DEBUG: 2026-05-27 08:04:08 - Create token pair
+DEBUG: 2026-05-27 08:04:08 - Accouting refresh token
+DEBUG: 2026-05-27 08:04:08 - Token pyload after serialize
+DEBUG: 2026-05-27 08:04:08 - Accouting access token
+DEBUG: 2026-05-27 08:04:08 - Redis session started
+DEBUG: 2026-05-27 08:04:09 - saved to Redis: 57:39d57b62-7780-4808-aebc-597bdad7fca6:8610e39410aa9877c9cd76dd1d08f19e, TTL: 0:15:00s
+DEBUG: 2026-05-27 08:04:09 - Redis session ended
+DEBUG: 2026-05-27 08:04:09 - Commit
+DEBUG: 2026-05-27 08:04:09 - Session close
+DEBUG: 2026-05-27 08:04:09 - Open transaction ...
+DEBUG: 2026-05-27 08:04:09 - Get token ...
+DEBUG: 2026-05-27 08:04:09 - Get device id ...
+DEBUG: 2026-05-27 08:04:09 - Verefy access token
+DEBUG: 2026-05-27 08:04:09 - Verification of access token registration
+DEBUG: 2026-05-27 08:04:09 - Redis session started
+DEBUG: 2026-05-27 08:04:09 - Value retrieved from Redis: 57:39d57b62-7780-4808-aebc-597bdad7fca6:8610e39410aa9877c9cd76dd1d08f19e
+DEBUG: 2026-05-27 08:04:09 - Redis session ended
+DEBUG: 2026-05-27 08:04:09 - serialize token payload ...
+DEBUG: 2026-05-27 08:04:09 - Access token is valid
+DEBUG: 2026-05-27 08:04:09 - Commit
+DEBUG: 2026-05-27 08:04:09 - Session close
+DEBUG: 2026-05-27 08:04:09 - Open transaction ...
+DEBUG: 2026-05-27 08:04:09 - Get me ... id : 57
+DEBUG: 2026-05-27 08:04:09 - Serialize ...
+DEBUG: 2026-05-27 08:04:09 - Commit
+DEBUG: 2026-05-27 08:04:09 - Session close
+DEBUG: 2026-05-27 08:04:09 - Open transaction ...
+WARNING: 2026-05-27 08:04:09 - News not found
+WARNING: 2026-05-27 08:04:09 - Discard change rollback...
+DEBUG: 2026-05-27 08:04:09 - Session close
+INFO: 2026-05-27 08:05:05 - [TokenCleanup] 🛑 Останавливаем фоновый процесс...
+INFO: 2026-05-27 08:05:06 - [TokenCleanup] Соединения с БД закрыты
+INFO: 2026-05-27 08:05:06 - [TokenCleanup] 👋 Поток очистки остановлен
+INFO: 2026-05-27 08:05:06 - [TokenCleanup] Поток успешно завершен
+INFO: 2026-05-27 08:05:13 - [TokenCleanup] ✅ Фоновый процесс запущен (поток: TokenCleanup, ID: 134229255423680)
+INFO: 2026-05-27 08:05:13 - [TokenCleanup] Синхронный engine инициализирован
+INFO: 2026-05-27 08:05:13 - [TokenCleanup] 🚀 Поток очистки запущен (интервал: 60 мин, поток: TokenCleanup)
+INFO: 2026-05-27 08:05:13 - [TokenCleanup] 🧹 Начинаем очистку...
+INFO: 2026-05-27 08:05:13 - [TokenCleanup] ✅ Истекших токенов не найдено
+DEBUG: 2026-05-27 08:05:13 - [TokenCleanup] Ожидание 60 мин...
+DEBUG: 2026-05-27 08:21:10 - Open transaction ...
+DEBUG: 2026-05-27 08:21:10 - Get token ...
+DEBUG: 2026-05-27 08:21:10 - Get device id ...
+DEBUG: 2026-05-27 08:21:10 - Verefy access token
+WARNING: 2026-05-27 08:21:10 - Токен просрочен!
+WARNING: 2026-05-27 08:21:10 - Error invalid token
+WARNING: 2026-05-27 08:21:10 - Discard change rollback...
+DEBUG: 2026-05-27 08:21:10 - Session close
+DEBUG: 2026-05-27 08:21:10 - Open transaction ...
+DEBUG: 2026-05-27 08:21:10 - Get token ...
+DEBUG: 2026-05-27 08:21:10 - Verefy refresh token
+DEBUG: 2026-05-27 08:21:10 - Verification of refresh token registration
+DEBUG: 2026-05-27 08:21:11 - Revoking the access token
+DEBUG: 2026-05-27 08:21:11 - Redis session started
+DEBUG: 2026-05-27 08:21:11 - Found 0 keys matching pattern: 57:*:8610e39410aa9877c9cd76dd1d08f19e
+DEBUG: 2026-05-27 08:21:11 - Redis session ended
+DEBUG: 2026-05-27 08:21:11 - Revork 0 tokens
+DEBUG: 2026-05-27 08:21:11 - Create access token ...
+DEBUG: 2026-05-27 08:21:11 - Accouting access token
+DEBUG: 2026-05-27 08:21:11 - Redis session started
+DEBUG: 2026-05-27 08:21:11 - saved to Redis: 57:ba96d834-ecaf-44c6-b9b9-b1aa4ba1a5c1:8610e39410aa9877c9cd76dd1d08f19e, TTL: 0:15:00s
+DEBUG: 2026-05-27 08:21:11 - Redis session ended
+DEBUG: 2026-05-27 08:21:11 - Commit
+DEBUG: 2026-05-27 08:21:11 - Session close
+DEBUG: 2026-05-27 08:21:11 - Open transaction ...
+DEBUG: 2026-05-27 08:21:11 - Get token ...
+DEBUG: 2026-05-27 08:21:11 - Get device id ...
+DEBUG: 2026-05-27 08:21:11 - Verefy access token
+DEBUG: 2026-05-27 08:21:11 - Verification of access token registration
+DEBUG: 2026-05-27 08:21:11 - Redis session started
+DEBUG: 2026-05-27 08:21:11 - Value retrieved from Redis: 57:ba96d834-ecaf-44c6-b9b9-b1aa4ba1a5c1:8610e39410aa9877c9cd76dd1d08f19e
+DEBUG: 2026-05-27 08:21:11 - Redis session ended
+DEBUG: 2026-05-27 08:21:11 - serialize token payload ...
+DEBUG: 2026-05-27 08:21:11 - Access token is valid
+DEBUG: 2026-05-27 08:21:11 - Commit
+DEBUG: 2026-05-27 08:21:11 - Session close
+DEBUG: 2026-05-27 08:21:11 - Open transaction ...
+DEBUG: 2026-05-27 08:21:12 - Get me ... id : 57
+DEBUG: 2026-05-27 08:21:12 - Serialize ...
+DEBUG: 2026-05-27 08:21:12 - Commit
+DEBUG: 2026-05-27 08:21:12 - Session close
+DEBUG: 2026-05-27 08:21:13 - Open transaction ...
+DEBUG: 2026-05-27 08:21:13 - Login attemp demonuchy@gmail.com - D2i0m0a5
+DEBUG: 2026-05-27 08:21:13 - Check login attemmp ...
+DEBUG: 2026-05-27 08:21:13 - Check user ...
+DEBUG: 2026-05-27 08:21:13 - Check tokens
+DEBUG: 2026-05-27 08:21:13 - Revoking the access token
+DEBUG: 2026-05-27 08:21:13 - Redis session started
+DEBUG: 2026-05-27 08:21:13 - Found 1 keys matching pattern: 57:*:8610e39410aa9877c9cd76dd1d08f19e
+DEBUG: 2026-05-27 08:21:13 - Redis session ended
+DEBUG: 2026-05-27 08:21:13 - Redis session started
+DEBUG: 2026-05-27 08:21:13 - Deleted 1 keys matching pattern: 57:*:8610e39410aa9877c9cd76dd1d08f19e
+DEBUG: 2026-05-27 08:21:13 - Redis session ended
+DEBUG: 2026-05-27 08:21:13 - Revoking the refresh token
+DEBUG: 2026-05-27 08:21:13 - Revork 1 tokens
+DEBUG: 2026-05-27 08:21:13 - calculate expire ...
+DEBUG: 2026-05-27 08:21:13 - exoire 28800
+DEBUG: 2026-05-27 08:21:13 - Create token pair ...
+DEBUG: 2026-05-27 08:21:13 - Accouting refresh token
+DEBUG: 2026-05-27 08:21:13 - Token pyload after serialize
+DEBUG: 2026-05-27 08:21:13 - Accouting access token
+DEBUG: 2026-05-27 08:21:13 - Redis session started
+DEBUG: 2026-05-27 08:21:13 - saved to Redis: 57:6dda43a6-df47-4e6e-a55b-70121a8896e2:8610e39410aa9877c9cd76dd1d08f19e, TTL: 0:15:00s
+DEBUG: 2026-05-27 08:21:13 - Redis session ended
+DEBUG: 2026-05-27 08:21:13 - User login
+DEBUG: 2026-05-27 08:21:13 - Commit
+DEBUG: 2026-05-27 08:21:13 - Session close
+DEBUG: 2026-05-27 08:21:13 - Open transaction ...
+DEBUG: 2026-05-27 08:21:13 - Get token ...
+DEBUG: 2026-05-27 08:21:13 - Get device id ...
+DEBUG: 2026-05-27 08:21:13 - Verefy access token
+DEBUG: 2026-05-27 08:21:13 - Verification of access token registration
+DEBUG: 2026-05-27 08:21:13 - Redis session started
+DEBUG: 2026-05-27 08:21:13 - Value retrieved from Redis: 57:6dda43a6-df47-4e6e-a55b-70121a8896e2:8610e39410aa9877c9cd76dd1d08f19e
+DEBUG: 2026-05-27 08:21:13 - Redis session ended
+DEBUG: 2026-05-27 08:21:13 - serialize token payload ...
+DEBUG: 2026-05-27 08:21:13 - Access token is valid
+DEBUG: 2026-05-27 08:21:13 - Commit
+DEBUG: 2026-05-27 08:21:13 - Session close
+DEBUG: 2026-05-27 08:21:13 - Open transaction ...
+DEBUG: 2026-05-27 08:21:13 - Get me ... id : 57
+DEBUG: 2026-05-27 08:21:13 - Serialize ...
+DEBUG: 2026-05-27 08:21:13 - Commit
+DEBUG: 2026-05-27 08:21:13 - Session close
+DEBUG: 2026-05-27 08:21:13 - Open transaction ...
+WARNING: 2026-05-27 08:21:13 - News not found
+WARNING: 2026-05-27 08:21:13 - Discard change rollback...
+DEBUG: 2026-05-27 08:21:13 - Session close
+DEBUG: 2026-05-27 08:21:45 - Open transaction ...
+DEBUG: 2026-05-27 08:21:45 - Get token ...
+DEBUG: 2026-05-27 08:21:45 - Get device id ...
+DEBUG: 2026-05-27 08:21:45 - Verefy access token
+DEBUG: 2026-05-27 08:21:45 - Verification of access token registration
+DEBUG: 2026-05-27 08:21:45 - Redis session started
+DEBUG: 2026-05-27 08:21:45 - Value retrieved from Redis: 57:6dda43a6-df47-4e6e-a55b-70121a8896e2:8610e39410aa9877c9cd76dd1d08f19e
+DEBUG: 2026-05-27 08:21:45 - Redis session ended
+DEBUG: 2026-05-27 08:21:45 - serialize token payload ...
+DEBUG: 2026-05-27 08:21:45 - Access token is valid
+DEBUG: 2026-05-27 08:21:45 - Commit
+DEBUG: 2026-05-27 08:21:45 - Session close
+DEBUG: 2026-05-27 08:21:45 - Check adnmin recive role: root : <class 'str'>
+DEBUG: 2026-05-27 08:21:45 - Open transaction ...
+DEBUG: 2026-05-27 08:21:45 - Publish news...
+DEBUG: 2026-05-27 08:21:45 - Save to elasticsearch
+DEBUG: 2026-05-27 08:21:46 - File successfully uploaded to news-images/4/4a7c4fe1d89ea4742056654b78af6cd9_26cd6b62-c1d1-4120-91e3-b88884e4a323.webp
+DEBUG: 2026-05-27 08:21:46 - ✅ Successfully uploaded 1
+DEBUG: 2026-05-27 08:21:46 - news images [<database.models.NewsImages object at 0x7a14af1f33d0>]
+DEBUG: 2026-05-27 08:21:46 - serialize news {'id': 4, 'user_id': 57, 'title': 'Заголовок', 'body': 'йцукенгшщзйцукенгшщзйцукенгшщ', 'views': 0, 'like': 0, 'created_at': '2026-05-27T08:21:45.490136+00:00', 'updated_at': '2026-05-27T08:21:45.490136+00:00', 'images': [{'id': 10, 'url': '4/4a7c4fe1d89ea4742056654b78af6cd9_26cd6b62-c1d1-4120-91e3-b88884e4a323.webp', 'filename': '4a7c4fe1d89ea4742056654b78af6cd9_26cd6b62-c1d1-4120-91e3-b88884e4a323.webp', 'bucket_name': 'news-images', 'content_type': 'image/webp', 'order': 1, 'base64': None, 'binary': None, 'width': None, 'height': None, 'created_at': '2026-05-27T08:21:45.490136+00:00'}], 'comments': []}
+DEBUG: 2026-05-27 08:21:46 - Initialized NewsElasticsearchManager for index 'news' with document type NewsDocument
+INFO: 2026-05-27 08:21:46 - Attempting to connect to Elasticsearch at http://elasticsearch:9200...
+INFO: 2026-05-27 08:21:46 - ✅ Successfully connected to Elasticsearch at http://elasticsearch:9200
+DEBUG: 2026-05-27 08:21:46 - Index 'news' already exists
+INFO: 2026-05-27 08:21:46 - ✅ Object saved with ID: 4 in index news
+DEBUG: 2026-05-27 08:21:46 - Commit
+DEBUG: 2026-05-27 08:21:46 - Session close
+DEBUG: 2026-05-27 08:21:46 - Open transaction ...
+DEBUG: 2026-05-27 08:21:46 - Load images ...
+DEBUG: 2026-05-27 08:21:46 - Commit
+DEBUG: 2026-05-27 08:21:46 - Session close
+DEBUG: 2026-05-27 08:21:47 - Open transaction ...
+DEBUG: 2026-05-27 08:21:48 - Commit
+DEBUG: 2026-05-27 08:21:48 - Session close
+DEBUG: 2026-05-27 08:25:19 - Open transaction ...
+DEBUG: 2026-05-27 08:25:19 - Get token ...
+DEBUG: 2026-05-27 08:25:19 - Get device id ...
+DEBUG: 2026-05-27 08:25:19 - Verefy access token
+DEBUG: 2026-05-27 08:25:19 - Verification of access token registration
+DEBUG: 2026-05-27 08:25:19 - Redis session started
+DEBUG: 2026-05-27 08:25:19 - Value retrieved from Redis: 57:6dda43a6-df47-4e6e-a55b-70121a8896e2:8610e39410aa9877c9cd76dd1d08f19e
+DEBUG: 2026-05-27 08:25:19 - Redis session ended
+DEBUG: 2026-05-27 08:25:19 - serialize token payload ...
+DEBUG: 2026-05-27 08:25:19 - Access token is valid
+DEBUG: 2026-05-27 08:25:19 - Commit
+DEBUG: 2026-05-27 08:25:19 - Session close
+DEBUG: 2026-05-27 08:25:19 - Open transaction ...
+DEBUG: 2026-05-27 08:25:19 - Get me ... id : 57
+DEBUG: 2026-05-27 08:25:19 - Serialize ...
+WARNING: 2026-05-27 08:25:19 - Discard change rollback...
+DEBUG: 2026-05-27 08:25:19 - Session close
+DEBUG: 2026-05-27 08:25:19 - Open transaction ...
+WARNING: 2026-05-27 08:25:19 - News not found
+WARNING: 2026-05-27 08:25:19 - Discard change rollback...
+DEBUG: 2026-05-27 08:25:19 - Session close
+DEBUG: 2026-05-27 08:25:47 - Open transaction ...
+DEBUG: 2026-05-27 08:25:47 - Get token ...
+DEBUG: 2026-05-27 08:25:47 - Get device id ...
+DEBUG: 2026-05-27 08:25:47 - Verefy access token
+DEBUG: 2026-05-27 08:25:47 - Verification of access token registration
+DEBUG: 2026-05-27 08:25:47 - Redis session started
+DEBUG: 2026-05-27 08:25:47 - Value retrieved from Redis: 57:6dda43a6-df47-4e6e-a55b-70121a8896e2:8610e39410aa9877c9cd76dd1d08f19e
+DEBUG: 2026-05-27 08:25:47 - Redis session ended
+DEBUG: 2026-05-27 08:25:48 - serialize token payload ...
+DEBUG: 2026-05-27 08:25:48 - Access token is valid
+DEBUG: 2026-05-27 08:25:48 - Commit
+DEBUG: 2026-05-27 08:25:48 - Session close
+DEBUG: 2026-05-27 08:25:48 - Open transaction ...
+DEBUG: 2026-05-27 08:25:48 - Get me ... id : 57
+DEBUG: 2026-05-27 08:25:48 - Serialize ...
+WARNING: 2026-05-27 08:25:48 - Discard change rollback...
+DEBUG: 2026-05-27 08:25:48 - Session close
+DEBUG: 2026-05-27 08:26:04 - Open transaction ...
+DEBUG: 2026-05-27 08:26:04 - News sign in
+DEBUG: 2026-05-27 08:26:04 - Create user ...
+DEBUG: 2026-05-27 08:26:04 - generate code
+DEBUG: 2026-05-27 08:26:04 - add background task
+DEBUG: 2026-05-27 08:26:04 - Send code, code : 023225
+DEBUG: 2026-05-27 08:26:04 - Curent file /app/src/utils/mail_service.py
+DEBUG: 2026-05-27 08:26:04 - project_root /app/src
+DEBUG: 2026-05-27 08:26:04 - template path /app/src/templates/email_template.html
+DEBUG: 2026-05-27 08:26:07 - generate token id
+DEBUG: 2026-05-27 08:26:07 - Save code session bee00ca9-5127-4d44-956e-c700abecd8b9
+DEBUG: 2026-05-27 08:26:07 - Redis session started
+DEBUG: 2026-05-27 08:26:07 - saved to Redis: bee00ca9-5127-4d44-956e-c700abecd8b9, TTL: 300s
+DEBUG: 2026-05-27 08:26:07 - Redis session ended
+DEBUG: 2026-05-27 08:26:07 - Create code token
+DEBUG: 2026-05-27 08:26:07 - Success
+DEBUG: 2026-05-27 08:26:07 - Commit
+DEBUG: 2026-05-27 08:26:07 - Session close
+DEBUG: 2026-05-27 08:26:32 - Open transaction ...
+DEBUG: 2026-05-27 08:26:32 - Get token ...
+DEBUG: 2026-05-27 08:26:32 - verefy code code: 02322
+DEBUG: 2026-05-27 08:26:32 - Get code session ogj
+DEBUG: 2026-05-27 08:26:32 - Redis session started
+DEBUG: 2026-05-27 08:26:32 - Value retrieved from Redis: bee00ca9-5127-4d44-956e-c700abecd8b9
+DEBUG: 2026-05-27 08:26:32 - Redis session ended
+DEBUG: 2026-05-27 08:26:32 - Compair code
+DEBUG: 2026-05-27 08:26:32 - Compair failed
+DEBUG: 2026-05-27 08:26:32 - Check attemps
+DEBUG: 2026-05-27 08:26:32 - Incriment attemps count
+DEBUG: 2026-05-27 08:26:32 - Redis session started
+DEBUG: 2026-05-27 08:26:32 - Redis session ended
+WARNING: 2026-05-27 08:26:32 - Code is not valid
+WARNING: 2026-05-27 08:26:32 - Discard change rollback...
+DEBUG: 2026-05-27 08:26:32 - Session close
+DEBUG: 2026-05-27 08:26:35 - Open transaction ...
+DEBUG: 2026-05-27 08:26:35 - Get token ...
+DEBUG: 2026-05-27 08:26:35 - verefy code code: 023225
+DEBUG: 2026-05-27 08:26:35 - Get code session ogj
+DEBUG: 2026-05-27 08:26:35 - Redis session started
+DEBUG: 2026-05-27 08:26:35 - Value retrieved from Redis: bee00ca9-5127-4d44-956e-c700abecd8b9
+DEBUG: 2026-05-27 08:26:35 - Redis session ended
+DEBUG: 2026-05-27 08:26:35 - Compair code
+DEBUG: 2026-05-27 08:26:35 - Activate user
+DEBUG: 2026-05-27 08:26:35 - Delete old session
+DEBUG: 2026-05-27 08:26:35 - Redis session started
+DEBUG: 2026-05-27 08:26:35 - delete to Redis
+DEBUG: 2026-05-27 08:26:35 - Redis session ended
+DEBUG: 2026-05-27 08:26:35 - Create token pair
+DEBUG: 2026-05-27 08:26:35 - Accouting refresh token
+DEBUG: 2026-05-27 08:26:35 - Token pyload after serialize
+DEBUG: 2026-05-27 08:26:35 - Accouting access token
+DEBUG: 2026-05-27 08:26:35 - Redis session started
+DEBUG: 2026-05-27 08:26:35 - saved to Redis: 58:f7da1d69-776c-402e-9a16-16180cd3c9b8:8610e39410aa9877c9cd76dd1d08f19e, TTL: 0:15:00s
+DEBUG: 2026-05-27 08:26:35 - Redis session ended
+DEBUG: 2026-05-27 08:26:35 - Commit
+DEBUG: 2026-05-27 08:26:35 - Session close
+DEBUG: 2026-05-27 08:26:35 - Open transaction ...
+DEBUG: 2026-05-27 08:26:35 - Get token ...
+DEBUG: 2026-05-27 08:26:35 - Get device id ...
+DEBUG: 2026-05-27 08:26:35 - Verefy access token
+DEBUG: 2026-05-27 08:26:35 - Verification of access token registration
+DEBUG: 2026-05-27 08:26:35 - Redis session started
+DEBUG: 2026-05-27 08:26:35 - Value retrieved from Redis: 58:f7da1d69-776c-402e-9a16-16180cd3c9b8:8610e39410aa9877c9cd76dd1d08f19e
+DEBUG: 2026-05-27 08:26:35 - Redis session ended
+DEBUG: 2026-05-27 08:26:35 - serialize token payload ...
+DEBUG: 2026-05-27 08:26:35 - Access token is valid
+DEBUG: 2026-05-27 08:26:35 - Commit
+DEBUG: 2026-05-27 08:26:35 - Session close
+DEBUG: 2026-05-27 08:26:35 - Open transaction ...
+DEBUG: 2026-05-27 08:26:35 - Get me ... id : 58
+DEBUG: 2026-05-27 08:26:35 - Serialize ...
+DEBUG: 2026-05-27 08:26:35 - Commit
+DEBUG: 2026-05-27 08:26:35 - Session close
+DEBUG: 2026-05-27 08:26:36 - Open transaction ...
+WARNING: 2026-05-27 08:26:36 - News not found
+WARNING: 2026-05-27 08:26:36 - Discard change rollback...
+DEBUG: 2026-05-27 08:26:36 - Session close
+INFO: 2026-05-27 08:32:02 - [TokenCleanup] 🛑 Останавливаем фоновый процесс...
+INFO: 2026-05-27 08:32:10 - [TokenCleanup] ✅ Фоновый процесс запущен (поток: TokenCleanup, ID: 136537683158720)
+INFO: 2026-05-27 08:32:11 - [TokenCleanup] Синхронный engine инициализирован
+INFO: 2026-05-27 08:32:11 - [TokenCleanup] 🚀 Поток очистки запущен (интервал: 60 мин, поток: TokenCleanup)
+INFO: 2026-05-27 08:32:11 - [TokenCleanup] 🧹 Начинаем очистку...
+INFO: 2026-05-27 08:32:11 - [TokenCleanup] ✅ Истекших токенов не найдено
+DEBUG: 2026-05-27 08:32:11 - [TokenCleanup] Ожидание 60 мин...
+DEBUG: 2026-05-27 08:32:22 - Open transaction ...
+DEBUG: 2026-05-27 08:32:22 - Get token ...
+DEBUG: 2026-05-27 08:32:22 - Get device id ...
+DEBUG: 2026-05-27 08:32:22 - Verefy access token
+DEBUG: 2026-05-27 08:32:22 - Verification of access token registration
+DEBUG: 2026-05-27 08:32:22 - Redis session started
+DEBUG: 2026-05-27 08:32:22 - Value retrieved from Redis: 58:f7da1d69-776c-402e-9a16-16180cd3c9b8:8610e39410aa9877c9cd76dd1d08f19e
+DEBUG: 2026-05-27 08:32:22 - Redis session ended
+DEBUG: 2026-05-27 08:32:22 - serialize token payload ...
+DEBUG: 2026-05-27 08:32:22 - Access token is valid
+DEBUG: 2026-05-27 08:32:22 - Commit
+DEBUG: 2026-05-27 08:32:22 - Session close
+DEBUG: 2026-05-27 08:32:22 - Open transaction ...
+DEBUG: 2026-05-27 08:32:22 - Get me ... id : 58
+DEBUG: 2026-05-27 08:32:23 - Serialize ...
+WARNING: 2026-05-27 08:32:23 - Discard change rollback...
+DEBUG: 2026-05-27 08:32:23 - Session close
+DEBUG: 2026-05-27 08:32:50 - Open transaction ...
+DEBUG: 2026-05-27 08:32:50 - News sign in
+DEBUG: 2026-05-27 08:32:50 - Create user ...
+DEBUG: 2026-05-27 08:32:50 - generate code
+DEBUG: 2026-05-27 08:32:50 - add background task
+DEBUG: 2026-05-27 08:32:50 - Send code, code : 205613
+DEBUG: 2026-05-27 08:32:50 - Curent file /app/src/utils/mail_service.py
+DEBUG: 2026-05-27 08:32:50 - project_root /app/src
+DEBUG: 2026-05-27 08:32:50 - template path /app/src/templates/email_template.html
+DEBUG: 2026-05-27 08:32:53 - generate token id
+DEBUG: 2026-05-27 08:32:53 - Save code session 3be76426-ca1a-4f2d-b3c2-cf657674d0e4
+DEBUG: 2026-05-27 08:32:53 - Redis session started
+DEBUG: 2026-05-27 08:32:53 - saved to Redis: 3be76426-ca1a-4f2d-b3c2-cf657674d0e4, TTL: 300s
+DEBUG: 2026-05-27 08:32:53 - Redis session ended
+DEBUG: 2026-05-27 08:32:53 - Create code token
+DEBUG: 2026-05-27 08:32:53 - Success
+DEBUG: 2026-05-27 08:32:53 - Commit
+DEBUG: 2026-05-27 08:32:53 - Session close
+DEBUG: 2026-05-27 08:33:50 - Open transaction ...
+DEBUG: 2026-05-27 08:33:50 - Get token ...
+DEBUG: 2026-05-27 08:33:50 - verefy code code: 20561
+DEBUG: 2026-05-27 08:33:50 - Get code session ogj
+DEBUG: 2026-05-27 08:33:50 - Redis session started
+DEBUG: 2026-05-27 08:33:50 - Value retrieved from Redis: 3be76426-ca1a-4f2d-b3c2-cf657674d0e4
+DEBUG: 2026-05-27 08:33:50 - Redis session ended
+DEBUG: 2026-05-27 08:33:50 - Compair code
+DEBUG: 2026-05-27 08:33:50 - Compair failed
+DEBUG: 2026-05-27 08:33:50 - Check attemps
+DEBUG: 2026-05-27 08:33:50 - Incriment attemps count
+DEBUG: 2026-05-27 08:33:50 - Redis session started
+DEBUG: 2026-05-27 08:33:50 - Redis session ended
+WARNING: 2026-05-27 08:33:50 - Code is not valid
+WARNING: 2026-05-27 08:33:50 - Discard change rollback...
+DEBUG: 2026-05-27 08:33:50 - Session close
+DEBUG: 2026-05-27 08:33:52 - Open transaction ...
+DEBUG: 2026-05-27 08:33:52 - Get token ...
+DEBUG: 2026-05-27 08:33:52 - verefy code code: 205613
+DEBUG: 2026-05-27 08:33:52 - Get code session ogj
+DEBUG: 2026-05-27 08:33:52 - Redis session started
+DEBUG: 2026-05-27 08:33:52 - Value retrieved from Redis: 3be76426-ca1a-4f2d-b3c2-cf657674d0e4
+DEBUG: 2026-05-27 08:33:52 - Redis session ended
+DEBUG: 2026-05-27 08:33:52 - Compair code
+DEBUG: 2026-05-27 08:33:52 - Activate user
+DEBUG: 2026-05-27 08:33:52 - Delete old session
+DEBUG: 2026-05-27 08:33:52 - Redis session started
+DEBUG: 2026-05-27 08:33:52 - delete to Redis
+DEBUG: 2026-05-27 08:33:52 - Redis session ended
+DEBUG: 2026-05-27 08:33:52 - Create token pair
+DEBUG: 2026-05-27 08:33:52 - Accouting refresh token
+DEBUG: 2026-05-27 08:33:52 - Token pyload after serialize
+DEBUG: 2026-05-27 08:33:52 - Accouting access token
+DEBUG: 2026-05-27 08:33:52 - Redis session started
+DEBUG: 2026-05-27 08:33:52 - saved to Redis: 59:4dc6b9b9-053d-4673-91ce-4ed81b52084d:8610e39410aa9877c9cd76dd1d08f19e, TTL: 0:15:00s
+DEBUG: 2026-05-27 08:33:52 - Redis session ended
+DEBUG: 2026-05-27 08:33:52 - Open transaction ...
+DEBUG: 2026-05-27 08:33:52 - Get token ...
+DEBUG: 2026-05-27 08:33:52 - Get device id ...
+DEBUG: 2026-05-27 08:33:52 - Verefy access token
+DEBUG: 2026-05-27 08:33:52 - Verification of access token registration
+DEBUG: 2026-05-27 08:33:52 - Redis session started
+DEBUG: 2026-05-27 08:33:52 - Commit
+DEBUG: 2026-05-27 08:33:52 - Session close
+DEBUG: 2026-05-27 08:33:52 - Value retrieved from Redis: 59:4dc6b9b9-053d-4673-91ce-4ed81b52084d:8610e39410aa9877c9cd76dd1d08f19e
+DEBUG: 2026-05-27 08:33:52 - Redis session ended
+DEBUG: 2026-05-27 08:33:52 - serialize token payload ...
+DEBUG: 2026-05-27 08:33:52 - Access token is valid
+DEBUG: 2026-05-27 08:33:52 - Commit
+DEBUG: 2026-05-27 08:33:52 - Session close
+DEBUG: 2026-05-27 08:33:53 - Open transaction ...
+DEBUG: 2026-05-27 08:33:53 - Get me ... id : 59
+DEBUG: 2026-05-27 08:33:53 - Serialize ...
+DEBUG: 2026-05-27 08:33:53 - Commit
+DEBUG: 2026-05-27 08:33:53 - Session close
+DEBUG: 2026-05-27 08:33:53 - Open transaction ...
+WARNING: 2026-05-27 08:33:53 - News not found
+WARNING: 2026-05-27 08:33:53 - Discard change rollback...
+DEBUG: 2026-05-27 08:33:53 - Session close
+INFO: 2026-05-27 08:47:38 - [TokenCleanup] 🛑 Останавливаем фоновый процесс...
+INFO: 2026-05-27 08:47:39 - [TokenCleanup] Соединения с БД закрыты
+INFO: 2026-05-27 08:47:39 - [TokenCleanup] 👋 Поток очистки остановлен
+INFO: 2026-05-27 08:47:39 - [TokenCleanup] Поток успешно завершен
+INFO: 2026-05-27 08:47:48 - [TokenCleanup] ✅ Фоновый процесс запущен (поток: TokenCleanup, ID: 126747220207296)
+INFO: 2026-05-27 08:47:48 - [TokenCleanup] Синхронный engine инициализирован
+INFO: 2026-05-27 08:47:48 - [TokenCleanup] 🚀 Поток очистки запущен (интервал: 60 мин, поток: TokenCleanup)
+INFO: 2026-05-27 08:47:48 - [TokenCleanup] 🧹 Начинаем очистку...
+INFO: 2026-05-27 08:47:48 - [TokenCleanup] ✅ Истекших токенов не найдено
+DEBUG: 2026-05-27 08:47:48 - [TokenCleanup] Ожидание 60 мин...
+DEBUG: 2026-05-27 08:47:54 - Open transaction ...
+DEBUG: 2026-05-27 08:47:55 - Get token ...
+DEBUG: 2026-05-27 08:47:55 - Get device id ...
+DEBUG: 2026-05-27 08:47:55 - Verefy access token
+DEBUG: 2026-05-27 08:47:55 - Verification of access token registration
+DEBUG: 2026-05-27 08:47:55 - Redis session started
+DEBUG: 2026-05-27 08:47:55 - Value retrieved from Redis: 59:4dc6b9b9-053d-4673-91ce-4ed81b52084d:8610e39410aa9877c9cd76dd1d08f19e
+DEBUG: 2026-05-27 08:47:55 - Redis session ended
+DEBUG: 2026-05-27 08:47:55 - serialize token payload ...
+DEBUG: 2026-05-27 08:47:55 - Access token is valid
+DEBUG: 2026-05-27 08:47:55 - Commit
+DEBUG: 2026-05-27 08:47:55 - Session close
+DEBUG: 2026-05-27 08:47:55 - Open transaction ...
+DEBUG: 2026-05-27 08:47:55 - Get me ... id : 59
+DEBUG: 2026-05-27 08:47:56 - Serialize ...
+WARNING: 2026-05-27 08:47:56 - Discard change rollback...
+DEBUG: 2026-05-27 08:47:56 - Session close
+DEBUG: 2026-05-27 08:48:17 - Open transaction ...
+DEBUG: 2026-05-27 08:48:17 - News sign in
+DEBUG: 2026-05-27 08:48:17 - Create user ...
+DEBUG: 2026-05-27 08:48:17 - Generate code
+DEBUG: 2026-05-27 08:48:17 - Add background task
+DEBUG: 2026-05-27 08:48:17 - Generate token id
+DEBUG: 2026-05-27 08:48:17 - Save code session cb5bd361-f68a-4eda-8a41-cb6ecf54c5b0
+DEBUG: 2026-05-27 08:48:17 - Redis session started
+DEBUG: 2026-05-27 08:48:17 - saved to Redis: cb5bd361-f68a-4eda-8a41-cb6ecf54c5b0, TTL: 300s
+DEBUG: 2026-05-27 08:48:17 - Redis session ended
+DEBUG: 2026-05-27 08:48:17 - Create code token
+DEBUG: 2026-05-27 08:48:17 - Success
+DEBUG: 2026-05-27 08:48:17 - Send code, code : 285808
+DEBUG: 2026-05-27 08:48:17 - Curent file /app/src/utils/mail_service.py
+DEBUG: 2026-05-27 08:48:18 - project_root /app/src
+DEBUG: 2026-05-27 08:48:18 - template path /app/src/templates/email_template.html
+DEBUG: 2026-05-27 08:48:22 - Commit
+DEBUG: 2026-05-27 08:48:22 - Session close
+DEBUG: 2026-05-27 08:48:37 - Open transaction ...
+DEBUG: 2026-05-27 08:48:37 - Get token ...
+DEBUG: 2026-05-27 08:48:37 - verefy code code: 28580
+DEBUG: 2026-05-27 08:48:37 - Get code session ogj
+DEBUG: 2026-05-27 08:48:37 - Redis session started
+DEBUG: 2026-05-27 08:48:37 - Value retrieved from Redis: cb5bd361-f68a-4eda-8a41-cb6ecf54c5b0
+DEBUG: 2026-05-27 08:48:37 - Redis session ended
+DEBUG: 2026-05-27 08:48:37 - Compair code
+DEBUG: 2026-05-27 08:48:37 - Compair failed
+DEBUG: 2026-05-27 08:48:37 - Check attemps
+DEBUG: 2026-05-27 08:48:37 - Incriment attemps count
+DEBUG: 2026-05-27 08:48:37 - Redis session started
+DEBUG: 2026-05-27 08:48:37 - Redis session ended
+WARNING: 2026-05-27 08:48:37 - Code is not valid
+WARNING: 2026-05-27 08:48:37 - Discard change rollback...
+DEBUG: 2026-05-27 08:48:37 - Session close
+DEBUG: 2026-05-27 08:48:38 - Open transaction ...
+DEBUG: 2026-05-27 08:48:38 - Get token ...
+DEBUG: 2026-05-27 08:48:38 - verefy code code: 285809
+DEBUG: 2026-05-27 08:48:38 - Get code session ogj
+DEBUG: 2026-05-27 08:48:38 - Redis session started
+DEBUG: 2026-05-27 08:48:38 - Value retrieved from Redis: cb5bd361-f68a-4eda-8a41-cb6ecf54c5b0
+DEBUG: 2026-05-27 08:48:38 - Redis session ended
+DEBUG: 2026-05-27 08:48:38 - Compair code
+DEBUG: 2026-05-27 08:48:38 - Compair failed
+DEBUG: 2026-05-27 08:48:38 - Check attemps
+DEBUG: 2026-05-27 08:48:38 - Incriment attemps count
+DEBUG: 2026-05-27 08:48:38 - Redis session started
+DEBUG: 2026-05-27 08:48:38 - Redis session ended
+WARNING: 2026-05-27 08:48:38 - Code is not valid
+WARNING: 2026-05-27 08:48:38 - Discard change rollback...
+DEBUG: 2026-05-27 08:48:38 - Session close
+DEBUG: 2026-05-27 08:48:40 - Open transaction ...
+DEBUG: 2026-05-27 08:48:40 - Get token ...
+DEBUG: 2026-05-27 08:48:40 - verefy code code: 285809
+DEBUG: 2026-05-27 08:48:40 - Get code session ogj
+DEBUG: 2026-05-27 08:48:40 - Redis session started
+DEBUG: 2026-05-27 08:48:40 - Value retrieved from Redis: cb5bd361-f68a-4eda-8a41-cb6ecf54c5b0
+DEBUG: 2026-05-27 08:48:40 - Redis session ended
+DEBUG: 2026-05-27 08:48:40 - Compair code
+DEBUG: 2026-05-27 08:48:40 - Compair failed
+DEBUG: 2026-05-27 08:48:40 - Check attemps
+DEBUG: 2026-05-27 08:48:40 - Incriment attemps count
+DEBUG: 2026-05-27 08:48:40 - Redis session started
+DEBUG: 2026-05-27 08:48:40 - Redis session ended
+WARNING: 2026-05-27 08:48:40 - Code is not valid
+WARNING: 2026-05-27 08:48:40 - Discard change rollback...
+DEBUG: 2026-05-27 08:48:40 - Session close
+DEBUG: 2026-05-27 08:49:37 - Open transaction ...
+DEBUG: 2026-05-27 08:49:37 - Get token ...
+DEBUG: 2026-05-27 08:49:37 - verefy code code: 28580
+DEBUG: 2026-05-27 08:49:37 - Get code session ogj
+DEBUG: 2026-05-27 08:49:37 - Redis session started
+DEBUG: 2026-05-27 08:49:37 - Value retrieved from Redis: cb5bd361-f68a-4eda-8a41-cb6ecf54c5b0
+DEBUG: 2026-05-27 08:49:37 - Redis session ended
+DEBUG: 2026-05-27 08:49:37 - Compair code
+DEBUG: 2026-05-27 08:49:37 - Compair failed
+DEBUG: 2026-05-27 08:49:37 - Check attemps
+DEBUG: 2026-05-27 08:49:37 - Redis session started
+DEBUG: 2026-05-27 08:49:37 - delete to Redis
+DEBUG: 2026-05-27 08:49:37 - Redis session ended
+WARNING: 2026-05-27 08:49:37 - Exceeded the limit attemps
+WARNING: 2026-05-27 08:49:37 - Discard change rollback...
+DEBUG: 2026-05-27 08:49:37 - Session close
+DEBUG: 2026-05-27 08:49:38 - Open transaction ...
+DEBUG: 2026-05-27 08:49:38 - Get token ...
+DEBUG: 2026-05-27 08:49:38 - verefy code code: 285808
+DEBUG: 2026-05-27 08:49:38 - Get code session ogj
+DEBUG: 2026-05-27 08:49:38 - Redis session started
+DEBUG: 2026-05-27 08:49:38 - Value not found in Redis: cb5bd361-f68a-4eda-8a41-cb6ecf54c5b0
+DEBUG: 2026-05-27 08:49:38 - Redis session ended
+WARNING: 2026-05-27 08:49:38 - Session not found
+WARNING: 2026-05-27 08:49:38 - Discard change rollback...
+DEBUG: 2026-05-27 08:49:38 - Session close
+INFO: 2026-05-27 09:10:40 - [TokenCleanup] 🛑 Останавливаем фоновый процесс...
+INFO: 2026-05-27 09:10:40 - [TokenCleanup] Соединения с БД закрыты
+INFO: 2026-05-27 09:10:40 - [TokenCleanup] 👋 Поток очистки остановлен
+INFO: 2026-05-27 09:10:40 - [TokenCleanup] Поток успешно завершен
+INFO: 2026-05-27 09:14:28 - [TokenCleanup] ✅ Фоновый процесс запущен (поток: TokenCleanup, ID: 136434838091456)
+INFO: 2026-05-27 09:14:28 - [TokenCleanup] Синхронный engine инициализирован
+INFO: 2026-05-27 09:14:28 - [TokenCleanup] 🚀 Поток очистки запущен (интервал: 60 мин, поток: TokenCleanup)
+INFO: 2026-05-27 09:14:28 - [TokenCleanup] 🧹 Начинаем очистку...
+INFO: 2026-05-27 09:14:29 - [TokenCleanup] ✅ Истекших токенов не найдено
+DEBUG: 2026-05-27 09:14:29 - [TokenCleanup] Ожидание 60 мин...
+DEBUG: 2026-05-27 09:14:46 - Open transaction ...
+DEBUG: 2026-05-27 09:14:46 - Get token ...
+DEBUG: 2026-05-27 09:14:46 - Get device id ...
+DEBUG: 2026-05-27 09:14:46 - Verefy access token
+WARNING: 2026-05-27 09:14:46 - Токен просрочен!
+WARNING: 2026-05-27 09:14:46 - Error invalid token
+WARNING: 2026-05-27 09:14:46 - Discard change rollback...
+DEBUG: 2026-05-27 09:14:46 - Session close
+DEBUG: 2026-05-27 09:14:46 - Open transaction ...
+DEBUG: 2026-05-27 09:14:46 - Get token ...
+DEBUG: 2026-05-27 09:14:46 - Verefy refresh token
+DEBUG: 2026-05-27 09:14:46 - Verification of refresh token registration
+WARNING: 2026-05-27 09:14:47 - Tokenr not found key : 59:30afd012-05db-4a84-b9da-1bd87f51e7bc:8610e39410aa9877c9cd76dd1d08f19e
+WARNING: 2026-05-27 09:14:47 - Discard change rollback...
+DEBUG: 2026-05-27 09:14:47 - Session close
+DEBUG: 2026-05-27 09:15:06 - Open transaction ...
+DEBUG: 2026-05-27 09:15:06 - News sign in
+DEBUG: 2026-05-27 09:15:06 - Create user ...
+DEBUG: 2026-05-27 09:15:06 - Generate code
+DEBUG: 2026-05-27 09:15:06 - Add background task
+DEBUG: 2026-05-27 09:15:06 - Generate token id
+DEBUG: 2026-05-27 09:15:06 - Save code session 9b03008c-f9e9-49bf-b930-cf53e3d3a5a3
+DEBUG: 2026-05-27 09:15:06 - Redis session started
+DEBUG: 2026-05-27 09:15:06 - saved to Redis: 9b03008c-f9e9-49bf-b930-cf53e3d3a5a3, TTL: 300s
+DEBUG: 2026-05-27 09:15:06 - Redis session ended
+DEBUG: 2026-05-27 09:15:06 - Create code token
+WARNING: 2026-05-27 09:15:06 - Discard change rollback...
+DEBUG: 2026-05-27 09:15:06 - Session close
+INFO: 2026-05-27 09:16:16 - [TokenCleanup] 🛑 Останавливаем фоновый процесс...
+INFO: 2026-05-27 09:16:16 - [TokenCleanup] Соединения с БД закрыты
+INFO: 2026-05-27 09:16:16 - [TokenCleanup] 👋 Поток очистки остановлен
+INFO: 2026-05-27 09:16:16 - [TokenCleanup] Поток успешно завершен
+INFO: 2026-05-27 09:16:24 - [TokenCleanup] ✅ Фоновый процесс запущен (поток: TokenCleanup, ID: 126547917305536)
+INFO: 2026-05-27 09:16:24 - [TokenCleanup] Синхронный engine инициализирован
+INFO: 2026-05-27 09:16:24 - [TokenCleanup] 🚀 Поток очистки запущен (интервал: 60 мин, поток: TokenCleanup)
+INFO: 2026-05-27 09:16:24 - [TokenCleanup] 🧹 Начинаем очистку...
+INFO: 2026-05-27 09:16:25 - [TokenCleanup] ✅ Истекших токенов не найдено
+DEBUG: 2026-05-27 09:16:25 - [TokenCleanup] Ожидание 60 мин...
+DEBUG: 2026-05-27 09:16:29 - Open transaction ...
+DEBUG: 2026-05-27 09:16:29 - News sign in
+DEBUG: 2026-05-27 09:16:29 - Create user ...
+DEBUG: 2026-05-27 09:16:29 - Generate code
+DEBUG: 2026-05-27 09:16:29 - Add background task
+DEBUG: 2026-05-27 09:16:29 - Generate token id
+DEBUG: 2026-05-27 09:16:29 - Save code session 837e1cff-d22a-40d3-9d9a-5babb18be56f
+DEBUG: 2026-05-27 09:16:29 - Redis session started
+DEBUG: 2026-05-27 09:16:29 - saved to Redis: 837e1cff-d22a-40d3-9d9a-5babb18be56f, TTL: 300s
+DEBUG: 2026-05-27 09:16:29 - Redis session ended
+DEBUG: 2026-05-27 09:16:29 - Create code token
+DEBUG: 2026-05-27 09:16:29 - Success
+DEBUG: 2026-05-27 09:16:29 - Send code, code : 135329
+DEBUG: 2026-05-27 09:16:29 - Curent file /app/src/utils/mail_service.py
+DEBUG: 2026-05-27 09:16:29 - project_root /app/src
+DEBUG: 2026-05-27 09:16:29 - template path /app/src/templates/email_template.html
+DEBUG: 2026-05-27 09:16:31 - Commit
+DEBUG: 2026-05-27 09:16:31 - Session close
+DEBUG: 2026-05-27 09:17:06 - Open transaction ...
+DEBUG: 2026-05-27 09:17:06 - Get token ...
+DEBUG: 2026-05-27 09:17:06 - Get device id ...
+DEBUG: 2026-05-27 09:17:06 - Verefy access token
+WARNING: 2026-05-27 09:17:06 - Токен просрочен!
+WARNING: 2026-05-27 09:17:06 - Error invalid token
+WARNING: 2026-05-27 09:17:06 - Discard change rollback...
+DEBUG: 2026-05-27 09:17:06 - Session close
+INFO: 2026-05-27 09:18:24 - [TokenCleanup] 🛑 Останавливаем фоновый процесс...
+INFO: 2026-05-27 09:18:24 - [TokenCleanup] Соединения с БД закрыты
+INFO: 2026-05-27 09:18:24 - [TokenCleanup] 👋 Поток очистки остановлен
+INFO: 2026-05-27 09:18:24 - [TokenCleanup] Поток успешно завершен
+INFO: 2026-05-27 09:20:52 - [TokenCleanup] ✅ Фоновый процесс запущен (поток: TokenCleanup, ID: 137924465301184)
+INFO: 2026-05-27 09:20:52 - [TokenCleanup] Синхронный engine инициализирован
+INFO: 2026-05-27 09:20:52 - [TokenCleanup] 🚀 Поток очистки запущен (интервал: 60 мин, поток: TokenCleanup)
+INFO: 2026-05-27 09:20:52 - [TokenCleanup] 🧹 Начинаем очистку...
+INFO: 2026-05-27 09:20:52 - [TokenCleanup] ✅ Истекших токенов не найдено
+DEBUG: 2026-05-27 09:20:52 - [TokenCleanup] Ожидание 60 мин...
+DEBUG: 2026-05-27 09:21:12 - Open transaction ...
+DEBUG: 2026-05-27 09:21:12 - News sign in
+WARNING: 2026-05-27 09:21:12 - Error user already exists
+WARNING: 2026-05-27 09:21:12 - Discard change rollback...
+DEBUG: 2026-05-27 09:21:12 - Session close
+DEBUG: 2026-05-27 09:21:35 - Open transaction ...
+DEBUG: 2026-05-27 09:21:35 - News sign in
+DEBUG: 2026-05-27 09:21:35 - Create user ...
+DEBUG: 2026-05-27 09:21:35 - Generate code
+DEBUG: 2026-05-27 09:21:35 - Add background task
+DEBUG: 2026-05-27 09:21:35 - Generate token id
+DEBUG: 2026-05-27 09:21:35 - Save code session e4df2683-f091-4d17-813c-6059dc386dba
+DEBUG: 2026-05-27 09:21:35 - Redis session started
+DEBUG: 2026-05-27 09:21:35 - saved to Redis: e4df2683-f091-4d17-813c-6059dc386dba, TTL: 300s
+DEBUG: 2026-05-27 09:21:35 - Redis session ended
+DEBUG: 2026-05-27 09:21:35 - Create code token
+DEBUG: 2026-05-27 09:21:35 - Success
+DEBUG: 2026-05-27 09:21:35 - Send code, code : 396548
+DEBUG: 2026-05-27 09:21:36 - Curent file /app/src/utils/mail_service.py
+DEBUG: 2026-05-27 09:21:36 - project_root /app/src
+DEBUG: 2026-05-27 09:21:36 - template path /app/src/templates/email_template.html
+DEBUG: 2026-05-27 09:21:37 - Commit
+DEBUG: 2026-05-27 09:21:38 - Session close
+DEBUG: 2026-05-27 09:22:48 - Open transaction ...
+DEBUG: 2026-05-27 09:22:48 - Get token ...
+DEBUG: 2026-05-27 09:22:48 - Get device id ...
+DEBUG: 2026-05-27 09:22:48 - Verefy access token
+WARNING: 2026-05-27 09:22:48 - Токен просрочен!
+WARNING: 2026-05-27 09:22:48 - Error invalid token
+WARNING: 2026-05-27 09:22:48 - Discard change rollback...
+DEBUG: 2026-05-27 09:22:48 - Session close
+DEBUG: 2026-05-27 09:22:48 - Open transaction ...
+WARNING: 2026-05-27 09:22:48 - News not found
+WARNING: 2026-05-27 09:22:48 - Discard change rollback...
+DEBUG: 2026-05-27 09:22:48 - Session close
+DEBUG: 2026-05-27 09:23:22 - Open transaction ...
+DEBUG: 2026-05-27 09:23:22 - Get token ...
+DEBUG: 2026-05-27 09:23:22 - Get device id ...
+DEBUG: 2026-05-27 09:23:22 - Verefy access token
+WARNING: 2026-05-27 09:23:22 - Токен просрочен!
+WARNING: 2026-05-27 09:23:22 - Error invalid token
+WARNING: 2026-05-27 09:23:22 - Discard change rollback...
+DEBUG: 2026-05-27 09:23:22 - Session close
+DEBUG: 2026-05-27 09:23:36 - Open transaction ...
+DEBUG: 2026-05-27 09:23:36 - News sign in
+DEBUG: 2026-05-27 09:23:36 - Create user ...
+DEBUG: 2026-05-27 09:23:36 - Generate code
+DEBUG: 2026-05-27 09:23:36 - Add background task
+DEBUG: 2026-05-27 09:23:36 - Generate token id
+DEBUG: 2026-05-27 09:23:36 - Save code session a4552444-3a8b-4b63-90bc-b303014baa65
+DEBUG: 2026-05-27 09:23:36 - Redis session started
+DEBUG: 2026-05-27 09:23:36 - saved to Redis: a4552444-3a8b-4b63-90bc-b303014baa65, TTL: 300s
+DEBUG: 2026-05-27 09:23:36 - Redis session ended
+DEBUG: 2026-05-27 09:23:36 - Create code token
+DEBUG: 2026-05-27 09:23:36 - Success
+DEBUG: 2026-05-27 09:23:36 - Send code, code : 234159
+DEBUG: 2026-05-27 09:23:36 - Curent file /app/src/utils/mail_service.py
+DEBUG: 2026-05-27 09:23:36 - project_root /app/src
+DEBUG: 2026-05-27 09:23:36 - template path /app/src/templates/email_template.html
+DEBUG: 2026-05-27 09:23:38 - Commit
+DEBUG: 2026-05-27 09:23:38 - Session close
+DEBUG: 2026-05-27 09:23:55 - Open transaction ...
+DEBUG: 2026-05-27 09:23:56 - Get token ...
+DEBUG: 2026-05-27 09:23:56 - Get device id ...
+DEBUG: 2026-05-27 09:23:56 - Verefy access token
+DEBUG: 2026-05-27 09:23:56 - Verification of access token registration
+DEBUG: 2026-05-27 09:23:57 - Redis session started
+DEBUG: 2026-05-27 09:23:57 - Value not found in Redis: 64:64d41adb-b4e7-4f87-8f97-5347b5b2cc89:ce176c27d12d74848fc877cefb5e5b05
+DEBUG: 2026-05-27 09:23:57 - Redis session ended
+WARNING: 2026-05-27 09:23:57 - Token not found
+WARNING: 2026-05-27 09:23:57 - Discard change rollback...
+DEBUG: 2026-05-27 09:23:57 - Session close
+DEBUG: 2026-05-27 09:24:45 - Open transaction ...
+DEBUG: 2026-05-27 09:24:45 - Get token ...
+DEBUG: 2026-05-27 09:24:45 - Get device id ...
+DEBUG: 2026-05-27 09:24:45 - Verefy access token
+DEBUG: 2026-05-27 09:24:45 - Verification of access token registration
+DEBUG: 2026-05-27 09:24:45 - Redis session started
+DEBUG: 2026-05-27 09:24:45 - Value not found in Redis: 64:64d41adb-b4e7-4f87-8f97-5347b5b2cc89:ce176c27d12d74848fc877cefb5e5b05
+DEBUG: 2026-05-27 09:24:45 - Redis session ended
+WARNING: 2026-05-27 09:24:45 - Token not found
+WARNING: 2026-05-27 09:24:45 - Discard change rollback...
+DEBUG: 2026-05-27 09:24:45 - Session close
+INFO: 2026-05-27 09:25:46 - [TokenCleanup] 🛑 Останавливаем фоновый процесс...
+INFO: 2026-05-27 09:25:47 - [TokenCleanup] Соединения с БД закрыты
+INFO: 2026-05-27 09:25:47 - [TokenCleanup] 👋 Поток очистки остановлен
+INFO: 2026-05-27 09:25:47 - [TokenCleanup] Поток успешно завершен
+INFO: 2026-05-27 09:25:56 - [TokenCleanup] ✅ Фоновый процесс запущен (поток: TokenCleanup, ID: 134023690622656)
+INFO: 2026-05-27 09:25:56 - [TokenCleanup] Синхронный engine инициализирован
+INFO: 2026-05-27 09:25:56 - [TokenCleanup] 🚀 Поток очистки запущен (интервал: 60 мин, поток: TokenCleanup)
+INFO: 2026-05-27 09:25:56 - [TokenCleanup] 🧹 Начинаем очистку...
+INFO: 2026-05-27 09:25:56 - [TokenCleanup] ✅ Истекших токенов не найдено
+DEBUG: 2026-05-27 09:25:56 - [TokenCleanup] Ожидание 60 мин...
+DEBUG: 2026-05-27 09:26:23 - Open transaction ...
+DEBUG: 2026-05-27 09:26:23 - Get token ...
+DEBUG: 2026-05-27 09:26:23 - Get device id ...
+DEBUG: 2026-05-27 09:26:23 - Verefy access token
+WARNING: 2026-05-27 09:26:23 - Токен просрочен!
+WARNING: 2026-05-27 09:26:24 - Error invalid token
+WARNING: 2026-05-27 09:26:24 - Discard change rollback...
+DEBUG: 2026-05-27 09:26:24 - Session close
+DEBUG: 2026-05-27 09:26:35 - Open transaction ...
+DEBUG: 2026-05-27 09:26:35 - Get token ...
+DEBUG: 2026-05-27 09:26:35 - verefy code code: 234159
+DEBUG: 2026-05-27 09:26:35 - Get code session ogj
+DEBUG: 2026-05-27 09:26:35 - Redis session started
+DEBUG: 2026-05-27 09:26:35 - Value retrieved from Redis: a4552444-3a8b-4b63-90bc-b303014baa65
+DEBUG: 2026-05-27 09:26:35 - Redis session ended
+DEBUG: 2026-05-27 09:26:35 - Compair code
+DEBUG: 2026-05-27 09:26:35 - Activate user
+DEBUG: 2026-05-27 09:26:35 - Delete old session
+DEBUG: 2026-05-27 09:26:35 - Redis session started
+DEBUG: 2026-05-27 09:26:35 - delete to Redis
+DEBUG: 2026-05-27 09:26:36 - Redis session ended
+DEBUG: 2026-05-27 09:26:36 - Create token pair
+DEBUG: 2026-05-27 09:26:36 - Accouting refresh token
+DEBUG: 2026-05-27 09:26:36 - Token pyload after serialize
+WARNING: 2026-05-27 09:26:36 - Discard change rollback...
+DEBUG: 2026-05-27 09:26:36 - Session close
+INFO: 2026-05-27 09:30:49 - [TokenCleanup] ✅ Фоновый процесс запущен (поток: TokenCleanup, ID: 132257769465536)
+INFO: 2026-05-27 09:30:49 - [TokenCleanup] Синхронный engine инициализирован
+INFO: 2026-05-27 09:30:49 - [TokenCleanup] 🚀 Поток очистки запущен (интервал: 60 мин, поток: TokenCleanup)
+INFO: 2026-05-27 09:30:49 - [TokenCleanup] 🧹 Начинаем очистку...
+ERROR: 2026-05-27 09:30:49 - [TokenCleanup] Ошибка в _cleanup_batch_sync: (psycopg2.errors.UndefinedTable) relation "tokens" does not exist
+LINE 2: FROM tokens 
+             ^
+
+[SQL: SELECT tokens.id 
+FROM tokens 
+WHERE tokens.exp < %(exp_1)s 
+ LIMIT %(param_1)s]
+[parameters: {'exp_1': datetime.datetime(2026, 5, 27, 9, 30, 49, 546581), 'param_1': 100}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+ERROR: 2026-05-27 09:30:49 - [TokenCleanup] Ошибка при удалении батча: (psycopg2.errors.UndefinedTable) relation "tokens" does not exist
+LINE 2: FROM tokens 
+             ^
+
+[SQL: SELECT tokens.id 
+FROM tokens 
+WHERE tokens.exp < %(exp_1)s 
+ LIMIT %(param_1)s]
+[parameters: {'exp_1': datetime.datetime(2026, 5, 27, 9, 30, 49, 546581), 'param_1': 100}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+INFO: 2026-05-27 09:30:49 - [TokenCleanup] ✅ Истекших токенов не найдено
+DEBUG: 2026-05-27 09:30:49 - [TokenCleanup] Ожидание 60 мин...
+DEBUG: 2026-05-27 09:35:17 - Open transaction ...
+DEBUG: 2026-05-27 09:35:17 - News sign in
+DEBUG: 2026-05-27 09:35:18 - Create user ...
+DEBUG: 2026-05-27 09:35:18 - Generate code
+DEBUG: 2026-05-27 09:35:18 - Add background task
+DEBUG: 2026-05-27 09:35:18 - Generate token id
+DEBUG: 2026-05-27 09:35:18 - Save code session 92c2a4c7-6bd7-485c-84d3-8fdc0dc24bbb
+DEBUG: 2026-05-27 09:35:18 - Redis session started
+DEBUG: 2026-05-27 09:35:18 - saved to Redis: 92c2a4c7-6bd7-485c-84d3-8fdc0dc24bbb, TTL: 300s
+DEBUG: 2026-05-27 09:35:18 - Redis session ended
+DEBUG: 2026-05-27 09:35:18 - Create code token
+DEBUG: 2026-05-27 09:35:18 - Success
+DEBUG: 2026-05-27 09:35:18 - Send code, code : 348615
+DEBUG: 2026-05-27 09:35:18 - Curent file /app/src/utils/mail_service.py
+DEBUG: 2026-05-27 09:35:18 - project_root /app/src
+DEBUG: 2026-05-27 09:35:18 - template path /app/src/templates/email_template.html
+DEBUG: 2026-05-27 09:35:20 - Commit
+DEBUG: 2026-05-27 09:35:20 - Session close
+DEBUG: 2026-05-27 09:35:55 - Open transaction ...
+DEBUG: 2026-05-27 09:35:55 - Get token ...
+DEBUG: 2026-05-27 09:35:55 - verefy code code: 348615
+DEBUG: 2026-05-27 09:35:55 - Get code session ogj
+DEBUG: 2026-05-27 09:35:55 - Redis session started
+DEBUG: 2026-05-27 09:35:55 - Value retrieved from Redis: 92c2a4c7-6bd7-485c-84d3-8fdc0dc24bbb
+DEBUG: 2026-05-27 09:35:55 - Redis session ended
+DEBUG: 2026-05-27 09:35:55 - Compair code
+DEBUG: 2026-05-27 09:35:55 - Activate user
+DEBUG: 2026-05-27 09:35:55 - Delete old session
+DEBUG: 2026-05-27 09:35:55 - Redis session started
+DEBUG: 2026-05-27 09:35:55 - delete to Redis
+DEBUG: 2026-05-27 09:35:55 - Redis session ended
+DEBUG: 2026-05-27 09:35:55 - Create token pair
+DEBUG: 2026-05-27 09:35:55 - Accouting refresh token
+DEBUG: 2026-05-27 09:35:55 - Token pyload after serialize
+DEBUG: 2026-05-27 09:35:55 - Accouting access token
+DEBUG: 2026-05-27 09:35:55 - Redis session started
+DEBUG: 2026-05-27 09:35:55 - saved to Redis: 1:6c703226-7746-4a67-b101-2daab6a3a464:ce176c27d12d74848fc877cefb5e5b05, TTL: 0:15:00s
+DEBUG: 2026-05-27 09:35:55 - Redis session ended
+DEBUG: 2026-05-27 09:35:55 - Open transaction ...
+DEBUG: 2026-05-27 09:35:55 - Get token ...
+DEBUG: 2026-05-27 09:35:55 - Get device id ...
+DEBUG: 2026-05-27 09:35:55 - Verefy access token
+DEBUG: 2026-05-27 09:35:55 - Verification of access token registration
+DEBUG: 2026-05-27 09:35:55 - Redis session started
+DEBUG: 2026-05-27 09:35:55 - Commit
+DEBUG: 2026-05-27 09:35:55 - Session close
+DEBUG: 2026-05-27 09:35:55 - Value retrieved from Redis: 1:6c703226-7746-4a67-b101-2daab6a3a464:ce176c27d12d74848fc877cefb5e5b05
+DEBUG: 2026-05-27 09:35:55 - Redis session ended
+DEBUG: 2026-05-27 09:35:55 - serialize token payload ...
+DEBUG: 2026-05-27 09:35:55 - Access token is valid
+DEBUG: 2026-05-27 09:35:55 - Commit
+DEBUG: 2026-05-27 09:35:55 - Session close
+DEBUG: 2026-05-27 09:35:55 - Open transaction ...
+DEBUG: 2026-05-27 09:35:55 - Get me ... id : 1
+DEBUG: 2026-05-27 09:35:55 - Serialize ...
+DEBUG: 2026-05-27 09:35:55 - Commit
+DEBUG: 2026-05-27 09:35:56 - Session close
+DEBUG: 2026-05-27 09:35:56 - Open transaction ...
+WARNING: 2026-05-27 09:35:56 - News not found
+WARNING: 2026-05-27 09:35:56 - Discard change rollback...
+DEBUG: 2026-05-27 09:35:57 - Session close
+DEBUG: 2026-05-27 10:24:44 - Open transaction ...
+DEBUG: 2026-05-27 10:24:45 - Get token ...
+DEBUG: 2026-05-27 10:24:46 - Get device id ...
+DEBUG: 2026-05-27 10:24:46 - Verefy access token
+WARNING: 2026-05-27 10:24:46 - Токен просрочен!
+WARNING: 2026-05-27 10:24:46 - Error invalid token
+WARNING: 2026-05-27 10:24:46 - Discard change rollback...
+DEBUG: 2026-05-27 10:24:46 - Session close
+DEBUG: 2026-05-27 10:24:46 - Open transaction ...
+WARNING: 2026-05-27 10:24:46 - News not found
+WARNING: 2026-05-27 10:24:47 - Discard change rollback...
+DEBUG: 2026-05-27 10:24:47 - Session close
+DEBUG: 2026-05-27 10:24:53 - Open transaction ...
+DEBUG: 2026-05-27 10:24:53 - Get token ...
+DEBUG: 2026-05-27 10:24:53 - Get device id ...
+DEBUG: 2026-05-27 10:24:53 - Verefy access token
+WARNING: 2026-05-27 10:24:53 - Токен просрочен!
+WARNING: 2026-05-27 10:24:53 - Error invalid token
+WARNING: 2026-05-27 10:24:53 - Discard change rollback...
+DEBUG: 2026-05-27 10:24:53 - Session close
+DEBUG: 2026-05-27 10:25:07 - Open transaction ...
+DEBUG: 2026-05-27 10:25:07 - News sign in
+DEBUG: 2026-05-27 10:25:07 - Create user ...
+DEBUG: 2026-05-27 10:25:07 - Generate code
+DEBUG: 2026-05-27 10:25:07 - Add background task
+DEBUG: 2026-05-27 10:25:07 - Generate token id
+DEBUG: 2026-05-27 10:25:07 - Save code session 3ce6d30e-a2cd-43c0-b29f-a91f44488b36
+DEBUG: 2026-05-27 10:25:07 - Redis session started
+DEBUG: 2026-05-27 10:25:07 - saved to Redis: 3ce6d30e-a2cd-43c0-b29f-a91f44488b36, TTL: 300s
+DEBUG: 2026-05-27 10:25:07 - Redis session ended
+DEBUG: 2026-05-27 10:25:07 - Create code token
+DEBUG: 2026-05-27 10:25:07 - Success
+DEBUG: 2026-05-27 10:25:07 - Send code, code : 474208
+DEBUG: 2026-05-27 10:25:07 - Curent file /app/src/utils/mail_service.py
+DEBUG: 2026-05-27 10:25:07 - project_root /app/src
+DEBUG: 2026-05-27 10:25:07 - template path /app/src/templates/email_template.html
+DEBUG: 2026-05-27 10:25:10 - Commit
+DEBUG: 2026-05-27 10:25:10 - Session close
+DEBUG: 2026-05-27 10:25:47 - Open transaction ...
+DEBUG: 2026-05-27 10:25:47 - Get token ...
+DEBUG: 2026-05-27 10:25:47 - verefy code code: 474208
+DEBUG: 2026-05-27 10:25:47 - Get code session ogj
+DEBUG: 2026-05-27 10:25:47 - Redis session started
+DEBUG: 2026-05-27 10:25:47 - Value retrieved from Redis: 3ce6d30e-a2cd-43c0-b29f-a91f44488b36
+DEBUG: 2026-05-27 10:25:47 - Redis session ended
+DEBUG: 2026-05-27 10:25:47 - Compair code
+DEBUG: 2026-05-27 10:25:47 - Activate user
+DEBUG: 2026-05-27 10:25:47 - Delete old session
+DEBUG: 2026-05-27 10:25:47 - Redis session started
+DEBUG: 2026-05-27 10:25:47 - delete to Redis
+DEBUG: 2026-05-27 10:25:47 - Redis session ended
+DEBUG: 2026-05-27 10:25:47 - Create token pair
+DEBUG: 2026-05-27 10:25:47 - Accouting refresh token
+DEBUG: 2026-05-27 10:25:47 - Token pyload after serialize
+DEBUG: 2026-05-27 10:25:47 - Accouting access token
+DEBUG: 2026-05-27 10:25:47 - Redis session started
+DEBUG: 2026-05-27 10:25:47 - saved to Redis: 2:7b000336-fa59-445d-a08e-207c8a64cef3:ce176c27d12d74848fc877cefb5e5b05, TTL: 0:15:00s
+DEBUG: 2026-05-27 10:25:47 - Redis session ended
+DEBUG: 2026-05-27 10:25:47 - Commit
+DEBUG: 2026-05-27 10:25:47 - Session close
+DEBUG: 2026-05-27 10:25:47 - Open transaction ...
+DEBUG: 2026-05-27 10:25:47 - Get token ...
+DEBUG: 2026-05-27 10:25:47 - Get device id ...
+DEBUG: 2026-05-27 10:25:47 - Verefy access token
+DEBUG: 2026-05-27 10:25:47 - Verification of access token registration
+DEBUG: 2026-05-27 10:25:47 - Redis session started
+DEBUG: 2026-05-27 10:25:47 - Value retrieved from Redis: 2:7b000336-fa59-445d-a08e-207c8a64cef3:ce176c27d12d74848fc877cefb5e5b05
+DEBUG: 2026-05-27 10:25:47 - Redis session ended
+DEBUG: 2026-05-27 10:25:47 - serialize token payload ...
+DEBUG: 2026-05-27 10:25:47 - Access token is valid
+DEBUG: 2026-05-27 10:25:47 - Commit
+DEBUG: 2026-05-27 10:25:47 - Session close
+DEBUG: 2026-05-27 10:25:47 - Open transaction ...
+DEBUG: 2026-05-27 10:25:47 - Get me ... id : 2
+DEBUG: 2026-05-27 10:25:47 - Serialize ...
+DEBUG: 2026-05-27 10:25:47 - Commit
+DEBUG: 2026-05-27 10:25:47 - Session close
+DEBUG: 2026-05-27 10:25:48 - Open transaction ...
+WARNING: 2026-05-27 10:25:48 - News not found
+WARNING: 2026-05-27 10:25:48 - Discard change rollback...
+DEBUG: 2026-05-27 10:25:48 - Session close
+DEBUG: 2026-05-27 10:30:51 - Open transaction ...
+DEBUG: 2026-05-27 10:30:51 - Get token ...
+DEBUG: 2026-05-27 10:30:51 - Get device id ...
+DEBUG: 2026-05-27 10:30:51 - Verefy access token
+DEBUG: 2026-05-27 10:30:51 - Verification of access token registration
+DEBUG: 2026-05-27 10:30:51 - Redis session started
+DEBUG: 2026-05-27 10:30:51 - Value retrieved from Redis: 2:7b000336-fa59-445d-a08e-207c8a64cef3:ce176c27d12d74848fc877cefb5e5b05
+DEBUG: 2026-05-27 10:30:51 - Redis session ended
+DEBUG: 2026-05-27 10:30:51 - serialize token payload ...
+DEBUG: 2026-05-27 10:30:51 - Access token is valid
+DEBUG: 2026-05-27 10:30:51 - Commit
+DEBUG: 2026-05-27 10:30:51 - Session close
+DEBUG: 2026-05-27 10:30:51 - Open transaction ...
+DEBUG: 2026-05-27 10:30:51 - Get me ... id : 2
+DEBUG: 2026-05-27 10:30:51 - Serialize ...
+DEBUG: 2026-05-27 10:30:51 - Commit
+DEBUG: 2026-05-27 10:30:51 - Session close
+DEBUG: 2026-05-27 10:30:55 - Open transaction ...
+WARNING: 2026-05-27 10:30:55 - News not found
+WARNING: 2026-05-27 10:30:55 - Discard change rollback...
+DEBUG: 2026-05-27 10:30:55 - Session close
+DEBUG: 2026-05-27 10:30:57 - Open transaction ...
+DEBUG: 2026-05-27 10:30:57 - Get token ...
+DEBUG: 2026-05-27 10:30:57 - Get device id ...
+DEBUG: 2026-05-27 10:30:57 - Verefy access token
+DEBUG: 2026-05-27 10:30:57 - Verification of access token registration
+DEBUG: 2026-05-27 10:30:57 - Redis session started
+DEBUG: 2026-05-27 10:30:57 - Value retrieved from Redis: 2:7b000336-fa59-445d-a08e-207c8a64cef3:ce176c27d12d74848fc877cefb5e5b05
+DEBUG: 2026-05-27 10:30:57 - Redis session ended
+DEBUG: 2026-05-27 10:30:57 - serialize token payload ...
+DEBUG: 2026-05-27 10:30:57 - Access token is valid
+DEBUG: 2026-05-27 10:30:57 - Commit
+DEBUG: 2026-05-27 10:30:57 - Session close
+DEBUG: 2026-05-27 10:30:57 - Open transaction ...
+DEBUG: 2026-05-27 10:30:57 - Get me ... id : 2
+DEBUG: 2026-05-27 10:30:57 - Serialize ...
+DEBUG: 2026-05-27 10:30:57 - Commit
+DEBUG: 2026-05-27 10:30:57 - Session close
+DEBUG: 2026-05-27 10:30:57 - Open transaction ...
+WARNING: 2026-05-27 10:30:57 - News not found
+WARNING: 2026-05-27 10:30:57 - Discard change rollback...
+DEBUG: 2026-05-27 10:30:57 - Session close
+DEBUG: 2026-05-27 10:30:59 - Open transaction ...
+WARNING: 2026-05-27 10:30:59 - News not found
+WARNING: 2026-05-27 10:30:59 - Discard change rollback...
+DEBUG: 2026-05-27 10:30:59 - Session close
+DEBUG: 2026-05-27 10:31:00 - Open transaction ...
+WARNING: 2026-05-27 10:31:00 - News not found
+WARNING: 2026-05-27 10:31:00 - Discard change rollback...
+DEBUG: 2026-05-27 10:31:00 - Session close
+DEBUG: 2026-05-27 10:31:04 - Open transaction ...
+WARNING: 2026-05-27 10:31:04 - News not found
+WARNING: 2026-05-27 10:31:04 - Discard change rollback...
+DEBUG: 2026-05-27 10:31:04 - Session close
+DEBUG: 2026-05-27 10:31:14 - Open transaction ...
+WARNING: 2026-05-27 10:31:14 - News not found
+WARNING: 2026-05-27 10:31:14 - Discard change rollback...
+DEBUG: 2026-05-27 10:31:14 - Session close
+DEBUG: 2026-05-27 10:31:22 - Open transaction ...
+WARNING: 2026-05-27 10:31:22 - News not found
+WARNING: 2026-05-27 10:31:22 - Discard change rollback...
+DEBUG: 2026-05-27 10:31:22 - Session close
+DEBUG: 2026-05-27 10:31:24 - Open transaction ...
+WARNING: 2026-05-27 10:31:24 - News not found
+WARNING: 2026-05-27 10:31:24 - Discard change rollback...
+DEBUG: 2026-05-27 10:31:24 - Session close
+INFO: 2026-05-27 10:31:49 - [TokenCleanup] 🛑 Останавливаем фоновый процесс...
+INFO: 2026-05-27 10:31:49 - [TokenCleanup] Соединения с БД закрыты
+INFO: 2026-05-27 10:31:49 - [TokenCleanup] 👋 Поток очистки остановлен
+INFO: 2026-05-27 10:31:49 - [TokenCleanup] Поток успешно завершен
+INFO: 2026-05-27 10:32:00 - [TokenCleanup] ✅ Фоновый процесс запущен (поток: TokenCleanup, ID: 128339083118272)
+INFO: 2026-05-27 10:32:00 - [TokenCleanup] Синхронный engine инициализирован
+INFO: 2026-05-27 10:32:00 - [TokenCleanup] 🚀 Поток очистки запущен (интервал: 60 мин, поток: TokenCleanup)
+INFO: 2026-05-27 10:32:00 - [TokenCleanup] 🧹 Начинаем очистку...
+INFO: 2026-05-27 10:32:00 - [TokenCleanup] ✅ Истекших токенов не найдено
+DEBUG: 2026-05-27 10:32:01 - [TokenCleanup] Ожидание 60 мин...
+DEBUG: 2026-05-27 10:32:29 - Open transaction ...
+DEBUG: 2026-05-27 10:32:29 - News sign in
+DEBUG: 2026-05-27 10:32:29 - Create user ...
+DEBUG: 2026-05-27 10:32:29 - Generate code
+DEBUG: 2026-05-27 10:32:29 - Add background task
+DEBUG: 2026-05-27 10:32:29 - Generate token id
+DEBUG: 2026-05-27 10:32:29 - Save code session 27a326a9-8292-4c20-b2ac-6374fe1b6a25
+DEBUG: 2026-05-27 10:32:29 - Redis session started
+DEBUG: 2026-05-27 10:32:29 - saved to Redis: 27a326a9-8292-4c20-b2ac-6374fe1b6a25, TTL: 300s
+DEBUG: 2026-05-27 10:32:29 - Redis session ended
+DEBUG: 2026-05-27 10:32:29 - Create code token
+DEBUG: 2026-05-27 10:32:29 - Success
+DEBUG: 2026-05-27 10:32:29 - Send code, code : 713733
+DEBUG: 2026-05-27 10:32:29 - Curent file /app/src/utils/mail_service.py
+DEBUG: 2026-05-27 10:32:29 - project_root /app/src
+DEBUG: 2026-05-27 10:32:29 - template path /app/src/templates/email_template.html
+DEBUG: 2026-05-27 10:32:31 - Commit
+DEBUG: 2026-05-27 10:32:31 - Session close
+DEBUG: 2026-05-27 10:32:57 - Open transaction ...
+DEBUG: 2026-05-27 10:32:57 - Get token ...
+DEBUG: 2026-05-27 10:32:57 - Get new code
+DEBUG: 2026-05-27 10:32:57 - Save code session 890e4cb2-8be5-467b-97b0-42f743cd8652
+DEBUG: 2026-05-27 10:32:57 - Redis session started
+DEBUG: 2026-05-27 10:32:57 - saved to Redis: 890e4cb2-8be5-467b-97b0-42f743cd8652, TTL: 300s
+DEBUG: 2026-05-27 10:32:57 - Redis session ended
+DEBUG: 2026-05-27 10:32:57 - Create code token
+DEBUG: 2026-05-27 10:32:57 - Success
+WARNING: 2026-05-27 10:32:57 - Discard change rollback...
+DEBUG: 2026-05-27 10:32:57 - Session close
+INFO: 2026-05-27 10:33:15 - [TokenCleanup] 🛑 Останавливаем фоновый процесс...
+INFO: 2026-05-27 10:33:16 - [TokenCleanup] Соединения с БД закрыты
+INFO: 2026-05-27 10:33:16 - [TokenCleanup] 👋 Поток очистки остановлен
+INFO: 2026-05-27 10:33:16 - [TokenCleanup] Поток успешно завершен
+INFO: 2026-05-27 10:33:23 - [TokenCleanup] ✅ Фоновый процесс запущен (поток: TokenCleanup, ID: 127961768437440)
+INFO: 2026-05-27 10:33:23 - [TokenCleanup] Синхронный engine инициализирован
+INFO: 2026-05-27 10:33:23 - [TokenCleanup] 🚀 Поток очистки запущен (интервал: 60 мин, поток: TokenCleanup)
+INFO: 2026-05-27 10:33:23 - [TokenCleanup] 🧹 Начинаем очистку...
+INFO: 2026-05-27 10:33:23 - [TokenCleanup] ✅ Истекших токенов не найдено
+DEBUG: 2026-05-27 10:33:23 - [TokenCleanup] Ожидание 60 мин...
+DEBUG: 2026-05-27 10:33:31 - Open transaction ...
+DEBUG: 2026-05-27 10:33:31 - News sign in
+DEBUG: 2026-05-27 10:33:31 - Create user ...
+DEBUG: 2026-05-27 10:33:31 - Generate code
+DEBUG: 2026-05-27 10:33:31 - Add background task
+DEBUG: 2026-05-27 10:33:31 - Generate token id
+DEBUG: 2026-05-27 10:33:31 - Save code session 5cb8020d-4552-49d5-9446-7cf0eae19c4d
+DEBUG: 2026-05-27 10:33:31 - Redis session started
+DEBUG: 2026-05-27 10:33:31 - saved to Redis: 5cb8020d-4552-49d5-9446-7cf0eae19c4d, TTL: 300s
+DEBUG: 2026-05-27 10:33:31 - Redis session ended
+DEBUG: 2026-05-27 10:33:31 - Create code token
+DEBUG: 2026-05-27 10:33:31 - Success
+DEBUG: 2026-05-27 10:33:31 - Send code, code : 653834
+DEBUG: 2026-05-27 10:33:31 - Curent file /app/src/utils/mail_service.py
+DEBUG: 2026-05-27 10:33:31 - project_root /app/src
+DEBUG: 2026-05-27 10:33:31 - template path /app/src/templates/email_template.html
+DEBUG: 2026-05-27 10:33:35 - Commit
+DEBUG: 2026-05-27 10:33:35 - Session close
+DEBUG: 2026-05-27 10:33:48 - Open transaction ...
+DEBUG: 2026-05-27 10:33:48 - Get token ...
+DEBUG: 2026-05-27 10:33:48 - Get new code
+DEBUG: 2026-05-27 10:33:48 - Save code session 75cc5cf5-d886-40e7-8b56-23129508d1d7
+DEBUG: 2026-05-27 10:33:48 - Redis session started
+DEBUG: 2026-05-27 10:33:48 - saved to Redis: 75cc5cf5-d886-40e7-8b56-23129508d1d7, TTL: 300s
+DEBUG: 2026-05-27 10:33:48 - Redis session ended
+DEBUG: 2026-05-27 10:33:48 - Create code token
+DEBUG: 2026-05-27 10:33:49 - Success
+DEBUG: 2026-05-27 10:33:49 - Send code, code : 203867
+DEBUG: 2026-05-27 10:33:49 - Curent file /app/src/utils/mail_service.py
+DEBUG: 2026-05-27 10:33:49 - project_root /app/src
+DEBUG: 2026-05-27 10:33:49 - template path /app/src/templates/email_template.html
+DEBUG: 2026-05-27 10:33:52 - Commit
+DEBUG: 2026-05-27 10:33:52 - Session close
+DEBUG: 2026-05-27 10:51:45 - Open transaction ...
+WARNING: 2026-05-27 10:51:45 - News not found
+WARNING: 2026-05-27 10:51:45 - Discard change rollback...
+DEBUG: 2026-05-27 10:51:45 - Session close
+DEBUG: 2026-05-27 10:51:46 - Open transaction ...
+WARNING: 2026-05-27 10:51:46 - News not found
+WARNING: 2026-05-27 10:51:46 - Discard change rollback...
+DEBUG: 2026-05-27 10:51:46 - Session close
+DEBUG: 2026-05-27 10:51:48 - Open transaction ...
+WARNING: 2026-05-27 10:51:48 - News not found
+WARNING: 2026-05-27 10:51:48 - Discard change rollback...
+DEBUG: 2026-05-27 10:51:48 - Session close
+DEBUG: 2026-05-27 10:51:52 - Open transaction ...
+WARNING: 2026-05-27 10:51:52 - News not found
+WARNING: 2026-05-27 10:51:52 - Discard change rollback...
+DEBUG: 2026-05-27 10:51:52 - Session close
+DEBUG: 2026-05-27 10:52:07 - Open transaction ...
+WARNING: 2026-05-27 10:52:07 - News not found
+WARNING: 2026-05-27 10:52:07 - Discard change rollback...
+DEBUG: 2026-05-27 10:52:07 - Session close
+DEBUG: 2026-05-27 10:52:44 - Open transaction ...
+DEBUG: 2026-05-27 10:52:44 - Get token ...
+DEBUG: 2026-05-27 10:52:44 - Get device id ...
+DEBUG: 2026-05-27 10:52:44 - Verefy access token
+WARNING: 2026-05-27 10:52:44 - Токен просрочен!
+WARNING: 2026-05-27 10:52:44 - Error invalid token
+WARNING: 2026-05-27 10:52:44 - Discard change rollback...
+DEBUG: 2026-05-27 10:52:44 - Session close
+DEBUG: 2026-05-27 10:52:45 - Open transaction ...
+WARNING: 2026-05-27 10:52:45 - News not found
+WARNING: 2026-05-27 10:52:45 - Discard change rollback...
+DEBUG: 2026-05-27 10:52:45 - Session close
+DEBUG: 2026-05-27 10:52:48 - Open transaction ...
+DEBUG: 2026-05-27 10:52:48 - Get token ...
+DEBUG: 2026-05-27 10:52:48 - Get device id ...
+DEBUG: 2026-05-27 10:52:48 - Verefy access token
+WARNING: 2026-05-27 10:52:48 - Токен просрочен!
+WARNING: 2026-05-27 10:52:48 - Error invalid token
+WARNING: 2026-05-27 10:52:48 - Discard change rollback...
+DEBUG: 2026-05-27 10:52:48 - Session close
+DEBUG: 2026-05-27 10:52:53 - Open transaction ...
+WARNING: 2026-05-27 10:52:53 - News not found
+WARNING: 2026-05-27 10:52:53 - Discard change rollback...
+DEBUG: 2026-05-27 10:52:53 - Session close
+DEBUG: 2026-05-27 10:53:03 - Open transaction ...
+DEBUG: 2026-05-27 10:53:03 - Get token ...
+DEBUG: 2026-05-27 10:53:03 - Get device id ...
+DEBUG: 2026-05-27 10:53:03 - Verefy access token
+WARNING: 2026-05-27 10:53:03 - Токен просрочен!
+WARNING: 2026-05-27 10:53:03 - Error invalid token
+WARNING: 2026-05-27 10:53:03 - Discard change rollback...
+DEBUG: 2026-05-27 10:53:03 - Session close
+DEBUG: 2026-05-27 10:53:04 - Open transaction ...
+WARNING: 2026-05-27 10:53:04 - News not found
+WARNING: 2026-05-27 10:53:04 - Discard change rollback...
+DEBUG: 2026-05-27 10:53:04 - Session close
+DEBUG: 2026-05-27 10:53:35 - Open transaction ...
+WARNING: 2026-05-27 10:53:35 - News not found
+WARNING: 2026-05-27 10:53:35 - Discard change rollback...
+DEBUG: 2026-05-27 10:53:35 - Session close
+DEBUG: 2026-05-27 10:53:42 - Open transaction ...
+WARNING: 2026-05-27 10:53:42 - News not found
+WARNING: 2026-05-27 10:53:42 - Discard change rollback...
+DEBUG: 2026-05-27 10:53:42 - Session close
+DEBUG: 2026-05-27 10:54:30 - Open transaction ...
+WARNING: 2026-05-27 10:54:30 - News not found
+WARNING: 2026-05-27 10:54:30 - Discard change rollback...
+DEBUG: 2026-05-27 10:54:30 - Session close
+DEBUG: 2026-05-27 10:55:07 - Open transaction ...
+WARNING: 2026-05-27 10:55:07 - News not found
+WARNING: 2026-05-27 10:55:07 - Discard change rollback...
+DEBUG: 2026-05-27 10:55:07 - Session close
+DEBUG: 2026-05-27 10:55:10 - Open transaction ...
+WARNING: 2026-05-27 10:55:10 - News not found
+WARNING: 2026-05-27 10:55:10 - Discard change rollback...
+DEBUG: 2026-05-27 10:55:10 - Session close
+DEBUG: 2026-05-27 10:55:28 - Open transaction ...
+WARNING: 2026-05-27 10:55:28 - News not found
+WARNING: 2026-05-27 10:55:28 - Discard change rollback...
+DEBUG: 2026-05-27 10:55:28 - Session close
+INFO: 2026-05-27 18:19:50 - [TokenCleanup] 🧹 Начинаем очистку...
+INFO: 2026-05-27 18:19:50 - [TokenCleanup] ✅ Истекших токенов не найдено
+DEBUG: 2026-05-27 18:19:50 - [TokenCleanup] Ожидание 60 мин...

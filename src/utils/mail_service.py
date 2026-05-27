@@ -1,5 +1,7 @@
 import secrets
 import aiosmtplib
+from string import Template
+from pathlib import Path
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 from shared.logger.logger import logger
@@ -36,37 +38,42 @@ class MailService:
     def generate_code(self) -> str:
         """Генерирует 6-значный код"""
         return ''.join(secrets.choice('0123456789') for _ in range(6))
+
+    def _load_mail_template(self, template_dir : str, file_name : str):
+        current_file = Path(__file__)  # /app/src/utils/mail_service.py
+        logger.debug(f"Curent file {current_file}")
+        project_root = current_file.parent.parent  # /app/src/
+        logger.debug(f"project_root {project_root}")
+        template_path = project_root / template_dir / file_name
+        logger.debug(f"template path {template_path}")
+        if not template_path.exists():
+            logger.error(f"Template file not found: {template_path}")   
+            raise 
+        html_template = template_path.read_text(encoding="utf-8")
+        return html_template
     
     async def send_code(self, code : str, email_to : str) -> None:
-        logger.debug(f"Send code, code : {code}")
-        message = MIMEMultipart("alternative")
-        message["From"] = f"{self.name_from} <{self.email_from}>"
-        message["To"] = email_to
-        message["Subject"] = "Your verification code"
+        try:
+            logger.debug(f"Send code, code : {code}")
+            message = MIMEMultipart("alternative")
+            message["From"] = f"{self.name_from} <{self.email_from}>"
+            message["To"] = email_to
+            message["Subject"] = "Your verification code"
 
-        html_body = f"""
-            <html>
-            <body>
-                <h2>Email Verification</h2>
-                <p>Hello!</p>
-                <p>Your verification code is:</p>
-                <h1 style="color: #4CAF50; font-size: 32px;">{code}</h1>
-                <p>This code will expire in <strong>5 minutes</strong>.</p>
-                <p>If you didn't request this code, please ignore this email.</p>
-                <br>
-                <p>Best regards,<br>{self.name_from}</p>
-            </body>
-            </html>
-            """
+            html_template = self._load_mail_template("templates", "email_template.html")
+            template = Template(html_template)
+            html_body = template.safe_substitute(code=code, name_from=self.name_from)
+            html_part = MIMEText(html_body, "html")
+            message.attach(html_part)
 
-        html_part = MIMEText(html_body, "html")
-        message.attach(html_part)
-
-        await aiosmtplib.send(
-                message,
-                hostname=self.host,
-                port=self.port,
-                username=self.user,
-                password=self.password,
-                start_tls=True
-            )
+            await aiosmtplib.send(
+                    message,
+                    hostname=self.host,
+                    port=self.port,
+                    username=self.user,
+                    password=self.password,
+                    start_tls=True
+                )
+        except Exception as e:
+            logger.warn(f"Send mail notification failed : {e}")
+        
